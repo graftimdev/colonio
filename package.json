@@ -1,0 +1,17 @@
+{
+  "name": "jopium",
+  "version": "0.1.8",
+  "private": true,
+  "description": "Jopium: online multiplayer server and game files",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "python tools/build.py"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.22.1"
+  }
+}
