@@ -1,6 +1,6 @@
 {
   "name": "jopium",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "private": true,
   "description": "Jopium: online multiplayer server and game files",
   "main": "server/server.js",
@@ -12,6 +12,7 @@
     "node": ">=18"
   },
   "dependencies": {
+    "firebase-admin": "^12.7.0",
     "ws": "^8.22.1"
   }
 }

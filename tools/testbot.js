@@ -38,7 +38,7 @@ window.botOrders=function(){
     if(f.cls==='charger'){if(!f.settled&&r<.4)order({t:'settle',f:f.id,v:true});else if(f.settled&&r<.15)order({t:'settle',f:f.id,v:false});
       if(f.settled){const g=mine.find(g=>g!==f&&g.node===f.node&&G.fleets.includes(g)&&g.cls!=='leviathan'&&g.cls!=='charger');if(g)order({t:'dockone',f:g.id,ch:f.id});for(const d of (f.dock||[]).slice(0,1))order({t:'launch',ch:f.id,c:d.c,i:-1});}
       if(f.settled)continue;}
-    if(ARTY(f.cls)&&r<.4)order({t:'bomb',f:f.id,to:pick(G.nodes[f.node].nbr),keep:R()<.5});
+    if(ARTY(f.cls)&&r<.4)order({t:'bomb',f:f.id,to:pick(G.nodes[f.node].nbr),keep:R()<.5,cr:1+Math.floor(R()*maxCharge(f))});
     else if(r<.08&&f.count>1)order({t:'split',f:f.id,k:1});
     else if(r<.14){const g=mine.find(g=>g!==f&&g.cls===f.cls&&G.fleets.includes(g));if(g)order({t:'merge',src:f.id,tgt:g.id});}
     else if(r<.2){const to=pick(K),p=findPath(f.node,to,routeSet(f,ME));if(p&&p.length)order({t:'fmove',f:f.id,to,path:p});}
@@ -49,6 +49,11 @@ window.botOrders=function(){
   for(const q of me.squads||[])if(R()<.3)order({t:'squadmove',q:q.id,to:pick(K)});
   if(R()<.05&&(me.squads||[]).length)order({t:'squaddel',q:me.squads[0].id});
   if(R()<.3)order({t:'trade',give:pick(RES),get:pick(RES)});
+  // Draft 10: send workers somewhere with a task, diplomacy both ways
+  if(R()<.2&&ws.length){const w=pick(ws);order({t:'wgo',w:w.id,to:pick(K),task:pick(['mine','claim',null])});}
+  const cw=ws.find(w=>w.node===me.core&&!w.path.length);
+  if(cw&&R()<.1){const q=pick(G.players.filter(q=>q.id!==ME));order({t:'diplo',w:cw.id,to:q.id,brk:atPeace(ME,q.id)&&R()<.5});}
+  for(const t of (G.treaties||[]))if(t.to===ME&&t.ans==null&&R()<.6)order({t:'peaceans',from:t.from,yes:R()<.6});
 };
 window.BOT=setInterval(()=>{if(!G||!G.online||G.waiting||!P(ME).alive)return;try{botOrders();}catch(e){console.error('bot',e);window.BOTERR=String(e.stack);}endTurn(true);},60);
 })();

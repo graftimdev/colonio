@@ -9,6 +9,55 @@ const path = require('path');
 const crypto = require('crypto');
 const { WebSocketServer } = require('ws');
 
+// ---------------------------------------------------------------- accounts and Elo (Firebase)
+// The secret key comes from the FIREBASE_SERVICE_ACCOUNT environment variable (set on Render, never in the code).
+// Without it the server still runs; online games are simply not rated.
+let admin = null, fdb = null;
+try {
+  if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+    admin = require('firebase-admin');
+    admin.initializeApp({ credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)) });
+    fdb = admin.firestore();
+    console.log('accounts: on (Elo is saved)');
+  } else console.log('accounts: off (no FIREBASE_SERVICE_ACCOUNT, games are not rated)');
+} catch (e) { console.error('accounts: could not start:', e.message); admin = null; fdb = null; }
+const ELO_STEP = 20;
+// winner +20, every other player -20 (never below 0). Ties on the leaderboard go to whoever reached that Elo first,
+// so the sort key is elo, then the earlier time: score = elo * 1e10 + (1e10 - seconds)
+async function rateMatch(r, winSeat, why) {
+  if (r.rated) return; r.rated = true;
+  const uids = r.seatUids || [];
+  if (!fdb || r.desync || uids.length < 2 || uids.some(u => !u) || new Set(uids).size !== uids.length) {
+    console.log(`room ${r.code}: not rated (${!fdb ? 'accounts off' : r.desync ? 'desync' : 'a seat without an account'})`); return;
+  }
+  const out = [];
+  try {
+    await fdb.runTransaction(async t => {
+      out.length = 0;
+      const refs = uids.map(u => fdb.collection('users').doc(u));
+      const docs = await Promise.all(refs.map(x => t.get(x)));
+      const now = Date.now(), sec = Math.floor(now / 1000);
+      docs.forEach((d, i) => {
+        const cur = d.exists ? d.data() : {}, before = Number.isFinite(cur.elo) ? cur.elo : 1000, games = (cur.games || 0) + 1;
+        const after = Math.max(0, before + (i === winSeat ? ELO_STEP : -ELO_STEP));
+        t.set(refs[i], { elo: after, games, score: after * 1e10 + (1e10 - sec), eloAt: admin.firestore.Timestamp.fromMillis(now) }, { merge: true });
+        out.push({ seat: i, before, after, games, first: games === 1 });
+      });
+    });
+  } catch (e) { console.error(`room ${r.code}: Elo update failed:`, e.message); return; }
+  console.log(`room ${r.code}: rated (${why}), winner seat ${winSeat}`);
+  for (const x of out) { const p = r.players.find(q => q.seat === x.seat && q.room === r); if (p) send(p, { t: 'elo', ...x }); }
+}
+// every screen still in the match reports the winner it saw; a winner is accepted when they all agree
+// (or 60 s after the first report with nobody disagreeing); any disagreement means the match is not rated
+function onResult(r, c, winner) {
+  if (r.rated || r.void || !Number.isInteger(winner) || winner < 0 || winner >= r.seatUids.length) return;
+  r.reports = r.reports || new Map(); r.reports.set(c.seat, winner);
+  if (new Set(r.reports.values()).size > 1) { r.void = true; console.warn(`room ${r.code}: players disagree on the winner, not rated`); return; }
+  if ([...r.active].every(s => r.reports.has(s))) return rateMatch(r, winner, 'all agreed');
+  if (!r.resultTimer) r.resultTimer = setTimeout(() => { if (!r.void) rateMatch(r, winner, 'reported'); }, 60000);
+}
+
 const PORT = +process.env.PORT || 8080;
 const CLIENT_DIR = path.join(__dirname, '..', 'client');
 const GRACE_S = 15;            // extra seconds after the turn timer before the server ends a turn for slow players
@@ -63,6 +112,7 @@ function leaveRoom(c) {
   }
   // in a match: the AI takes over this seat from the next turn on
   r.active.delete(seat); r.ended.delete(seat); r.dropped.push(seat);
+  if (r.active.size === 1 && !r.rated && !r.void) rateMatch(r, [...r.active][0], 'everyone else left');
   if (!r.active.size) { clearTimeout(r.deadline); rooms.delete(r.code); return; }
   progress(r); maybeFinish(r);
 }
@@ -71,13 +121,15 @@ function startMatch(r) {
   r.state = 'play';
   const seed = crypto.randomInt(1, 2 ** 32 - 1);
   const seats = [];
-  for (let i = 0; i < r.need; i++) seats.push(r.players[i] ? { name: r.players[i].name, ai: false } : { name: null, ai: true });
+  // online matches are people only: empty seats are not filled with the computer (Elo is at stake)
+  for (let i = 0; i < r.players.length; i++) seats.push({ name: r.players[i].name, ai: false });
   r.players.forEach((p, i) => { p.seat = i; });
   r.active = new Set(r.players.map((p, i) => i));
   r.turn = 1; r.cmds = {}; r.ended = new Set(); r.dropped = []; r.hashes = new Map();
+  r.seatUids = r.players.map(p => p.uid || null); r.rated = false; r.void = false; r.desync = false; r.reports = new Map();
   for (const p of r.players) send(p, { t: 'start', code: r.code, seed, seats, you: p.seat, opts: { mode: r.mode, per: r.per, timer: r.timer } });
   armDeadline(r);
-  console.log(`room ${r.code}: match started with ${r.players.length} players and ${r.need - r.players.length} AI`);
+  console.log(`room ${r.code}: match started with ${r.players.length} of ${r.need} players`);
 }
 function armDeadline(r) {
   clearTimeout(r.deadline);
@@ -98,14 +150,18 @@ function maybeFinish(r) {
 // ---------------------------------------------------------------- messages
 const wss = new WebSocketServer({ server, maxPayload: 256 * 1024 });
 wss.on('connection', ws => {
-  const c = { ws, name: 'Player', pic: '', ver: '', room: null, seat: null };
+  const c = { ws, name: 'Player', pic: '', ver: '', room: null, seat: null, uid: null };
   ws.on('message', data => {
     let m; try { m = JSON.parse(data); } catch (e) { return; }
     if (!m || typeof m.t !== 'string') return;
     const who = w => { if (w && typeof w === 'object') { c.name = clean(w.name, 18) || 'Player'; c.pic = PIC_OK.test(w.pic || '') && w.pic.length < 60000 ? w.pic : ''; } };
     const r = c.room;
     switch (m.t) {
-      case 'hello': who(m); c.ver = clean(m.ver, 20); break;
+      case 'hello': who(m); c.ver = clean(m.ver, 20);
+        // the Google sign-in token proves which account is playing
+        if (admin && typeof m.token === 'string' && m.token) admin.auth().verifyIdToken(m.token).then(d => { c.uid = d.uid; }).catch(() => { c.uid = null; });
+        break;
+      case 'result': if (r && r.state === 'play' && c.seat != null) onResult(r, c, +m.winner); break;
       case 'list': send(c, { t: 'lobbies', list: openLobbies(c.ver) }); break;
       case 'host': {
         who(m.who); leaveRoom(c);
@@ -123,8 +179,7 @@ wss.on('connection', ws => {
         if (t.ver !== c.ver) return send(c, { t: 'error', msg: `That lobby runs a different version of Jopium (${t.ver}). Refresh the page to update.` });
         if (t === r) return;
         if (t.players.length >= t.need) return send(c, { t: 'error', msg: 'That lobby is full.' });
-        leaveRoom(c); t.players.push(c); c.room = t; sendLobby(t);
-        if (t.players.length === t.need) startMatch(t);
+        leaveRoom(c); t.players.push(c); c.room = t; sendLobby(t);   // the host starts the match (never automatic)
         break;
       }
       case 'leave': leaveRoom(c); break;
@@ -145,7 +200,7 @@ wss.on('connection', ws => {
         const turn = +m.turn; if (!r.hashes.has(turn)) r.hashes.set(turn, new Map());
         const hs = r.hashes.get(turn); hs.set(c.seat, m.h.slice(0, 20));
         if (hs.size >= r.active.size) {
-          if (new Set(hs.values()).size > 1) { console.warn(`room ${r.code}: desync on turn ${turn}`, [...hs]); for (const p of r.players) if (p.room === r) send(p, { t: 'desync', turn }); }
+          if (new Set(hs.values()).size > 1) { r.desync = true; console.warn(`room ${r.code}: desync on turn ${turn}`, [...hs]); for (const p of r.players) if (p.room === r) send(p, { t: 'desync', turn }); }
           r.hashes.delete(turn);
         }
         break;
