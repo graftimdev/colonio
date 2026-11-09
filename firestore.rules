@@ -2,7 +2,7 @@ rules_version = '2';
 // Jopium's database rules. Paste this into Firebase → Firestore Database → Rules, then Publish.
 // - Anyone can read profiles (the leaderboard needs them).
 // - A signed-in player can create only their own profile, starting at Elo 1000 with 0 games.
-// - A player can change only their nickname, picture and tutorial flag. Elo, games and score are written
+// - A player can change only their nickname, picture, tutorial progress and achievements. Elo, games and score are written
 //   only by the game server (it uses the secret key, which these rules don't apply to).
 // - names/{name} reserves a nickname, so no two players share one (capital letters count as different).
 service cloud.firestore {
@@ -19,7 +19,7 @@ service cloud.firestore {
         && request.resource.data.elo == 1000 && request.resource.data.games == 0 && request.resource.data.tut == false
         && validName(request.resource.data.name) && validPic(request.resource.data.pic) && ownsName(request.resource.data.name);
       allow update: if signedIn() && request.auth.uid == uid
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'pic', 'tut'])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'pic', 'tut', 'tuts', 'ach'])
         && validName(request.resource.data.name) && validPic(request.resource.data.pic)
         && (request.resource.data.name == resource.data.name || ownsName(request.resource.data.name));
       allow delete: if false;

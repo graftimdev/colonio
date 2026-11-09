@@ -5,22 +5,31 @@
 #tutarrow::before{content:"";position:absolute;left:-5px;top:-34px;width:10px;height:17px;background:var(--volt)}
 #tutarrow.up{transform:rotate(180deg);animation-name:tutbobu}
 @keyframes tutbob{0%,100%{translate:0 0}50%{translate:0 10px}}@keyframes tutbobu{0%,100%{translate:0 0}50%{translate:0 -10px}}
-#tutout{position:absolute;overflow:visible}#tutout rect{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:4 4;stroke-dashoffset:100;animation:tuttrace 2s linear infinite;width:calc(100% - 4px);height:calc(100% - 4px)}
+#tutout{position:absolute;overflow:visible}#tutout rect{fill:none;stroke:var(--volt);stroke-width:2.2;stroke-dasharray:2.2 2.8;stroke-linecap:round;animation:tutspin 9s linear infinite}
+@keyframes tutspin{to{stroke-dashoffset:-100}}
+#tutbig{position:fixed;left:0;right:0;top:38%;text-align:center;font:900 clamp(40px,9vw,96px)/1 var(--f-display,Impact,sans-serif);color:#ff3b3b;letter-spacing:.06em;text-shadow:0 0 18px rgba(255,40,40,.7),0 4px 0 #400}
+#tutbig.go{animation:tutbig 2.2s ease-out}@keyframes tutbig{0%{transform:scale(2.2);opacity:0}12%{transform:scale(1);opacity:1}80%{opacity:1}100%{opacity:0}}
+.tutrow{display:flex;justify-content:space-between;align-items:center}.tutgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px}
 @keyframes tuttrace{0%{stroke-dashoffset:100;opacity:1}70%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
 #tutbub{position:absolute;max-width:min(320px,calc(100vw - 32px));background:var(--panel);border:1px solid var(--accent);border-radius:10px;padding:9px 12px;color:var(--fg);font-size:14px;line-height:1.4;pointer-events:auto;display:grid;gap:8px;box-shadow:0 8px 30px rgba(0,0,0,.5)}
 #tutbub.pop{animation:tutpop .35s ease-out}@keyframes tutpop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1)}}
 #tutbub .tutnext{justify-self:end}
-#tutfx{position:absolute;width:0;height:0}#tutfx b{position:absolute;left:-30px;top:-30px;width:60px;height:60px;border-radius:50%;background:#fff;opacity:calc(.9 - var(--k,0)*2)}
+#tutfx{position:absolute;width:0;height:0}#tutfx b{position:absolute;left:-34px;top:-34px;width:68px;height:68px;border-radius:50%;background:radial-gradient(circle,rgba(255,216,77,.55),rgba(255,216,77,0) 70%);opacity:calc(1 - var(--k,0))}
 #tutfx i{position:absolute;width:6px;height:6px;margin:-3px;border-radius:50%;background:var(--volt);opacity:calc(1 - var(--k,0));translate:calc(cos(var(--a)) * var(--k,0) * 70px) calc(sin(var(--a)) * var(--k,0) * 56px)}
 #tutfx i:nth-of-type(1){--a:0deg}#tutfx i:nth-of-type(2){--a:45deg}#tutfx i:nth-of-type(3){--a:90deg}#tutfx i:nth-of-type(4){--a:135deg}#tutfx i:nth-of-type(5){--a:180deg}#tutfx i:nth-of-type(6){--a:225deg}#tutfx i:nth-of-type(7){--a:270deg}#tutfx i:nth-of-type(8){--a:315deg}
 .gbtn{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff!important;background:#fff1!important;border-color:var(--accent)!important}.lblist{max-height:52vh;overflow:auto;display:grid;gap:2px}.lbrow.me{outline:1px solid var(--accent);border-radius:8px}.lbgap{text-align:center;color:var(--muted)}
 .eloroll{display:grid;justify-items:center;gap:8px;font-family:'IBM Plex Mono',monospace}.eloroll .dg{display:inline-block;width:1.1em;height:1.3em;overflow:hidden;background:var(--panel2);border-radius:5px;margin:0 2px;font-size:30px;line-height:1.3em;text-align:center;vertical-align:top}.eloroll .rl{display:flex;flex-direction:column}.eloroll .rl span{height:1.3em}.ebar{width:150px;height:6px;background:var(--panel2);border-radius:3px;overflow:hidden}.ebar i{display:block;height:100%;width:50%}.ebar i.up{background:var(--good)}.ebar i.down{background:var(--bad)}
 .tabs{margin:0 auto 4px}.keys{display:grid;gap:6px;max-height:52vh;overflow:auto}.krow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.kk{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.kcap{min-width:34px;text-align:center;padding:3px 8px;border:1px solid var(--line);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:12px}.kcap.wait{border-color:var(--warn);color:var(--warn)}
+#signcv.full{position:fixed;inset:0;width:100%;height:100%;z-index:0}.loadtxt{position:fixed;left:0;right:0;bottom:9%;text-align:center;font:600 13px var(--f-mono,monospace);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);z-index:1}.ldots::after{content:'';animation:ldots 2.4s steps(4) infinite}@keyframes ldots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
+.achgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.achtile{border:1px solid var(--line);border-radius:10px;padding:8px 6px;display:grid;justify-items:center;gap:5px;text-align:center;font-size:12px}.achtile.done{border-color:var(--accent);background:rgba(77,163,255,.12)}.achic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 13px var(--f-mono,monospace);border:2px solid var(--accent);color:var(--accent)}.achic.done{background:var(--accent);color:#04101f}.achic.lock{border-color:#33415e;color:#5b6a88}.achbar{width:100%;height:6px;border-radius:3px;background:var(--panel2);overflow:hidden;border:1px solid var(--line)}.achbar i{display:block;height:100%;background:var(--accent)}
+.dchips{display:flex;flex-wrap:wrap;gap:6px}.dchip{display:flex;flex-direction:column;align-items:center;border:1px solid var(--line);border-radius:8px;padding:4px 6px;font-size:12px;min-width:56px}.dchip.low{border-color:var(--warn)}
+.scard{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.scard b{display:block;font-size:18px}
+h2 .lnk{font:inherit;color:inherit;text-decoration:underline dotted;text-underline-offset:4px}
 .lnk{background:none;border:0;padding:0;font:inherit;color:var(--accent);text-decoration:underline;cursor:pointer}
 .pager{display:flex;align-items:center;justify-content:center;gap:14px}.pager .dots{display:flex;gap:7px}.pager .dots i{width:7px;height:7px;border-radius:50%;background:rgba(221,230,245,.3)}.pager .dots i.on{background:#fff}
 #unlcv{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block}
 .lconf{display:grid;gap:8px;padding:12px;border:1px solid var(--accent);border-radius:12px;background:rgba(12,17,32,.92);max-width:420px;margin:0 auto}
-.tpick{display:inline-flex;gap:4px;flex-wrap:wrap}.tpick .btn.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.tpick{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center;flex:1}.tpick .btn{width:38px;height:34px;display:grid;place-items:center;padding:0}.trow{display:flex;align-items:center;gap:10px;margin:4px 0}.trow .tl{width:56px}.trow .tn2{width:34px;text-align:right}.tpick .btn.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 </style></head><body>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -247,13 +256,12 @@ input.txt:focus{border-color:var(--accent);outline:none}
       </div>
     </header>
     <div id="tut" hidden aria-live="polite">
-      <div id="tutring"><i></i><i></i></div>
-      <div id="tutarrow" aria-hidden="true"></div>
-      <svg id="tutout" aria-hidden="true"><rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" pathLength="100"/></svg>
+      <svg id="tutout" aria-hidden="true"><rect x="2" y="2" pathLength="100"/></svg>
       <div id="tutbub" role="status"><span class="tt"></span><button class="btn small tutnext" type="button" data-a="tut-next">Next</button></div>
       <div id="tutfx"><b></b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="tutbig" hidden></div>
     </div>
-    <div class="mapctl" id="mapctl" hidden>
+    <div class="mapctl" id="mapctl" hidden style="display:none">
       <button class="btn" id="zin" type="button" aria-label="Zoom in">+</button>
       <button class="btn" id="zout" type="button" aria-label="Zoom out">−</button>
       <button class="btn" id="home" type="button" aria-label="Center on your core">◎</button>
@@ -335,6 +343,7 @@ const DR={
 // rovers absorb damage before space drones on their side
 // the order a side's units take damage in (first = hit first). Turrets, workers and the core slot into this order in battle.
 const DRONE_PRI=['leviathan','stomper','tank','ballista','frigate','catapult','bomber','interceptor','siege','boomerang','spy','repair','charger'];
+for(const c in DR)DR[c].up=c==='leviathan'?0:.5; // upkeep per drone per turn (war drones on planets: 1)
 const SPACE=['interceptor','bomber','frigate','siege','catapult','boomerang','repair','spy','charger'];
 const ROVERS=['tank','ballista','stomper'];
 const CLS=[...SPACE,...ROVERS,'leviathan'];
@@ -354,8 +363,8 @@ const TECHS=[
   {id:'utility',b:1,at:[2,14],req:'barrack',br:'Barrack',rbr:'Казарма',n:'Utility drones',r:'Вспомогательные дроны',c:3,d:'The barrack can build the spy, engineer and charger.',rd:'Казарма может строить шпиона, инженера и зарядчика.'},
   {id:'upgradest',b:1,at:[3,16],req:'utility',br:'Barrack',rbr:'Казарма',n:'Upgrade station',r:'Станция улучшений',c:4,d:'Unlocks the upgrade station.',rd:'Открывает станцию улучшений.'},
   {id:'planetmove',b:2,at:[1,0],br:'Planets',rbr:'Планеты',n:'Planet movement',r:'Полёты на планеты',c:3,d:'War drones can travel onto planet tiles.',rd:'Боевые дроны могут летать на клетки планет.'},
-  {id:'borehole',b:2,at:[2,-14],req:'planetmove',br:'Planets',rbr:'Планеты',n:'Boreholes',r:'Скважины',c:4,d:'Unlocks the borehole: 5 jopium a turn from a planet centre.',rd:'Открывает скважину: 5 жопиума за ход в центре планеты.'},
-  {id:'rovers',b:2,at:[2,14],req:'planetmove',req2:'barrack',br:'Planets',rbr:'Планеты',n:'Rover station',r:'Станция роверов',c:4,d:'Unlocks the rover station. Needs Barrack too.',rd:'Открывает станцию роверов. Нужна и Казарма.'},
+  {id:'borehole',b:2,at:[2,14],req:'planetmove',br:'Planets',rbr:'Планеты',n:'Boreholes',r:'Скважины',c:4,d:'Unlocks the borehole: 5 jopium a turn from a planet centre.',rd:'Открывает скважину: 5 жопиума за ход в центре планеты.'},
+  {id:'rovers',b:2,at:[2,-14],req:'planetmove',req2:'barrack',br:'Planets',rbr:'Планеты',n:'Rover station',r:'Станция роверов',c:4,d:'Unlocks the rover station. Needs Barrack too.',rd:'Открывает станцию роверов. Нужна и Казарма.'},
   {id:'turret',b:3,at:[1,0],br:'Turrets',rbr:'Турели',n:'Turret',r:'Турель',c:2,d:'Unlocks the turret.',rd:'Открывает турель.'},
   {id:'chain',b:3,at:[2,-14],req:'turret',br:'Turrets',rbr:'Турели',n:'Chain turret',r:'Цепная турель',c:3,d:'Unlocks the chain turret.',rd:'Открывает цепную турель.'},
   {id:'barrier',b:3,at:[3,-18],req:'chain',br:'Turrets',rbr:'Турели',n:'Electric barrier',r:'Электробарьер',c:4,d:'Unlocks the electric barrier.',rd:'Открывает электробарьер.'},
@@ -378,7 +387,7 @@ const tN=t=>L(TECH[t].n,TECH[t].r),tD=t=>L(TECH[t].d,TECH[t].rd),tBr=t=>L(TECH[t
 const rN=r=>L(RINFO[r].n,RINFO[r].r);
 const plName=pl=>L(pl.name,pl.r);
 // the player's profile: username, picture and Elo (stored on this device)
-const GAME_VERSION='ver. 0.1.10';
+const GAME_VERSION='ver. 0.2.1';
 // games: online games played (Elo is shown after the first); uid: the signed-in account, if any
 const profile={name:'Player',pic:'',elo:1000,games:0,uid:null};
 try{Object.assign(profile,JSON.parse(localStorage.getItem('jopium-profile')||'{}'));}catch(e){}
@@ -419,7 +428,7 @@ const PLW={hop:['прыжок','прыжка','прыжков'],turn:['ход','
 const cnt=(k,w)=>RU()?pl(k,...PLW[w]):plural(k,w).replace('spys','spies');
 
 /* ---------- settings and sound ---------- */
-const settings={music:.5,sfx:.6,keepFire:false,loopQ:false,lang:/^ru\b/i.test(navigator.language||'')?'ru':'en'};
+const settings={music:.5,sfx:.6,keepFire:false,loopQ:false,autoReport:false,lang:/^ru\b/i.test(navigator.language||'')?'ru':'en'};
 const ARTY=c=>c==='catapult'||c==='ballista';
 // players at peace never hurt each other (diplomacy fills G.peace in)
 const atPeace=(a,b)=>!!(G.peace&&G.peace.some(x=>x.a===Math.min(a,b)&&x.b===Math.max(a,b)));
@@ -442,6 +451,7 @@ const KEY_ACTIONS=[
   ['back',['Escape'],'Close a menu / game menu','Закрыть меню / меню игры'],
   ['tech',['f'],'Tech tree','Дерево технологий'],
   ['squad',['q'],'First squadron on the tile','Первая эскадрилья на клетке'],
+  ['center',['c'],'Centre the map on your core','Центрировать карту на ядре'],
   ['up',['w','ArrowUp'],'Select the tile above','Клетка выше'],
   ['down',['s','ArrowDown'],'Select the tile below','Клетка ниже'],
   ['left',['a','ArrowLeft'],'Tile to the left / previous menu','Клетка слева / предыдущее меню'],
@@ -467,7 +477,7 @@ for(const k in TRACKS){const t=TRACKS[k];t.name=k;t.el.volume=0;t.el.addEventLis
 let curTrack=null,musicLast=performance.now();
 function musicTick(){
   const now=performance.now(),dt=Math.min(.25,(now-musicLast)/1000);musicLast=now;
-  const want=gameClosed||settings.music<=0?null:G?'game':'menu';
+  const want=gameClosed||pageHidden||settings.music<=0?null:G?'game':'menu';
   if(curTrack&&curTrack.name!==want){curTrack.target=0;curTrack.rate=1/2;if(curTrack.g<=0){curTrack.el.pause();curTrack=null;}}
   if(!curTrack&&want){curTrack=TRACKS[want];curTrack.g=0;try{curTrack.el.currentTime=0;}catch(e){}curTrack.el.play().catch(()=>{});}
   if(curTrack&&curTrack.name===want){
@@ -477,11 +487,16 @@ function musicTick(){
   }
   for(const t of Object.values(TRACKS)){
     if(t.g<t.target)t.g=Math.min(t.target,t.g+t.rate*dt);else if(t.g>t.target)t.g=Math.max(t.target,t.g-t.rate*dt);
-    t.el.volume=Math.max(0,Math.min(1,t.g*settings.music));
+    t.el.volume=Math.max(0,Math.min(1,t.g*settings.music*duck));
   }
 }
 setInterval(musicTick,50);
-let audioReady=false;
+let audioReady=false,pageHidden=false,duck=1;
+document.addEventListener('visibilitychange',()=>{
+  pageHidden=document.hidden;
+  if(pageHidden){for(const t of Object.values(TRACKS)){t.el.pause();t.g=0;t.el.volume=0;}curTrack=null;if(AC&&AC.state==='running')AC.suspend().catch(()=>{});}
+  else if(AC&&AC.state==='suspended'&&audioReady)AC.resume().catch(()=>{});
+});
 function audioInit(){
   audioReady=true;
   if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}}
@@ -662,9 +677,9 @@ try{Object.assign(setupOpts,JSON.parse(localStorage.getItem('jopium-setup')||'{}
 // opts.online: {seed, seats:[{name,ai}], you} from the server; every player builds the same map from the same seed
 function newGame(opts){
   const on=opts.online||null;
-  if(!on)try{localStorage.setItem('jopium-setup',JSON.stringify(opts));}catch(e){}
+  if(!on&&!opts.map)try{localStorage.setItem('jopium-setup',JSON.stringify(opts));}catch(e){}
   UID=1;ME=on?on.you:0;seedRng(on?on.seed:opts.seed!=null?opts.seed:Math.floor(Math.random()*4294967296));myCmds=[];SNAP=null;
-  const np=on?on.seats.length:opts.bots+1,mode=opts.mode==='conquest'?'conquest':'warfare';const {nodes,cores,planets}=genMap(np,opts.per,mode);
+  const np=on?on.seats.length:opts.bots+1,mode=opts.mode==='conquest'?'conquest':'warfare';const {nodes,cores,planets}=opts.map?opts.map():genMap(np,opts.per,mode);
   let trade={give:'iron',get:'copper'};
   try{Object.assign(trade,JSON.parse(localStorage.getItem('jopium-trade')||'{}'));}catch(e){}
   G={turn:1,mode,diff:AI_DIFF[opts.diff]?opts.diff:'normal',planets,spectate:false,popup:null,nodes,players:[],workers:[],fleets:[],log:[],flash:new Set(),conn:[],turnTime:opts.timer,timeLeft:opts.timer,over:false,
@@ -676,7 +691,7 @@ function newGame(opts){
     G.players.push(Object.assign({id:i,ai:!!seat.ai,core:cores[i],alive:true,energy:30,
       res:{iron:20,copper:15,silicon:10,xeno:0},explored:new Set([cores[i]]),techs:new Set(),prog:{},workersBuilt:0,workerQueue:0,freeQ:0,gold:0},PLAYERS[i],who));
   }
-  for(let i=0;i<np;i++)for(let w=0;w<5;w++)G.workers.push(newWorker(i,cores[i]));
+  for(let i=0;i<np;i++)for(let w=0;w<(opts.workers!=null?opts.workers:5);w++)G.workers.push(newWorker(i,cores[i]));
   G.conn=G.players.map(p=>connSet(p.id));
   takeSnapshot();
   if(settings.loopQ)order({t:'loopq',v:true});
@@ -843,7 +858,7 @@ function mergeFleets(t,s){t.count+=s.count;t.hp+=s.hp;t.en=(t.en||[]).concat(s.e
 // one charger per tile; everything else up to the squadron size limit
 const capFor=(pid,cls)=>cls==='charger'||cls==='leviathan'?1:tileCap(pid);
 // what each station takes in: barrack = drones (not chargers), rover station = rovers, upgrade station = both
-const dockKinds=st=>st.type==='kazarm'?SPACE.filter(c=>c!=='charger'):st.type==='rbarracks'?ROVERS:st.type==='upgrade'?[...SPACE,...ROVERS].filter(c=>c!=='charger'):[];
+const dockKinds=st=>st.type==='kazarm'?SPACE:st.type==='rbarracks'?ROVERS:st.type==='upgrade'?[...SPACE,...ROVERS]:[];
 // a leviathan can't enter a tile with your squadrons (a settled charger is fine), and your squadrons can't enter a leviathan's tile
 const leviBlocks=(f,id)=>f.cls==='leviathan'?G.fleets.some(g=>g!==f&&g.owner===f.owner&&g.node===id&&!(g.cls==='charger'&&g.settled)):G.fleets.some(g=>g.owner===f.owner&&g.node===id&&g.cls==='leviathan');
 const leviHere=(pid,node)=>G.fleets.some(g=>g.owner===pid&&g.node===node&&g.cls==='leviathan');
@@ -904,7 +919,7 @@ function fight(n,fleets,where){
     const dest=rescueTile(s.pid,n);if(dest==null)return;
     for(let i=0;i<s.boom;i++){
       let ok=false;
-      for(const c of ['charger','repair']){const f=s.fleets.find(f=>f.cls===c&&f.hp>0&&f.count>0);if(f){const d=takeDrone(f);f.saved=(f.saved||0)+1;if(f.count<=0)f.hp=0;launchDrones(s.pid,c,dest,[d]);s.saved.push(dN(c));ok=true;break;}}
+      for(const c of ['charger','repair']){const f=s.fleets.find(f=>f.cls===c&&f.hp>0&&f.count>0);if(f){const d=takeDrone(f);f.saved=(f.saved||0)+1;if(f.count<=0)f.hp=0;launchDrones(s.pid,c,dest,[d]);s.saved.push(dN(c));if(c==='charger'&&s.pid===ME)achUnlock(2);ok=true;break;}}
       if(!ok){const w=s.workers.find(x=>x.hp>0);if(w){w.hp=0;w.saved=true;w.w.node=dest;w.w.path=[];w.w.task='idle';w.w.then=null;s.saved.push(w.w.name);ok=true;}}
       if(!ok){const f=G.fleets.find(f=>f.owner===s.pid&&f.node===n.id&&f.cls==='spy'&&f.count>0);if(f){const d=takeDrone(f);launchDrones(s.pid,'spy',dest,[d]);s.saved.push(dN('spy'));ok=true;}}
       if(!ok)break;
@@ -988,6 +1003,7 @@ function bombardAll(){
     const p=P(f.owner),who=RU()?(f.cls==='ballista'?'Баллисты':'Катапульты')+' ('+(f.owner===ME?'ваши':pShort(p))+')':(f.owner===ME?'Your':pShort(p))+' '+(f.cls==='ballista'?'ballistas':'catapults');
     // bombard order: turrets, then rovers, then war drones (both in battle order), then workers (1 per catapult), then an enemy core
     const turrets=foe(tn.owner)?liveTurrets(tn).sort((a,b)=>TURRET_PRI.indexOf(a.type)-TURRET_PRI.indexOf(b.type)):[];
+    if(f.owner===ME&&f.blind&&(G.fleets.some(g=>g.node===tn.id&&foe(g.owner)&&g.cls!=='spy'&&g.trail&&g.trail.length>1)||G.workers.some(w=>w.node===tn.id&&foe(w.owner)&&w.trail&&w.trail.length>1)))achUnlock(7);
     const drones=G.fleets.filter(g=>g.node===tn.id&&foe(g.owner)&&g.cls!=='spy').sort((a,b)=>DRONE_PRI.indexOf(a.cls)-DRONE_PRI.indexOf(b.cls));
     const workers=G.workers.filter(w=>w.node===tn.id&&foe(w.owner));
     const core=tn.type==='core'&&foe(tn.coreOf)&&tn.coreHp>0;
@@ -1053,6 +1069,7 @@ function updateGifts(){
   const st=strengths(),ranked=[...st].sort((a,b)=>a[1]-b[1]),[uid,S]=ranked[0];
   const avg=ranked.slice(1).reduce((a,x)=>a+x[1],0)/(ranked.length-1);
   if(S>.6*avg)return;
+  (G.underdogs=G.underdogs||{})[uid]=true;
   const k=Math.max(1,Math.min(3,Math.ceil((.6*avg-S)/.1-1e-9)));
   const spots=shuffle(G.nodes.filter(n=>giftSpot(uid,n))).slice(0,k);
   if(!spots.length)return;
@@ -1071,7 +1088,7 @@ function claimGifts(){
     const pid=owners.size===1?[...owners][0]:owners.has(g.for)?g.for:null;
     if(pid==null)continue;
     G.gifts=G.gifts.filter(x=>x!==g);
-    const f=newFleet(pid,g.cls,1,n.id,g.up);G.fleets.push(f);
+    const f=newFleet(pid,g.cls,1,n.id,g.up);G.fleets.push(f);if(pid===ME)achUnlock(5);
     const p=P(pid);for(const r of RES)addRes(p,r,2);
     log(L(`${pid===ME?'You':pShort(p)} collected the supplies at ${lc(nodeName(n))}: ${g.up?'an upgraded ':'a '}${dN(g.cls).toLowerCase()} and 2 of each resource.`,
           `${pid===ME?'Вы забрали':pShort(p)+' забрал'} припасы на ${lc(nodeName(n))}: ${dN(g.cls).toLowerCase()}${g.up?' (улучшенный)':''} и по 2 каждого ресурса.`),'info',n.id,[pid]);
@@ -1137,6 +1154,53 @@ function diploTurn(){
   // a fallen player's peace ends with them
   G.peace=(G.peace||[]).filter(x=>P(x.a).alive&&P(x.b).alive);
 }
+
+/* ---------- achievements ----------
+   Earned in online matches only (Early bird: on signing in). Saved to the account as users/{uid}.ach = {id: true, end: best tech count}.
+   Detection runs inside resolve() on every screen, but each screen only ever unlocks its own player's (ME), and it never
+   changes the match, so online games stay in sync. */
+const ACH=[
+  {id:1,n:'Long shot',r:'Дальний выстрел',d:'Destroy a core with a ballista bolt.',rd:'Уничтожьте ядро молнией баллисты.'},
+  {id:2,n:'Best deal',r:'Выгодная сделка',d:'A boomerang rescue saves your charger.',rd:'Спасите зарядчик бумерангом.'},
+  {id:3,n:'Eldritch horror',r:'Древний ужас',d:'Build a leviathan.',rd:'Постройте левиафана.'},
+  {id:4,n:'Found you',r:'Попался',d:'Catch a spy with an X-ray turret.',rd:'Поймайте шпиона рентген-турелью.'},
+  {id:5,n:'So nice',r:'Как мило',d:'Collect a gift.',rd:'Заберите подарок.'},
+  {id:6,n:'Still standing',r:'Ещё стою',d:'Win a Conquest match after being the underdog.',rd:'Выиграйте «Завоевание», побывав отстающим.'},
+  {id:7,n:'Mastermind',r:'Стратег',d:'A catapult fired at an empty tile hits an enemy that moved there.',rd:'Катапульта, стрелявшая по пустой клетке, попадает во врага, который туда прилетел.'},
+  {id:8,n:'End game',r:'Конец игры',d:'Research every tech in one game.',rd:'Изучите все технологии за одну игру.'},
+  {id:9,n:'Early bird',r:'Ранняя пташка',d:'Play Jopium in its early days.',rd:'Сыграйте в Jopium в первые дни.'},
+];
+let ACH_SESSION=[];
+const achHas=id=>!!(profile.ach&&profile.ach[id]);
+const achProgress=id=>id===8?[Math.min(TECHS.length,(profile.ach&&profile.ach.end)||0),TECHS.length]:[achHas(id)?1:0,1];
+function achUnlock(id,always){
+  if(REPLAY||achHas(id)||(!always&&!(G&&G.online&&!G.tut)))return;
+  profile.ach=profile.ach||{};profile.ach[id]=true;saveProfile();
+  ACH_SESSION.push(id);sfxAch();
+  const a=ACH.find(x=>x.id===id);toast(L(`Achievement unlocked: ${a.n}`,`Достижение: ${a.r}`));
+  if(Acc.state==='in')Acc.saveAch();
+}
+// End game also remembers your best tech count for its progress bar
+function achTechs(){
+  if(!G||!G.online||G.tut)return;const k=P(ME).techs.size;profile.ach=profile.ach||{};
+  if(k>((profile.ach.end)||0)){profile.ach.end=k;saveProfile();if(Acc.state==='in')Acc.saveAch();}
+  if(k>=TECHS.length)achUnlock(8);
+}
+function sfxAch(){[523,659,784,1047].forEach((f,i)=>tone('triangle',f,f,.28,.07,i*.09));}
+function achHtml(){
+  const done=ACH.filter(a=>achHas(a.id)).length;
+  return `<div class="sec"><h3>${L('Achievements','Достижения')} · ${done}/${ACH.length}</h3><div class="achgrid">${ACH.map(a=>{const [v,t]=achProgress(a.id),ok=v>=t;
+    return `<div class="achtile ${ok?'done':''}" title="${esc(L(a.d,a.rd))}"><div class="achic ${ok?'done':v>0?'':'lock'}">${a.id}</div><b>${L(a.n,a.r)}</b><div class="achbar"><i style="width:${100*v/t}%"></i></div></div>`;}).join('')}</div></div>`;
+}
+// back in the main menu after a game: what you unlocked in it
+function achPopup(){
+  if(!ACH_SESSION.length)return false;
+  const list=ACH_SESSION.map(id=>ACH.find(a=>a.id===id));ACH_SESSION=[];
+  ov.hidden=false;ov.className='';ov.dataset.view='achpop';
+  ov.innerHTML=`<div class="card"><h1>${L('New achievements','Новые достижения')}</h1><div class="achgrid">${list.map(a=>`<div class="achtile done"><div class="achic done">${a.id}</div><b>${L(a.n,a.r)}</b><span class="sub">${esc(L(a.d,a.rd))}</span></div>`).join('')}</div><div class="opts"><button class="btn primary" type="button" data-a="m-main">${L('Nice','Отлично')}</button></div></div>`;
+  return true;
+}
+
 function hitPulse(id,att,win,kind){(G.pulses=G.pulses||[]).push({node:id,att,win,kind});}
 // does tile id hold anything of an enemy of pid that a ballista bolt can hurt?
 function boltTargets(pid,id){
@@ -1178,7 +1242,7 @@ function boltHit(f,id,dmg,lost){
   G.fleets=G.fleets.filter(g=>g.hp>0);
   n.stations=n.stations.filter(s=>!(isTurret(s.type)&&s.state==='done'&&s.hp<=0));
   G.flash.add(id);hitPulse(id,[f.owner],[]);
-  if(n.type==='core'&&n.coreHp<=0)coreFall(n);
+  if(n.type==='core'&&n.coreHp<=0){if(f.owner===ME)achUnlock(1);coreFall(n);}
   return soaked;
 }
 // a ballista squadron fires one bolt: charged crystals decide how far it jumps (0.5, 1, 2, 4, 8),
@@ -1312,7 +1376,7 @@ function resolve(){
     const wf=warFleetsAt(f.owner,f.node),xr=enemyXray(f.owner,f.node);
     if(!wf.length&&!xr)continue;
     f.hp=0;
-    const killer=xr?G.nodes[f.node].owner:wf[0].owner,by=xr?L('X-ray turret','рентген турель'):L('war drones','боевые дроны');
+    const killer=xr?G.nodes[f.node].owner:wf[0].owner;if(xr&&killer===ME)achUnlock(4);const by=xr?L('X-ray turret','рентген турель'):L('war drones','боевые дроны');
     const spies=plural(f.count,'spy').replace('spys','spies');
     const text=RU()?(killer===ME?`Ваша ${by} уничтожила вражеского шпиона (${pShort(P(f.owner))}) на: ${lc(nodeName(G.nodes[f.node]))}.`.replace('Ваша боевые дроны уничтожила','Ваши боевые дроны уничтожили').replace('вражеского шпиона',f.count>1?'вражеских шпионов: '+f.count:'вражеского шпиона')
       :f.owner===ME?`Вы потеряли ${cnt(f.count,'spy')}: их уничтожила ${by} (${pShort(P(killer))}) на: ${lc(nodeName(G.nodes[f.node]))}.`
@@ -1432,15 +1496,16 @@ function resolve(){
   const wNow=new Set(G.workers.map(w=>w.id));
   for(const [id,o] of wBefore)if(!wNow.has(id)){const q=P(o);q.workersBuilt=Math.max(0,q.workersBuilt-1);}
   // 9. end
-  diploTurn();updateMet();
+  diploTurn();updateMet();achTechs();
   G.turn++;G.timeLeft=G.turnTime;G.anim={t0:performance.now()};
   updateGoldCap();updateGifts();
-  // winners: first to the jopium goal (conquest), or the last player left
+  // winners: first to the jopium goal (conquest), or the last player left; turn 1000 is a stalemate
+  if(G.turn>=1000&&!G.over){G.winner=-1;endGame('draw');}
   const alive=G.players.filter(p=>p.alive);
   const rich=G.mode==='conquest'?alive.filter(p=>p.gold>=GOLD_WIN).sort((a,b)=>b.gold-a.gold)[0]:null;
   const champ=rich||(alive.length===1?alive[0]:null);
   if(!G.over){
-    if(rich){G.winner=rich.id;endGame(rich.id===ME?'won':'lost');}
+    if(rich){G.winner=rich.id;if(rich.id===ME&&G.underdogs&&G.underdogs[ME])achUnlock(6);endGame(rich.id===ME?'won':'lost');}
     else if(!P(ME).alive)endGame(G.iResigned?'resigned':'lost');
     else if(alive.length===1){G.winner=ME;endGame('won');}
   }else if(G.spectate&&champ&&G.winner==null){
@@ -1448,7 +1513,7 @@ function resolve(){
   }
   // online: tell the server who won, so it can rate the match (every screen reports; they must agree)
   if(G.online&&G.winner==null&&champ)G.winner=champ.id;
-  if(G.online&&G.winner!=null&&!G.resultSent){G.resultSent=true;Net.send({t:'result',winner:G.winner});}
+  if(G.online&&G.winner!=null&&G.winner>=0&&!G.resultSent){G.resultSent=true;Net.send({t:'result',winner:G.winner});}
   const V=vis(ME);
   G.unread=G.log.filter(e=>e.pids.includes(ME)||(e.node!=null&&V.has(e.node))).length;
 }
@@ -1490,7 +1555,7 @@ function produce(p){
       if(G.fleets.some(g=>g.owner===pid&&g.node===f.n.id&&!(g.cls==='charger'&&g.settled))){p.gold+=f.s.gold||0;log(L(`The leviathan at ${lc(nodeName(f.n))} could not be finished: your squadrons were in the way. 100 jopium returned.`,`Левиафан на ${lc(nodeName(f.n))} не достроен: мешали ваши эскадрильи. 100 жопиума возвращено.`),'warn',f.n.id,[pid]);continue;}
       // a random worker from the ones building it becomes the pilot
       const pilot=crew.length?crew[Math.floor(rnd()*crew.length)]:w;G.workers=G.workers.filter(x=>x!==pilot);
-      const lv=newFleet(pid,'leviathan',1,f.n.id);lv.pilot=pilot.name;G.fleets.push(lv);
+      const lv=newFleet(pid,'leviathan',1,f.n.id);lv.pilot=pilot.name;G.fleets.push(lv);if(pid===ME)achUnlock(3);
       log(L(`A leviathan rose at ${lc(nodeName(f.n))}, piloted by ${pilot.name}.`,`На ${lc(nodeName(f.n))} поднялся левиафан. Пилот: ${pilot.name}.`),'good',f.n.id,[pid]);
       continue;
     }
@@ -1845,7 +1910,7 @@ function aiTurn(p){
     if(w&&(d.get(w.node)??99)<=10)send(w,gap,'claim');
   }
   // reconnect cut-off land that our workers mine: claim the free gap tiles back to the core's network
-  {const cut=[...new Set(ws.filter(w=>!w.path.length&&w.task==='mine'&&!conn.has(w.node)&&G.nodes[w.node].owner===pid).map(w=>w.node))];
+  {const cut=[...new Set([...ws.filter(w=>!w.path.length&&w.task==='mine'&&!conn.has(w.node)&&G.nodes[w.node].owner===pid).map(w=>w.node),...G.nodes.filter(n=>n.owner===pid&&!conn.has(n.id)&&(n.res||n.stations.length||n.center)).map(n=>n.id)])];
    for(const id of cut.slice(0,2)){
     const route=findPath(p.core,id,new Set(G.nodes.filter(n=>K.has(n.id)&&(n.owner==null||n.owner===pid)).map(n=>n.id)));if(!route)continue;
     const gap=route.find(x=>G.nodes[x].owner==null&&!targeted.has(x)&&!warFleetsAt(pid,x).length);if(gap==null)continue;
@@ -1897,14 +1962,16 @@ function aiTurn(p){
       if(n.type==='deadcore'&&!warFleetsAt(pid,id).length&&!targeted.has(id)&&dd-6<bd){best=id;bd=dd-6;task='claim';}
     }
     if(best==null)for(const [id,dd] of d){
-      const n=G.nodes[id];if(!n.res||targeted.has(id)||warFleetsAt(pid,id).length)continue;
+      const n=G.nodes[id];
+      if(!n.res&&n.owner==null&&n.planet==null&&n.type==='empty'&&!targeted.has(id)&&!warFleetsAt(pid,id).length&&n.nbr.some(x=>conn.has(x))&&n.nbr.some(x=>G.nodes[x].res&&G.nodes[x].owner==null)&&dd+3<bd){best=id;bd=dd+3;task='claim';continue;}
+      if(!n.res||targeted.has(id)||warFleetsAt(pid,id).length)continue;
       const full=resTotal(p)>=resCap(pid);
       const dw=dd+(full?6:p.res[n.res]<12?-4:p.res[n.res]<25?-1.5:0);
       if(n.owner===pid&&!minedHere(id)&&(conn.has(id)||clusterOf(pid,id).some(x=>storeCap(x)>storeHeld(x)))&&dw<bd){best=id;bd=dw;task='mine';}
-      else if(n.owner==null&&dw+.5<bd){best=id;bd=dw+.5;task='claim';}
+      else if(n.owner==null){const link=n.nbr.some(x=>conn.has(x))?0:n.nbr.some(x=>G.nodes[x].owner===pid)?2:6;if(dw+.5+link<bd){best=id;bd=dw+.5+link;task='claim';}}
     }
     const guarded=id=>{const m=G.nodes[id];return m.owner!=null&&m.owner!==pid&&liveTurrets(m).length>0;};
-    if(best==null)for(const [id,dd] of d){if(!p.explored.has(id)&&!targeted.has(id)&&!guarded(id)&&dd<bd){best=id;bd=dd;task='idle';}}
+    if(best==null&&rnd()<.5)for(const [id,dd] of d){if(!p.explored.has(id)&&!targeted.has(id)&&!guarded(id)&&dd<bd){best=id;bd=dd;task='idle';}}
     if(best!=null)send(w,best,task);
   }
 }
@@ -2005,6 +2072,7 @@ function applyCmd(pid,c){
     case 'bomb':{const f=F(c.f);if(!f||!ARTY(f.cls))return false;if(stuck(f))return deny(L("Drones in this squadron have no energy, so it can't fire.",'В этой эскадрилье есть дроны без энергии, он не может стрелять.'));if(!G.nodes[f.node].nbr.includes(+c.to))return deny(L('Artillery can only fire at a neighbouring tile.','Артиллерия стреляет только по соседней клетке.'));
       if(f.cls==='ballista'){const cr=Math.floor(+c.cr||0);if(!(cr>=1&&cr<=maxCharge(f)))return deny(L('Pick how many crystals to charge.','Выберите, сколько кристаллов зарядить.'));
         if(p.res.xeno<cr)return deny(L(`You need ${cr} crystals for that shot.`,`Для этого выстрела нужно кристаллов: ${cr}.`));f.charge=cr;}
+      {const V=vis(pid),tn=+c.to;f.blind=f.cls==='catapult'&&!G.fleets.some(g=>g.node===tn&&isFoe(pid,g.owner)&&V.has(tn)&&g.cls!=='spy')&&!G.workers.some(w=>w.node===tn&&isFoe(pid,w.owner));}
       f.bombard=+c.to;f.keep=!!c.keep;f.path=[];f.mergeInto=null;return true;}
     case 'fstop':{const f=F(c.f);if(!f)return false;f.path=[];f.bombard=null;f.mergeInto=null;return true;}
     case 'merge':return orderMerge(pid,+c.src,+c.tgt);
@@ -2272,18 +2340,18 @@ function unitSlot(u,V){
   if(u.cls){const list=G.fleets.filter(f=>f.node===u.node&&unitVisible(f,V));const i=Math.max(0,list.indexOf(u));
     const ring=i<7?0:1,j=ring?i-7:i,a=Math.PI*.55+j*(ring?.32:.46);
     // a leviathan sits clear of the workers' ring (and of the second ring when a tile has more than 15 workers)
-    const rad=u.cls==='leviathan'?66+(G.workers.filter(w=>w.node===u.node).length>15?12:0):44+ring*22;return [Math.cos(a)*rad,Math.sin(a)*rad];}
+    const rad=u.cls==='leviathan'?60+(G.workers.filter(w=>w.node===u.node).length>15?10:0):44+ring*22;return [Math.cos(a)*rad,Math.sin(a)*rad];}
   // workers wrap evenly round the tile: 15 on the inner ring, then an outer ring of 21
   const list=G.workers.filter(w=>w.node===u.node);const i=Math.max(0,list.indexOf(u));
-  const ring=i<15?0:1,j=ring?i-15:i,a=.15+j*2*Math.PI/(ring?21:15),rad=ring?39:27;return [Math.cos(a)*rad,Math.sin(a)*rad];
+  const ring=i<15?0:1,j=ring?i-15:i,a=.15+j*2*Math.PI/(ring?21:15),rad=ring?33:21.5;return [Math.cos(a)*rad,Math.sin(a)*rad];
 }
 function drawFleet(f,x,y,sz,sel,busy){
   const c=P(f.owner).color,r=fleetR(f)*sz;
   if(busy){ctx.beginPath();ctx.arc(x,y,r+4.5*sz,0,Math.PI*2);ctx.strokeStyle=BUSY;ctx.lineWidth=1.8;ctx.stroke();}
-  if(f.cls==='leviathan'){drawLeviathan(ctx,x,y,r,sel?'#ffffff':c,.18,sz*.42);return;}
-  shapePath(ctx,f.cls,x,y,r);ctx.fillStyle=hexa(c,f.cls==='spy'?.08:.25);ctx.fill();
-  ctx.strokeStyle=sel?'#fff':c;ctx.lineWidth=sel?2.4:1.8;ctx.setLineDash(f.cls==='spy'?[2,2]:[]);ctx.stroke();ctx.setLineDash([]);
-  if(f.up){ctx.fillStyle='#fff';ctx.font=`700 ${Math.round(8*sz)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('U',x,y);}
+  if(f.cls==='leviathan'){drawLeviathan(ctx,x,y,r,sel?'#ffffff':c,.18,sz*.5);return;}
+  shapePath(ctx,f.cls,x,y,r);ctx.fillStyle=f.up?c:hexa(c,.25);ctx.fill();
+  ctx.strokeStyle=sel?'#fff':c;ctx.lineWidth=sel?2.4:1.8;ctx.stroke();
+  if(f.up){ctx.fillStyle='#0b1020';ctx.font=`700 ${Math.round(8*sz)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('U',x,y);}
   ctx.fillStyle='#dde6f5';ctx.font=`600 ${Math.round(11*sz)}px 'IBM Plex Mono',monospace`;ctx.textAlign='left';ctx.textBaseline='middle';
   ctx.fillText(f.count+(f.up?'↑':''),x+r+3*sz,y);
 }
@@ -2459,13 +2527,12 @@ function draw(now){
   // hit pulses: when the move animation ends, every tile you can see that was hit pulses twice (blue: you attacked and won there)
   if(!G.anim&&G.pulseT0&&G.pulses&&G.pulses.length){
     const t=now-G.pulseT0;
-    if(t>1700)G.pulseT0=null;
+    if(t>800)G.pulseT0=null;
     else for(const pu of G.pulses){
       if(!V.has(pu.node))continue;
       const n=G.nodes[pu.node],[x,y]=toScreen(n.x,n.y);
       const won=pu.att.includes(ME)&&pu.win.length===1&&pu.win[0]===ME,col=pu.kind==='gift'?'255,216,77':won?'77,163,255':'255,93,108';
-      for(const d of [0,550]){const e=(t-d)/1100;if(e<0||e>1)continue;
-        ctx.beginPath();ctx.arc(x,y,R*cam.z*(.35+1.1*e),0,Math.PI*2);ctx.fillStyle=`rgba(${col},${.22*(1-e)})`;ctx.fill();ctx.strokeStyle=`rgba(${col},${.9*(1-e)})`;ctx.lineWidth=2.5*sz;ctx.stroke();}
+      {const e=t/700;if(e>=0&&e<=1){ctx.beginPath();ctx.arc(x,y,27*sz*(.92+.22*e),0,Math.PI*2);ctx.strokeStyle=`rgba(${col},${.85*(1-e)})`;ctx.lineWidth=2;ctx.stroke();}}
     }
   }
   // fog
@@ -2505,7 +2572,7 @@ cv.addEventListener('pointerdown',e=>{
   if(touches.size===2){drag=null;pinch=pinchState();return;}
   if(touches.size>2)return;
   const mm=G.moveMode;
-  drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y,moved:false,hit:hitAt(sx,sy),trace:mm&&mm.mode==='move'?[mm.from]:null};
+  drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y,moved:false,hit:hitAt(sx,sy),trace:mm&&mm.mode==='move'&&nodeAt(sx,sy)===mm.from?[mm.from]:null};
   // press and hold for a second (without moving) to select squadrons by dragging a box
   clearTimeout(lpT);
   if(!mm)lpT=setTimeout(()=>{if(drag&&!drag.moved&&!pinch){drag.select={x0:sx,y0:sy,x1:sx,y1:sy};sfxConfirm();const [wx,wy]=toWorld(sx,sy);ripples.push({x:wx,y:wy,t:performance.now(),big:true});if(navigator.vibrate)try{navigator.vibrate(20);}catch(e){}}},1000);
@@ -2649,6 +2716,7 @@ window.addEventListener('keydown',e=>{
     case 'endturn':if(!menu){e.preventDefault();$('#endturn').click();}break;
     case 'empire':G.modal&&G.modal.type==='empire'?closeModal():openModal({type:'empire'});break;
     case 'tech':!$('#techscr').hidden?closeModal():openModal({type:'tech'});break;
+    case 'center':centerOn(G.nodes[P(ME).core],false);refresh();break;
     case 'tile':if(G.sel!=null){closeModal();openModal({type:'node',id:G.sel});}break;
     case 'squad':{if(G.sel==null)break;const f=idleFirst(G.fleets.filter(f=>f.owner===ME&&f.node===G.sel))[0];if(f){closeModal();openUnit(f);}else toast(L('None of your squadrons is on this tile.','На этой клетке нет ваших эскадрилий.'));break;}
     default:if(/^st[1-5]$/.test(a)&&G.sel!=null){const n=G.nodes[G.sel],k=+a[2];
@@ -2714,163 +2782,325 @@ function workerStatus(w){
   return taskN(w.task);
 }
 
-/* ---------- tutorial ----------
-   A fixed little Warfare match against a sleeping rival. Each step points at what to press:
-   a double ripple on the target (1A), a bobbing arrow (2A), a dotted outline drawn around it (3B),
-   a speech bubble next to it (4B), and a flash with sparks when the step is done (5B).
-   Research, the Barrack, drones and the leviathan are sped up so it all fits in a few minutes. */
+/* ---------- tutorials ----------
+   One engine for the starter tutorial and the small ones. Each tutorial builds a hand-made map (tutMap),
+   then walks through steps. The only pointer is a slow, turning yellow outline around what to press; a bubble
+   appears only when there is something worth explaining. When a menu is in the way of a map target, the pointer
+   goes to that menu's ✕ first. A correct press gives a short yellow shine. */
 let TUT=null,TUT_SAVE=null;
 const tutEl=()=>$('#tut');
-// find a map with: core → iron asteroid A → free asteroid Gp → our planet section S → planet centre P, and a free tile X next to the core
-function tutLayout(){
-  for(let seed=1;seed<3000;seed++){
-    newGame({per:12,bots:1,timer:0,mode:'warfare',diff:'easy',seed});
-    const core=G.nodes[P(0).core],ec=P(1).core,d=distMap(core.id,null),pl=G.planets[0];if(!pl)continue;
-    const Pn=G.nodes[pl.center];if(d.get(Pn.id)!==4||(d.get(ec)||0)<4)continue;
-    for(const a of core.nbr){const A=G.nodes[a];if(A.planet!=null||A.type==='core')continue;
-      for(const g of A.nbr){const Gn=G.nodes[g];if(Gn.planet!=null||Gn.type==='core'||d.get(g)!==2)continue;
-        const S=Gn.nbr.find(x=>G.nodes[x].planet!=null&&!G.nodes[x].center&&G.nodes[x].nbr.includes(Pn.id));if(S==null)continue;
-        const X=core.nbr.find(x=>x!==a&&G.nodes[x].planet==null&&G.nodes[x].type!=='core'&&!G.nodes[x].nbr.includes(g));if(X==null)continue;
-        return {seed,A:a,Gp:g,S,P:Pn.id,X,ec};}}
-  }
-  return null;
+// a map from axial cells: {cells:[[q,r,type,res]...], planet:{c:[q,r],secs:[[q,r]...]}, cores:[[q,r],[q,r]]}
+function tutMap(spec){
+  const nodes=[],idx=new Map(),key2=(q,r)=>q+','+r;
+  const add=(q,r,type,res)=>{const n={id:nodes.length,q,r,x:R*(q+r/2),y:R*(SQ3/2)*r,nbr:[],type:type||'empty',res:res||null,owner:null,coreOf:null,coreHp:0,stations:[],store:{},estore:0,cut:0,planet:null,center:false};n.shape=Array.from({length:7},()=>.75+rnd()*.45);idx.set(key2(q,r),n.id);nodes.push(n);return n;};
+  for(const [q,r,t,res] of spec.cells)add(q,r,t,res);
+  const planets=[];
+  if(spec.planet){const pl=spec.planet,c=add(pl.c[0],pl.c[1],'planet');c.planet=0;c.center=true;
+    const ids=[c.id];for(const [q,r] of pl.secs){const n=add(q,r,'planet');n.planet=0;ids.push(n.id);}
+    planets.push({...PLANETS[pl.look||0],center:c.id,ids,look:planetLook(PLANETS[pl.look||0].kind)});}
+  const cores=spec.cores.map(([q,r])=>{let id=idx.get(key2(q,r));if(id==null)id=add(q,r,'core').id;return id;});
+  for(const n of nodes)for(const [a,b] of DIRS){const k=key2(n.q+a,n.r+b);if(idx.has(k))n.nbr.push(idx.get(k));}
+  cores.forEach((c,pid)=>{const n=nodes[c];n.type='core';n.coreOf=pid;n.owner=pid;n.coreHp=CORE_HP;});
+  const at=(q,r)=>idx.get(key2(q,r));
+  return {nodes,cores,planets,at};
 }
-function startTutorial(){showMenu('tutlang');}
-function beginTutorial(){
-  closeOverlay();
-  const L0=tutLayout();if(!L0){showMenu('main');return;}
-  G.tut=true;G.turnTime=0;G.timeLeft=0;
-  // sped-up rules for the tutorial only (put back when it ends)
-  TUT_SAVE={tb:TECH.barrack.c,kt:ST.kazarm.t,lt:ST.levi.t,ls:DR.leviathan.spd};
-  TECH.barrack.c=1;ST.kazarm.t=1;ST.levi.t=1;DR.leviathan.spd=30;
-  const p=P(ME);for(const r of RES)p.res[r]=25;p.gold=99;
-  const A=G.nodes[L0.A];A.type='res';A.res='iron';
-  G.nodes[L0.Gp].type='empty';G.nodes[L0.Gp].res=null;
-  G.nodes[L0.S].owner=ME;
-  p.explored=new Set(G.nodes.map(n=>n.id));
+// start a tutorial: a fresh match on its map, sleeping rival, tutorial rules on
+function beginTutorial(key){
+  const T=TUTS[key]||TUTS.starter;closeOverlay();
+  // the tutorial layer sits above every menu
+  if(tutEl().parentNode!==document.body)document.body.appendChild(tutEl());
+  let M=null;
+  newGame({per:12,bots:1,timer:0,mode:'warfare',diff:'easy',seed:7,workers:T.workers??1,map:()=>(M=tutMap(T.map),M)});
+  G.tut=true;G.turnTime=0;G.timeLeft=0;G.sel=null;
+  TUT_SAVE={tb:TECH.barrack.c,kt:ST.kazarm.t,lt:ST.levi.t,tt:TECH.trade.c};
+  const p=P(ME);p.explored=new Set(G.nodes.map(n=>n.id));P(1).explored=new Set(G.nodes.map(n=>n.id));
+  for(const r of RES)p.res[r]=0;
+  T.setup(M.at,p);
   G.conn=G.players.map(q=>connSet(q.id));
-  TUT={i:0,ids:L0,t0:performance.now(),fx:null};
-  centerOn(G.nodes[p.core],true);G.sel=p.core;refresh();
+  TUT={key,T,i:0,at:M.at,ids:T.ids?T.ids(M.at):{},t0:performance.now(),fx:null};
+  centerOn(G.nodes[p.core],true);
+  if(T.center)centerOn(G.nodes[T.center(M.at)],false);
+  refresh();takeSnapshot();
+  const st=tutStep();if(st&&st.enter)st.enter();
   tutLoop();
 }
-// ---- what to point at ----
+// ---- where to point ----
 const nodeOpen=id=>G.modal&&G.modal.type==='node'&&G.modal.id===id&&!$('#modal').hidden;
-const q$=sel=>{const el=document.querySelector(sel);return el&&el.offsetParent!==null?el:null;};
+const unitOpen=f=>f&&G.modal&&G.modal.type==='unit'&&G.modal.f===f.id&&!$('#modal').hidden;
+const stOpen=uid=>G.modal&&G.modal.type==='station'&&G.modal.uid===uid&&!$('#modal').hidden;
+const q$=sel=>{const el=document.querySelector(sel);return el&&el.offsetParent!==null&&!el.disabled?el:null;};
 const T_tile=id=>({tile:id}),T_dom=sel=>({dom:sel});
-// open tile `from`, press Move on a worker there, then tap tile `to`
-function tMove(from,to){if(G.moveMode)return T_tile(to);if(nodeOpen(from)&&q$('[data-a="wmove"]'))return T_dom('[data-a="wmove"]');return T_tile(from);}
-function tTask(id,task){if(nodeOpen(id)&&q$(`[data-a="wtask"][data-t="${task}"]`))return T_dom(`[data-a="wtask"][data-t="${task}"]`);return T_tile(id);}
 const myWorkers=()=>G.workers.filter(w=>w.owner===ME);
 const workerTo=id=>myWorkers().some(w=>(w.path.length?w.path.at(-1):w.node)===id);
 const workerAt=id=>myWorkers().some(w=>w.node===id&&!w.path.length);
-const T=(en,ru)=>L(en,ru);
-const TSTEPS=[
-  {say:()=>T('This is your core. Everything you build starts here. Let\'s take a tour.','Это ваше ядро. С него начинается всё, что вы строите. Давайте осмотримся.'),at:()=>T_tile(P(ME).core),next:true},
-  {say:()=>G.moveMode?T('Now tap this asteroid to send the worker there.','Теперь нажмите на этот астероид, чтобы отправить туда рабочего.'):nodeOpen(P(ME).core)?T('Press Move next to your worker.','Нажмите «Лететь» рядом с рабочим.'):T('Tap your core twice to open it.','Нажмите на ядро дважды, чтобы открыть его.'),
-    at:()=>tMove(P(ME).core,TUT.ids.A),done:()=>workerTo(TUT.ids.A)},
-  {say:()=>T('End the turn: everything you ordered happens at once.','Завершите ход: всё, что вы приказали, происходит одновременно.'),at:()=>T_dom('#endturn'),end:true,done:()=>workerAt(TUT.ids.A)},
-  {say:()=>nodeOpen(P(ME).core)?T('Build a worker. It appears at the core next turn.','Создайте рабочего. Он появится в ядре в следующем ходу.'):T('Open your core again.','Снова откройте ядро.'),
-    at:()=>nodeOpen(P(ME).core)?T_dom('[data-a="hire"]'):T_tile(P(ME).core),done:()=>P(ME).workerQueue>0},
-  {say:()=>nodeOpen(TUT.ids.A)?T('Press Claim: the asteroid becomes yours at the end of the turn.','Нажмите «Захватить»: астероид станет вашим в конце хода.'):T('Open the asteroid your worker reached.','Откройте астероид, до которого долетел рабочий.'),
-    at:()=>tTask(TUT.ids.A,'claim'),done:()=>myWorkers().some(w=>w.node===TUT.ids.A&&w.task==='claim')||G.nodes[TUT.ids.A].owner===ME},
-  {say:()=>T('End the turn to claim it.','Завершите ход, чтобы захватить его.'),at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.A].owner===ME},
-  {say:()=>nodeOpen(TUT.ids.A)?T('Press Mine: the worker brings in iron every turn.','Нажмите «Добывать»: рабочий будет приносить железо каждый ход.'):T('Open the asteroid again.','Снова откройте астероид.'),
-    at:()=>tTask(TUT.ids.A,'mine'),done:()=>myWorkers().some(w=>w.node===TUT.ids.A&&w.task==='mine')},
-  {say:()=>!$('#techscr').hidden?(G.popup&&G.popup.type==='tech'&&G.popup.t==='barrack'?T('Assign the worker standing at your core.','Назначьте рабочего, стоящего в ядре.'):T('Pick Barrack in the tech tree.','Выберите «Казарму» в дереве технологий.')):T('Open the tech tree (the F key, or the research row in your core menu).','Откройте дерево технологий (клавиша F или строка исследований в меню ядра).'),
-    at:()=>!$('#techscr').hidden?(G.popup&&G.popup.type==='tech'&&G.popup.t==='barrack'?T_dom('[data-a="tset"]'):T_dom('[data-a="techpop"][data-t="barrack"]')):nodeOpen(P(ME).core)?T_dom('[data-a="open"][data-m="tech"]'):T_tile(P(ME).core),
-    done:()=>myWorkers().some(w=>w.task==='research'&&w.tech==='barrack')||has(ME,'barrack')},
-  {say:()=>T('End the turn. (Research is sped up in the tutorial.)','Завершите ход. (В обучении исследования ускорены.)'),at:()=>T_dom('#endturn'),end:true,done:()=>has(ME,'barrack')},
-  {say:()=>nodeOpen(P(ME).core)?T('Start a Barrack here.','Начните строить здесь Казарму.'):T('Open your core.','Откройте ядро.'),
-    at:()=>nodeOpen(P(ME).core)?T_dom('[data-a="start"][data-t="kazarm"]'):T_tile(P(ME).core),done:()=>G.nodes[P(ME).core].stations.some(s=>s.type==='kazarm')},
-  {say:()=>T('End the turn to finish the Barrack.','Завершите ход, чтобы достроить Казарму.'),at:()=>T_dom('#endturn'),end:true,done:()=>live(G.nodes[P(ME).core],'kazarm').length>0},
-  {say:()=>{const m=G.modal;return m&&m.type==='station'?T('Queue an interceptor and a bomber.','Поставьте в очередь перехватчик и бомбер.'):T('Open the Barrack: tap its icon next to the core, or open the core and pick it from the list.','Откройте Казарму: нажмите на её значок у ядра или откройте ядро и выберите её в списке.');},
-    at:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];const m=G.modal;if(m&&m.type==='station'&&k&&m.uid===k.uid){const q=k.queue;return T_dom(q.includes('interceptor')?'[data-a="kbuild"][data-c="bomber"]':'[data-a="kbuild"][data-c="interceptor"]');}if(k&&nodeOpen(P(ME).core)&&q$(`[data-a="openst"][data-s="${k.uid}"]`))return T_dom(`[data-a="openst"][data-s="${k.uid}"]`);return k?{station:k.uid}:T_tile(P(ME).core);},
-    done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&new Set([...k.queue,...CLS.filter(c=>k.hangar[c].length)]).size>=2;}},
-  {say:()=>T('End the turn: both drones are built at once here.','Завершите ход: здесь оба дрона строятся сразу.'),at:()=>T_dom('#endturn'),end:true,done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&k.hangar.interceptor.length>0&&k.hangar.bomber.length>0;}},
-  {say:()=>G.popup&&G.popup.type==='hangar'?T('Launch them.','Выпустите их.'):T('Press Launch on each drone in the Barrack.','Нажмите «Выпустить» у каждого дрона в Казарме.'),
-    at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const k=live(G.nodes[P(ME).core],'kazarm')[0];const m=G.modal;if(m&&m.type==='station'&&k&&m.uid===k.uid)return T_dom(`[data-a="hangar"][data-c="${k.hangar.interceptor.length?'interceptor':'bomber'}"]`);if(k&&nodeOpen(P(ME).core)&&q$(`[data-a="openst"][data-s="${k.uid}"]`))return T_dom(`[data-a="openst"][data-s="${k.uid}"]`);return k?{station:k.uid}:T_tile(P(ME).core);},
-    done:()=>G.fleets.filter(f=>f.owner===ME&&f.cls!=='spy').length>=2},
-  {say:()=>G.popup&&G.popup.type==='squad'?T('Make them one fleet: fleets move together.','Объедините их во флот: флот движется вместе.'):T('Press and hold the map for a second, then drag a box over both squadrons.','Нажмите на карту и держите секунду, затем протяните рамку через обе эскадрильи.'),
-    at:()=>G.popup&&G.popup.type==='squad'?T_dom('[data-a="sqmake"]'):{unit:G.fleets.find(f=>f.owner===ME&&f.cls!=='spy')},done:()=>(P(ME).squads||[]).length>0},
-  {enter:()=>{const e=newFleet(1,'interceptor',1,TUT.ids.X,false);G.fleets.push(e);G.flash.add(TUT.ids.X);hitPulse(TUT.ids.X,[],[],'gift');G.pulseT0=performance.now();refresh();},
-    say:()=>G.popup&&G.popup.type==='preview'?T('The preview says you would win. Press Move.','Прогноз говорит, что вы победите. Нажмите «Лететь».'):G.moveMode?T('Tap the enemy drone\'s tile.','Нажмите на клетку вражеского дрона.'):G.modal&&G.modal.type==='empire'?T('Press Move on your fleet.','Нажмите «Лететь» у вашего флота.'):T('An enemy drone landed next to your Barrack! Open the Empire menu (the crown).','Вражеский дрон сел рядом с вашей Казармой! Откройте меню «Империя» (корона).'),
-    at:()=>G.popup&&G.popup.type==='preview'?T_dom('[data-a="pmove"]'):G.moveMode?T_tile(TUT.ids.X):G.modal&&G.modal.type==='empire'?T_dom('[data-a="sqmove"]'):T_dom('#empireBtn'),
-    done:()=>G.fleets.some(f=>f.owner===ME&&f.cls!=='spy'&&(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
-  {say:()=>T('End the turn to attack.','Завершите ход, чтобы атаковать.'),at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
-  {say:()=>G.moveMode?T('Tap the planet centre.','Нажмите на центр планеты.'):T('Planets hold jopium. Send your new worker to the planet centre: open the core, press Move.','На планетах есть жопиум. Отправьте нового рабочего в центр планеты: откройте ядро, нажмите «Лететь».'),
-    at:()=>workerTo(TUT.ids.P)?null:tMove(P(ME).core,TUT.ids.P),done:()=>workerTo(TUT.ids.P)},
-  {say:()=>T('End turns until the worker arrives.','Завершайте ходы, пока рабочий не долетит.'),at:()=>T_dom('#endturn'),end:true,done:()=>workerAt(TUT.ids.P)},
-  {say:()=>nodeOpen(TUT.ids.P)?T('Claim the planet centre.','Захватите центр планеты.'):T('Open the planet centre.','Откройте центр планеты.'),at:()=>tTask(TUT.ids.P,'claim'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='claim')||G.nodes[TUT.ids.P].owner===ME},
-  {say:()=>T('End the turn to claim it.','Завершите ход, чтобы захватить его.'),at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.P].owner===ME},
-  {say:()=>T('See the red cross? The centre is cut off: one free asteroid separates it from your network, so its jopium can\'t reach your core.','Видите красный крестик? Центр отрезан: между ним и вашей сетью есть свободный астероид, поэтому жопиум не доходит до ядра.'),at:()=>T_tile(TUT.ids.P),next:true},
-  {say:()=>{const g=TUT.ids.Gp;if(myWorkers().some(w=>w.node===g&&!w.path.length&&w.task==='claim'))return T('End the turn to claim it.','Завершите ход, чтобы захватить его.');if(workerTo(g)&&!workerAt(g))return T('End the turn: the worker flies there.','Завершите ход: рабочий долетит.');if(workerAt(g))return nodeOpen(g)?T('Claim it.','Захватите его.'):T('Open this asteroid and claim it.','Откройте этот астероид и захватите его.');return G.moveMode?T('Tap the gap asteroid.','Нажмите на астероид-разрыв.'):T('Send the miner from your iron asteroid to the gap: open the iron asteroid, press Move.','Отправьте шахтёра с железного астероида в разрыв: откройте железный астероид, нажмите «Лететь».');},
-    at:()=>{const g=TUT.ids.Gp;if(myWorkers().some(w=>w.node===g&&!w.path.length&&w.task==='claim'))return T_dom('#endturn');if(workerAt(g))return tTask(g,'claim');if(workerTo(g))return T_dom('#endturn');return tMove(TUT.ids.A,g);},end:true,done:()=>G.nodes[TUT.ids.Gp].owner===ME&&G.conn[ME].has(TUT.ids.P)},
-  {say:()=>nodeOpen(TUT.ids.P)?T('Mine jopium. You have 99: one more makes 100, enough for a leviathan.','Добывайте жопиум. У вас 99: ещё один — и будет 100, хватит на левиафана.'):T('Open the planet centre.','Откройте центр планеты.'),
-    at:()=>tTask(TUT.ids.P,'mine'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='mine')||P(ME).gold>=100},
-  {say:()=>T('End the turn.','Завершите ход.'),at:()=>T_dom('#endturn'),end:true,done:()=>P(ME).gold>=100},
-  {say:()=>nodeOpen(TUT.ids.P)?T('Build a Leviathan. The worker who finishes it becomes its pilot.','Постройте Левиафана. Рабочий, который его достроит, станет пилотом.'):T('Open the planet centre.','Откройте центр планеты.'),
-    at:()=>nodeOpen(TUT.ids.P)?T_dom('[data-a="start"][data-t="levi"]'):T_tile(TUT.ids.P),done:()=>G.nodes[TUT.ids.P].stations.some(s=>s.type==='levi')||G.fleets.some(f=>f.owner===ME&&f.cls==='leviathan')},
-  {say:()=>T('End the turn. (It builds in one turn here.)','Завершите ход. (Здесь он строится за один ход.)'),at:()=>T_dom('#endturn'),end:true,done:()=>G.fleets.some(f=>f.owner===ME&&f.cls==='leviathan')},
-  {say:()=>G.popup&&G.popup.type==='preview'?T('Press Move.','Нажмите «Лететь».'):G.moveMode?T('Tap the enemy core.','Нажмите на вражеское ядро.'):G.modal&&G.modal.type==='unit'?T('Press Move.','Нажмите «Лететь».'):T('Tap your leviathan.','Нажмите на своего левиафана.'),
-    at:()=>{const lv=G.fleets.find(f=>f.owner===ME&&f.cls==='leviathan');if(G.popup&&G.popup.type==='preview')return T_dom('[data-a="pmove"]');if(G.moveMode)return T_tile(TUT.ids.ec);if(G.modal&&G.modal.type==='unit')return T_dom('[data-a="fmove"]');return {unit:lv};},
-    done:()=>G.fleets.some(f=>f.owner===ME&&f.cls==='leviathan'&&(f.path.length?f.path.at(-1):f.node)===TUT.ids.ec)},
-  {say:()=>T('End turns until your leviathan reaches the enemy core: it wins the battle in one turn.','Завершайте ходы, пока левиафан не долетит до вражеского ядра: он выиграет бой за один ход.'),at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
-];
-const tutStep=()=>TUT&&TSTEPS[TUT.i];
+const myFleets=c=>G.fleets.filter(f=>f.owner===ME&&(!c||f.cls===c));
+const T2=(en,ru)=>L(en,ru);
+// open tile `from`, press Move on a worker there, then tap tile `to`
+function tMove(from,to){if(G.moveMode)return T_tile(to);if(nodeOpen(from)&&q$('[data-a="wmove"]'))return T_dom('[data-a="wmove"]');return T_tile(from);}
+function tTask(id,task){if(nodeOpen(id)&&q$(`[data-a="wtask"][data-t="${task}"]`))return T_dom(`[data-a="wtask"][data-t="${task}"]`);return T_tile(id);}
+// open a tile's "Build a station here" list, then press Start on `type`
+function tBuild(id,type){if(!nodeOpen(id))return T_tile(id);if(q$(`[data-a="start"][data-t="${type}"]`))return T_dom(`[data-a="start"][data-t="${type}"]`);return T_dom('#modal details > summary');}
+// a squadron order: tap the squadron, press the button, tap the tile (and confirm the battle preview)
+function tFleet(f,act,to){if(!f)return null;if(G.popup&&G.popup.type==='preview')return T_dom('[data-a="pmove"]');if(G.popup&&G.popup.type==='charge')return null;if(G.moveMode)return T_tile(to);if(unitOpen(f)&&q$(`[data-a="${act}"][data-f="${f.id}"]`))return T_dom(`[data-a="${act}"][data-f="${f.id}"]`);return {unit:f};}
+// a station's button
+function tStation(n,s,sel){if(stOpen(s.uid)&&q$(sel))return T_dom(sel);if(nodeOpen(n)&&q$(`[data-a="openst"][data-s="${s.uid}"]`))return T_dom(`[data-a="openst"][data-s="${s.uid}"]`);return {station:s.uid,tile:n};}
+const stepDone=()=>TUT&&TUT.T.steps[TUT.i];
+const tutStep=stepDone;
 const tutAllowsEnd=()=>!TUT||!!(tutStep()&&tutStep().end);
-// where the current target is on screen: {x,y,w,h} in page pixels
+// a map target can't be pressed while a menu covers it: point at the menu's ✕ first
+function tutResolve(t){
+  if(!t)return null;
+  const mapT=t.tile!=null||t.unit||t.station!=null||t.hold;
+  if(mapT&&!t.dom){
+    if(G.popup&&!$('#popup').hidden&&q$('#popup .x'))return {dom:'#popup .x',close:true};
+    if(!$('#techscr').hidden&&q$('#techscr .tcore'))return {dom:'#techscr .tcore',close:true};
+    if(!$('#modal').hidden&&q$('#modal .x'))return {dom:'#modal .x',close:true};
+  }
+  return t;
+}
 function tutRect(t){
   if(!t)return null;
-  if(t.dom){const el=q$(t.dom);if(!el)return null;const r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:r.width+10,h:r.height+10,round:false};}
+  if(t.dom){const el=q$(t.dom);if(!el)return null;const r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:r.width+12,h:r.height+12,round:false};}
   const cr=cv.getBoundingClientRect();
-  if(t.tile!=null){const n=G.nodes[t.tile];const [x,y]=toScreen(n.x,n.y);const d=R*cam.z*1.25;return {x:cr.left+x,y:cr.top+y,w:d,h:d,round:true};}
-  if(t.unit){const h=G.hits.find(h=>h.kind==='fleet'&&h.u===t.unit);if(!h)return null;return {x:cr.left+h.x,y:cr.top+h.y,w:h.r*2.4,h:h.r*2.4,round:true};}
-  if(t.station!=null){const h=G.hits.find(h=>h.kind==='station'&&h.s.uid===t.station);if(!h)return null;return {x:cr.left+h.x,y:cr.top+h.y,w:h.r*2.6,h:h.r*2.6,round:true};}
-  return null;
+  if(t.unit||t.hold){const u=t.unit||t.hold;const h=G.hits.find(h=>h.kind==='fleet'&&h.u===u);if(h)return {x:cr.left+h.x,y:cr.top+h.y,w:h.r*2.6,h:h.r*2.6,round:true};const n=G.nodes[u.node];const [x,y]=toScreen(n.x,n.y);const d=R*cam.z*1.2;return {x:cr.left+x,y:cr.top+y,w:d,h:d,round:true};}
+  if(t.station!=null){const h=G.hits.find(h=>h.kind==='station'&&h.s.uid===t.station);if(h)return {x:cr.left+h.x,y:cr.top+h.y,w:h.r*2.8,h:h.r*2.8,round:true};}
+  const id=t.tile;if(id==null)return null;const n=G.nodes[id];const [x,y]=toScreen(n.x,n.y);const d=27*Math.max(.55,Math.min(1.4,cam.z))*2+16;return {x:cr.left+x,y:cr.top+y,w:d,h:d,round:true};
 }
 function tutAdvance(){
-  const st=tutStep();const r=TUT.lastRect;if(r)TUT.fx={x:r.x,y:r.y,t:performance.now()};
+  const r=TUT.lastRect;if(r)TUT.fx={x:r.x,y:r.y,t:performance.now()};
   TUT.i++;TUT.t0=performance.now();sfxTurn();
-  const nx=tutStep();if(nx&&nx.enter)nx.enter();
-  if(nx&&nx.end&&nx.at&&(nx.at()||{}).dom==='#endturn'){closeModal();refresh();}
-  if(!nx)tutFinish();
+  const nx=tutStep();
+  if(!nx){tutFinish();return;}
+  if(nx.enter)nx.enter();
+  if(nx.end&&nx.at&&(nx.at()||{}).dom==='#endturn'){closeModal();refresh();}
 }
 function tutLoop(){
   if(!TUT||!G||!G.tut){const el=tutEl();if(el)el.hidden=true;return;}
   const el=tutEl(),st=tutStep();
   if(!st){el.hidden=true;return;}
+  if(st.fix)st.fix();
   if(st.done&&st.done()){tutAdvance();requestAnimationFrame(tutLoop);return;}
   el.hidden=false;
-  const r=tutRect(st.at());TUT.lastRect=r||TUT.lastRect;
-  const ring=$('#tutring'),arr=$('#tutarrow'),out=$('#tutout'),bub=$('#tutbub'),fx=$('#tutfx');
-  for(const e of [ring,arr,out])e.hidden=!r;
-  if(r){
-    ring.style.left=r.x+'px';ring.style.top=r.y+'px';
-    const up=r.y-r.h/2<90;arr.style.left=r.x+'px';arr.style.top=(up?r.y+r.h/2+8:r.y-r.h/2-40)+'px';arr.classList.toggle('up',up);
-    out.style.left=(r.x-r.w/2-6)+'px';out.style.top=(r.y-r.h/2-6)+'px';out.style.width=(r.w+12)+'px';out.style.height=(r.h+12)+'px';out.querySelector('rect').setAttribute('rx',r.round?(r.w+12)/2:10);
+  const t=tutResolve(st.at?st.at():null),r=tutRect(t);if(r)TUT.lastRect=r;
+  const out=$('#tutout'),bub=$('#tutbub'),fx=$('#tutfx');
+  out.hidden=!r;
+  if(r){out.style.left=(r.x-r.w/2-4)+'px';out.style.top=(r.y-r.h/2-4)+'px';out.setAttribute('width',r.w+8);out.setAttribute('height',r.h+8);
+    const rc=out.querySelector('rect');rc.setAttribute('width',r.w+4);rc.setAttribute('height',r.h+4);rc.setAttribute('rx',r.round?(r.w+4)/2:10);}
+  // the bubble: only when this step has something to explain (closing a menu needs no words)
+  const txt=t&&t.close?null:st.say?st.say():null;
+  const key=TUT.i+'|'+(txt||'');
+  if(bub.dataset.k!==key){bub.dataset.k=key;bub.hidden=!txt&&!st.next;bub.querySelector('.tt').textContent=txt||'';const nb=bub.querySelector('.tutnext');nb.hidden=!st.next;nb.textContent=L('Next','Далее');bub.classList.remove('pop');void bub.offsetWidth;bub.classList.add('pop');}
+  if(!bub.hidden){
+    const bw=bub.offsetWidth,bh=bub.offsetHeight,vw=innerWidth,vh=innerHeight;let bx,by;
+    if(r){const right=r.x+r.w/2+16+bw<vw-8;bx=right?r.x+r.w/2+16:r.x-r.w/2-16-bw;by=r.y-bh/2;if(bx<8){bx=Math.max(8,Math.min(vw-bw-8,r.x-bw/2));by=r.y+r.h/2+14;if(by+bh>vh-8)by=r.y-r.h/2-bh-14;}}
+    else{bx=(vw-bw)/2;by=vh-bh-90;}
+    bub.style.left=Math.max(8,Math.min(vw-bw-8,bx))+'px';bub.style.top=Math.max(8,Math.min(vh-bh-8,by))+'px';
   }
-  // the speech bubble: next to the target, on whichever side has room
-  const txt=st.say();if(bub.dataset.k!==TUT.i+'|'+txt){bub.dataset.k=TUT.i+'|'+txt;bub.querySelector('.tt').textContent=txt;bub.querySelector('.tutnext').hidden=!st.next;bub.querySelector('.tutnext').textContent=L('Next','Далее');bub.classList.remove('pop');void bub.offsetWidth;bub.classList.add('pop');}
-  const bw=bub.offsetWidth,bh=bub.offsetHeight,vw=innerWidth,vh=innerHeight;
-  let bx,by;
-  if(r){const right=r.x+r.w/2+16+bw<vw-8;bx=right?r.x+r.w/2+16:r.x-r.w/2-16-bw;by=r.y-bh/2;if(bx<8){bx=Math.max(8,Math.min(vw-bw-8,r.x-bw/2));by=r.y+r.h/2+44;if(by+bh>vh-8)by=r.y-r.h/2-bh-48;}bub.classList.toggle('left',!right);}
-  else{bx=(vw-bw)/2;by=vh-bh-90;}
-  bub.style.left=Math.max(8,Math.min(vw-bw-8,bx))+'px';bub.style.top=Math.max(8,Math.min(vh-bh-8,by))+'px';
-  // step done: a white flash and sparks where the last target was
-  if(TUT.fx){const k=(performance.now()-TUT.fx.t)/900;if(k>1){TUT.fx=null;fx.hidden=true;}else{fx.hidden=false;fx.style.left=TUT.fx.x+'px';fx.style.top=TUT.fx.y+'px';fx.style.setProperty('--k',k);}}
+  // a correct press: a short yellow shine with a few sparks
+  if(TUT.fx){const k=(performance.now()-TUT.fx.t)/1100;if(k>1){TUT.fx=null;fx.hidden=true;}else{fx.hidden=false;fx.style.left=TUT.fx.x+'px';fx.style.top=TUT.fx.y+'px';fx.style.setProperty('--k',k);}}
   requestAnimationFrame(tutLoop);
+}
+// FINISH HIM: big letters for 2 s and a deep synthesized voice; the music dips while it speaks
+function finishHim(){
+  const b=$('#tutbig');b.textContent=L('FINISH HIM','ДОБЕЙ ЕГО');b.hidden=false;b.classList.remove('go');void b.offsetWidth;b.classList.add('go');setTimeout(()=>{b.hidden=true;},2200);
+  duck=.2;const back=()=>{duck=1;};
+  try{if(window.speechSynthesis&&settings.sfx>0){const u=new SpeechSynthesisUtterance(L('Finish him!','Добей его!'));u.lang=RU()?'ru-RU':'en-US';u.pitch=.1;u.rate=.75;u.volume=Math.min(1,settings.sfx*1.4);u.onend=back;speechSynthesis.cancel();speechSynthesis.speak(u);setTimeout(back,3500);}else setTimeout(back,1500);}catch(e){back();}
 }
 function tutFinish(){
   restoreTutRules();
   const el=tutEl();if(el)el.hidden=true;
-  TUT=null;Acc.tutDone();
+  const k=TUT?TUT.key:'starter',T=TUTS[k];TUT=null;
+  profile.tuts=Object.assign({},profile.tuts||{},{[k]:true});saveProfile();
+  if(k==='starter')Acc.tutDone();
+  if(Acc.state==='in')Acc.saveTuts();
   if(G){G.tut=false;G.over=true;}
   ov.hidden=false;ov.className='dim';ov.dataset.view='tutdone';
-  ov.innerHTML=`<div class="card"><h1>${L('Tutorial complete','Обучение пройдено')}</h1><p>${L('You moved, claimed, mined, researched, built a Barrack and drones, made a fleet, linked a planet and flew a leviathan into the enemy core. You can replay this any time from Settings.','Вы летали, захватывали, добывали, исследовали, построили Казарму и дронов, собрали флот, подключили планету и разбили вражеское ядро левиафаном. Пройти обучение заново можно в Настройках.')}</p><div class="opts"><button class="btn primary" type="button" data-a="tut-menu">${L('To the main menu','В главное меню')}</button></div></div>`;
+  ov.innerHTML=`<div class="card"><h1>${k==='starter'?L('Tutorial complete','Обучение пройдено'):L(`${T.n} tutorial completed`,`Обучение «${T.r}» пройдено`)}</h1>${k==='starter'?`<p>${L('More short tutorials are in Settings → Tutorials.','Другие короткие уроки — в Настройках → «Обучение».')}</p>`:''}<div class="opts"><button class="btn primary" type="button" data-a="tut-menu">${L('To the main menu','В главное меню')}</button>${k!=='starter'?`<button class="btn" type="button" data-a="tut-list">${L('More tutorials','Другие уроки')}</button>`:''}</div></div>`;
 }
-function restoreTutRules(){if(TUT_SAVE){TECH.barrack.c=TUT_SAVE.tb;ST.kazarm.t=TUT_SAVE.kt;ST.levi.t=TUT_SAVE.lt;DR.leviathan.spd=TUT_SAVE.ls;TUT_SAVE=null;}}
-// leaving the tutorial early: ask first
+function restoreTutRules(){if(TUT_SAVE){TECH.barrack.c=TUT_SAVE.tb;ST.kazarm.t=TUT_SAVE.kt;ST.levi.t=TUT_SAVE.lt;TECH.trade.c=TUT_SAVE.tt;TUT_SAVE=null;}}
+// leaving a tutorial early: ask first
 function tutSkip(){G.popup={type:'tutskip'};G.popupAt=performance.now();renderPopup();}
+// first visit: language first, then the starter tutorial; from Settings: the list of tutorials
+function startTutorial(){showMenu('tutlang');}
+function tutMenuHtml(){
+  const done=profile.tuts||{},row=k=>{const T=TUTS[k];return `<button class="btn tutrow" type="button" data-a="tut-go" data-v="${k}"><span>${L(T.n,T.r)}</span>${done[k]||(k==='starter'&&profile.tut)?'<span class="good">✓</span>':''}</button>`;};
+  return `<div class="card"><button class="x" type="button" data-a="m-settings" aria-label="${L('Close','Закрыть')}">✕</button><h1>${L('Tutorials','Обучение')}</h1>
+    <div class="mbtns">${row('starter')}</div>
+    <h3 class="sub" style="margin:4px 0 0">${L('Economy','Экономика')}</h3><div class="mbtns">${row('trade')}</div>
+    <h3 class="sub" style="margin:4px 0 0">${L('War drones','Боевые дроны')}</h3><div class="mbtns tutgrid">${['interceptor','bomber','frigate','siege','catapult','boomerang','tank','stomper','ballista'].map(row).join('')}</div></div>`;
+}
+
+
+/* ---------- the tutorials ---------- */
+const enemyFleet=(cls,k,node,up)=>{const f=newFleet(1,cls,k,node,up);G.fleets.push(f);return f;};
+const myFleet=(cls,k,node,up)=>{const f=newFleet(ME,cls,k,node,up);G.fleets.push(f);return f;};
+const TUTS={
+  // the starter: core with iron, empty and silicon asteroids; iron and silicon meet in one planet section; the enemy core sits by another
+  starter:{n:'Starter tutorial',r:'Основное обучение',workers:1,
+    map:{cells:[[1,0,'res','iron'],[-1,0,'empty'],[1,-1,'res','silicon'],[6,-1,'res','copper'],[5,0,'empty'],[6,-2,'res','iron'],[5,-2,'res','silicon'],[-2,0,'res','copper'],[-2,1,'empty']],
+         planet:{c:[3,-1],secs:[[2,-1],[4,-1],[3,0],[3,-2],[4,-2]],look:1},cores:[[0,0],[5,-1]]},
+    ids:at=>({A:at(1,0),E:at(-1,0),Si:at(1,-1),S:at(2,-1),S2:at(4,-1),P:at(3,-1),ec:at(5,-1)}),
+    setup:(at,p)=>{for(const r of RES)p.res[r]=25;p.gold=99;TECH.barrack.c=1;ST.kazarm.t=1;ST.levi.t=1;},
+    steps:[
+      {say:()=>T2('This is your core: everything starts here. Tap it.','Это ваше ядро, с него начинается всё. Нажмите на него.'),at:()=>T_tile(P(ME).core),done:()=>G.sel===P(ME).core||nodeOpen(P(ME).core)},
+      {say:()=>T2('Tap it again to open it.','Нажмите ещё раз, чтобы открыть его.'),at:()=>T_tile(P(ME).core),done:()=>nodeOpen(P(ME).core)},
+      {say:()=>G.moveMode?T2('Send it to the iron asteroid.','Отправьте его на железный астероид.'):T2('Workers claim and mine asteroids. Send yours out.','Рабочие захватывают астероиды и добывают ресурсы. Отправьте своего.'),at:()=>tMove(P(ME).core,TUT.ids.A),done:()=>workerTo(TUT.ids.A)},
+      {say:()=>T2('Orders play out when you end the turn.','Приказы выполняются, когда вы завершаете ход.'),at:()=>T_dom('#endturn'),end:true,done:()=>workerAt(TUT.ids.A)},
+      {say:()=>T2('Claim the asteroid to make it yours.','Захватите астероид, чтобы он стал вашим.'),at:()=>tTask(TUT.ids.A,'claim'),done:()=>myWorkers().some(w=>w.node===TUT.ids.A&&w.task==='claim')||G.nodes[TUT.ids.A].owner===ME},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.A].owner===ME},
+      {say:()=>T2('Mine it: a worker on your asteroid brings 2 of its resource every turn, for 1 energy. Iron pays for workers and drones.','Добывайте: рабочий на вашем астероиде приносит 2 единицы ресурса каждый ход за 1 энергию. Железо нужно для рабочих и дронов.'),at:()=>tTask(TUT.ids.A,'mine'),done:()=>myWorkers().some(w=>w.node===TUT.ids.A&&w.task==='mine')},
+      {say:()=>T2('Build a second worker at your core. It appears next turn.','Создайте в ядре второго рабочего. Он появится в следующем ходу.'),at:()=>nodeOpen(P(ME).core)?T_dom('[data-a="hire"]'):T_tile(P(ME).core),done:()=>P(ME).workerQueue>0},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>myWorkers().length>=2},
+      {say:()=>T2('Research the Barrack with the worker at your core.','Исследуйте Казарму рабочим, стоящим в ядре.'),
+        at:()=>!$('#techscr').hidden?(G.popup&&G.popup.type==='tech'&&G.popup.t==='barrack'?T_dom('[data-a="tset"]'):T_dom('[data-a="techpop"][data-t="barrack"]')):nodeOpen(P(ME).core)?T_dom('[data-a="open"][data-m="tech"]'):T_tile(P(ME).core),
+        done:()=>myWorkers().some(w=>w.task==='research'&&w.tech==='barrack')||has(ME,'barrack')},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>has(ME,'barrack')},
+      {say:()=>T2('Build a Barrack at your core.','Постройте Казарму в ядре.'),at:()=>tBuild(P(ME).core,'kazarm'),done:()=>G.nodes[P(ME).core].stations.some(s=>s.type==='kazarm')},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>live(G.nodes[P(ME).core],'kazarm').length>0},
+      {say:()=>T2('Order two different war drones.','Закажите двух разных боевых дронов.'),
+        at:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];if(!k)return null;return tStation(P(ME).core,k,k.queue.includes('interceptor')?'[data-a="kbuild"][data-c="bomber"]':'[data-a="kbuild"][data-c="interceptor"]');},
+        done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&new Set([...k.queue,...CLS.filter(c=>k.hangar[c].length)]).size>=2;}},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&k.hangar.interceptor.length>0&&k.hangar.bomber.length>0;}},
+      {at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const k=live(G.nodes[P(ME).core],'kazarm')[0];return k?tStation(P(ME).core,k,`[data-a="hangar"][data-c="${k.hangar.interceptor.length?'interceptor':'bomber'}"]`):null;},
+        done:()=>myFleets().length>=2},
+      {say:()=>G.popup&&G.popup.type==='squad'?null:T2('Press and hold here for a second, then drag across both squadrons to group them into a fleet.','Нажмите здесь и держите секунду, затем протяните рамку через обе эскадрильи, чтобы собрать их во флот.'),
+        at:()=>G.popup&&G.popup.type==='squad'?T_dom('[data-a="sqmake"]'):{hold:myFleets()[0]},done:()=>(P(ME).squads||[]).length>0},
+      {enter:()=>{enemyFleet('interceptor',1,TUT.ids.E);hitPulse(TUT.ids.E,[],[],'gift');G.pulseT0=performance.now();refresh();},
+        say:()=>G.popup&&G.popup.type==='preview'||G.moveMode?null:T2('An enemy drone landed next to your core! Attack it with your fleet.','Вражеский дрон сел рядом с ядром! Атакуйте его флотом.'),
+        at:()=>G.popup&&G.popup.type==='preview'?T_dom('[data-a="pmove"]'):G.moveMode?T_tile(TUT.ids.E):G.modal&&G.modal.type==='empire'&&!$('#modal').hidden?T_dom('[data-a="sqmove"]'):T_dom('#empireBtn'),
+        done:()=>myFleets().some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.E)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+      {say:()=>G.moveMode?null:T2('Planet centres hold jopium. Send your new worker to the planet centre.','В центрах планет есть жопиум. Отправьте нового рабочего в центр планеты.'),at:()=>tMove(P(ME).core,TUT.ids.P),done:()=>workerTo(TUT.ids.P),
+        // the worker takes the silicon asteroid and the planet section straight to the centre
+        fix:()=>{const w=myWorkers().find(w=>w.path.length&&w.path.at(-1)===TUT.ids.P&&w.path[0]!==TUT.ids.Si&&w.node===P(ME).core);if(w)w.path=[TUT.ids.Si,TUT.ids.S,TUT.ids.P];}},
+      {say:()=>T2('End turns until it arrives.','Завершайте ходы, пока он не долетит.'),at:()=>T_dom('#endturn'),end:true,done:()=>workerAt(TUT.ids.P)},
+      {at:()=>tTask(TUT.ids.P,'claim'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='claim')||G.nodes[TUT.ids.P].owner===ME},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.P].owner===ME},
+      {say:()=>T2('Press Mine now: from the turn the centre connects to your core, it gives 1 jopium a turn, that very turn included.','Нажмите «Добывать»: с того хода, когда центр соединится с ядром, он даёт 1 жопиум за ход, включая этот ход.'),at:()=>tTask(TUT.ids.P,'mine'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='mine')},
+      {say:()=>T2('The red cross means the centre is cut off: the planet section between it and your iron asteroid is unclaimed.','Красный крестик значит, что центр отрезан: участок планеты между ним и вашим железным астероидом ничей.'),at:()=>T_tile(TUT.ids.P),next:true},
+      {say:()=>{const g=TUT.ids.S;if(workerAt(g)&&!myWorkers().some(w=>w.node===g&&w.task==='claim'))return null;if(myWorkers().some(w=>w.node===g&&w.task==='claim')||workerTo(g))return null;return T2('Move the iron miner one hop onto that section and claim it.','Переместите шахтёра с железа на этот участок и захватите его.');},
+        at:()=>{const g=TUT.ids.S;if(myWorkers().some(w=>w.node===g&&!w.path.length&&w.task==='claim'))return T_dom('#endturn');if(workerAt(g))return tTask(g,'claim');if(workerTo(g))return T_dom('#endturn');return tMove(TUT.ids.A,g);},end:true,
+        done:()=>G.nodes[TUT.ids.S].owner===ME&&G.conn[ME].has(TUT.ids.P)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>P(ME).gold>=100},
+      {say:()=>T2('100 jopium: build a leviathan on the planet centre.','100 жопиума: постройте левиафана в центре планеты.'),at:()=>tBuild(TUT.ids.P,'levi'),done:()=>G.nodes[TUT.ids.P].stations.some(s=>s.type==='levi')||myFleets('leviathan').length>0},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>myFleets('leviathan').length>0},
+      {say:()=>G.moveMode||G.popup?null:T2('Send it to the enemy core.','Отправьте его к вражескому ядру.'),at:()=>tFleet(myFleets('leviathan')[0],'fmove',TUT.ids.ec),done:()=>myFleets('leviathan').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.ec)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>myFleets('leviathan').some(f=>f.node===TUT.ids.S2)},
+      {enter:()=>finishHim(),at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
+    ]},
+
+  trade:{n:'Trade',r:'Торговля',workers:2,
+    map:{cells:[[1,0,'res','iron'],[-1,0,'res','copper'],[0,1,'empty'],[4,-2,'empty']],cores:[[0,0],[5,-2]]},
+    setup:(at,p)=>{p.res.iron=30;p.res.silicon=10;p.techs.add('generator');TECH.trade.c=1;p.workersBuilt=0;},
+    steps:[
+      {say:()=>T2('You need copper for a new worker, and you have none. Research Trade with your workers.','Для нового рабочего нужна медь, а её нет. Исследуйте Торговлю своими рабочими.'),
+        at:()=>!$('#techscr').hidden?(G.popup&&G.popup.type==='tech'&&G.popup.t==='trade'?T_dom('[data-a="tset"]'):T_dom('[data-a="techpop"][data-t="trade"]')):nodeOpen(P(ME).core)?T_dom('[data-a="open"][data-m="tech"]'):T_tile(P(ME).core),
+        done:()=>myWorkers().some(w=>w.task==='research'&&w.tech==='trade')},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>has(ME,'trade')},
+      {say:()=>G.modal&&G.modal.type==='empire'&&!$('#modal').hidden?T2('Give iron, get copper, and trade until you have 4 copper.','Отдайте железо, получите медь и меняйте, пока не будет 4 меди.'):T2('Trading is in the Empire menu.','Торговля — в меню «Империя».'),
+        at:()=>{if(!(G.modal&&G.modal.type==='empire'&&!$('#modal').hidden))return T_dom('#empireBtn');if(G.trade.give!=='iron')return T_dom('[data-a="tgive"][data-r="iron"]');if(G.trade.get!=='copper')return T_dom('[data-a="tget"][data-r="copper"]');return T_dom('[data-a="trade"]');},
+        done:()=>P(ME).res.copper>=workerCost(P(ME)).copper},
+      {say:()=>T2('Now build the worker at your core.','Теперь создайте рабочего в ядре.'),at:()=>nodeOpen(P(ME).core)?T_dom('[data-a="hire"]'):T_tile(P(ME).core),done:()=>P(ME).workerQueue>0},
+    ]},
+
+  // a lone ballista at the edge of a planet; four enemy tiles in a line, the last an enemy core at 1 health
+  ballista:{n:'Ballista',r:'Баллиста',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty'],[-3,2,'empty']],planet:{c:[-1,0],secs:[[0,0],[-2,0],[-1,1],[-1,-1],[0,-1],[-2,1]],look:2},cores:[[-3,1],[4,0]]},
+    ids:at=>({B:at(0,0),t1:at(1,0),t2:at(2,0),t3:at(3,0),ec:at(4,0)}),center:at=>at(1,0),
+    setup:(at,p)=>{p.res.xeno=10;p.techs.add('rovers');p.techs.add('planetmove');myFleet('ballista',1,at(0,0));enemyFleet('interceptor',1,at(1,0));enemyFleet('interceptor',1,at(2,0));enemyFleet('frigate',1,at(3,0));G.nodes[at(4,0)].coreHp=1;},
+    steps:[
+      {say:()=>G.popup&&G.popup.type==='charge'?T2('Charge all 5 crystals: the bolt jumps along the line, doubling each time, and the 4th hit lands on the core.','Зарядите все 5 кристаллов: молния прыгает по линии, удваиваясь, и 4-й удар придётся в ядро.'):G.moveMode?null:T2('Your ballista can fire lightning along that line of enemies.','Ваша баллиста может ударить молнией по этой линии врагов.'),
+        at:()=>{if(G.popup&&G.popup.type==='charge')return G.popup.cr<5?T_dom('[data-a="chg"][data-k="5"]'):T_dom('[data-a="chgfire"]');return tFleet(myFleets('ballista')[0],'fbomb',TUT.ids.t1);},
+        done:()=>myFleets('ballista').some(f=>f.bombard===TUT.ids.t1&&f.charge===5)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
+    ]},
+
+  interceptor:{n:'Interceptor',r:'Перехватчик',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'res','iron'],[4,0,'empty']],cores:[[0,0],[6,-1]]},
+    ids:at=>({X:at(3,0)}),center:at=>at(2,0),
+    setup:(at,p)=>{p.techs.add('barrack');myFleet('interceptor',2,at(1,0));G.workers.push(newWorker(1,at(3,0)));G.workers.at(-1).task='claim';G.nodes[at(4,0)].owner=null;},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('Interceptors fly 2 hops a turn. An enemy worker is claiming the iron asteroid 2 hops away: get there this turn.','Перехватчики пролетают 2 прыжка за ход. Вражеский рабочий захватывает железный астероид в 2 прыжках: успейте туда за этот ход.'),
+        at:()=>tFleet(myFleets('interceptor')[0],'fmove',TUT.ids.X),done:()=>myFleets('interceptor').some(f=>f.path.at(-1)===TUT.ids.X)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.workers.some(w=>w.owner===1&&w.node===TUT.ids.X)},
+    ]},
+
+  bomber:{n:'Bomber',r:'Бомбер',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty']],cores:[[0,0],[4,-1]]},
+    ids:at=>({X:at(1,0)}),center:at=>at(1,0),
+    setup:(at,p)=>{p.techs.add('barrack');const c=G.nodes[p.core];const k=newStation(c,'kazarm',{state:'done'});k.work=0;c.stations.push(k);k.hangar.bomber.push(newDrone('bomber'));myFleet('bomber',5,p.core);enemyFleet('bomber',5,at(1,0));enemyFleet('interceptor',2,at(1,0));},
+    steps:[
+      {say:()=>T2('Bombers deal 3 instead of 2 while their squadron outnumbers every enemy squadron. 5 against 5 would lose this fight. Launch the bomber waiting in your Barrack.','Бомберы наносят 3 вместо 2, пока их эскадрилья больше любой вражеской. 5 против 5 проиграли бы этот бой. Выпустите бомбер из Казармы.'),
+        at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const k=live(G.nodes[P(ME).core],'kazarm')[0];return tStation(P(ME).core,k,'[data-a="hangar"][data-c="bomber"]');},
+        done:()=>myFleets('bomber').some(f=>f.count>=6)},
+      {say:()=>G.moveMode||G.popup?null:T2('6 against 5: attack now.','6 против 5: атакуйте.'),at:()=>tFleet(myFleets('bomber')[0],'fmove',TUT.ids.X),done:()=>myFleets('bomber').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+    ]},
+
+  frigate:{n:'Frigate',r:'Фрегат',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[1,-1,'empty']],cores:[[0,0],[4,-1]]},
+    ids:at=>({X:at(1,0),Y:at(1,-1),Z:at(2,0)}),center:at=>at(1,0),
+    setup:(at,p)=>{p.techs.add('barrack');myFleet('catapult',2,at(1,0));myFleet('frigate',3,at(1,-1));enemyFleet('interceptor',3,at(2,0));},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('Enemy interceptors will hit your catapults next turn. Frigates take damage first: move them onto the catapults\' tile to shield them.','Вражеские перехватчики ударят по катапультам в следующем ходу. Фрегаты принимают урон первыми: переместите их к катапультам, чтобы прикрыть.'),
+        at:()=>tFleet(myFleets('frigate')[0],'fmove',TUT.ids.X),done:()=>myFleets('frigate').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
+      {enter:()=>{const e=G.fleets.find(f=>f.owner===1);if(e)e.path=[TUT.ids.X];},at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+      {say:()=>myFleets('catapult').length?T2('The frigates took the hits, and every catapult survived.','Фрегаты приняли удар, и все катапульты уцелели.'):T2('The battle is over.','Бой окончен.'),at:()=>T_tile(TUT.ids.X),next:true},
+    ]},
+
+  siege:{n:'Siege',r:'Осада',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty']],cores:[[0,0],[3,0]]},
+    ids:at=>({ec:at(3,0),X:at(2,0)}),center:at=>at(2,0),
+    setup:(at,p)=>{p.techs.add('barrack');myFleet('siege',6,at(2,0));const e=G.nodes[at(3,0)];const t=newStation(e,'turret',{state:'done'});t.hp=t.maxHp||ST.turret.hp||6;e.stations.push(t);},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('Siege drones deal only 1 to drones but 5 to turrets and cores. Attack the enemy core.','Осадные дроны наносят дронам всего 1, но турелям и ядрам — 5. Атакуйте вражеское ядро.'),
+        at:()=>tFleet(myFleets('siege')[0],'fmove',TUT.ids.ec),done:()=>myFleets('siege').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.ec)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
+    ]},
+
+  catapult:{n:'Catapult',r:'Катапульта',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,-1,'empty']],cores:[[0,0],[4,-1]]},
+    ids:at=>({T:at(2,0),X:at(1,0)}),center:at=>at(2,0),
+    setup:(at,p)=>{p.techs.add('barrack');p.res.iron=20;myFleet('catapult',3,at(1,0));const n=G.nodes[at(2,0)];n.owner=1;const t=newStation(n,'turret',{state:'done'});t.hp=t.maxHp||ST.turret.hp||6;n.stations.push(t);},
+    steps:[
+      {say:()=>G.moveMode?null:T2('A turret guards that asteroid. Catapults bombard the next tile from safety: 2 damage per catapult, 1 iron a shot.','Этот астероид охраняет турель. Катапульты обстреливают соседнюю клетку издалека: 2 урона с каждой, 1 железо за выстрел.'),
+        at:()=>tFleet(myFleets('catapult')[0],'fbomb',TUT.ids.T),done:()=>myFleets('catapult').some(f=>f.bombard===TUT.ids.T)},
+      {say:()=>T2('End turns until the turret falls.','Завершайте ходы, пока турель не падёт.'),at:()=>T_dom('#endturn'),end:true,fix:()=>{const f=myFleets('catapult')[0];if(f&&f.bombard==null&&liveTurrets(G.nodes[TUT.ids.T]).length)f.bombard=TUT.ids.T;},done:()=>!liveTurrets(G.nodes[TUT.ids.T]).length},
+    ]},
+
+  boomerang:{n:'Boomerang',r:'Бумеранг',workers:0,
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty']],cores:[[0,0],[5,-1]]},
+    ids:at=>({A:at(2,0),B:at(3,0),H:at(1,0)}),center:at=>at(2,0),
+    setup:(at,p)=>{p.techs.add('barrack');myFleet('boomerang',4,at(1,0));enemyFleet('interceptor',1,at(2,0));enemyFleet('interceptor',1,at(3,0));},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('Attack the closer enemy drone.','Атакуйте ближайший вражеский дрон.'),at:()=>tFleet(myFleets('boomerang')[0],'fmove',TUT.ids.A),done:()=>myFleets('boomerang').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.A)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1&&f.node===TUT.ids.A)},
+      {say:()=>G.moveMode||G.popup?null:T2('After a win, boomerangs fly back home. Next turn the tile they attacked costs no hop: reach the far drone, 2 hops away, in one turn.','После победы бумеранги возвращаются. В следующем ходу атакованная клетка не тратит прыжок: долетите до дальнего дрона в 2 прыжках за один ход.'),
+        at:()=>tFleet(myFleets('boomerang')[0],'fmove',TUT.ids.B),done:()=>myFleets('boomerang').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.B)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+    ]},
+
+  tank:{n:'Tank',r:'Танк',workers:0,
+    map:{cells:[[-3,1,'empty']],planet:{c:[0,0],secs:[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]],look:3},cores:[[-2,1],[3,-1]]},
+    ids:at=>({P:at(0,0),T:at(-1,1)}),center:at=>at(0,0),
+    setup:(at,p)=>{p.techs.add('rovers');p.techs.add('planetmove');myFleet('tank',2,at(-1,1));G.workers.push(newWorker(1,at(0,0)));G.workers.at(-1).task='claim';},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('Tanks are rovers: they only drive on their planet. An enemy worker is claiming the centre: drive there.','Танки — роверы: они ездят только по своей планете. Вражеский рабочий захватывает центр: езжайте туда.'),
+        at:()=>tFleet(myFleets('tank')[0],'fmove',TUT.ids.P),done:()=>myFleets('tank').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.P)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.workers.some(w=>w.owner===1)},
+    ]},
+
+  stomper:{n:'Stomper',r:'Топтун',workers:0,
+    map:{cells:[[-3,1,'empty']],planet:{c:[0,0],secs:[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]],look:4},cores:[[-2,1],[3,-1]]},
+    ids:at=>({B:at(-1,0),S:at(0,-1),E:at(0,0)}),center:at=>at(0,0),
+    setup:(at,p)=>{p.techs.add('rovers');p.techs.add('planetmove');myFleet('ballista',2,at(-1,0));myFleet('stomper',2,at(0,-1));enemyFleet('tank',3,at(0,0));},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('Enemy tanks will hit your ballistas next turn. Stompers are bulky and take damage first: move yours next to the ballistas.','Вражеские танки ударят по баллистам в следующем ходу. Топтуны крепкие и принимают урон первыми: подведите своего к баллистам.'),
+        at:()=>tFleet(myFleets('stomper')[0],'fmove',TUT.ids.B),done:()=>myFleets('stomper').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.B)},
+      {enter:()=>{const e=G.fleets.find(f=>f.owner===1);if(e)e.path=[TUT.ids.B];},at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)||G.turn>=6},
+      {say:()=>T2('The stomper soaked up the tank fire while the ballistas fought.','Топтун принял огонь танков, пока баллисты сражались.'),at:()=>T_tile(TUT.ids.B),next:true},
+    ]},
+};
 
 function renderTop(){
   const p=P(ME);
@@ -2939,7 +3169,8 @@ function renderModal(){
 $('#popup').addEventListener('click',e=>{if(e.target===$('#popup')&&G&&!(performance.now()-(G.popupAt||0)<450)){sfxClick();G.popup=null;renderPopup();}});
 $('#modal').addEventListener('click',e=>{if(e.target===$('#modal')&&!(G&&performance.now()-(G.modalAt||0)<450)){sfxClick();closeModal();}});
 
-function fleetRow(f,n){
+// big: the squadron's own menu (style 2B): one chip per drone with its health and energy, then the buttons
+function fleetRow(f,n,big){
   const D=DR[f.cls],mine=n.owner===ME;
   const kaz=mine&&live(n,D.ground?'rbarracks':'kazarm').length;
   const btn=(a,l,cls)=>`<button class="btn small ${cls||''}" type="button" data-a="${a}" data-f="${f.id}">${l}</button>`;
@@ -2957,6 +3188,13 @@ function fleetRow(f,n){
   if(f.settled)status+=' · '+L('settled','сидит');
   if(f.path.length)status+=' · '+(f.mergeInto?L('flying to merge','летит на объединение'):L(`moving, ${plural(f.path.length,'hop')} left`,`в пути, осталось ${cnt(f.path.length,'hop')}`));
   if(f.bombard!=null)status+=' · '+L('bombarding ','обстреливает: ')+lc(nodeName(G.nodes[f.bombard]));
+  const split=G.splitOpen===f.id?(()=>{const half=Math.floor(f.count/2);return `<div class="full"><input type="range" id="splitN" min="1" max="${f.count-1}" value="${half}" aria-label="${L('Drones to split off','Сколько отделить')}"><span class="mono" id="splitLbl" style="white-space:nowrap">${f.count-half} + ${half}</span><button class="btn small" type="button" data-a="fsplitgo" data-f="${f.id}">${L('Split','Разделить')}</button></div>`;})():'';
+  if(big){
+    // each drone's share of the health: the front drones are whole, the last one carries the damage
+    const per=DR[f.cls].hp;let rest=f.hp;const hps=Array.from({length:f.count},()=>{const v=Math.min(per,rest);rest-=v;return Math.max(0,Math.round(v*10)/10);});
+    const where=status.split(' · ').filter(x=>!x.includes(HEART)&&!x.includes(BOLT)).join(' · ');
+    return `<div class="dchips">${hps.map((hp,i)=>{const e=f.cls==='leviathan'?null:f.en[i];return `<div class="dchip ${e!=null&&e<=1?'low':''}"><span class="mono">${HEART}${hp}/${per}</span>${e!=null?`<span class="mono ${e<=0?'bad':e<=1?'warn':''}">${BOLT}${e}</span>`:''}</div>`;}).join('')}</div>${where?`<p class="sub" style="margin:6px 0 0">${where}</p>`:''}<div class="acts" style="margin-top:8px">${b.join('')}</div>${split}`;
+  }
   let h=`<div class="row"><div class="grow"><b>${dN(f.cls)}${f.up?' ↑':''}</b> ×${f.count}<br><span class="sub">${status}</span></div><div class="acts">${b.join('')}</div>`;
   if(f.cls!=='leviathan')h+=`<div class="full mono sub" title="${L('Energy of each drone','Энергия каждого дрона')}">${BOLT} ${f.en.map(e=>`<span class="${e<=0?'bad':e<2?'warn':''}">${e}</span>`).join(' · ')}</div>`;
   if(G.splitOpen===f.id){const half=Math.floor(f.count/2);h+=`<div class="full"><input type="range" id="splitN" min="1" max="${f.count-1}" value="${half}" aria-label="${L('Drones to split off','Сколько отделить')}"><span class="mono" id="splitLbl" style="white-space:nowrap">${f.count-half} | ${half}</span><button class="btn small primary" type="button" data-a="fsplitgo" data-f="${f.id}">${L('Split','Разделить')}</button></div>`;}
@@ -3003,10 +3241,12 @@ function statLine(D,f){return `<span class="stats mono"><span title="${L('Health
 function unitMenu(m){
   const f=G.fleets.find(x=>x.id===m.f);if(!f)return null;
   const n=G.nodes[f.node],D=DR[f.cls],mine=f.owner===ME;
-  let h=`<h2>${dN(f.cls)}${f.up?' ↑':''} ×${f.count}</h2><div class="opts">${mine?'':`<span class="pill" style="color:${P(f.owner).color}">${esc(pShort(P(f.owner)))}</span>`}<span class="sub">${L('at ','на: ')}${lc(nodeName(n))}</span>${statLine(D)}</div><p class="sub" style="margin:0">${dD(f.cls)}</p>`;
-  if(mine)h+=`<div class="sec">${fleetRow(f,n)}</div>`;
+  let h=`<h2><button class="lnk" type="button" data-a="dinfo" data-c="${f.cls}">${dN(f.cls)}</button>${f.up?' ↑':''} ×${f.count}</h2><div class="opts">${mine?'':`<span class="pill" style="color:${P(f.owner).color}">${esc(pShort(P(f.owner)))}</span>`}<span class="sub">${L('at ','на: ')}${lc(nodeName(n))}</span>${statLine(D)}</div><p class="sub" style="margin:0">${dD(f.cls)}</p>`;
+  if(mine)h+=`<div class="sec">${fleetRow(f,n,true)}</div>`;
   if(mine&&f.cls==='charger'&&f.settled){h+=nearbyHtml(n,[...SPACE,...ROVERS].filter(c=>c!=='charger'),`data-ch="${f.id}"`);h+=dockedHtml(f.dock||[],`data-ch="${f.id}"`);}
-  else h+=`<div class="sec">${hpBar(f.hp,fleetMax(f))}</div>`;
+  // an enemy squadron: a stat card and one health bar, no buttons
+  if(!mine){const dmg=DR[f.cls].dmg*f.count,avg=f.cls==='leviathan'?'∞':avgEn(f);
+    h+=`<div class="sec scard"><div><b class="mono">${Math.round(f.hp*10)/10}</b><span class="sub">${L(`of ${fleetMax(f)} health`,`из ${fleetMax(f)} здоровья`)}</span></div><div><b class="mono">${BOLT}${avg}</b><span class="sub">${L('avg energy','ср. энергия')}</span></div><div><b class="mono">${dmg}</b><span class="sub">${L('damage','урон')}</span></div></div>${hpBar(f.hp,fleetMax(f))}`;}
   return h;
 }
 function nodeMenu(n){
@@ -3024,7 +3264,7 @@ function nodeMenu(n){
   if(n.owner===ME&&!G.conn[ME].has(n.id)){const w=walletAt(ME,n.id);const e=clusterOf(ME,n.id).reduce((a,x)=>a+x.estore+5*live(x,'generator').length,0);h+=P0(`${L('This cluster runs on its own supplies:','Это скопление живёт на своих запасах:')} ${RES.map(r=>`${rb(r)}${w[r]}`).join(' ')} · ${BOLT}${e}`);}
   h+=`</div>`;
   // an unclaimed tile you can see: send any worker there
-  if(n.owner==null&&p.alive)h+=assignList(L('Move to it','Лететь сюда'),n.id,'wgo',w=>w.path.length>0&&w.path.at(-1)===n.id);
+  if(n.owner!==ME&&p.alive&&!G.workers.some(w=>w.owner===ME&&w.node===n.id))h+=moveToHtml(n);
   const myCore=n.type==='core'&&n.coreOf===ME&&p.alive;
   if(myCore){
     // 1. research tree
@@ -3078,13 +3318,24 @@ function buildHtml(n){
   }
   return h+`</div></details>`;
 }
+// "Move to it": the nearest idle worker that can get here
+function moveToHtml(n){
+  const K=known(ME);let best=null;
+  for(const w of G.workers){if(w.owner!==ME||w.path.length||w.task!=='idle')continue;const pth=findPath(w.node,n.id,K);if(pth&&(!best||pth.length<best.d))best={w,d:pth.length};}
+  const coming=G.workers.find(w=>w.owner===ME&&w.path.length&&w.path.at(-1)===n.id);
+  let h=`<div class="sec"><h3>${L('Move to it','Лететь сюда')}</h3>`;
+  if(coming)h+=`<div class="row"><div class="grow"><b>${esc(coming.name)}</b> <span class="sub">${L(`on the way · ${plural(coming.path.length,'hop')} away`,`в пути · ${cnt(coming.path.length,'hop')}`)}</span></div><button class="btn small" type="button" data-a="wtask" data-t="idle" data-w="${coming.id}">${L('Stop','Стоп')}</button></div>`;
+  else if(!best)h+=`<p class="sub" style="margin:0">${L('No idle workers.','Нет свободных рабочих.')}</p>`;
+  else h+=`<div class="row"><div class="grow"><b>${esc(best.w.name)}</b> <span class="sub">${L(`${plural(best.d,'hop')} away`,`${cnt(best.d,'hop')} отсюда`)}</span></div><button class="btn small primary" type="button" data-a="wgo" data-w="${best.w.id}" data-n="${n.id}">${L('Assign','Назначить')}</button></div>`;
+  return h+`</div>`;
+}
 function assignList(title,id,act,on,extra){
   const K=known(ME),ws=G.workers.filter(w=>w.owner===ME);
   const hops=w=>{if(w.node===id)return 0;const pth=findPath(w.node,id,K);return pth?pth.length:null;};
   const rows=ws.map(w=>({w,h:hops(w),on:on(w)})).filter(x=>x.h!=null).sort((a,b)=>(a.on-b.on)||((a.w.task==='idle'&&!a.w.path.length?0:1)-(b.w.task==='idle'&&!b.w.path.length?0:1))||a.h-b.h);
   let h=`<div class="sec"><h3>${title} · ${rows.length}</h3>`;
   if(!rows.length)h+=`<p class="sub" style="margin:0">${L('None of your workers has a known route here.','Ни у одного рабочего нет известного пути сюда.')}</p>`;
-  for(const {w,h:d,on:x} of rows)h+=`<div class="row"><div class="grow"><b>${esc(w.name)}</b> <span class="sub mono">${d?plural(d,'hop'):L('here','здесь')}</span><br><span class="sub">${workerStatus(w)}</span></div>${x?`<button class="btn small" type="button" data-a="wtask" data-t="idle" data-w="${w.id}">${L('Stop','Стоп')}</button>`:`<button class="btn small primary" type="button" data-a="${act}" data-w="${w.id}" data-n="${id}" ${extra||''}>${L('Assign','Назначить')}</button>`}</div>`;
+  for(const {w,h:d,on:x} of rows)h+=`<div class="row"><div class="grow"><b>${esc(w.name)}</b> <span class="sub mono">${d?L(`${plural(d,'hop')} away`,`${cnt(d,'hop')} отсюда`):L('here','здесь')}</span><br><span class="sub">${workerStatus(w)}</span></div>${x?`<button class="btn small" type="button" data-a="wtask" data-t="idle" data-w="${w.id}">${L('Stop','Стоп')}</button>`:`<button class="btn small primary" type="button" data-a="${act}" data-w="${w.id}" data-n="${id}" ${extra||''}>${L('Assign','Назначить')}</button>`}</div>`;
   return h+`</div>`;
 }
 function stationMenu(n,s){
@@ -3138,7 +3389,7 @@ function kazarmHtml(n,s){
 }
 // upgrade station: like a barrack, a card per type with Upgrade (a docked drone, done next turn) and Launch
 function upgradeHtml(n,s){
-  const w=walletAt(ME,n.id),list=dockKinds(s).filter(c=>canMake(ME,c)&&(DR[c].ground?has(ME,'rovers'):dU(c)));
+  const w=walletAt(ME,n.id),list=dockKinds(s).filter(c=>DR[c].ground?s.hangar[c].length>0:canMake(ME,c)&&dU(c));
   let h=`<div class="sec"><h3>${L('Upgrades · each takes one turn','Улучшения · каждое за один ход')}</h3><div class="dgrid">`;
   for(const c of list){
     // rovers only dock here to recharge: they can be launched but not upgraded
@@ -3211,7 +3462,7 @@ function renderPopup(){
   }else if(m.type==='drone'){
     const D=DR[m.c];
     h+=`<h2>${dN(m.c)}</h2><canvas id="dronecv" width="440" height="260" aria-label="${L('Blueprint','Чертёж')}: ${dN(m.c)}"></canvas>${statLine(D)}<p style="margin:0">${dD(m.c)}</p>`;
-    h+=`<div class="sub">${L('Cost','Цена')}: ${costHtml(D.cost)} · ${L('upkeep','содержание')} ${BOLT}${D.up}/${L('turn','ход')}</div>`;
+    h+=`<div class="sub">${L('Cost','Цена')}: ${costHtml(D.cost)} · ${L('upkeep','содержание')} ${BOLT}${D.up}/${L('turn','ход')}${!D.ground&&D.up?L(' (1 on planets)',' (1 на планетах)'):''}</div>`;
     if(dU(m.c))h+=`<div class="sub">${L('Upgrade','Улучшение')}: ${dU(m.c)}</div>`;
     if(D.ground)h+=`<div class="sub">${L('Rover: moves only on the planet it was built on.','Ровер: ездит только по планете, где его построили.')}</div>`;
   }else if(m.type==='tech'){
@@ -3234,13 +3485,13 @@ function renderPopup(){
   const cv3=$('#unlcv');
   if(cv3){const u=techUnlocks(m.t)[m.i],c=cv3.getContext('2d'),Wd=cv3.width,Hd=cv3.height;c.fillStyle='#08101f';c.fillRect(0,0,Wd,Hd);
     c.strokeStyle='rgba(77,163,255,.14)';c.lineWidth=1;for(let x=0;x<=Wd;x+=20){c.beginPath();c.moveTo(x+.5,0);c.lineTo(x+.5,Hd);c.stroke();}for(let y=0;y<=Hd;y+=20){c.beginPath();c.moveTo(0,y+.5);c.lineTo(Wd,y+.5);c.stroke();}
-    if(u.k==='dr'){shapePath(c,u.id,Wd/2,Hd/2,64);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash(u.id==='spy'?[8,8]:[]);c.stroke();c.setLineDash([]);}
+    if(u.k==='dr'){shapePath(c,u.id,Wd/2,Hd/2,64);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash([]);c.stroke();c.setLineDash([]);}
     else stationIcon(c,{type:u.id,state:'done',hp:1},Wd/2,Hd/2,6.5,'#4da3ff');}
   const cv2=$('#dronecv');
   if(cv2){const c=cv2.getContext('2d'),Wd=cv2.width,Hd=cv2.height;c.fillStyle='#08101f';c.fillRect(0,0,Wd,Hd);
     c.strokeStyle='rgba(77,163,255,.14)';c.lineWidth=1;for(let x=0;x<=Wd;x+=20){c.beginPath();c.moveTo(x+.5,0);c.lineTo(x+.5,Hd);c.stroke();}for(let y=0;y<=Hd;y+=20){c.beginPath();c.moveTo(0,y+.5);c.lineTo(Wd,y+.5);c.stroke();}
     c.strokeStyle='rgba(77,163,255,.32)';for(let x=0;x<=Wd;x+=100){c.beginPath();c.moveTo(x+.5,0);c.lineTo(x+.5,Hd);c.stroke();}for(let y=0;y<=Hd;y+=100){c.beginPath();c.moveTo(0,y+.5);c.lineTo(Wd,y+.5);c.stroke();}
-    shapePath(c,m.c,Wd/2,Hd/2,72);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash(m.c==='spy'?[8,8]:[]);c.stroke();c.setLineDash([]);
+    shapePath(c,m.c,Wd/2,Hd/2,72);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash([]);c.stroke();c.setLineDash([]);
   }
 }
 function empireMenu(){
@@ -3253,7 +3504,7 @@ function empireMenu(){
     const [give,get]=tradeRate(ME,G.trade.give,G.trade.get);
     // resources are picked by their bar icons
     const opt=(side,sel)=>`<span class="tpick" role="radiogroup">${opts.map(r=>`<button class="btn small ${sel===r?'on':''}" type="button" role="radio" aria-checked="${sel===r}" data-a="${side}" data-r="${r}" title="${rN(r)}" aria-label="${rN(r)}">${rb(r)}</button>`).join('')}</span>`;
-    h+=`<div class="sec"><h3>${L('Trade','Торговля')}</h3><div class="row"><span class="sub">${L('Give','Отдать')} ${give}</span>${opt('tgive',G.trade.give)}</div><div class="row"><span class="sub">${L('for','за')} ${get}</span>${opt('tget',G.trade.get)}<button class="btn small" type="button" data-a="trade">${L('Trade','Обменять')}</button></div></div>`;
+    h+=`<div class="sec"><h3>${L('Trade','Торговля')}</h3><div class="trow"><span class="sub tl">${L('Give','Отдать')}</span>${opt('tgive',G.trade.give)}<b class="mono tn2">×${give}</b></div><div class="trow"><span class="sub tl">${L('Get','Получить')}</span>${opt('tget',G.trade.get)}<b class="mono tn2">×${get}</b></div><div class="row" style="justify-content:center"><button class="btn small" type="button" data-a="trade">${L('Trade','Обменять')}</button></div></div>`;
   }
   const fl=idleFirst(G.fleets.filter(f=>f.owner===ME&&!inSquadron(f)));
   const sqs=(p.squads||[]).map(q=>({q,fl:q.ids.map(id=>G.fleets.find(f=>f.id===id&&f.owner===ME)).filter(Boolean)})).filter(x=>x.fl.length);
@@ -3271,19 +3522,16 @@ function empireMenu(){
     const cutTxt=f.cls!=='spy'&&f.cls!=='leviathan'&&!fleetOnGrid(f)?` · <span class="warn">${L('cut off','отрезан')}</span>`:'';
     h+=`<div class="row" data-fdrop="${f.id}"><span class="handle" data-fdrag="${f.id}" aria-label="${L('Drag to merge','Перетащите, чтобы объединить')}">⠿</span><div class="grow" data-a="gonode" data-n="${f.node}" style="cursor:pointer"><b>${dN(f.cls)}${f.up?' ↑':''}</b> ×${f.count} · <span class="sub">${nodeName(G.nodes[f.node])} · ${task}${cutTxt} · ${BOLT}${f.cls==='leviathan'?'∞':avgEn(f)}</span></div></div>`;
   }
+  h+=`</div><div class="sec"><h3>${L('Workers','Рабочие')}</h3>`;
+  for(const w of idleFirst(G.workers.filter(w=>w.owner===ME)))h+=`<div class="row click" data-a="gonode" data-n="${w.node}"><div class="grow"><b>${esc(w.name)}</b> · <span class="sub">${nodeName(G.nodes[w.node])}</span><br><span class="sub ${w.task==='idle'&&!w.path.length?'warn':''}">${workerStatus(w)}</span></div></div>`;
   // rivals: everyone is listed; ones you haven't met yet are "unknown rival"
   const met=metOf(ME);
   h+=`</div><div class="sec"><h3>${L('Rivals','Соперники')}</h3>`;
   for(const q of G.players){if(q.id===ME)continue;
     if(!met.has(q.id)){h+=`<div class="row"><div class="grow sub">${L('Unknown rival','Неизвестный соперник')}${q.alive?'':' · '+L('out','выбыл')}</div></div>`;continue;}
-    const inc=(G.treaties||[]).find(t=>t.from===q.id&&t.to===ME&&t.ans==null),sent=(G.treaties||[]).some(t=>t.from===ME&&t.to===q.id);
+    const inc=(G.treaties||[]).find(t=>t.from===q.id&&t.to===ME&&t.ans==null),sent=(G.treaties||[]).some(t=>t.from===ME&&t.to===q.id),gold=G.mode==='conquest'?` · ${STARGOLD}${q.gold}`:'';
     const st=!q.alive?L('Out of the game','Выбыл'):atPeace(ME,q.id)?`<span class="good">${L('At peace','Мир')}</span>`:inc?`<span class="warn">${L('Wants peace','Предлагает мир')}</span>`:sent?L('Treaty sent','Договор отправлен'):L('No treaty','Нет договора');
-    h+=`<div class="row ${q.alive?'click':''}" ${q.alive?`data-a="rival" data-p="${q.id}"`:''}><div class="grow"><b style="color:${q.color}">${esc(pName(q))}</b><br><span class="sub">${st}</span></div></div>`;}
-  h+=`</div><div class="sec"><h3>${L('Workers','Рабочие')}</h3>`;
-  for(const w of idleFirst(G.workers.filter(w=>w.owner===ME)))h+=`<div class="row click" data-a="gonode" data-n="${w.node}"><div class="grow"><b>${esc(w.name)}</b> · <span class="sub">${nodeName(G.nodes[w.node])}</span><br><span class="sub ${w.task==='idle'&&!w.path.length?'warn':''}">${workerStatus(w)}</span></div></div>`;
-  h+=`</div><div class="sec"><h3>${L('Rivals','Соперники')}</h3>`;
-  // in conquest the rivals list shows everyone's jopium
-  for(const q of (G.mode==='conquest'?G.players:G.players.slice(1)))h+=`<div class="row"><span class="rb" style="background:${q.color};width:8px;height:8px;border-radius:50%"></span><span class="grow">${esc(pName(q))}</span>${G.mode==='conquest'?`<span class="mono">${STARGOLD} ${q.gold}/${GOLD_WIN}</span>`:''}<span class="pill ${q.alive?'muted':'bad'}">${q.alive?L('Active','В игре'):L('Destroyed','Уничтожен')}</span></div>`;
+    h+=`<div class="row ${q.alive?'click':''}" ${q.alive?`data-a="rival" data-p="${q.id}"`:''}><div class="grow"><b style="color:${q.color}">${esc(pName(q))}</b><br><span class="sub">${st}${gold}</span></div></div>`;}
   return h+`</div>`;
 }
 function reportMenu(){
@@ -3341,7 +3589,7 @@ function renderTech(){
   for(const t of TECHS){if(!p.techs.has(t.id))continue;const [x2,y2]=WEB[t.id];const [x1,y1]=t.req?WEB[t.req]:[50,50];
     svg+=`<line class="cline ${G.seenTech.has(t.id)?'':'new'}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;}
   // a second requirement (rover station needs Barrack too) gets its own faint guide
-  for(const t of TECHS)if(t.req2){const [x1,y1]=WEB[t.req2],[x2,y2]=WEB[t.id];svg+=`<line class="${p.techs.has(t.id)?'cline':'cguide'}" stroke-dasharray="1 1.2" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;}
+  for(const t of TECHS)if(t.req2){const [x1,y1]=WEB[t.req2],[x2,y2]=WEB[t.id];svg+=`<line class="${p.techs.has(t.id)?'cline':'cguide'}" ${p.techs.has(t.id)?'':'stroke-dasharray="1 1.2"'} x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;}
   for(const t of TECHS){const pr=p.prog[t.id]||0;if(p.techs.has(t.id)||!pr)continue;const [x,y]=WEB[t.id];const L=2*Math.PI*2.2;
     svg+=`<circle class="cprog" cx="${x}" cy="${y}" r="2.2" stroke-dasharray="${L*pr/t.c} ${L}" transform="rotate(-90 ${x} ${y})"/>`;}
   for(const [b,br,x,y] of BRANCH_LBL)svg+=`<text class="blabel" x="${x}" y="${y}" text-anchor="middle">${L(b,br)}</text>`;
@@ -3355,7 +3603,7 @@ function renderTech(){
 
 /* ---------- actions ---------- */
 function act(a,d){
-  if(/^([msehjlk]-|acc-|set-|tut-lang|tut-menu)/.test(a))return menuAct(a,d);
+  if(/^([msehjlk]-|acc-|set-|tut-lang|tut-menu|tut-go|tut-list)/.test(a))return menuAct(a,d);
   if(!G)return;
   const p=P(ME);
   const Wk=id=>G.workers.find(w=>w.id===+id),F=id=>G.fleets.find(f=>f.id===+id),S=uid=>findStation(+uid);
@@ -3429,7 +3677,7 @@ function act(a,d){
     case 'wgo':order({t:'wgo',w:+d.w,to:+d.n,task:d.t});break;
     case 'tans':{if(order({t:'peaceans',from:+d.p,yes:d.y==='1'})){(G.treatySeen=G.treatySeen||new Set()).add(+d.p);G.popup=null;toast(d.y==='1'?L('Accepted: peace starts when this turn ends.','Принято: мир начнётся в конце хода.'):L('Declined.','Отклонено.'));}break;}
     case 'chgfire':{const m=G.popup;if(m&&m.type==='charge'&&order({t:'bomb',f:m.f,to:m.to,keep:settings.keepFire,cr:m.cr})){G.popup=null;toast(settings.keepFire?L('They will fire every turn until you stop them.','Они будут стрелять каждый ход, пока вы их не остановите.'):L('They will fire once, when this turn ends.','Они выстрелят один раз в конце хода.'));}break;}
-    case 'tgive':case 'tget':G.trade[a==='tgive'?'give':'get']=el.dataset.r;try{localStorage.setItem('jopium-trade',JSON.stringify(G.trade));}catch(e){}break;
+    case 'tgive':case 'tget':G.trade[a==='tgive'?'give':'get']=d.r;try{localStorage.setItem('jopium-trade',JSON.stringify(G.trade));}catch(e){}renderModal();return;
   }
   refresh();
 }
@@ -3509,16 +3757,17 @@ function leviClashes(pid){
 }
 function afterResolve(){
   // the report only pops up when someone's core fell; everything else waits behind the Report button
-  if(G.coreFell&&!G.over)openModal({type:'report'});
+  if(G.coreFell&&!G.over&&settings.autoReport)openModal({type:'report'});
   else if(G.modal&&G.modal.type==='report')G.unread=0;
   refresh();
 }
 $('#endturn').onclick=()=>endTurn(false);
 $('#resign').onclick=()=>{if(!G)return;if(G.tut){tutSkip();return;}if(G.over)showEnd();else if(G.online)resignOnline();else endGame('resigned');};
+document.addEventListener('pointerdown',e=>{const t=$('#top');if(t.classList.contains('open')&&!t.contains(e.target)){t.classList.remove('open');$('#hudbar').setAttribute('aria-expanded',false);}},true);
 $('#hudbar').onclick=()=>{const t=$('#top');t.classList.toggle('open');$('#hudbar').setAttribute('aria-expanded',t.classList.contains('open'));};
 $('#settingsBtn').onclick=()=>{menuFrom='game';showMenu('settings');};
 let last=performance.now();
-setInterval(()=>{const now=performance.now(),dt=(now-last)/1000;last=now;if(!G||G.over||!G.turnTime||G.waiting||(!G.online&&!$('#overlay').hidden))return;G.timeLeft-=dt;if(G.timeLeft<=0)endTurn(true);else renderTime();},250);
+setInterval(()=>{const now=performance.now(),dt=(now-last)/1000;last=now;if(!G||G.over||!G.turnTime||G.waiting||(!G.online&&(!$('#overlay').hidden||pageHidden)))return;G.timeLeft-=dt;if(G.timeLeft<=0)endTurn(true);else renderTime();},250);
 
 /* ---------- online play: connection to the game server ---------- */
 // The server only relays orders between players; every screen runs the match itself (see applyCmd).
@@ -3558,8 +3807,9 @@ const Acc={
   },
   async signIn(){
     const {GoogleAuthProvider,signInWithPopup,signInWithRedirect}=this.m;
+    showMenu('signing');
     try{await signInWithPopup(this.auth,new GoogleAuthProvider());}
-    catch(e){if(/popup-blocked|operation-not-supported/.test(e.code||''))await signInWithRedirect(this.auth,new GoogleAuthProvider());else if(!/popup-closed|cancelled-popup/.test(e.code||''))toast(L("Couldn't sign in. Try again.",'Не удалось войти. Попробуйте ещё раз.'),true);}
+    catch(e){if(/popup-blocked|operation-not-supported/.test(e.code||''))await signInWithRedirect(this.auth,new GoogleAuthProvider());else{if(!/popup-closed|cancelled-popup/.test(e.code||''))toast(L("Couldn't sign in. Try again.",'Не удалось войти. Попробуйте ещё раз.'),true);showMenu('login');}}
   },
   async signOut(){if(this.auth)await this.m.signOut(this.auth);},
   async onUser(u){
@@ -3575,7 +3825,7 @@ const Acc={
     Net.rehello();
     accChanged(fresh||!snap.data().tut);
   },
-  apply(d){profile.name=d.name;profile.pic=d.pic||'';profile.elo=d.elo;profile.games=d.games||0;profile.tut=!!d.tut;saveProfile();if(!G&&ov.dataset.view&&['main','profile','board'].includes(ov.dataset.view))showMenu(ov.dataset.view);},
+  apply(d){profile.name=d.name;profile.pic=d.pic||'';profile.elo=d.elo;profile.games=d.games||0;profile.tut=!!d.tut;profile.ach=Object.assign({},profile.ach||{},d.ach||{});profile.tuts=Object.assign({},profile.tuts||{},d.tuts||{});saveProfile();if(!achHas(9))achUnlock(9,true);if(!G&&ov.dataset.view&&['main','profile','board'].includes(ov.dataset.view))showMenu(ov.dataset.view);},
   // a new account: default picture, nickname player + a free number from 1 to 10000
   async create(uid){
     const {doc,runTransaction,serverTimestamp}=this.m;
@@ -3595,6 +3845,8 @@ const Acc={
       t.set(nr,{uid});t.delete(doc(this.db,'names',old));t.update(doc(this.db,'users',uid),{name});});return '';}
     catch(e){return e.message==='taken'?L('That name is taken. Try another.','Это имя занято. Попробуйте другое.'):L("Couldn't save the name.",'Не удалось сохранить имя.');}
   },
+  async saveTuts(){if(this.state!=='in')return;const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{tuts:profile.tuts||{}});}catch(e){}},
+  async saveAch(){if(this.state!=='in')return;const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{ach:profile.ach});}catch(e){console.warn('Jopium: achievements not saved',e);}},
   async setPic(pic){const {doc,updateDoc}=this.m;await updateDoc(doc(this.db,'users',this.user.uid),{pic});},
   async tutDone(){if(this.state==='in'){const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{tut:true});}catch(e){}}profile.tut=true;saveProfile();},
   // the top 100 by Elo (ties: who got there first), plus your own place when you are lower
@@ -3615,7 +3867,7 @@ function accChanged(needTut){
   if(G)return;
   if(Acc.state==='out'){showMenu('login');return;}
   if(needTut&&typeof startTutorial==='function'){closeOverlay();startTutorial();return;}
-  if(['login','main',''].includes(ov.dataset.view||''))showMenu('main');
+  if(['login','signing','main',''].includes(ov.dataset.view||''))showMenu('main');
 }
 const eloText=()=>profile.games>0?`Elo ${profile.elo}`:L('Play 1 game','Сыграйте 1 игру');
 const Net={
@@ -3737,18 +3989,25 @@ function closeOverlay(){ov.hidden=true;ov.className='';ov.innerHTML='';ov.datase
 function seg(a,v,cur,l){return `<button type="button" data-a="${a}" data-v="${v}" class="${cur?'on':''}">${l}</button>`;}
 function leaveGame(){if(G&&G.online)Net.leaveRoom();G=null;SNAP=null;myCmds=[];['#top','#mapctl','#bottombar','#hint'].forEach(s=>$(s).hidden=true);$('#alarm').classList.remove('on');$('#modal').hidden=true;$('#techscr').hidden=true;}
 function showMenu(view){
-  if(view!=='lobby')lobbyAnim=null;
+  if(view!=='lobby'&&view!=='signing')lobbyAnim=null;
   requestAnimationFrame(()=>fitText(ov));
   ov.hidden=false;ov.className='';ov.dataset.view=view;
   $('#pchipWrap').innerHTML=view==='main'?`<button class="pchip" type="button" data-a="m-profile" aria-label="${L('Profile','Профиль')}">${avatar()}<span class="elo">${eloText()}</span></button>`:'';
   $('#ver').hidden=view!=='main';
-  if(view==='tutlang'){
+  if(view==='tutmenu'){
+    ov.innerHTML=tutMenuHtml();
+  }else if(view==='signing'){
+    ov.innerHTML=`<canvas id="signcv" class="full" aria-hidden="true"></canvas><div class="loadtxt" role="status">${L('Loading','Загрузка')}<i class="ldots"></i></div>`;
+    requestAnimationFrame(()=>startLobbyAnim('#signcv'));
+  }else if(view==='tutlang'){
     ov.innerHTML=`<div class="card"><h1>Tutorial · Обучение</h1><p style="text-align:center;margin:0">Choose your language · Выберите язык</p>
       <div class="mbtns"><button class="btn" type="button" data-a="tut-lang" data-v="en">English</button><button class="btn" type="button" data-a="tut-lang" data-v="ru">Русский</button></div></div>`;
   }else if(view==='login'){
     // first visit (or signed out): Google is the only way in
     ov.innerHTML=`<div class="card"><h1 class="logo">JOPIUM</h1><p style="text-align:center;margin:0">${L('Sign in to play. Your profile, Elo and nickname are saved to your Google account and stay through every update.','Войдите, чтобы играть. Профиль, Elo и никнейм сохраняются в вашем аккаунте Google и не пропадают при обновлениях.')}</p>
       ${Acc.state==='loading'?`<p class="sub" style="text-align:center">${L('Connecting…','Подключение…')}</p>`:''}<div class="mbtns" ${Acc.state==='loading'?'hidden':''}><button class="btn primary gbtn" type="button" data-a="acc-in"><svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/></svg> ${L('Sign in with Google','Войти через Google')}</button></div></div>`;
+  }else if(view==='main'&&!G&&achPopup()){
+    return;
   }else if(view==='main'){
     ov.innerHTML=`<div class="card"><h1 class="logo">JOPIUM</h1>
       <div class="mbtns">
@@ -3758,14 +4017,15 @@ function showMenu(view){
         <div class="mrow"><button class="btn" type="button" data-a="m-settings">${L('Settings','Настройки')}</button><button class="btn danger" type="button" data-a="m-close">${L('Quit','Выйти')}</button></div>
       </div></div>`;
   }else if(view==='profile'){
-    ov.innerHTML=`<div class="card"><h1>${L('Profile','Профиль')}</h1>
+    ov.innerHTML=`<div class="card"><button class="x" type="button" data-a="m-main" aria-label="${L('Close','Закрыть')}">✕</button><h1>${L('Profile','Профиль')}</h1>
       <button type="button" class="av avbig" data-a="m-pic" aria-label="${L('Choose a profile picture','Выбрать фото профиля')}" ${profile.pic?`style="background-image:url('${profile.pic}')"`:''}>${profile.pic?'':AV_EMPTY}</button>
       <p class="sub" style="margin:0;text-align:center">${L('Tap the picture to choose an image.','Нажмите на фото, чтобы выбрать изображение.')}${profile.pic?` <button type="button" class="btn small quiet" data-a="m-picdel">${L('Remove','Убрать')}</button>`:''}</p>
       <input type="file" id="picIn" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
-      <div class="field"><label class="lab" for="nameIn">${L('Username','Имя игрока')}</label><div class="opts" style="flex-wrap:nowrap"><input class="txt" id="nameIn" maxlength="16" value="${esc(profile.name)}" autocomplete="off" spellcheck="false">${Acc.state==='in'?`<button class="btn small" type="button" data-a="acc-name">${L('Save','Сохранить')}</button>`:''}</div>${nameMsg?`<p class="sub ${nameMsg.ok?'good':'bad'}" style="margin:0">${esc(nameMsg.t)}</p>`:''}</div>
+      <div class="field"><label class="lab" for="nameIn">${L('Username','Имя игрока')}</label><div class="opts" style="flex-wrap:nowrap"><input class="txt" id="nameIn" style="min-width:0;flex:1" maxlength="16" value="${esc(profile.name)}" autocomplete="off" spellcheck="false">${Acc.state==='in'?`<button class="btn small" type="button" data-a="acc-name" style="flex:none;white-space:nowrap">${L('Save','Сохранить')}</button>`:''}</div>${nameMsg?`<p class="sub ${nameMsg.ok?'good':'bad'}" style="margin:0">${esc(nameMsg.t)}</p>`:''}</div>
       <div class="field"><div class="lab">Elo<b>${profile.games>0?profile.elo:L('Play 1 game','Сыграйте 1 игру')}</b></div></div>
       ${Acc.state==='guest'?`<p class="sub" style="margin:0">${L('Guest profile: it stays on this device. Accounts, Elo and the leaderboard are in the full game.','Гостевой профиль хранится на этом устройстве. Аккаунты, Elo и таблица лидеров — в полной версии игры.')}</p>`:''}
-      <div class="opts"><button class="btn primary" type="button" data-a="m-main">${L('Back','Назад')}</button>${Acc.state==='in'?`<button class="btn quiet" type="button" data-a="acc-out">${L('Sign out','Выйти из аккаунта')}</button>`:''}</div></div>`;
+      ${achHtml()}
+      ${Acc.state==='in'?`<div class="opts" style="justify-content:center"><button class="btn danger" type="button" data-a="acc-out">${L('Sign out','Выйти из аккаунта')}</button></div>`:''}</div>`;
   }else if(view==='play'){
     ov.innerHTML=`<div class="card"><h1>${L('Play','Играть')}</h1>
       <div class="mbtns"><button class="btn" type="button" data-a="m-host">${L('Host lobby','Создать лобби')}</button><button class="btn" type="button" data-a="m-join">${L('Join lobby','Найти лобби')}</button></div>
@@ -3816,8 +4076,9 @@ function showMenu(view){
       <div class="field"><div class="lab"><label for="volM">${L('Music volume','Громкость музыки')}</label><b id="volMV">${m}%</b></div><input type="range" id="volM" min="0" max="100" value="${m}"></div>
       <div class="field"><div class="lab"><label for="volS">${L('Sound volume','Громкость звуков')}</label><b id="volSV">${s}%</b></div><input type="range" id="volS" min="0" max="100" value="${s}"></div>
       <div class="field"><div class="lab"><span>${L('Continuous artillery fire','Непрерывный огонь артиллерии')}</span><button type="button" class="switch ${settings.keepFire?'on':''}" role="switch" aria-checked="${settings.keepFire}" data-a="s-fire" aria-label="${L('Continuous artillery fire','Непрерывный огонь артиллерии')}"><i></i></button></div><p class="sub" style="margin:0">${L('Catapults and ballistas keep firing every turn until you stop them.','Катапульты и баллисты стреляют каждый ход, пока вы их не остановите.')}</p></div>
+      <div class="field"><div class="lab"><span>${L('Show important reports','Показывать важные отчёты')}</span><button type="button" class="switch ${settings.autoReport?'on':''}" role="switch" aria-checked="${settings.autoReport}" data-a="s-rep" aria-label="${L('Show important reports','Показывать важные отчёты')}"><i></i></button></div><p class="sub" style="margin:0">${L('Open the turn report by itself when something important happens, like losing your core.','Открывать отчёт за ход самостоятельно, когда происходит что-то важное, например падение ядра.')}</p></div>
       <div class="field"><div class="lab"><span>${L('Infinite queues','Бесконечные очереди')}</span><button type="button" class="switch ${settings.loopQ?'on':''}" role="switch" aria-checked="${settings.loopQ}" data-a="s-loop" aria-label="${L('Infinite queues','Бесконечные очереди')}"><i></i></button></div><p class="sub" style="margin:0">${L('Barracks and upgrade stations repeat the last drone, one a turn, whenever you can pay for it.','Казармы и станции улучшений повторяют последний дрон, по одному за ход, когда хватает ресурсов.')}</p></div>
-      ${menuFrom==='game'?'':`<div class="field"><button class="btn" type="button" data-a="s-tut">${L('Replay tutorial','Пройти обучение заново')}</button></div>`}
+      ${menuFrom==='game'?'':`<div class="field"><button class="btn" type="button" data-a="s-tut">${L('Tutorials','Обучение')}</button></div>`}
       <div class="opts"><button class="btn primary" type="button" data-a="m-back">${menuFrom==='game'?L('Back to game','Вернуться в игру'):L('Back','Назад')}</button></div></div>`;
   }else if(view==='closed'){
     ov.innerHTML=`<div class="card"><h1>${L('Jopium is closed','Jopium закрыт')}</h1><p>${L('The music has stopped. You can close this browser tab now.','Музыка остановлена. Теперь можно закрыть эту вкладку.')}</p><div class="opts"><button class="btn" type="button" data-a="m-reopen">${L('Back to main menu','В главное меню')}</button></div></div>`;
@@ -3829,38 +4090,33 @@ const touchOnly=()=>window.matchMedia&&matchMedia('(hover: none) and (pointer: c
 const setTabs=()=>touchOnly()?'':`<div class="seg tabs" role="tablist">${[['general','General','Общие'],['keys','Keyboard','Клавиатура']].map(([v,en,ru])=>`<button type="button" role="tab" aria-selected="${setTab===v}" class="${setTab===v?'on':''}" data-a="set-tab" data-v="${v}">${L(en,ru)}</button>`).join('')}</div>`;
 const hostOpts={name:'',mode:'warfare',per:20,opp:3,timer:45};
 const keepLobbyName=()=>{const el=$('#lobbyIn');if(el)hostOpts.name=el.value.trim();};
-// waiting-room animation (Draft 10, option B): a rocket climbing through streaking stars, tilting and swaying side to side
+// the calm rocket (Draft 11): slow drifting stars, one gentle sway every 6 s, a soft flame.
+// Used while waiting in a lobby and while signing in. On phones it flies higher so it never covers the text.
 let lobbyAnim=null;
-function startLobbyAnim(){
-  const cv=$('#lobbycv');if(!cv)return;
-  const d=Math.min(1.5,window.devicePixelRatio||1),w=cv.clientWidth,h=cv.clientHeight;cv.width=w*d;cv.height=h*d;
+function startLobbyAnim(id){
+  const cv=$(id||'#lobbycv');if(!cv)return;
+  const d=Math.min(2,window.devicePixelRatio||1),w=cv.clientWidth,h=cv.clientHeight;cv.width=w*d;cv.height=h*d;
   const x=cv.getContext('2d');x.setTransform(d,0,0,d,0,0);
-  const st=Array.from({length:160},()=>({x:Math.random()*w,y:Math.random()*h,l:6+Math.random()*22,v:.6+Math.random()*1.4,a:.2+Math.random()*.6}));
+  const st=Array.from({length:Math.round(w*h/2600)},()=>({x:Math.random()*w,y:Math.random()*h,l:3+Math.random()*9,v:.25+Math.random()*.6,a:.15+Math.random()*.5}));
+  const ry=w<600||h>w?.26:.36;
   const me={};lobbyAnim=me;let last=performance.now();
   const frame=now=>{
     if(lobbyAnim!==me||!document.body.contains(cv))return;
     const dt=Math.min(.05,(now-last)/1000);last=now;
     x.fillStyle='#060911';x.fillRect(0,0,w,h);
-    // stars stream downwards, so the rocket reads as flying up
-    for(const p of st){p.y+=p.v*dt*420;if(p.y-p.l>h){p.y=-Math.random()*40;p.x=Math.random()*w;}
-      x.fillStyle=`rgba(221,230,245,${p.a})`;x.fillRect(p.x,p.y-p.l,1.5,p.l);}
-    // weave: sway left and right and lean into the turn
-    const t=now/1000,ph=t*2*Math.PI/2.4,sway=Math.sin(ph),k=Math.max(1,Math.min(w,h)/220);
-    const cx=w/2+sway*14*k,cy=h*.42-Math.abs(Math.cos(ph))*5*k,tilt=sway*.12;
+    for(const p of st){p.y+=p.v*dt*60;if(p.y-p.l>h){p.y=-4;p.x=Math.random()*w;}x.fillStyle=`rgba(221,230,245,${p.a})`;x.fillRect(p.x,p.y-p.l,1.2,p.l);}
+    const t=now/1000,ph=t*2*Math.PI/6,sway=Math.sin(ph),k=Math.max(.8,Math.min(w,h)/260);
+    const cx=w/2+sway*10*k,cy=h*ry+Math.sin(t*2*Math.PI/4)*3*k,tilt=Math.cos(ph)*.07;
     x.save();x.translate(cx,cy);x.rotate(tilt);x.scale(k,k);
-    // flame: flickers in length, no glow bubble
-    const fl=1+.45*(.5+.5*Math.sin(now/38))*(.7+.3*Math.random());
-    x.beginPath();x.moveTo(-7,28);x.lineTo(0,28+20*fl);x.lineTo(7,28);x.closePath();x.fillStyle='#ffb547';x.fill();
-    x.beginPath();x.moveTo(-4,28);x.lineTo(0,28+11*fl);x.lineTo(4,28);x.closePath();x.fillStyle='#fff6dd';x.fill();
-    // fins, body, window
+    const fl=1+.18*Math.sin(now/180)+.06*Math.sin(now/67);
+    x.globalAlpha=.9;x.beginPath();x.moveTo(-6,28);x.lineTo(0,28+17*fl);x.lineTo(6,28);x.closePath();x.fillStyle='#ffb547';x.fill();
+    x.beginPath();x.moveTo(-3.5,28);x.lineTo(0,28+9*fl);x.lineTo(3.5,28);x.closePath();x.fillStyle='#fff6dd';x.fill();x.globalAlpha=1;
     x.fillStyle='#4da3ff';
     x.beginPath();x.moveTo(-9,10);x.lineTo(-17,32);x.lineTo(-9,27);x.closePath();x.fill();
     x.beginPath();x.moveTo(9,10);x.lineTo(17,32);x.lineTo(9,27);x.closePath();x.fill();
-    x.beginPath();x.moveTo(0,-34);x.bezierCurveTo(11,-20,11,6,9,28);x.lineTo(-9,28);x.bezierCurveTo(-11,6,-11,-20,0,-34);x.closePath();
-    x.fillStyle='#dde6f5';x.fill();
+    x.beginPath();x.moveTo(0,-34);x.bezierCurveTo(11,-20,11,6,9,28);x.lineTo(-9,28);x.bezierCurveTo(-11,6,-11,-20,0,-34);x.closePath();x.fillStyle='#dde6f5';x.fill();
     x.beginPath();x.arc(0,-8,5,0,Math.PI*2);x.fillStyle='#4da3ff';x.fill();x.strokeStyle='#0b1020';x.lineWidth=1.2;x.stroke();
-    x.restore();
-    requestAnimationFrame(frame);
+    x.restore();requestAnimationFrame(frame);
   };
   requestAnimationFrame(frame);
 }
@@ -3898,7 +4154,7 @@ function animateElo(){
   const bar=box.querySelector('.ebar i');if(bar)bar.animate([{width:'50%'},{width:up?'62%':'38%'}],{duration:1400,delay:600,easing:'ease-out',fill:'forwards'});
 }
 function endGame(result){
-  if(G&&G.tut){if(result==='won'&&TUT){TUT.i=TSTEPS.length;tutFinish();}return;}
+  if(G&&G.tut){if(result==='won'&&TUT){tutFinish();}return;}
   G.over=true;G.result=result;G.moveMode=null;
   // after a defeat (or resigning) the whole map opens up and you can keep pressing Next turn to watch the AIs
   // the winner also gets the whole map, with no fog, to look around
@@ -3910,8 +4166,8 @@ function endGame(result){
 function showEnd(){
   const r=G.result;
   const gw=G.winner!=null&&G.mode==='conquest'&&P(G.winner).gold>=GOLD_WIN?P(G.winner):null;
-  const title=r==='won'?(gw?L('Jopium secured','Жопиум добыто'):L('Belt secured','Пояс ваш')):r==='lost'?(gw?L(`${pShort(gw)} wins`,`Победа: ${pShort(gw)}`):L('Core lost','Ядро потеряно')):L('You resigned','Вы сдались');
-  const text=r==='won'?(gw?L(`You mined ${gw.gold} jopium on turn ${G.turn-1}.`,`Вы добыли ${gw.gold} жопиума на ходу ${G.turn-1}.`):L(`Every rival has been shut down. You control the belt after ${G.turn-1} turns.`,`Все соперники отключены. За ${cnt(G.turn-1,'turn')} вы взяли пояс под контроль.`)):r==='lost'?(gw?L(`${pName(gw)} reached ${GOLD_WIN} jopium on turn ${G.turn-1}.`,`${pName(gw)} набрал ${GOLD_WIN} жопиума на ходу ${G.turn-1}.`):L(`Your core was destroyed on turn ${G.turn-1}.`,`Ваше ядро уничтожено на ходу ${G.turn-1}.`)):L(`You left the match on turn ${G.turn}.`,`Вы покинули матч на ходу ${G.turn}.`);
+  const title=r==='draw'?L('Stalemate','Пат'):r==='won'?(gw?L('Jopium secured','Жопиум добыто'):L('Belt secured','Пояс ваш')):r==='lost'?(gw?L(`${pShort(gw)} wins`,`Победа: ${pShort(gw)}`):L('Core lost','Ядро потеряно')):L('You resigned','Вы сдались');
+  const text=r==='draw'?L('Turn 1000 was reached and nobody won. The match is a draw.','Достигнут 1000-й ход, никто не победил. Ничья.'):r==='won'?(gw?L(`You mined ${gw.gold} jopium on turn ${G.turn-1}.`,`Вы добыли ${gw.gold} жопиума на ходу ${G.turn-1}.`):L(`Every rival has been shut down. You control the belt after ${G.turn-1} turns.`,`Все соперники отключены. За ${cnt(G.turn-1,'turn')} вы взяли пояс под контроль.`)):r==='lost'?(gw?L(`${pName(gw)} reached ${GOLD_WIN} jopium on turn ${G.turn-1}.`,`${pName(gw)} набрал ${GOLD_WIN} жопиума на ходу ${G.turn-1}.`):L(`Your core was destroyed on turn ${G.turn-1}.`,`Ваше ядро уничтожено на ходу ${G.turn-1}.`)):L(`You left the match on turn ${G.turn}.`,`Вы покинули матч на ходу ${G.turn}.`);
   ov.hidden=false;ov.className='dim';ov.dataset.view='end';
   requestAnimationFrame(()=>fitText(ov));
   ov.innerHTML=`<div class="card"><button class="x" type="button" data-a="e-close" aria-label="${L('Close and watch the map','Закрыть и смотреть карту')}">✕</button><h1>${title}</h1><p>${text}</p>${G.online?eloRoll():''}<div class="opts">${G.online?'':`<button class="btn primary" type="button" data-a="e-next">${L('Next game','Следующая игра')}</button>`}${r==='won'?`<button class="btn" type="button" data-a="e-close">${L('Observe the map','Осмотреть карту')}</button>`:''}${r!=='won'&&G.spectate&&!gw&&G.players.filter(p=>p.alive).length>1?`<button class="btn" type="button" data-a="e-close">${G.online?L('Keep watching','Смотреть дальше'):L('Watch the AIs','Смотреть за ИИ')}</button>`:''}<button class="btn" type="button" data-a="e-menu">${L('Back to menu','В меню')}</button></div></div>`;
@@ -3925,7 +4181,9 @@ function menuAct(a,d){
     case 'm-join':LOBBIES=null;netError='';showMenu('join');Net.send({t:'list'});break;
     case 'm-board':BOARD=null;showMenu('board');if(Acc.state==='in'||Acc.state==='out')Acc.board().then(b=>{BOARD=b;if(ov.dataset.view==='board')showMenu('board');}).catch(e=>{console.warn(e);BOARD={err:L("Couldn't load the leaderboard.",'Не удалось загрузить таблицу.')};if(ov.dataset.view==='board')showMenu('board');});break;
     case 'acc-in':Acc.signIn();break;
-    case 'tut-lang':settings.lang=d.v;saveSettings();beginTutorial();break;
+    case 'tut-lang':settings.lang=d.v;saveSettings();beginTutorial('starter');break;
+    case 'tut-go':beginTutorial(d.v);break;
+    case 'tut-list':leaveGame();showMenu('tutmenu');break;
     case 'tut-menu':leaveGame();showMenu('main');break;
     case 'acc-out':Acc.signOut();break;
     case 'acc-name':{const v=($('#nameIn')||{}).value||'';Acc.rename(v.trim()).then(err=>{nameMsg=err?{t:err,ok:false}:{t:L('Saved.','Сохранено.'),ok:true};showMenu('profile');});break;}
@@ -3954,8 +4212,9 @@ function menuAct(a,d){
     case 's-timer':setupOpts.timer=+d.v;showMenu('setup');break;
     case 's-mode':setupOpts.mode=d.v;showMenu('setup');break;
     case 's-loop':settings.loopQ=!settings.loopQ;saveSettings();showMenu('settings');if(G&&P(ME).alive)order({t:'loopq',v:settings.loopQ});break;
+    case 's-rep':settings.autoReport=!settings.autoReport;saveSettings();showMenu('settings');break;
     case 's-fire':settings.keepFire=!settings.keepFire;saveSettings();showMenu('settings');break;
-    case 's-tut':startTutorial();break;
+    case 's-tut':showMenu('tutmenu');break;
     case 'set-tab':setTab=d.v;keyWait=null;showMenu('settings');break;
     case 'k-chg':keyWait={a:d.k,i:+d.i};showMenu('settings');break;
     case 'k-reset':settings.keys=defaultKeys();keyWait=null;saveSettings();showMenu('settings');toast(L('Keys reset to default.','Клавиши сброшены.'));break;
@@ -3969,7 +4228,7 @@ function menuAct(a,d){
 }
 
 $('#ver').textContent=GAME_VERSION;
-resize();showMenu(Acc.state==='guest'?(profile.tut?'main':'tutlang'):'login');Acc.init();if(document.fonts)document.fonts.ready.then(()=>{fitText(ov);if(G)refresh();});requestAnimationFrame(draw);
+resize();showMenu(Acc.state==='guest'?(profile.tut?'main':'tutlang'):'signing');Acc.init();if(document.fonts)document.fonts.ready.then(()=>{fitText(ov);if(G)refresh();});requestAnimationFrame(draw);
 </script>
 
 </body></html>

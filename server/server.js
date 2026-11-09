@@ -22,7 +22,7 @@ try {
   } else console.log('accounts: off (no FIREBASE_SERVICE_ACCOUNT, games are not rated)');
 } catch (e) { console.error('accounts: could not start:', e.message); admin = null; fdb = null; }
 const ELO_STEP = 20;
-// winner +20, every other player -20 (never below 0). Ties on the leaderboard go to whoever reached that Elo first,
+// winner +20, every other player -20 (never below 0). winSeat -1: nobody won (everyone -20); 'draw': stalemate, everyone +10. Ties on the leaderboard go to whoever reached that Elo first,
 // so the sort key is elo, then the earlier time: score = elo * 1e10 + (1e10 - seconds)
 async function rateMatch(r, winSeat, why) {
   if (r.rated) return; r.rated = true;
@@ -39,13 +39,13 @@ async function rateMatch(r, winSeat, why) {
       const now = Date.now(), sec = Math.floor(now / 1000);
       docs.forEach((d, i) => {
         const cur = d.exists ? d.data() : {}, before = Number.isFinite(cur.elo) ? cur.elo : 1000, games = (cur.games || 0) + 1;
-        const after = Math.max(0, before + (i === winSeat ? ELO_STEP : -ELO_STEP));
+        const after = Math.max(0, before + (winSeat === 'draw' ? 10 : i === winSeat ? ELO_STEP : -ELO_STEP));
         t.set(refs[i], { elo: after, games, score: after * 1e10 + (1e10 - sec), eloAt: admin.firestore.Timestamp.fromMillis(now) }, { merge: true });
         out.push({ seat: i, before, after, games, first: games === 1 });
       });
     });
   } catch (e) { console.error(`room ${r.code}: Elo update failed:`, e.message); return; }
-  console.log(`room ${r.code}: rated (${why}), winner seat ${winSeat}`);
+  console.log(`room ${r.code}: rated (${why}), result ${winSeat}`);
   for (const x of out) { const p = r.players.find(q => q.seat === x.seat && q.room === r); if (p) send(p, { t: 'elo', ...x }); }
 }
 // every screen still in the match reports the winner it saw; a winner is accepted when they all agree
@@ -141,6 +141,10 @@ function progress(r) {
 }
 function maybeFinish(r) {
   if (r.state !== 'play' || ![...r.active].every(s => r.ended.has(s))) return;
+  // everyone still playing resigned on the same turn: nobody wins, everyone loses Elo
+  if (!r.rated && !r.void && r.active.size && [...r.active].every(s => (r.cmds[s] || []).some(c => c.t === 'resign'))) rateMatch(r, -1, 'everyone resigned');
+  // turn 1000 is a stalemate: everyone +10
+  if (!r.rated && !r.void && r.turn >= 999) rateMatch(r, 'draw', 'stalemate at turn 1000');
   const m = { t: 'turn', turn: r.turn, cmds: r.cmds, dropped: r.dropped };
   for (const p of r.players) if (p.room === r) send(p, m);
   r.turn++; r.cmds = {}; r.ended = new Set(); r.dropped = [];
