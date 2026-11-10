@@ -11,7 +11,7 @@ Current version: **0.2.2 (Draft 12)**. See [Draft 12.md](Draft%2012.md) for ever
 
 ## Play
 
-- **Online and with an account:** the game's own site, `https://jopium-server.onrender.com`, or its itch.io page.
+- **Online and with an account:** the game's own site, `https://colonio-server.onrender.com`, or its itch.io page.
 - Sign in with Google the first time. Your nickname, picture and Elo are kept in your account, so they stay through every update and on every device.
 - New players start with a short tutorial. **Settings → Tutorials** has it and small lessons on trade, every war drone, the spy, engineer and charger, and three stations.
 - Your **Profile** shows nine achievements, earned in online matches.

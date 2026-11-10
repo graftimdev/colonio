@@ -1,7 +1,7 @@
-# Render "Blueprint": lets Render set up the Jopium server from this folder in one click.
+# Render "Blueprint": lets Render set up the Colonio server from this folder in one click.
 services:
   - type: web
-    name: jopium-server
+    name: colonio-server
     runtime: node
     plan: free
     buildCommand: npm install

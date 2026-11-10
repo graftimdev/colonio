@@ -1,8 +1,8 @@
 {
-  "name": "jopium",
+  "name": "colonio",
   "version": "0.2.2",
   "private": true,
-  "description": "Jopium: online multiplayer server and game files",
+  "description": "Colonio: online multiplayer server and game files",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
