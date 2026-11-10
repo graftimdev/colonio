@@ -1,6 +1,6 @@
 {
   "name": "jopium",
-  "version": "0.1.10",
+  "version": "0.2.2",
   "private": true,
   "description": "Jopium: online multiplayer server and game files",
   "main": "server/server.js",

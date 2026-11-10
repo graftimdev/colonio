@@ -1,0 +1,8 @@
+node_modules/
+dist/
+# your own notes: never uploaded to GitHub
+private/
+# Claude Code launch settings (local only)
+.claude/
+# old files kept on this PC only
+leftovers/

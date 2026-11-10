@@ -1,19 +1,19 @@
-# Jopium
+# Colonio
 
-Jopium is a turn-based strategy game set in an asteroid belt. Everyone gives orders at the same time, then presses **End turn**, and the whole turn plays out at once.
+Colonio is a turn-based strategy game set in an asteroid belt. Everyone gives orders at the same time, then presses **End turn**, and the whole turn plays out at once.
 
 Build up from a single core: claim asteroids, mine iron, copper, silicon and Xenocrystal, research new technology, and build drones. Then win your way:
 
 - **Warfare:** be the last core standing.
-- **Conquest:** be the first to mine 100 jopium.
+- **Conquest:** be the first to mine 100 starium.
 
-Current version: **0.2.1 (Draft 11)**. See [Draft 11.md](Draft%2011.md) for everything new, and [Draft 10.md](Draft%2010.md) for the version before.
+Current version: **0.2.2 (Draft 12)**. See [Draft 12.md](Draft%2012.md) for everything new, and [Draft 11.md](Draft%2011.md) for the version before.
 
 ## Play
 
 - **Online and with an account:** the game's own site, `https://jopium-server.onrender.com`, or its itch.io page.
 - Sign in with Google the first time. Your nickname, picture and Elo are kept in your account, so they stay through every update and on every device.
-- New players start with a short tutorial. **Settings → Tutorials** has it and small lessons on trade and each war drone.
+- New players start with a short tutorial. **Settings → Tutorials** has it and small lessons on trade, every war drone, the spy, engineer and charger, and three stations.
 - Your **Profile** shows nine achievements, earned in online matches.
 - The free server sleeps when nobody is playing. The first visitor may wait about a minute for it to wake up.
 
@@ -46,7 +46,8 @@ Press and hold the map for a second to select several squadrons with a box and m
 
 - **Squadron:** a group of drones of the same type.
 - **Fleet:** several squadrons that move together.
-- **Jopium (Жопиум):** the rare resource mined on planet centres. It builds leviathans and wins Conquest.
+- **Drones:** every unit: workers, war drones, utility drones and rovers.
+- **Starium (Стариум):** the rare resource mined on planet centres. It builds leviathans and wins Conquest.
 
 ## Languages
 
