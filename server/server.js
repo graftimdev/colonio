@@ -1,9 +1,10 @@
-// Jopium game server.
+// Colonio game server.
 // It hosts lobbies and relays each turn's orders between players. It does not run the game itself:
 // every player's browser runs the same match from the same seed and the same orders (lockstep).
 // It also serves the game files from ../client, so one deployment is both the website and the server.
 'use strict';
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -59,6 +60,7 @@ function onResult(r, c, winner) {
 }
 
 const PORT = +process.env.PORT || 8080;
+const FIREBASE_HOST = 'jopium-243b1.firebaseapp.com';   // the Firebase project's own address (players never see it)
 const CLIENT_DIR = path.join(__dirname, '..', 'client');
 const GRACE_S = 15;            // extra seconds after the turn timer before the server ends a turn for slow players
 const MAX_ORDERS = 400;        // per player per turn
@@ -69,6 +71,14 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.mp3': 'audio/mpeg', '.js'
 const server = http.createServer((req, res) => {
   const url = decodeURIComponent((req.url || '/').split('?')[0]);
   if (url === '/health') { res.writeHead(200, { 'content-type': 'text/plain' }); return res.end('ok'); }
+  // Google sign-in runs through this site (/__/auth/...), so the Google screen names this site instead of the Firebase project.
+  // Every /__/ request is passed on unchanged to Firebase's own sign-in pages.
+  if (url.startsWith('/__/')) {
+    const headers = { ...req.headers, host: FIREBASE_HOST }; delete headers['accept-encoding'];
+    const up = https.request({ host: FIREBASE_HOST, path: req.url, method: req.method, headers }, r => { res.writeHead(r.statusCode || 502, r.headers); r.pipe(res); });
+    up.on('error', () => { if (!res.headersSent) res.writeHead(502); res.end(); });
+    return req.pipe(up);
+  }
   const file = path.normalize(path.join(CLIENT_DIR, url === '/' ? 'index.html' : url));
   if (!file.startsWith(CLIENT_DIR + path.sep)) { res.writeHead(403); return res.end(); }
   fs.stat(file, (err, st) => {
@@ -180,7 +190,7 @@ wss.on('connection', ws => {
         who(m.who);
         const t = rooms.get(clean(m.code, 4).toUpperCase());
         if (!t || t.state !== 'lobby') return send(c, { t: 'error', msg: 'That lobby is not open any more.' });
-        if (t.ver !== c.ver) return send(c, { t: 'error', msg: `That lobby runs a different version of Jopium (${t.ver}). Refresh the page to update.` });
+        if (t.ver !== c.ver) return send(c, { t: 'error', msg: `That lobby runs a different version of Colonio (${t.ver}). Refresh the page to update.` });
         if (t === r) return;
         if (t.players.length >= t.need) return send(c, { t: 'error', msg: 'That lobby is full.' });
         leaveRoom(c); t.players.push(c); c.room = t; sendLobby(t);   // the host starts the match (never automatic)
@@ -222,4 +232,4 @@ setInterval(() => {
 }, 30000);
 wss.on('connection', ws => { ws.isAlive = true; ws.on('pong', () => { ws.isAlive = true; }); });
 
-server.listen(PORT, () => console.log(`Jopium server on http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`Colonio server on http://localhost:${PORT}`));

@@ -18,7 +18,7 @@
 #tutfx i{position:absolute;width:6px;height:6px;margin:-3px;border-radius:50%;background:var(--volt);opacity:calc(1 - var(--k,0));translate:calc(cos(var(--a)) * var(--k,0) * 70px) calc(sin(var(--a)) * var(--k,0) * 56px)}
 #tutfx i:nth-of-type(1){--a:0deg}#tutfx i:nth-of-type(2){--a:45deg}#tutfx i:nth-of-type(3){--a:90deg}#tutfx i:nth-of-type(4){--a:135deg}#tutfx i:nth-of-type(5){--a:180deg}#tutfx i:nth-of-type(6){--a:225deg}#tutfx i:nth-of-type(7){--a:270deg}#tutfx i:nth-of-type(8){--a:315deg}
 .gbtn{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff!important;background:#fff1!important;border-color:var(--accent)!important}.lblist{max-height:52vh;overflow:auto;display:grid;gap:2px}.lbrow.me{outline:1px solid var(--accent);border-radius:8px}.lbgap{text-align:center;color:var(--muted)}
-.eloroll{display:grid;justify-items:center;gap:8px;font-family:'IBM Plex Mono',monospace}.eloroll .dg{display:inline-block;width:1.1em;height:1.3em;overflow:hidden;background:var(--panel2);border-radius:5px;margin:0 2px;font-size:30px;line-height:1.3em;text-align:center;vertical-align:top}.eloroll .rl{display:flex;flex-direction:column}.eloroll .rl span{height:1.3em}.ebar{width:150px;height:6px;background:var(--panel2);border-radius:3px;overflow:hidden}.ebar i{display:block;height:100%;width:50%}.ebar i.up{background:var(--good)}.ebar i.down{background:var(--bad)}
+.eloroll{display:grid;justify-items:center;gap:8px;font-family:'IBM Plex Mono',monospace}.eloroll .dg{display:inline-block;width:1.1em;height:1.3em;overflow:hidden;background:var(--panel2);border-radius:5px;margin:0 2px;font-size:30px;line-height:1.3em;text-align:center;vertical-align:top}.eloroll .edigs{display:flex;justify-content:center}.eloroll .rl{display:flex;flex-direction:column}.eloroll .rl span{height:1.3em}.ebar{width:150px;height:6px;background:var(--panel2);border-radius:3px;overflow:hidden}.ebar i{display:block;height:100%;width:50%}.ebar i.up{background:var(--good)}.ebar i.down{background:var(--bad)}
 .tabs{margin:0 auto 4px}.keys{display:grid;gap:6px;max-height:52vh;overflow:auto}.krow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.kk{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.kcap{min-width:34px;text-align:center;padding:3px 8px;border:1px solid var(--line);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:12px}.kcap.wait{border-color:var(--warn);color:var(--warn)}
 #signcv.full{position:fixed;inset:0;width:100%;height:100%;z-index:0}.loadtxt{position:fixed;left:0;right:0;bottom:9%;text-align:center;font:600 13px var(--f-mono,monospace);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);z-index:1}.ldots::after{content:'';animation:ldots 2.4s steps(4) infinite}@keyframes ldots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
 .achgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.achtile{border:1px solid var(--line);border-radius:10px;padding:8px 6px;display:grid;justify-items:center;gap:5px;text-align:center;font-size:12px}.achtile.done{border-color:var(--accent);background:rgba(77,163,255,.12)}.achic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 13px var(--f-mono,monospace);border:2px solid var(--accent);color:var(--accent)}.achic.done{background:var(--accent);color:#04101f}.achic.lock{border-color:#33415e;color:#5b6a88}.achbar{width:100%;height:6px;border-radius:3px;background:var(--panel2);overflow:hidden;border:1px solid var(--line)}.achbar i{display:block;height:100%;background:var(--accent)}
@@ -30,10 +30,33 @@ h2 .lnk{font:inherit;color:inherit;text-decoration:underline dotted;text-underli
 #unlcv{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block}
 .lconf{display:grid;gap:8px;padding:12px;border:1px solid var(--accent);border-radius:12px;background:rgba(12,17,32,.92);max-width:420px;margin:0 auto}
 .tpick{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center;flex:1}.tpick .btn{width:38px;height:34px;display:grid;place-items:center;padding:0}.trow{display:flex;align-items:center;gap:10px;margin:4px 0}.trow .tl{width:56px}.trow .tn2{width:34px;text-align:right}.tpick .btn.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+
+/* Draft 12 */
+.h2row{display:flex;align-items:center;gap:10px;padding-right:38px;flex-wrap:wrap}.h2row h2{margin:0}
+.ftab{margin-left:auto;display:inline-flex;align-items:center;gap:4px;font:600 12px var(--f-body);color:var(--volt);border:1px solid rgba(255,216,77,.55);background:rgba(255,216,77,.08);border-radius:99px;padding:3px 10px;cursor:pointer;white-space:nowrap}.ftab:hover{background:rgba(255,216,77,.16)}
+.dchip{position:relative;cursor:pointer}.dchip .dx{display:none;position:absolute;inset:0;border:0;border-radius:7px;background:rgba(255,93,108,.88);color:#fff;font:700 13px var(--f-body);cursor:pointer;place-items:center}
+@media (hover:hover){.dchip:hover .dx{display:grid}}.dchip.show .dx{display:grid}
+.sqcard{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:6px;background:var(--panel2)}.sqhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.sqhead img{width:22px;height:22px;flex:none}.sqhead .acts{margin-left:auto}
+.minichips{display:flex;gap:4px;flex-wrap:wrap}.minichips i{font-style:normal;font:500 11px var(--f-mono);border:1px solid var(--line);border-radius:6px;padding:1px 5px}.minichips i.low{border-color:var(--warn);color:var(--warn)}
+.sumline{display:flex;flex-wrap:wrap;gap:4px 14px;font:500 12.5px var(--f-mono);color:var(--muted)}.sumline b{color:var(--fg);font-weight:500}
+.ecards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ecard{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:3px;background:var(--panel2);position:relative;overflow:hidden;text-align:left;color:var(--fg);font:inherit}.ecard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c)}
+.ecard .nm{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}.ecard .v{font:600 20px var(--f-mono);line-height:1.1}.ecard .d{font:500 11.5px var(--f-mono)}button.ecard{cursor:pointer}
+.energy{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel2);display:grid;gap:6px}.energy .top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.energy .big{font:600 24px var(--f-mono)}
+.bar2{height:8px;border-radius:4px;background:#0a0f1c;border:1px solid var(--line);overflow:hidden;display:flex}.bar2 i{display:block;height:100%}
+.space{display:grid;gap:5px}.space .lab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.refund{display:flex;gap:8px;flex-wrap:wrap}.refund span{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:5px 10px;font:600 14px var(--f-mono);background:var(--panel2)}
+.warnbox{border:1px solid var(--warn);background:rgba(255,181,71,.08);color:var(--warn);border-radius:8px;padding:8px 10px;font-size:13px}
+@media (max-width:420px){.ecards{grid-template-columns:repeat(2,1fr)}}
+
+/* Draft 12 tutorial: text box at the bottom (or top) edge, never over the map's middle */
+#tutbub{position:fixed!important;left:0!important;right:0!important;margin:0 auto;width:fit-content;top:auto;bottom:calc(78px + env(safe-area-inset-bottom,0px));max-width:min(520px,calc(100vw - 32px))!important;padding:10px 44px 10px 14px!important}
+#tutbub.top{top:calc(58px + env(safe-area-inset-top,0px));bottom:auto}
+#tutbub .tutx{position:absolute;right:8px;top:8px;width:26px;height:26px;border-radius:6px;border:1px solid var(--line);background:none;color:var(--fg);font-size:13px;line-height:1;padding:0;cursor:pointer}
+#tutcv{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
 </style></head><body>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jopium</title>
+<title>Colonio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -245,7 +268,7 @@ input.txt:focus{border-color:var(--accent);outline:none}
       <button id="hudbar" type="button" aria-expanded="false" aria-controls="hudmore" aria-label="Energy and resources; tap for the game menu">
         <span class="stat" title="Energy"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.5 1 3 9h4l-1 6 7-8.5H9l.5-5.5z" fill="#ffd84d"/></svg><b id="energy">0</b></span>
         <span class="res" id="res"></span>
-        <span class="stat" id="gold" title="Jopium" hidden></span>
+        <span class="stat" id="gold" title="Starium" hidden></span>
         <span class="dot" id="repDot" hidden></span>
       </button>
       <div id="hudmore">
@@ -257,7 +280,7 @@ input.txt:focus{border-color:var(--accent);outline:none}
     </header>
     <div id="tut" hidden aria-live="polite">
       <svg id="tutout" aria-hidden="true"><rect x="2" y="2" pathLength="100"/></svg>
-      <div id="tutbub" role="status"><span class="tt"></span><button class="btn small tutnext" type="button" data-a="tut-next">Next</button></div>
+      <canvas id="tutcv" aria-hidden="true"></canvas><div id="tutbub" role="status"><span class="tt"></span><button class="btn small tutnext" type="button" data-a="tut-next">Next</button><button class="tutx" type="button" data-a="tut-hide" aria-label="Close">✕</button></div>
       <div id="tutfx"><b></b><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <div id="tutbig" hidden></div>
     </div>
@@ -313,21 +336,21 @@ const ST={
   xray:{n:'X-ray turret',r:'Рентген турель',rd:'Наносит 1 урона за раунд. Видит шпионов, уничтожает их на своём астероиде и не даёт пролететь мимо.',cat:'turret',letter:'X',cost:{copper:3,silicon:3},t:2,hp:1,dmg:1,tech:'xray',d:'Deals 1 damage per round. Sees spies, destroys them on its asteroid and stops them flying past.'},
   death:{n:'Death turret',r:'Турель смерти',rd:'Не участвует в боях. Наведите её на астероид в 1 прыжке, чтобы уничтожить там все дроны и станции. Перезарядка 5 ходов.',cat:'turret',letter:'D',cost:{iron:10,copper:8,silicon:6,xeno:3},t:4,hp:5,dmg:0,tech:'death',d:'Does not fight in battles. Aim it at an asteroid 1 hop away to wipe out every drone and station there. Recharges for 5 turns.'},
   kazarm:{n:'Barrack',r:'Казарма',rd:'Строит боевые дроны, по одному за ход, и хранит их до выпуска.',tech:'barrack',cost:{iron:12,copper:5},t:3,d:'Builds war drones, one per turn, and stores them until you launch them.'},
-  upgrade:{n:'Upgrade station',r:'Станция улучшений',rd:'Улучшает боевые дроны на этом астероиде, по одному за раз.',tech:'upgradest',cost:{iron:8,copper:6,silicon:6},t:2,d:'Upgrades war drones parked on this asteroid, one drone at a time.'},
+  upgrade:{n:'Upgrade station',r:'Станция улучшений',rd:'Улучшает пристыкованные дроны, по одному за раз. Роверы тоже: постройте её на участке их планеты.',tech:'upgradest',cost:{iron:8,copper:6,silicon:6},t:2,d:'Upgrades docked drones, one at a time. Rovers too: build it on a section of their planet.'},
   barrier:{n:'Electric barrier',r:'Электробарьер',rd:'Поглощает 10 урона в первом раунде каждого боя на этом астероиде и 10 урона каждого залпа артиллерии.',tech:'barrier',cost:{copper:4,silicon:8,xeno:1},t:2,d:'Absorbs 10 damage in the first round of every battle on this asteroid, and 10 of every catapult volley.'},
   storage:{n:'Resource storage',r:'Склад ресурсов',rd:'+30 общего места для любых ресурсов. Поддерживает отрезанное скопление.',cost:{iron:5},t:1,d:'Adds 30 space shared by any resources. Keeps a cut-off cluster supplied.'},
   estorage:{n:'Energy storage',r:'Накопитель энергии',rd:'+30 к ёмкости энергии. Питает отрезанное скопление.',tech:'estorage',cost:{copper:4,silicon:2},t:1,d:'Adds 30 energy capacity. Powers a cut-off cluster.'},
   generator:{n:'Energy generator',r:'Генератор энергии',rd:'Даёт 5 энергии за ход.',tech:'generator',cost:{copper:8,silicon:4},t:2,d:'Produces 5 energy per turn.'},
   rbarracks:{n:'Rover station',r:'Станция роверов',rd:'Строит роверы, по одному за ход. Только на участке планеты.',tech:'rovers',cost:{iron:10,copper:4},t:3,where:'planet',d:'Builds rovers, one per turn. Only on a planet section.'},
-  borehole:{n:'Borehole',r:'Скважина',rd:'Рабочий в центре планеты добывает 5 жопиума за ход вместо 1. Только в центре планеты.',tech:'borehole',cost:{iron:6,copper:4,silicon:3,xeno:1},t:3,where:'centre',d:'The miner at the planet centre digs 5 jopium per turn instead of 1. Only on a planet centre.'},
+  borehole:{n:'Borehole',r:'Скважина',rd:'Рабочий в центре планеты добывает 5 стариума за ход вместо 1. Только в центре планеты.',tech:'borehole',cost:{iron:6,copper:4,silicon:3,xeno:1},t:3,where:'centre',d:'The miner at the planet centre digs 5 starium per turn instead of 1. Only on a planet centre.'},
   levi:{n:'Leviathan',r:'Левиафан',rd:'Гигантский боевой дрон (50 здоровья, 20 урона, 1 прыжок за ход), которым управляет построивший его рабочий. Не тратит энергию и не занимает место станции. Только в «Сражении».',cost:{},gold:100,t:2,where:'centre',noSlot:true,d:'A giant war drone (50 health, 20 damage, 1 hop a turn) piloted by the worker who builds it. Uses no energy and takes no station slot. Warfare only.'},
 };
 const isTurret=t=>ST[t].cat==='turret';
 const TURRET_PRI=['chain','turret','xray','death'];
 const DR={
-  interceptor:{n:'Interceptor',r:['Перехватчик','Перехватчика','Перехватчиков'],rd:'Быстрый базовый дрон. 2 прыжка за ход.',rud:'Пролетает 3 прыжка, если начинает ход на вашей территории.',cost:{iron:3,copper:2},hp:4,dmg:2,spd:2,up:1,d:'Fast basic drone. 2 hops per turn.',ud:'Moves 3 hops when it starts on your territory.'},
-  bomber:{n:'Bomber',r:['Бомбер','Бомбера','Бомберов'],rd:'Наносит 3 вместо 2, пока его эскадрилья больше любой вражеской.',rud:'Пролетает 2 прыжка за ход.',cost:{iron:3,copper:3},hp:5,dmg:2,spd:1,up:1,d:'Deals 3 instead of 2 while its squadron outnumbers every enemy squadron.',ud:'Moves 2 hops per turn.'},
-  frigate:{n:'Frigate',r:['Фрегат','Фрегата','Фрегатов'],rd:'Прочная передовая. Принимает урон первым.',rud:'+1 временное здоровье каждому фрегату в бою, если эскадрилья не двигалась в этот ход.',cost:{iron:5,silicon:2},hp:8,dmg:1,spd:1,up:2,d:'Tough front line. Takes damage first.',ud:'+1 temporary health per frigate in a battle when the squadron did not move this turn.'},
+  interceptor:{n:'Interceptor',r:['Перехватчик','Перехватчика','Перехватчиков'],rd:'Быстрый дрон для набегов и быстрых ответов. 2 прыжка за ход.',rud:'Пролетает 3 прыжка, если начинает ход на вашей территории.',cost:{iron:3,copper:2},hp:4,dmg:2,spd:2,up:1,d:'Fast drone for raids and quick replies. 2 hops per turn.',ud:'Moves 3 hops when it starts on your territory.'},
+  bomber:{n:'Bomber',r:['Бомбер','Бомбера','Бомберов'],rd:'Базовый боевой дрон: больше дронов — больше урона. Наносит 3 вместо 2, пока его эскадрилья больше любой вражеской.',rud:'Пролетает 2 прыжка за ход.',cost:{iron:3,copper:3},hp:5,dmg:2,spd:1,up:1,d:'The basic war drone: build more, deal more. Deals 3 instead of 2 while its squadron outnumbers every enemy squadron.',ud:'Moves 2 hops per turn.'},
+  frigate:{n:'Frigate',r:['Фрегат','Фрегата','Фрегатов'],rd:'Прочная передовая. Враги бьют его раньше других ваших космических дронов.',rud:'+1 временное здоровье каждому фрегату в бою, если эскадрилья не двигалась в этот ход.',cost:{iron:5,silicon:2},hp:8,dmg:1,spd:1,up:2,d:'Tough front line. Enemies target it before your other space drones.',ud:'+1 temporary health per frigate in a battle when the squadron did not move this turn.'},
   siege:{n:'Siege',r:['Осада','Осады','Осад'],rd:'1 урона дронам, 5 — турелям и ядрам.',rud:'Отключает один вражеский электробарьер.',cost:{iron:5,copper:2,xeno:1},hp:10,dmg:1,sdmg:5,spd:1,up:2,d:'1 damage to drones, 5 to turrets and cores.',ud:'Switches off one enemy electric barrier.'},
   catapult:{n:'Catapult',r:['Катапульта','Катапульты','Катапульт'],rd:'Обстреливает соседний астероид: 2 урона с каждого дрона. Каждый выстрел тратит 1 железо.',rud:'1 железо на 2 выстрела.',cost:{iron:6,copper:4,silicon:3},hp:2,dmg:2,spd:1,up:2,d:'Bombards turrets on a neighbouring asteroid for 2 per drone. Each shot uses 1 iron.',ud:'Uses 1 iron per 2 shots.'},
   repair:{n:'Engineer',r:['Инженер','Инженера','Инженеров'],rd:'Не атакует. Каждый дрон за ход чинит 1 здоровья всем дронам и 2 — всем турелям на своём астероиде.',rud:'Также восстанавливает одну разрушенную станцию за ход.',cost:{copper:2,silicon:3},hp:2,dmg:0,spd:1,up:1,d:'Cannot attack. Each drone repairs 1 health on every drone and 2 on every turret on its asteroid per turn.',ud:'Also fixes one destroyed station on its asteroid per turn.'},
@@ -335,10 +358,10 @@ const DR={
   boomerang:{n:'Boomerang',r:['Бумеранг','Бумеранга','Бумерангов'],rd:'Побеждая, возвращается туда, откуда атаковал. В следующий ход клетка, которую он атаковал, не считается прыжком. Погибая, спасает одного своего (зарядчик, инженер, рабочий, шпион) с поля боя.',rud:'+2 урона в бою, в который он вошёл через бесплатный прыжок.',cost:{iron:3,copper:2,xeno:2},hp:2,dmg:1,spd:1,up:.5,d:'After winning a battle it returns to the tile it attacked from. Next turn, the tile it attacked does not count as a hop. When boomerangs die, each saves one of its side (charger, engineer, worker, spy) from that battle.',ud:'+2 damage in a battle it entered through a free hop.'},
   charger:{n:'Charger',r:['Зарядчик','Зарядчика','Зарядчиков'],rd:'Не атакует. Может сесть: тогда не тратит энергию, заряжается на 0,5 за ход, и в него можно пристыковать дроны (+0,5 энергии за ход каждому). Строится 2 хода. Один на клетку.',rud:'Севший зарядчик соединяет свою клетку с сетью, пока она ничья.',cost:{iron:5,copper:2,silicon:2,xeno:4},hp:10,dmg:0,spd:1,up:.5,build:2,d:'Cannot attack. Settle it to stop using energy, charge itself 0.5 a turn and let drones dock into it (+0.5 energy a turn each). Takes 2 turns to build. One per tile.',ud:'A settled charger links its tile to your network while nobody owns it.'},
   // rovers: built on planets, never leave the planet they were built on
-  tank:{n:'Tank',r:['Танк','Танка','Танков'],rd:'Обычный ровер. Ездит только по своей планете.',cost:{iron:3,copper:2},hp:5,dmg:2,spd:1,up:1,ground:true,d:'The standard rover. Moves only on its planet.',ud:null},
-  ballista:{n:'Ballista',r:['Баллиста','Баллисты','Баллист'],rd:'Бьёт молнией по соседней клетке за кристаллы: 1 кристалл = удар 0,5. Зарядите до 5 кристаллов: молния перескакивает на соседние клетки с врагами, удваивая урон (0,5, 1, 2, 4, 8). Каждая лишняя баллиста в эскадрилье может добавить +0,5 к последнему удару за +1 кристалл.',cost:{iron:4,copper:3,silicon:1},hp:2,dmg:2,spd:1,up:1,ground:true,d:'Shoots lightning at a neighbouring tile for crystals: 1 crystal is a 0.5 hit. Charge up to 5 and the bolt jumps on to neighbouring enemy tiles, doubling each time (0.5, 1, 2, 4, 8). Each extra ballista in the squadron can add +0.5 to the last hit for +1 crystal.',ud:null},
-  stomper:{n:'Stomper',r:['Топтун','Топтуна','Топтунов'],rd:'Тяжёлый ровер. Принимает урон первым.',cost:{iron:6,copper:2,silicon:2},hp:9,dmg:1,spd:1,up:2,ground:true,d:'The bulky rover. Takes damage first.',ud:null},
-  leviathan:{n:'Leviathan',r:['Левиафан','Левиафана','Левиафанов'],rd:'Гигантский боевой дрон, которым управляет рабочий. Строится в центре планеты за 100 жопиума. Не тратит энергию. Погибает вместе с пилотом.',cost:{},hp:50,dmg:20,spd:1,up:0,giant:true,d:'A giant war drone piloted by a worker. Built on a planet centre for 100 jopium. Uses no energy. Its pilot dies with it.',ud:null},
+  tank:{n:'Tank',r:['Танк','Танка','Танков'],rd:'Обычный ровер. Ездит только по своей планете.',cost:{iron:3,copper:2},hp:5,dmg:2,spd:1,up:1,ground:true,d:'The standard rover. Moves only on its planet.',ud:'Uses no energy while it stands still (except on a planet centre).',rud:'Не тратит энергию, пока стоит на месте (кроме центра планеты).'},
+  ballista:{n:'Ballista',r:['Баллиста','Баллисты','Баллист'],rd:'Бьёт молнией по соседней клетке за кристаллы: 1 кристалл = удар 0,5. Зарядите до 5 кристаллов: молния перескакивает на соседние клетки с врагами, удваивая урон (0,5, 1, 2, 4, 8). Каждая лишняя баллиста в эскадрилье может добавить +0,5 к последнему удару за +1 кристалл.',cost:{iron:4,copper:3,silicon:1},hp:2,dmg:2,spd:1,up:1,ground:true,d:'Shoots lightning at a neighbouring tile for crystals: 1 crystal is a 0.5 hit. Charge up to 5 and the bolt jumps on to neighbouring enemy tiles, doubling each time (0.5, 1, 2, 4, 8). Each extra ballista in the squadron can add +0.5 to the last hit for +1 crystal.',ud:'A bolt charged to 5 keeps jumping after the 5th hit: each further hop hits as hard as the 5th, as long as it finds new enemies on connected tiles.',rud:'Молния, заряженная до 5, не гаснет после 5-го удара: каждый следующий прыжок бьёт как 5-й, пока находит новых врагов на соседних клетках.'},
+  stomper:{n:'Stomper',r:['Топтун','Топтуна','Топтунов'],rd:'Тяжёлый ровер. Принимает урон первым, но в бою не бьёт. Каждый раз, когда он переезжает, он наносит 0,5 урона всем врагам на клетках вокруг места, куда приехал.',cost:{iron:6,copper:2,silicon:2},hp:9,dmg:0,spd:1,up:2,ground:true,d:'The bulky rover. Takes damage first but deals none in battle. Each time it moves, it hits every enemy on the tiles around where it lands for 0.5.',ud:'Also deals 1 to everything on the tile it steps onto.',rud:'Также наносит 1 урона всем на клетке, на которую въезжает.'},
+  leviathan:{n:'Leviathan',r:['Левиафан','Левиафана','Левиафанов'],rd:'Гигантский боевой дрон, которым управляет рабочий. Строится в центре планеты за 100 стариума. Не тратит энергию. Погибает вместе с пилотом.',cost:{},hp:50,dmg:20,spd:1,up:0,giant:true,d:'A giant war drone piloted by a worker. Built on a planet centre for 100 starium. Uses no energy. Its pilot dies with it.',ud:null},
 };
 // rovers absorb damage before space drones on their side
 // the order a side's units take damage in (first = hit first). Turrets, workers and the core slot into this order in battle.
@@ -363,7 +386,7 @@ const TECHS=[
   {id:'utility',b:1,at:[2,14],req:'barrack',br:'Barrack',rbr:'Казарма',n:'Utility drones',r:'Вспомогательные дроны',c:3,d:'The barrack can build the spy, engineer and charger.',rd:'Казарма может строить шпиона, инженера и зарядчика.'},
   {id:'upgradest',b:1,at:[3,16],req:'utility',br:'Barrack',rbr:'Казарма',n:'Upgrade station',r:'Станция улучшений',c:4,d:'Unlocks the upgrade station.',rd:'Открывает станцию улучшений.'},
   {id:'planetmove',b:2,at:[1,0],br:'Planets',rbr:'Планеты',n:'Planet movement',r:'Полёты на планеты',c:3,d:'War drones can travel onto planet tiles.',rd:'Боевые дроны могут летать на клетки планет.'},
-  {id:'borehole',b:2,at:[2,14],req:'planetmove',br:'Planets',rbr:'Планеты',n:'Boreholes',r:'Скважины',c:4,d:'Unlocks the borehole: 5 jopium a turn from a planet centre.',rd:'Открывает скважину: 5 жопиума за ход в центре планеты.'},
+  {id:'borehole',b:2,at:[2,14],req:'planetmove',br:'Planets',rbr:'Планеты',n:'Boreholes',r:'Скважины',c:4,d:'Unlocks the borehole: 5 starium a turn from a planet centre.',rd:'Открывает скважину: 5 стариума за ход в центре планеты.'},
   {id:'rovers',b:2,at:[2,-14],req:'planetmove',req2:'barrack',br:'Planets',rbr:'Планеты',n:'Rover station',r:'Станция роверов',c:4,d:'Unlocks the rover station. Needs Barrack too.',rd:'Открывает станцию роверов. Нужна и Казарма.'},
   {id:'turret',b:3,at:[1,0],br:'Turrets',rbr:'Турели',n:'Turret',r:'Турель',c:2,d:'Unlocks the turret.',rd:'Открывает турель.'},
   {id:'chain',b:3,at:[2,-14],req:'turret',br:'Turrets',rbr:'Турели',n:'Chain turret',r:'Цепная турель',c:3,d:'Unlocks the chain turret.',rd:'Открывает цепную турель.'},
@@ -380,14 +403,14 @@ const TECHS=[
 const TECH=Object.fromEntries(TECHS.map(t=>[t.id,t]));
 // localised names and descriptions
 const sN=t=>L(ST[t].n,ST[t].r),sD=t=>L(ST[t].d,ST[t].rd);
-const dN=c=>L(DR[c].n,DR[c].r[0]),dD=c=>L(DR[c].d,DR[c].rd),dU=c=>!DR[c].ground&&DR[c].ud&&L(DR[c].ud,DR[c].rud); // rovers never get upgrades
+const dN=c=>L(DR[c].n,DR[c].r[0]),dD=c=>L(DR[c].d,DR[c].rd),dU=c=>DR[c].ud&&L(DR[c].ud,DR[c].rud); // rovers upgrade at the upgrade station too (Draft 12)
 // "3 frigates" / "3 фрегата"
 const dCount=(k,c)=>RU()?pl(k,...DR[c].r.map(x=>x.toLowerCase())):`${k} ${DR[c].n.toLowerCase()}${c==='siege'?' drone':''}${k===1?'':'s'}`;
 const tN=t=>L(TECH[t].n,TECH[t].r),tD=t=>L(TECH[t].d,TECH[t].rd),tBr=t=>L(TECH[t].br,TECH[t].rbr);
 const rN=r=>L(RINFO[r].n,RINFO[r].r);
 const plName=pl=>L(pl.name,pl.r);
 // the player's profile: username, picture and Elo (stored on this device)
-const GAME_VERSION='ver. 0.2.1';
+const GAME_VERSION='ver. 0.2.2';
 // games: online games played (Elo is shown after the first); uid: the signed-in account, if any
 const profile={name:'Player',pic:'',elo:1000,games:0,uid:null};
 try{Object.assign(profile,JSON.parse(localStorage.getItem('jopium-profile')||'{}'));}catch(e){}
@@ -428,7 +451,7 @@ const PLW={hop:['прыжок','прыжка','прыжков'],turn:['ход','
 const cnt=(k,w)=>RU()?pl(k,...PLW[w]):plural(k,w).replace('spys','spies');
 
 /* ---------- settings and sound ---------- */
-const settings={music:.5,sfx:.6,keepFire:false,loopQ:false,autoReport:false,lang:/^ru\b/i.test(navigator.language||'')?'ru':'en'};
+const settings={music:.5,sfx:.6,bsfx:.6,fleetRoute:true,keepFire:false,loopQ:false,autoReport:false,battleFx:true,lang:/^ru\b/i.test(navigator.language||'')?'ru':'en'};
 const ARTY=c=>c==='catapult'||c==='ballista';
 // players at peace never hurt each other (diplomacy fills G.peace in)
 const atPeace=(a,b)=>!!(G.peace&&G.peace.some(x=>x.a===Math.min(a,b)&&x.b===Math.max(a,b)));
@@ -771,7 +794,7 @@ function energyCap(pid){let c=BASE_ENERGY;for(const id of G.conn[pid]||[])c+=30*
 // the core makes 10, each generator 5 and each captured core 10
 function energyProd(pid){if(!P(pid).alive)return 0;let e=10;for(const id of G.conn[pid]||[]){const n=G.nodes[id];e+=5*live(n,'generator').length+(n.type==='captured'?10:0);}return e;}
 // energy one drone of this squadron uses a turn: 0.5, or 1 for a war drone on a planet tile; leviathans and settled chargers use none
-const droneUse=f=>f.cls==='leviathan'||f.settled?0:(!DR[f.cls].ground&&G.nodes[f.node].planet!=null?1:.5);
+const droneUse=f=>f.cls==='leviathan'||f.settled||(f.cls==='tank'&&f.up&&!G.nodes[f.node].center&&!f.path.length&&!(f.trail&&f.trail.length>1))?0:(!DR[f.cls].ground&&G.nodes[f.node].planet!=null?1:.5);
 // squadrons on their owner's connected network are powered by the core; spies always are
 // at peace, two players' networks link where their tiles are one hop apart, so squadrons on a partner's network stay powered
 const peaceLinked=(a,b)=>atPeace(a,b)&&G.conn[a]&&G.conn[b]&&[...G.conn[a]].some(id=>G.nodes[id].nbr.some(x=>G.conn[b].has(x)));
@@ -841,7 +864,7 @@ function canBuild(pid,n,type){
   if(type==='borehole'&&boreholes(pid)>=5)return L('You already have 5 boreholes','У вас уже 5 скважин');
   if(type==='levi'){
     if(G.mode==='conquest')return L('No leviathans in Conquest','В «Завоевании» левиафанов нет');
-    if(P(pid).gold<ST.levi.gold)return L('Needs 100 jopium','Нужно 100 жопиума');
+    if(P(pid).gold<ST.levi.gold)return L('Needs 100 starium','Нужно 100 стариума');
     if(n.stations.some(x=>x.type==='levi'))return L('A leviathan is already being built here','Здесь уже строится левиафан');
   }
   if(!ST[type].noSlot&&n.stations.filter(x=>!ST[x.type].noSlot).length>=SLOTS)return L('All 4 build slots are used','Все 4 места для станций заняты');
@@ -925,6 +948,10 @@ function fight(n,fleets,where){
       if(!ok)break;
     }
   };
+  const bfx=n&&!REPLAY?{node:n.id,core:null,sides:[...sides.values()].map(s=>{
+      const ent=[...s.fleets.map(f=>({k:f.cls==='leviathan'?'L':'d',cls:f.cls,up:!!f.up,ref:f,o:HIT_ORDER.indexOf(f.cls),c:[f.count]})),...s.turrets.map(t=>({k:'t',type:t.type,ref:t,o:HIT_ORDER.indexOf('t:'+t.type),c:[1]}))].sort((a,b)=>a.o-b.o);
+      return {pid:s.pid,ent};}),got:[]}:null;
+  if(bfx){const cs=[...sides.values()].find(s=>s.core);if(cs)bfx.core={pid:cs.pid,hp:[cs.core.coreHp]};}
   let rounds=0;
   for(;rounds<60;rounds++){
     const act=[...sides.values()].filter(alive);
@@ -966,7 +993,10 @@ function fight(n,fleets,where){
       if(rep){const front=s.fleets.filter(f=>f.hp>0).sort((a,b)=>DRONE_PRI.indexOf(a.cls)-DRONE_PRI.indexOf(b.cls))[0];if(front)front.hp=Math.min(fleetMax(front),front.hp+rep);}
       if(s.boom>0&&!s.rescued&&!s.fleets.some(f=>f.cls==='boomerang'&&f.hp>0)){s.rescued=true;if(n)rescue(s);}
     }
+    if(bfx){for(const b of bfx.sides)for(const e of b.ent)e.c.push(e.k==='t'?(e.ref.hp>0?1:0):(e.ref.hp>0?e.ref.count:0));if(bfx.core){const cs=[...sides.values()].find(s=>s.core);bfx.core.hp.push(Math.max(0,cs.core.coreHp));}
+      bfx.got.push([...sides.values()].map(s=>{const x=inc.get(s.pid);return x?Math.round((x.gen+x.str+x.chain)*10)/10:0;}));}
   }
+  if(bfx&&bfx.got.length){for(const b of bfx.sides)for(const e of b.ent)delete e.ref;(G.battleFx=G.battleFx||[]).push(bfx);}
   for(const s of sides.values())for(const f of s.fleets)f.buf=0;
   // workers who fell in the battle
   const deadW=new Set();for(const s of sides.values())for(const w of s.workers)if(w.hp<=0&&!w.saved)deadW.add(w.w);
@@ -1042,7 +1072,7 @@ function bombardAll(){
 }
 // a tile was hit: it pulses twice at the start of the next turn (red, or blue for a tile you attacked and won)
 /* ---------- underdog gifts ----------
-   Every 5 turns from turn 15, with 3+ players alive: strength = 0.35 army + 0.25 land + 0.15 resources + 0.15 jopium + 0.10 cores,
+   Every 5 turns from turn 15, with 3+ players alive: strength = 0.35 army + 0.25 land + 0.15 resources + 0.15 starium + 0.10 cores,
    each part compared with the best alive player. The weakest player is the underdog when their strength is at most 60% of
    everyone else's average; they get ceil((0.6·avg − S)/0.1) gifts (1–3) on their own empty asteroids / planet sections.
    A gift lasts 5 turns, is seen only by players who see its tile, and goes to whoever reaches it first (see claimGifts). */
@@ -1094,16 +1124,16 @@ function claimGifts(){
           `${pid===ME?'Вы забрали':pShort(p)+' забрал'} припасы на ${lc(nodeName(n))}: ${dN(g.cls).toLowerCase()}${g.up?' (улучшенный)':''} и по 2 каждого ресурса.`),'info',n.id,[pid]);
   }
 }
-/* Conquest: a leader 50+ jopium ahead of second place mines less (boreholes 2, miners 1) until the gap has been 49 or less for 10 turns */
+/* Conquest: a leader 50+ starium ahead of second place mines less (boreholes 2, miners 1) until the gap has been 49 or less for 10 turns */
 function updateGoldCap(){
   if(G.mode!=='conquest')return;
   const al=G.players.filter(p=>p.alive).sort((a,b)=>b.gold-a.gold);
   if(al.length<2){G.goldCap=null;return;}
   const gap=al[0].gold-al[1].gold;
   if(gap>=50){if(!G.goldCap||G.goldCap.pid!==al[0].id){G.goldCap={pid:al[0].id,calm:0};
-      log(L(`${al[0].id===ME?'You are':pShort(al[0])+' is'} 50 jopium ahead: ${al[0].id===ME?'your':'their'} boreholes now give 2 jopium a turn until the others catch up.`,`${al[0].id===ME?'Вы опережаете':pShort(al[0])+' опережает'} всех на 50 жопиума: буры дают только 2 за ход, пока остальные не догонят.`),'warn',null,G.players.map(q=>q.id));}
+      log(L(`${al[0].id===ME?'You are':pShort(al[0])+' is'} 50 starium ahead: ${al[0].id===ME?'your':'their'} boreholes now give 2 starium a turn until the others catch up.`,`${al[0].id===ME?'Вы опережаете':pShort(al[0])+' опережает'} всех на 50 стариума: буры дают только 2 за ход, пока остальные не догонят.`),'warn',null,G.players.map(q=>q.id));}
     else G.goldCap.calm=0;}
-  else if(G.goldCap){G.goldCap.calm++;if(G.goldCap.calm>=10){log(L('The jopium leader mines at the normal rate again.','Лидер по жопиуму снова добывает в обычном темпе.'),'info',null,G.players.map(q=>q.id));G.goldCap=null;}}
+  else if(G.goldCap){G.goldCap.calm++;if(G.goldCap.calm>=10){log(L('The starium leader mines at the normal rate again.','Лидер по стариуму снова добывает в обычном темпе.'),'info',null,G.players.map(q=>q.id));G.goldCap=null;}}
 }
 /* ---------- diplomacy ----------
    G.peace: [{a,b}] pairs at peace (a<b). G.treaties: [{from,to,t}] waiting for an answer.
@@ -1168,7 +1198,7 @@ const ACH=[
   {id:6,n:'Still standing',r:'Ещё стою',d:'Win a Conquest match after being the underdog.',rd:'Выиграйте «Завоевание», побывав отстающим.'},
   {id:7,n:'Mastermind',r:'Стратег',d:'A catapult fired at an empty tile hits an enemy that moved there.',rd:'Катапульта, стрелявшая по пустой клетке, попадает во врага, который туда прилетел.'},
   {id:8,n:'End game',r:'Конец игры',d:'Research every tech in one game.',rd:'Изучите все технологии за одну игру.'},
-  {id:9,n:'Early bird',r:'Ранняя пташка',d:'Play Jopium in its early days.',rd:'Сыграйте в Jopium в первые дни.'},
+  {id:9,n:'Early bird',r:'Ранняя пташка',d:'Play Colonio in its early days.',rd:'Сыграйте в Колонио в первые дни.'},
 ];
 let ACH_SESSION=[];
 const achHas=id=>!!(profile.ach&&profile.ach[id]);
@@ -1247,6 +1277,23 @@ function boltHit(f,id,dmg,lost){
 }
 // a ballista squadron fires one bolt: charged crystals decide how far it jumps (0.5, 1, 2, 4, 8),
 // crystals past the 5th add +0.5 each to the last hit (one per extra ballista)
+const BOLT_MAX=20;
+// stompers: each one that moved deals 0.5 to every enemy on the neighbouring tiles of its planet; upgraded ones also 1 on their own tile
+function stompAll(){
+  for(const f of G.fleets.filter(f=>f.cls==='stomper'&&f.hp>0&&f.trail&&f.trail.length>1)){
+    const n=G.nodes[f.node],k=f.count,lines=[],pids=new Set([f.owner]);
+    const hits=n.nbr.filter(id=>G.nodes[id].planet!=null&&G.nodes[id].planet===n.planet).map(id=>[id,.5*k]);
+    if(f.up)hits.unshift([n.id,k]);
+    const fx={node:n.id,owner:f.owner,hits:[]};if(!REPLAY)(G.stomps=G.stomps||[]).push(fx);
+    for(const [id,d] of hits){if(!boltTargets(f.owner,id).length)continue;const lost=[];fx.hits.push([id,d]);
+      if(G.nodes[id].owner!=null)pids.add(G.nodes[id].owner);for(const g of G.fleets)if(g.node===id)pids.add(g.owner);
+      const soaked=boltHit(f,id,d,lost);
+      lines.push(L(`${lc(nodeName(G.nodes[id]))} ${d}${soaked?` (${soaked} soaked by a barrier)`:''}${lost.length?': '+lost.join(', '):''}`,`${lc(nodeName(G.nodes[id]))} ${String(d).replace('.',',')}${soaked?` (барьер поглотил ${soaked})`:''}${lost.length?': '+lost.join(', '):''}`));}
+    if(!lines.length)continue;
+    const who=RU()?'Топтуны ('+(f.owner===ME?'ваши':pShort(P(f.owner)))+')':(f.owner===ME?'Your':pShort(P(f.owner)))+' stompers';
+    log(L(`${who} stomped at ${lc(nodeName(n))}: ${lines.join(', ')}.`,`${who} топнули на ${lc(nodeName(n))}: ${lines.join(', ')}.`),'battle',n.id,[...pids]);
+  }
+}
 function ballistaFire(f,tn){
   const p=P(f.owner),who=RU()?'Баллисты ('+(f.owner===ME?'ваши':pShort(p))+')':(f.owner===ME?'Your':pShort(p))+' ballistas';
   const want=Math.min(f.charge||1,maxCharge(f)),cr=Math.min(want,Math.floor(p.res.xeno),poweredDrones(f)>0?maxCharge(f):0);
@@ -1256,9 +1303,15 @@ function ballistaFire(f,tn){
   // the first hit always lands on the chosen tile; the bolt only jumps on from a tile that had an enemy
   const route=[tn.id];
   if(hops>1&&boltTargets(f.owner,tn.id).length)route.push(...boltRoute(f.owner,tn.id,new Set([f.node,tn.id]),hops-1));
+  // upgraded ballistas (Draft 12): a full 5-hop bolt keeps jumping to new enemy tiles at the 5th hit's damage (20 hits at most)
+  if(f.up&&hops===5&&route.length===5){const seen=new Set([f.node,...route]);
+    const cores=G.players.filter(q=>q.alive&&isFoe(f.owner,q.id)).map(q=>G.nodes[q.core]);
+    const coreD=id=>cores.length?Math.min(...cores.map(c=>hexDist(G.nodes[id],c))):0;
+    while(route.length<BOLT_MAX){const opts=G.nodes[route.at(-1)].nbr.filter(id=>!seen.has(id)&&boltTargets(f.owner,id).length);if(!opts.length)break;
+      const dmin=Math.min(...opts.map(coreD)),best=opts.filter(id=>coreD(id)===dmin),nx=best[Math.floor(rnd()*best.length)];seen.add(nx);route.push(nx);}}
   const lines=[],pids=new Set([f.owner]);
   route.forEach((id,i)=>{
-    const dmg=CHAIN[i]+(i===route.length-1?.5*extra:0),lost=[];
+    const dmg=CHAIN[Math.min(i,4)]+(i===route.length-1?.5*extra:0),lost=[];
     if(G.nodes[id].owner!=null)pids.add(G.nodes[id].owner);
     for(const g of G.fleets)if(g.node===id)pids.add(g.owner);
     const soaked=boltHit(f,id,dmg,lost);
@@ -1277,6 +1330,7 @@ function fireDeathTurrets(){
     const t=G.nodes[s.aim];s.aim=null;
     if(!canPayAt(n.owner,n.id,{xeno:10})||!payEnergy(n.owner,n.id,5)){log(L(`The death turret at ${lc(nodeName(n))} could not fire: it needs 5 energy and 10 Xenocrystal.`,`Турель смерти на ${lc(nodeName(n))} не выстрелила: нужно 5 энергии и 10 кристаллов.`),'warn',n.id,[n.owner]);continue;}
     payAt(n.owner,n.id,{xeno:10});s.charge=5;
+    if(!REPLAY)(G.dtFx=G.dtFx||[]).push({from:n.id,to:t.id,owner:n.owner});
     const k=G.fleets.filter(f=>f.node===t.id&&f.cls!=='spy').reduce((a,f)=>a+f.count,0)+G.workers.filter(w=>w.node===t.id).length;
     const spyK=G.fleets.filter(f=>f.node===t.id&&f.cls==='spy'&&isFoe(f.owner,n.owner)).reduce((a,f)=>a+f.count,0);
     const spyOwners=G.fleets.filter(f=>f.node===t.id&&f.cls==='spy').map(f=>f.owner);
@@ -1295,6 +1349,7 @@ function fireDeathTurrets(){
 function wreckStations(n){n.stations.forEach(s=>{s.state='destroyed';s.queue=[];s.hangar=emptyHangar();s.aim=null;s.charge=0;});}
 function coreFall(c){
   const pid=c.coreOf,p=P(pid);if(!p.alive)return;p.alive=false;
+  if(!REPLAY)(G.coreFx=G.coreFx||[]).push({node:c.id,color:p.color});
   G.workers=G.workers.filter(w=>w.owner!==pid);G.fleets=G.fleets.filter(f=>f.owner!==pid);
   for(const n of G.nodes)if(n.owner===pid){n.owner=null;wreckStations(n);n.store={};n.estore=0;n.cut=0;}
   c.type='deadcore';c.owner=null;c.coreHp=0;c.vault={...p.res};wreckStations(c);
@@ -1305,7 +1360,7 @@ function coreFall(c){
 
 /* ---------- turn resolution ---------- */
 function resolve(){
-  G.log=[];G.flash=new Set();G.notice=null;G.rockets=[];G.shocks=[];G.pulses=[];G.coreFell=false;
+  G.log=[];G.flash=new Set();G.notice=null;G.rockets=[];G.shocks=[];G.stomps=[];G.battleFx=[];G.coreFx=[];G.dtFx=[];G.boomFx=[];G.healFx=[];G.ghost=null;G.pulses=[];G.coreFell=false;
   if(!G.tut)G.players.filter(p=>p.ai&&p.alive).forEach(aiTurn);
   for(const u of [...G.workers,...G.fleets])u.trail=[u.node];
   const wBefore=G.workers.map(w=>[w.id,w.owner]);
@@ -1353,6 +1408,9 @@ function resolve(){
     }
    }
   }
+  captureGhost();
+  // 1b. stompers that moved this turn shake the planet tiles around where they landed (Draft 12)
+  stompAll();
   // 2. death turrets, catapults, battles
   fireDeathTurrets();
   bombardAll();
@@ -1369,7 +1427,7 @@ function resolve(){
   for(const f of G.fleets)if(f.cls==='charger'&&f.settled&&(f.dock||[]).length&&warFleetsAt(f.owner,f.node).length){log(L(`${plural(f.dock.length,'drone')} docked in ${whose(f.owner).toLowerCase()} charger at ${lc(nodeName(G.nodes[f.node]))} were destroyed by enemy squadrons.`,`Пристыкованные к зарядчику (${f.owner===ME?'ваш':pShort(P(f.owner))}) дроны на ${lc(nodeName(G.nodes[f.node]))} уничтожены: ${cnt(f.dock.length,'drone')}.`),'battle',f.node,[f.owner]);f.dock=[];}
   // boomerangs that won a battle fly back to the tile they attacked from; next turn that battle tile is a free hop
   for(const f of G.fleets)if(f.cls==='boomerang'&&f.trail&&f.trail.length>1&&G.battleAt.has(f.node)&&!hostileAt(f.owner,f.node)){
-    const back=f.trail[f.trail.length-2];f.freeHop=f.node;f.node=back;f.trail.push(back);f.path=[];
+    const back=f.trail[f.trail.length-2];if(!REPLAY)(G.boomFx=G.boomFx||[]).push({fid:f.id,from:f.node,to:back});f.freeHop=f.node;f.node=back;f.trail.push(back);f.path=[];
   }
   // spies caught by enemy war drones or X-ray turrets
   for(const f of G.fleets.filter(f=>f.cls==='spy')){
@@ -1463,9 +1521,10 @@ function resolve(){
   // 6. production
   for(const p of G.players)if(p.alive)produce(p);
   // 7. repairs and passive effects
-  for(const n of G.nodes)if(n.type==='core'&&!G.fleets.some(f=>f.node===n.id&&isFoe(f.owner,n.owner)&&f.cls!=='spy'))n.coreHp=Math.min(CORE_HP,n.coreHp+2);
+  for(const n of G.nodes)if(n.type==='core'&&!G.fleets.some(f=>f.node===n.id&&isFoe(f.owner,n.owner)&&f.cls!=='spy'))n.coreHp=Math.min(CORE_HP,n.coreHp+10);
   for(const r of G.fleets.filter(f=>f.cls==='repair')){
-    for(const f of G.fleets)if(f.owner===r.owner&&f.node===r.node)f.hp=Math.min(fleetMax(f),f.hp+r.count*f.count);
+    for(const f of G.fleets)if(f.owner===r.owner&&f.node===r.node){const a=f.hp;f.hp=Math.min(fleetMax(f),f.hp+r.count*f.count);
+      if(!REPLAY&&f.hp>a+1e-9){G.healFx=G.healFx||[];const h=G.healFx.find(x=>x.fid===f.id);if(h)h.b=f.hp;else G.healFx.push({fid:f.id,eng:r.id,node:f.node,a,b:f.hp,max:fleetMax(f)});}}
     const n=G.nodes[r.node];
     if(n.owner===r.owner){
       for(const t of liveTurrets(n))t.hp=Math.min(t.maxHp,t.hp+2*r.count);
@@ -1497,9 +1556,9 @@ function resolve(){
   for(const [id,o] of wBefore)if(!wNow.has(id)){const q=P(o);q.workersBuilt=Math.max(0,q.workersBuilt-1);}
   // 9. end
   diploTurn();updateMet();achTechs();
-  G.turn++;G.timeLeft=G.turnTime;G.anim={t0:performance.now()};
+  G.turn++;G.timeLeft=G.turnTime;G.anim={t0:performance.now()};planTurnFx();
   updateGoldCap();updateGifts();
-  // winners: first to the jopium goal (conquest), or the last player left; turn 1000 is a stalemate
+  // winners: first to the starium goal (conquest), or the last player left; turn 1000 is a stalemate
   if(G.turn>=1000&&!G.over){G.winner=-1;endGame('draw');}
   const alive=G.players.filter(p=>p.alive);
   const rich=G.mode==='conquest'?alive.filter(p=>p.gold>=GOLD_WIN).sort((a,b)=>b.gold-a.gold)[0]:null;
@@ -1509,7 +1568,7 @@ function resolve(){
     else if(!P(ME).alive)endGame(G.iResigned?'resigned':'lost');
     else if(alive.length===1){G.winner=ME;endGame('won');}
   }else if(G.spectate&&champ&&G.winner==null){
-    G.winner=champ.id;log(L(`${pName(champ)} has won the match${rich?` with ${rich.gold} jopium`:''}.`,`${pName(champ)} побеждает${rich?` с ${rich.gold} жопиума`:''}.`),'battle',null,[0]);
+    G.winner=champ.id;log(L(`${pName(champ)} has won the match${rich?` with ${rich.gold} starium`:''}.`,`${pName(champ)} побеждает${rich?` с ${rich.gold} стариума`:''}.`),'battle',null,[0]);
   }
   // online: tell the server who won, so it can rate the match (every screen reports; they must agree)
   if(G.online&&G.winner==null&&champ)G.winner=champ.id;
@@ -1552,7 +1611,7 @@ function produce(p){
     if(f.s.work<=0&&f.s.type==='levi'){
       f.n.stations=f.n.stations.filter(x=>x!==f.s);
       const crew=ws.filter(x=>x.task==='build'&&x.ref===f.s.uid);crew.forEach(x=>{x.task='idle';x.ref=null;});
-      if(G.fleets.some(g=>g.owner===pid&&g.node===f.n.id&&!(g.cls==='charger'&&g.settled))){p.gold+=f.s.gold||0;log(L(`The leviathan at ${lc(nodeName(f.n))} could not be finished: your squadrons were in the way. 100 jopium returned.`,`Левиафан на ${lc(nodeName(f.n))} не достроен: мешали ваши эскадрильи. 100 жопиума возвращено.`),'warn',f.n.id,[pid]);continue;}
+      if(G.fleets.some(g=>g.owner===pid&&g.node===f.n.id&&!(g.cls==='charger'&&g.settled))){p.gold+=f.s.gold||0;log(L(`The leviathan at ${lc(nodeName(f.n))} could not be finished: your squadrons were in the way. 100 starium returned.`,`Левиафан на ${lc(nodeName(f.n))} не достроен: мешали ваши эскадрильи. 100 стариума возвращено.`),'warn',f.n.id,[pid]);continue;}
       // a random worker from the ones building it becomes the pilot
       const pilot=crew.length?crew[Math.floor(rnd()*crew.length)]:w;G.workers=G.workers.filter(x=>x!==pilot);
       const lv=newFleet(pid,'leviathan',1,f.n.id);lv.pilot=pilot.name;G.fleets.push(lv);if(pid===ME)achUnlock(3);
@@ -1575,12 +1634,12 @@ function produce(p){
   const mc=has(pid,'drills')?.5:1,goldDone=new Set();
   for(const w of ws.filter(w=>w.task==='mine')){
     const n=G.nodes[w.node];
-    // jopium: one miner per planet centre, 1 per turn or 5 with a borehole
+    // starium: one miner per planet centre, 1 per turn or 5 with a borehole
     if(n.center&&n.owner===pid){
       if(goldDone.has(n.id)){w.task='idle';continue;}
-      // jopium is only collected while the centre is linked to your core by your network
-      if(!conn.has(n.id)){if(!G.goldCutLogged)log(L(`Jopium at ${lc(nodeName(n))} is not collected: the centre is cut off from your core.`,`Жопиум на ${lc(nodeName(n))} не собирается: центр отрезан от ядра.`),'warn',n.id,[pid]);continue;}
-      // with a borehole the worker sits at it as its operator: 1 energy a turn, 5 jopium (2 while the Conquest leader is capped)
+      // starium is only collected while the centre is linked to your core by your network
+      if(!conn.has(n.id)){if(!G.goldCutLogged)log(L(`Starium at ${lc(nodeName(n))} is not collected: the centre is cut off from your core.`,`Стариум на ${lc(nodeName(n))} не собирается: центр отрезан от ядра.`),'warn',n.id,[pid]);continue;}
+      // with a borehole the worker sits at it as its operator: 1 energy a turn, 5 starium (2 while the Conquest leader is capped)
       const bore=live(n,'borehole').length>0,cost=bore?1:mc;
       if(avail<cost){blocked++;continue;}avail-=cost;
       const capped=G.goldCap&&G.goldCap.pid===pid;
@@ -1883,12 +1942,12 @@ function aiTurn(p){
   if(scarce&&!ws.some(w=>w.task==='idle'&&!w.path.length)){
     const rich=ws.filter(w=>w.task==='mine'&&!w.path.length).sort((a,b)=>p.res[G.nodes[b.node].res]-p.res[G.nodes[a.node].res])[0];
     if(rich&&p.res[G.nodes[rich.node].res]>(workerTotal(p)<4?10:DF.reserve<10?18:40))rich.task='idle';
-    // short of workers and of a basic resource: the jopium miner switches to it (jopium can wait)
+    // short of workers and of a basic resource: the starium miner switches to it (starium can wait)
     else if(workerTotal(p)<5){const gm=ws.find(w=>w.task==='mine'&&!w.path.length&&G.nodes[w.node].center);if(gm)gm.task='idle';}
   }
   // stop mining resources that are already full
   for(const w of ws)if(w.task==='mine'&&!G.nodes[w.node].center&&resTotal(p)>=resCap(pid))w.task='idle';
-  // conquest: claim every reachable planet centre and keep one worker mining jopium on each one we own
+  // conquest: claim every reachable planet centre and keep one worker mining starium on each one we own
   for(const pl of G.planets||[]){
     const c=G.nodes[pl.center];
     if(!K.has(c.id)||targeted.has(c.id)||warFleetsAt(pid,c.id).length)continue;
@@ -2136,6 +2195,14 @@ function applyCmd(pid,c){
       p.squads=(p.squads||[]).map(q=>({...q,ids:q.ids.filter(x=>!ids.includes(x))})).filter(q=>q.ids.length>1);
       p.sqN=(p.sqN||0)+1;p.squads.push({id:p.sqN,ids});return true;}
     case 'squaddel':p.squads=(p.squads||[]).filter(q=>q.id!==+c.q);return true;
+    // a squadron leaves its fleet; it keeps its place and route. A fleet left with one squadron ends.
+    case 'sqleave':{const q=(p.squads||[]).find(q=>q.ids.includes(+c.f));if(!q)return false;q.ids=q.ids.filter(x=>x!==+c.f);const f=F(c.f);if(f)f.sync=null;if(q.ids.length<2)p.squads=p.squads.filter(x=>x!==q);return true;}
+    // destroy a whole squadron, or one drone of it (c.i); refund only on land connected to the core
+    case 'fkill':{const f=F(c.f);if(!f||f.owner!==pid||f.cls==='leviathan')return false;
+      let k=f.count;
+      if(c.i!=null){const i=+c.i;if(!(i>=0&&i<f.count))return false;fixEn(f);const hps=droneHps(f);f.hp-=hps[i];f.en.splice(i,1);f.count--;k=1;}else f.count=0;
+      const r=killRefund(f,k);if(r)refundAt(pid,f.node,r);
+      if(f.count<=0||f.hp<=1e-9)G.fleets=G.fleets.filter(g=>g!==f);return true;}
     case 'squadmove':{
       const q=(p.squads||[]).find(q=>q.id===+c.q);if(!q)return false;
       const fl=q.ids.map(F).filter(f=>f&&!f.settled);const to=+c.to;if(!fl.length||!G.nodes[to])return false;
@@ -2143,7 +2210,8 @@ function applyCmd(pid,c){
       const by={};for(const f of fl)if(f.node!==to)by[f.cls]=(by[f.cls]||0)+f.count;
       for(const cl in by){const there=G.fleets.filter(g=>g.owner===pid&&g.node===to&&g.cls===cl&&!fl.includes(g)).reduce((a,g)=>a+g.count,0);
         if(there+by[cl]>capFor(pid,cl))return deny(L(`That tile can't hold that many ${dCount(2,cl).replace(/^\d+ /,'')}.`,`На этой клетке не поместится столько: ${dN(cl)}.`));}
-      const paths=fl.map(f=>f.node===to?[]:findPath(f.node,to,routeSet(f,pid)));
+      const drawn=c.path&&c.from!=null?c.path:null;
+      const paths=fl.map(f=>{if(f.node===to)return [];if(drawn&&f.node===+c.from){const r=checkPath(f.node,drawn,routeSet(f,pid));if(r&&r[r.length-1]===to)return r;}return findPath(f.node,to,routeSet(f,pid));});
       if(paths.some(x=>x==null))return deny(L('Not every squadron in the fleet has a known route there.','Не у всех эскадрилий флота есть известный путь туда.'));
       // the fleet moves together, at the speed of its slowest squadron
       const slow=Math.min(...fl.map(f=>DR[f.cls].spd));
@@ -2176,7 +2244,7 @@ function order(c){
 }
 let myCmds=[],SNAP=null;
 // fields that belong to this screen only (menus, what you've read, the end screen), never rewound
-const LOCAL_KEYS=new Set(['spectate','popup','sel','moveMode','hoverPath','unread','anim','splitOpen','notice','trade','result','modal','techSel','hits','flash','ver','modalAt','popupAt','techFor','rockets','shocks','pulses','pulseT0','treatySeen','resultSent','over','winner','online','seenTech','waiting','log','timeLeft','coreFell','goldCutLogged','room','lastFight','battleAt','squadOpen','iResigned','waitInfo']);
+const LOCAL_KEYS=new Set(['healFx','ghost','dtFx','boomFx','fxEnd','ringAt','battleFx','coreFx','endWait','stomps','spectate','popup','sel','moveMode','hoverPath','unread','anim','splitOpen','notice','trade','result','modal','techSel','hits','flash','ver','modalAt','popupAt','techFor','rockets','shocks','pulses','pulseT0','treatySeen','resultSent','over','winner','online','seenTech','waiting','log','timeLeft','coreFell','goldCutLogged','room','lastFight','battleAt','squadOpen','iResigned','waitInfo']);
 function takeSnapshot(){
   if(!G||!G.online)return;
   const g={};for(const k in G)if(!LOCAL_KEYS.has(k))g[k]=G[k];
@@ -2217,6 +2285,172 @@ function resize(){
 function centerOn(n,fit){cam.x=n.x;cam.y=n.y;if(fit)cam.z=Math.max(.35,Math.min(1.4,Math.min(W,H)/(R*4.6)));}
 const toScreen=(x,y)=>[(x-cam.x)*cam.z+W/2,(y-cam.y)*cam.z+H/2];
 const toWorld=(sx,sy)=>[(sx-W/2)/cam.z+cam.x,(sy-H/2)/cam.z+cam.y];
+
+/* ---------- Draft 12: battle animation (2B, battle lines round by round) and the falling core (1A) ----------
+   Screen only: built from what the battle recorded, never changes the match. */
+const BFX_ROUND=520,BFX_TAIL=600,CORE_FX=2400,MOVE_FX=950,HOP_FX=160,DT_HIT=1150,STOMP_HIT=650,BOOM_FX=650;
+function captureGhost(){
+  if(REPLAY)return;
+  const nodes=new Map();for(const n of G.nodes)if(n.type==='core'||n.stations.length)nodes.set(n.id,{...n,stations:n.stations.map(x=>({...x}))});
+  G.ghost={fleets:G.fleets.map(f=>({...f,trail:f.trail?f.trail.slice():null,en:(f.en||[]).slice()})),workers:G.workers.map(w=>({...w,trail:w.trail?w.trail.slice():null})),nodes};
+}
+// everything plays together right after the moves; boomerangs fly home after their battle; then a falling core implodes
+function planTurnFx(){
+  if(!G.anim)return;const V=vis(ME);let end=MOVE_FX;const fx=new Map(),set=(id,t)=>fx.set(id,Math.max(fx.get(id)||0,t));
+  const at=(t,fn)=>setTimeout(()=>{try{fn();}catch(e){}},Math.max(0,t));
+  const zv=zoomVol();
+  for(const b of G.battleFx||[]){b.start=null;set(b.node,MOVE_FX);if(!V.has(b.node))continue;
+    b.shown=Math.min(5,b.got.length);if(settings.battleFx){b.start=MOVE_FX;b.len=b.shown*BFX_ROUND+BFX_TAIL;set(b.node,b.start+b.len);end=Math.max(end,b.start+b.len);}
+    const lostBy=k=>{const r1=k<4?k+1:b.got.length,r0=k<4?k:b.got.length-1;let n=0;for(const sd of b.sides)for(const e of sd.ent)n+=e.c[r0]-e.c[r1];return Math.max(0,n);};
+    for(let k=0;k<b.shown;k++)at(MOVE_FX+k*BFX_ROUND,()=>bSnd.battle(zoomVol(),Math.min(4,lostBy(k))));}
+  for(const d of G.dtFx||[]){d.start=MOVE_FX;set(d.to,MOVE_FX+DT_HIT+50);end=Math.max(end,MOVE_FX+2400);
+    if(V.has(d.to)||V.has(d.from)){at(MOVE_FX,()=>bSnd.dtBeeps(zoomVol()));at(MOVE_FX+DT_HIT,()=>bSnd.dtCrack(zoomVol()));}}
+  for(const st of G.stomps||[]){st.start=MOVE_FX;for(const [id] of st.hits)set(id,MOVE_FX+STOMP_HIT);end=Math.max(end,MOVE_FX+1600);if(V.has(st.node))at(MOVE_FX,()=>bSnd.stomp(zoomVol()));}
+  for(const sh of G.shocks||[]){sh.start=MOVE_FX;sh.path.slice(1).forEach((id,i)=>{set(id,MOVE_FX+(i+1)*HOP_FX);if(V.has(id))at(MOVE_FX+(i+1)*HOP_FX,()=>bSnd.zap(zoomVol(),i));});end=Math.max(end,MOVE_FX+sh.path.length*HOP_FX+700);}
+  for(const rk of G.rockets||[]){const hit=(.12+(rk.n-1)*.09+.85)*1000;set(rk.to,hit+60);end=Math.max(end,hit+600);}
+  let boomEnd=0;for(const b of G.boomFx||[]){b.start=Math.max(MOVE_FX,fx.get(b.from)||0);b.len=BOOM_FX;boomEnd=Math.max(boomEnd,b.start+b.len);end=Math.max(end,b.start+b.len);}
+  for(const hf of G.healFx||[]){hf.start=Math.max(MOVE_FX,fx.get(hf.node)||0);end=Math.max(end,hf.start+2300);}
+  G.ringAt=new Map();for(const id of G.flash||[]){const t0=Math.max(MOVE_FX,fx.get(id)||0);G.ringAt.set(id,t0);end=Math.max(end,t0+900);}
+  const fightEnd=Math.max(MOVE_FX,...[...fx.values()]);
+  for(const c of G.coreFx||[]){c.start=Math.max(fightEnd,boomEnd);set(c.node,c.start);end=Math.max(end,c.start+CORE_FX);at(c.start,()=>bSnd.core());}
+  G.fxEnd=fx;G.anim.len=end+150;
+}
+// how loud battle sounds are at this zoom: full close up, silent once most of the belt is on screen
+const zoomVol=()=>{const k=Math.max(0,Math.min(1,(cam.z-.3)/(.8-.3)));return Math.pow(k,1.4);};
+// is tile id still showing what it looked like before the fighting?
+function ghostOn(id,el){if(!G.anim||!G.ghost)return false;if(el<MOVE_FX)return true;return el<((G.fxEnd&&G.fxEnd.get(id))||0);}
+const boomOf=f=>(G.anim&&G.boomFx||[]).find(b=>b.fid===f.id);
+// battle sounds: plays through the Battle volume (Settings → Sound); v = zoom/visibility factor
+function bTone(type,f0,f1,dur,vol,delay=0,lp=1800){if(!AC||settings.bsfx<=0||vol<=0)return;const t=AC.currentTime+delay,o=AC.createOscillator(),g=AC.createGain(),f=AC.createBiquadFilter();o.type=type;o.frequency.setValueAtTime(f0,t);o.frequency.exponentialRampToValueAtTime(Math.max(1,f1),t+dur);f.type='lowpass';f.frequency.value=lp;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.max(.0002,vol*settings.bsfx),t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(f).connect(g).connect(AC.destination);o.start(t);o.stop(t+dur+.05);}
+function bNoise(dur,vol,delay=0,type='lowpass',freq=800,q=.8,f1){if(!AC||settings.bsfx<=0||vol<=0)return;const t=AC.currentTime+delay,len=Math.floor(AC.sampleRate*dur),b=AC.createBuffer(1,len,AC.sampleRate),d=b.getChannelData(0);
+  for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2); // cosmetic: never the match's seeded rnd()
+  const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();s.buffer=b;f.type=type;f.frequency.setValueAtTime(freq,t);if(f1)f.frequency.exponentialRampToValueAtTime(f1,t+dur);f.Q.value=q;g.gain.setValueAtTime(Math.max(.0002,vol*settings.bsfx),t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f).connect(g).connect(AC.destination);s.start(t);}
+const bSnd={
+  // 7A: a burst of short shots per round, a pop for each drone lost
+  battle:(v,lost)=>{for(let s=0;s<5;s++)bTone('square',1500+Math.random()*500,350,.07,v*.035,s*.045+Math.random()*.02,4000);for(let p=0;p<(lost||0);p++){bTone('triangle',500,140,.12,v*.07,.3+p*.07);bNoise(.08,v*.12,.3+p*.07,'bandpass',1800,2);}},
+  // 5A: a crackle per hop, higher each time (up to the 5th)
+  zap:(v,i)=>{const k=Math.min(i,4);bNoise(.09,v*(.18+.05*k),0,'bandpass',2200+400*k,3);bTone('square',700+180*k,300+120*k,.08,v*.05,0,3500);},
+  // 2A: one heavy thud with a low rumble
+  stomp:v=>{bTone('sine',85,38,.5,v*.55);bNoise(.9,v*.35,0,'lowpass',260,.6,60);},
+  // 1B: three beeps while it locks on, then a thunder crack
+  dtBeeps:v=>{[0,.3,.6].forEach(d=>bTone('square',1400,1400,.07,v*.05,d));},
+  dtCrack:v=>{bNoise(.25,v*.55,0,'highpass',2000,.5,400);bTone('sine',90,35,1.1,v*.4,.05);bNoise(1.2,v*.4,.1,'lowpass',700,.6,80);},
+  // 6B: two warning tones, then a blast; heard from anywhere
+  core:()=>{bTone('square',880,880,.18,.06);bTone('square',660,660,.18,.06,.25);bNoise(.3,.7,.6,'highpass',1500,.5,300);bNoise(2.2,.55,.65,'lowpass',900,.6,50);bTone('sine',70,30,1.8,.45,.65);},
+};
+// time left until the turn's animation is over (the end screen and the tutorial's finish wait for it)
+const animWait=()=>G&&G.anim&&G.anim.len?Math.max(0,G.anim.t0+G.anim.len-performance.now()):0;
+function drawTurnFx(el,V,z,sz){
+  for(const b of G.battleFx||[]){if(b.start==null)continue;const t=el-b.start;if(t<0||t>b.len)continue;drawBattleFx(b,t,z,sz);}
+  for(const d of G.dtFx||[]){if(!V.has(d.to)&&!V.has(d.from))continue;const t=el-d.start;if(t<0||t>2400)continue;drawDeathFx(d,t/1000,sz);}
+  for(const st of G.stomps||[]){if(!V.has(st.node))continue;const t=el-st.start;if(t<0||t>1600)continue;drawStompFx(st,t/1000,sz);}
+  G.healFx&&G.healFx.forEach((hf,i)=>{if(!V.has(hf.node)||hf.start==null)return;const t=el-hf.start-i%3*350;if(t<0||t>2300)return;drawHealFx(hf,t/1000,sz);});
+  for(const c of G.coreFx||[]){if(!V.has(c.node))continue;const t=el-c.start;if(t<0||t>CORE_FX)continue;drawCoreFx(c,t/1000,sz);}
+}
+// 3A: a green spark leaves the engineers and circles the healed squadron; its ring fills from its real health before to after
+function drawHealFx(hf,t,sz){
+  const f=G.fleets.find(x=>x.id===hf.fid),e=G.fleets.find(x=>x.id===hf.eng);if(!f)return;
+  const hp=G.hits.find(h=>h.kind==='fleet'&&h.u===f),he=e&&G.hits.find(h=>h.kind==='fleet'&&h.u===e);if(!hp)return;
+  const r=(fleetR(f)+7)*sz,k=Math.min(1,t/1.1),eo=v=>1-Math.pow(1-v,3),fill=(hf.a+(hf.b-hf.a)*eo(Math.max(0,Math.min(1,(t-.4)/.9))))/hf.max,GR='95,211,141';
+  const fadeA=t>1.9?Math.max(0,1-(t-1.9)/.4):1;
+  ctx.save();ctx.globalAlpha=fadeA;ctx.beginPath();ctx.arc(hp.x,hp.y,r,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,.12)';ctx.lineWidth=2.2;ctx.stroke();
+  ctx.beginPath();ctx.arc(hp.x,hp.y,r,-Math.PI/2,-Math.PI/2+Math.PI*2*fill);ctx.strokeStyle=t<.4?'#ffb547':`rgb(${GR})`;ctx.lineWidth=2.2;ctx.stroke();ctx.restore();
+  if(k>0&&k<1){const a=-Math.PI/2+k*Math.PI*2,tx=hp.x+r*Math.cos(a),ty=hp.y+r*Math.sin(a),q=k<.15&&he?k/.15:1,sx=he?he.x+(tx-he.x)*q:tx,sy=he?he.y+(ty-he.y)*q:ty;
+    ctx.fillStyle=`rgba(${GR},1)`;ctx.beginPath();ctx.arc(sx,sy,2.6*sz,0,Math.PI*2);ctx.fill();ctx.fillStyle=`rgba(${GR},.3)`;ctx.beginPath();ctx.arc(sx,sy,6*sz,0,Math.PI*2);ctx.fill();}
+  const gain=Math.round((hf.b-hf.a)*10)/10,q=(t-.9)/1.1;
+  if(q>0&&q<1){ctx.save();ctx.globalAlpha=1-q;ctx.fillStyle=`rgb(${GR})`;ctx.font=`700 ${Math.round(11*sz+2)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('+'+gain+' ♥',hp.x,hp.y-r-8*sz-12*q);ctx.restore();}
+}
+// 1B: a reticle closes in on the target, then a column of light drops onto it with a shockwave
+function drawDeathFx(d,t,sz){
+  const n=G.nodes[d.to],[x,y]=toScreen(n.x,n.y),VI='199,125,255',eo=v=>1-Math.pow(1-v,3);
+  if(t<1.2){const k=Math.min(1,t/1.1),r=(70-38*k)*sz;ctx.save();ctx.strokeStyle=`rgba(${VI},.9)`;ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.stroke();
+    for(let i=0;i<4;i++){const a=i*Math.PI/2+k*1.5;ctx.beginPath();ctx.moveTo(x+Math.cos(a)*(r-8*sz),y+Math.sin(a)*(r-8*sz));ctx.lineTo(x+Math.cos(a)*(r+8*sz),y+Math.sin(a)*(r+8*sz));ctx.stroke();}ctx.restore();}
+  if(t>1.15&&t<1.7){const k=(t-1.15)/.55,g=ctx.createLinearGradient(0,y-H,0,y);g.addColorStop(0,`rgba(${VI},0)`);g.addColorStop(1,`rgba(${VI},${.85*(1-k)})`);const wd=26*sz*(1-k*.5);ctx.fillStyle=g;ctx.fillRect(x-wd,y-H,wd*2,H);ctx.fillStyle=`rgba(255,255,255,${.8*(1-k)})`;ctx.fillRect(x-6*sz,y-H,12*sz,H);}
+  if(t>1.2&&t<2.4){const k=(t-1.2)/1.2;ctx.beginPath();ctx.arc(x,y,(10+90*eo(k))*sz,0,Math.PI*2);ctx.strokeStyle=`rgba(${VI},${.8*(1-k)})`;ctx.lineWidth=(5*(1-k)+1)*sz;ctx.stroke();ctx.beginPath();ctx.arc(x,y,40*sz*(1-k),0,Math.PI*2);ctx.fillStyle=`rgba(255,240,255,${.7*(1-k)})`;ctx.fill();}
+}
+// 2A: the stompers land with a bump, cracks run across the planet, the tiles they hit shake and show the damage
+function drawStompFx(st,t,sz){
+  const n=G.nodes[st.node],[x,y]=toScreen(n.x,n.y);
+  if(t<.15){ctx.beginPath();ctx.arc(x,y,(18+10*t/.15)*sz,0,Math.PI*2);ctx.strokeStyle=`rgba(255,220,170,${.8*(1-t/.15)})`;ctx.lineWidth=3;ctx.stroke();}
+  const targets=n.nbr.filter(id=>G.nodes[id].planet!=null&&G.nodes[id].planet===n.planet);
+  if(t<1.4){const k=Math.min(1,t/.95),a=t<1?.85:.85*(1-(t-1)/.4);ctx.strokeStyle=`rgba(255,220,170,${a})`;ctx.lineWidth=1.4;
+    for(const id of targets){const m=G.nodes[id],[qx,qy]=toScreen(m.x,m.y),mx=x+(qx-x)*k,my=y+(qy-y)*k;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo((x+mx)/2+5*sz,(y+my)/2-4*sz);ctx.lineTo(mx,my);ctx.stroke();}}
+  for(const [id,d] of st.hits){const m=G.nodes[id],[qx,qy]=toScreen(m.x,m.y),k=(t-STOMP_HIT/1000)/.9;if(k<=0||k>=1)continue;
+    ctx.save();ctx.globalAlpha=1-k;ctx.fillStyle=P(st.owner).color;ctx.font=`700 ${Math.round(12*sz+2)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('−'+d,qx,qy-26*sz-14*k);ctx.restore();}
+}
+// a turret in a battle: its shield with its letter
+function turretIcon(c,type,x,y,q,col,a){c.save();c.globalAlpha*=a;c.beginPath();c.moveTo(x-q*.85,y-q*.8);c.lineTo(x+q*.85,y-q*.8);c.lineTo(x+q*.85,y);c.quadraticCurveTo(x+q*.8,y+q*.75,x,y+q*1.05);c.quadraticCurveTo(x-q*.8,y+q*.75,x-q*.85,y);c.closePath();
+  c.fillStyle=hexa(col,.22);c.fill();c.strokeStyle=col;c.lineWidth=1.6;c.lineJoin='round';c.stroke();c.fillStyle=col;c.font=`700 ${Math.max(6,Math.round(q*1.05))}px 'IBM Plex Mono',monospace`;c.textAlign='center';c.textBaseline='middle';c.fillText(ST[type].letter,x,y+q*.05);c.restore();}
+// one side's units, one by one in damage order, with which are alive after round r (the front of each group dies first)
+function bfxUnits(sd,r){const out=[];for(const e of sd.ent){const n0=e.c[0],nr=e.c[Math.min(r,e.c.length-1)];for(let i=0;i<n0;i++)out.push({e,alive:i>=n0-nr});}return out;}
+function drawBattleFx(b,t,z,sz){
+  const n=G.nodes[b.node],[x,y]=toScreen(n.x,n.y),RR=Math.max(60,Math.min(150,R*z*.72));
+  const fade=Math.min(1,t/150,(b.len-t)/300);
+  ctx.save();ctx.globalAlpha=Math.max(0,fade);
+  ctx.beginPath();ctx.arc(x,y,RR,0,Math.PI*2);ctx.fillStyle='#070b16';ctx.fill();ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=1.2;ctx.stroke();
+  const ns=b.sides.length,last=b.got.length;
+  // display round k shows battle round k+1; the 5th display round jumps to the last round of a long battle
+  const playing=t<b.shown*BFX_ROUND,k=playing?Math.floor(t/BFX_ROUND):b.shown-1,ph=playing?(t%BFX_ROUND)/BFX_ROUND:1;
+  const r0=k<4?k:last-1,r1=k<4?k+1:last;
+  const anchor=j=>{const a=ns===2?(j?0:Math.PI):Math.PI+j*2*Math.PI/ns;const r=RR*(b.core?.62:.55);return [x+Math.cos(a)*r,y+Math.sin(a)*r];};
+  const ds=Math.max(4.5,Math.min(9,RR/16)),gap=ds*2.8;
+  const slot=(ax,ay,i,flip)=>[ax+((i%2)-.5)*gap*(flip?-1:1),ay+(Math.floor(i/2)-1)*gap];
+  const unit=(u,cx,cy,col,a)=>{if(u.e.k==='t')turretIcon(ctx,u.e.type,cx,cy,ds*.95,col,a);else{ctx.save();ctx.globalAlpha*=a;shapePath(ctx,u.e.cls,cx,cy,ds);ctx.fillStyle=u.e.up?col:hexa(col,.25);ctx.fill();ctx.strokeStyle=col;ctx.lineWidth=1.4;ctx.stroke();ctx.restore();}};
+  // the core sits in the middle, its health ring going down
+  if(b.core){const col=P(b.core.pid).color,h0=b.core.hp[r0]/CORE_HP,h1=b.core.hp[r1]/CORE_HP,hp=playing?(ph<.45?h0:h0+(h1-h0)*Math.min(1,(ph-.45)/.3)):h1,cr=ds*2.2;
+    ctx.beginPath();ctx.arc(x,y,cr*1.6,0,Math.PI*2);ctx.fillStyle=hexa(col,.18);ctx.fill();ctx.beginPath();ctx.arc(x,y,cr,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+    ctx.beginPath();ctx.arc(x,y,cr*1.3,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=2.5;ctx.stroke();
+    if(hp>0){ctx.beginPath();ctx.arc(x,y,cr*1.3,-Math.PI/2,-Math.PI/2+Math.PI*2*hp);ctx.strokeStyle=hexa(col,.95);ctx.lineWidth=2.5;ctx.stroke();}
+    const d=Math.round(b.core.hp[r0]-b.core.hp[r1]);if(playing&&d>0&&ph>.45){const q=(ph-.45)/.55;ctx.save();ctx.globalAlpha*=1-q;ctx.fillStyle=col;ctx.font=`700 ${Math.round(12*sz+2)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('−'+d,x,y-cr*2.2-10*q);ctx.restore();}}
+  b.sides.forEach((sd,j)=>{
+    const col=P(sd.pid).color,[ax,ay]=anchor(j),flip=ns===2&&j===0;
+    const before=bfxUnits(sd,r0).filter(u=>u.alive),afterAll=bfxUnits(sd,r1),dead=new Set();
+    afterAll.forEach((u,i)=>{if(!u.alive)dead.add(u.e.c[0]+':'+i);});
+    // which of the units alive before this round die in it: compare by position in the full list
+    const fullBefore=bfxUnits(sd,r0),aliveIdx=fullBefore.map((u,i)=>u.alive?i:-1).filter(i=>i>=0),dies=new Set(aliveIdx.filter(i=>!afterAll[i].alive));
+    const lev=sd.ent.find(e=>e.k==='L');
+    if(lev){const alive=lev.c[r1]>0,a=alive||!playing?(alive?1:0):(ph<.45?1:1-Math.min(1,(ph-.45)/.3));if(a>0){ctx.save();ctx.globalAlpha*=a;drawLeviathan(ctx,ax,ay,gap*1.65,col,.18,0);ctx.restore();}}
+    else if(!playing||ph<.75){
+      const show=aliveIdx.slice(0,6);
+      show.forEach((ui,i)=>{const u=fullBefore[ui],die=playing&&dies.has(ui),a=die?1-Math.max(0,Math.min(1,(ph-.45)/.3)):1,[cx,cy]=slot(ax,ay,i,flip);if(!playing&&!afterAll[ui].alive)return;
+        unit(u,cx,cy,col,a);
+        if(die&&ph>.45&&ph<.75){const q=(ph-.45)/.3;ctx.beginPath();ctx.arc(cx,cy,ds*(1+2*q),0,Math.PI*2);ctx.strokeStyle=`rgba(255,220,150,${.8*(1-q)})`;ctx.lineWidth=1.3;ctx.stroke();}});
+      const rest=(playing?aliveIdx.length:afterAll.filter(u=>u.alive).length)-Math.min(6,playing?aliveIdx.length:6);
+      if(rest>0){ctx.fillStyle=col;ctx.font=`600 ${Math.round(ds*1.4)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('+'+rest,ax,ay+gap*2.1);}}
+    else{// the next ones in damage order slide into the empty slots
+      const q=1-Math.pow(1-Math.min(1,(ph-.75)/.25),3),nowIdx=afterAll.map((u,i)=>u.alive?i:-1).filter(i=>i>=0),show=nowIdx.slice(0,6);
+      show.forEach((ui,i)=>{const from=aliveIdx.indexOf(ui),[fx,fy]=slot(ax,ay,Math.min(from,7),flip),[tx,ty]=slot(ax,ay,i,flip),a=from>=6?q:1;unit(afterAll[ui],fx+(tx-fx)*q,fy+(ty-fy)*q,col,a);});
+      const rest=nowIdx.length-show.length;if(rest>0){ctx.fillStyle=col;ctx.font=`600 ${Math.round(ds*1.4)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('+'+rest,ax,ay+gap*2.1);}}
+    // shots at every enemy side that still stands (and at the core)
+    if(playing&&ph<.45&&(before.length||lev)){const q=ph/.45,tg=b.sides.map((o,i)=>i).filter(i=>i!==j&&b.got[r0]&&b.got[r0][i]>0).map(anchor);if(b.core&&b.core.pid!==sd.pid&&b.core.hp[r0]>0)tg.push([x,y]);
+      for(const [bx,by] of tg)for(let m=0;m<3;m++){const off=(m-1)*ds*1.4;ctx.beginPath();ctx.arc(ax+(bx-ax)*q+off*.3,ay+(by-ay)*q+off,1.8,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();}}
+    const got=b.got[r0]?b.got[r0][j]:0;
+    if(playing&&got>0&&ph>.45){const q=(ph-.45)/.55;ctx.save();ctx.globalAlpha*=1-q;ctx.fillStyle=col;ctx.font=`700 ${Math.round(12*sz+2)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('−'+got,ax,ay-gap*2.2-10*q);ctx.restore();}
+  });
+  ctx.fillStyle='rgba(129,144,171,.95)';ctx.font=`600 ${Math.round(9*sz+2)}px 'IBM Plex Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText(playing?L(`Round ${k+1>=5&&last>5?last:k+1} of ${last}`,`Раунд ${k+1>=5&&last>5?last:k+1} из ${last}`):L('Battle over','Бой окончен'),x,y+RR*.86);
+  ctx.restore();
+}
+// 1A: the health ring drains, the core flickers and implodes, then a shockwave in its owner's colour and flying shards
+function drawCoreFx(c,t,sz){
+  const n=G.nodes[c.node],[x,y]=toScreen(n.x,n.y),col=c.color,S=sz;
+  // hide the fallen core underneath until it fades in at the end
+  const cover=t<1.6?1:Math.max(0,1-(t-1.6)/.8);
+  if(cover>0){ctx.beginPath();ctx.arc(x,y,24*S,0,Math.PI*2);ctx.fillStyle=`rgba(6,9,17,${cover})`;ctx.fill();}
+  if(t<1){const fl=t>.3?(Math.sin(t*60)>0?1:.55):1,sh=1-Math.pow(Math.max(0,(t-.6)/.4),3)*.92,hp=.25*(1-Math.min(1,t/.6));
+    ctx.save();ctx.globalAlpha=fl;
+    ctx.beginPath();ctx.arc(x,y,22*S*sh,0,Math.PI*2);ctx.fillStyle=hexa(col,.18);ctx.fill();
+    ctx.beginPath();ctx.arc(x,y,13*S*sh,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+    if(hp>0){ctx.beginPath();ctx.arc(x,y,17*S*sh,-Math.PI/2,-Math.PI/2+Math.PI*2*hp);ctx.strokeStyle=hexa(col,.9);ctx.lineWidth=2;ctx.stroke();}
+    ctx.restore();
+    if(t>.6){ctx.beginPath();ctx.arc(x,y,(4+10*(1-(t-.6)/.4))*S,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.9)';ctx.fill();}
+    return;}
+  const k=Math.min(1,(t-1)/1.2),eo=v=>1-Math.pow(1-v,3);
+  if(t<1.3){ctx.beginPath();ctx.arc(x,y,60*S,0,Math.PI*2);ctx.fillStyle=`rgba(255,240,240,${.45*(1-(t-1)/.3)})`;ctx.fill();}
+  ctx.beginPath();ctx.arc(x,y,(10+110*eo(k))*S,0,Math.PI*2);ctx.strokeStyle=hexa(col,.8*(1-k));ctx.lineWidth=6*(1-k)+1;ctx.stroke();
+  const k2=Math.min(1,(t-1.05)/.95);if(k2>0){ctx.beginPath();ctx.arc(x,y,(6+70*eo(k2))*S,0,Math.PI*2);ctx.strokeStyle=`rgba(255,255,255,${.6*(1-k2)})`;ctx.lineWidth=2;ctx.stroke();}
+  for(let i=0;i<14;i++){const a=i/14*Math.PI*2+.3,d=eo(k)*(55+16*Math.sin(i*5))*S,sz2=(4+2*Math.sin(i))*S;ctx.save();ctx.translate(x+Math.cos(a)*d,y+Math.sin(a)*d);ctx.rotate(a+k*6);ctx.globalAlpha=1-k;ctx.fillStyle=i%3?col:'#ffffff';ctx.beginPath();ctx.moveTo(0,-sz2);ctx.lineTo(sz2*.6,sz2*.6);ctx.lineTo(-sz2*.6,sz2*.4);ctx.closePath();ctx.fill();ctx.restore();}
+}
 function hexa(c,a){const n=parseInt(c.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;}
 
 function shapePath(c,cls,x,y,s){
@@ -2345,7 +2579,12 @@ function unitSlot(u,V){
   const list=G.workers.filter(w=>w.node===u.node);const i=Math.max(0,list.indexOf(u));
   const ring=i<15?0:1,j=ring?i-15:i,a=.15+j*2*Math.PI/(ring?21:15),rad=ring?33:21.5;return [Math.cos(a)*rad,Math.sin(a)*rad];
 }
+function moveChosen(u){const mm=G&&G.moveMode;if(!mm||mm.mode!=='move')return false;if(mm.u===u)return true;
+  if(mm.squad!=null&&u.cls){const q=(P(ME).squads||[]).find(q=>q.id===mm.squad);return !!q&&q.ids.includes(u.id);}return false;}
+function chosenPulse(x,y,r){const now=performance.now();for(let i=0;i<2;i++){const k=((now/1200)+i*.5)%1;ctx.beginPath();ctx.arc(x,y,r+12*k,0,Math.PI*2);ctx.strokeStyle=`rgba(255,216,77,${.75*(1-k)})`;ctx.lineWidth=2;ctx.stroke();}
+  ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.strokeStyle='rgba(255,216,77,.5)';ctx.lineWidth=1.2;ctx.stroke();}
 function drawFleet(f,x,y,sz,sel,busy){
+  if(moveChosen(f))chosenPulse(x,y,(fleetR(f)+6)*sz);
   const c=P(f.owner).color,r=fleetR(f)*sz;
   if(busy){ctx.beginPath();ctx.arc(x,y,r+4.5*sz,0,Math.PI*2);ctx.strokeStyle=BUSY;ctx.lineWidth=1.8;ctx.stroke();}
   if(f.cls==='leviathan'){drawLeviathan(ctx,x,y,r,sel?'#ffffff':c,.18,sz*.5);return;}
@@ -2396,7 +2635,7 @@ function draw(now){
   G.hits=[];
   const me=P(ME),V=vis(ME),z=cam.z,FS=fleetSight(ME);
   let ap=1,el=0;
-  if(G.anim){el=now-G.anim.t0;ap=Math.min(1,el/950);if(el>=(G.shocks&&G.shocks.length?2000:G.rockets&&G.rockets.length?1800:950)){G.anim=null;G.rockets=[];G.shocks=[];G.pulseT0=now;for(const u of [...G.workers,...G.fleets])u.trail=null;}}
+  if(G.anim){el=now-G.anim.t0;ap=Math.min(1,el/950);if(el>=Math.max(G.anim.len||0,G.shocks&&G.shocks.length?2000:G.rockets&&G.rockets.length?1800:950)){G.anim=null;G.battleFx=[];G.coreFx=[];G.dtFx=[];G.boomFx=[];G.healFx=[];G.ghost=null;G.stomps=[];G.rockets=[];G.shocks=[];G.pulseT0=now;for(const u of [...G.workers,...G.fleets])u.trail=null;}}
   // dragged station icons and squadrons glide slowly back to their place once released
   const back=1-Math.exp(-dt*2.2),held=drag&&drag.moved&&drag.hit;
   for(const n of G.nodes)for(const s of n.stations)if(s.bx!=null&&!(held&&held.s===s)){s.ox+=(s.bx-s.ox)*back;s.oy+=(s.by-s.oy)*back;}
@@ -2441,9 +2680,12 @@ function draw(now){
   const sz=Math.max(.55,Math.min(1.4,z));
   const selU=G.moveMode&&G.moveMode.mode==='move'?G.moveMode.u:null;
   for(const id of V){
-    const n=G.nodes[id];const [x,y]=toScreen(n.x,n.y);
+    const gh=ghostOn(id,el),n=gh&&G.ghost.nodes.get(id)||G.nodes[id];const [x,y]=toScreen(n.x,n.y);
     if(x<-R*z||y<-R*z||x>W+R*z||y>H+R*z)continue;
-    if(n.type==='core'){
+    // a core that has fallen but whose implosion hasn't played yet still looks alive (empty health ring)
+    const cfx=G.anim&&!gh&&(G.coreFx||[]).find(c=>c.node===id&&el<c.start);
+    if(cfx){const c=cfx.color;ctx.beginPath();ctx.arc(x,y,22*sz,0,Math.PI*2);ctx.fillStyle=hexa(c,.18);ctx.fill();ctx.beginPath();ctx.arc(x,y,13*sz,0,Math.PI*2);ctx.fillStyle=c;ctx.fill();}
+    else if(n.type==='core'){
       const c=P(n.coreOf).color;
       ctx.beginPath();ctx.arc(x,y,22*sz,0,Math.PI*2);ctx.fillStyle=hexa(c,.18);ctx.fill();
       ctx.beginPath();ctx.arc(x,y,13*sz,0,Math.PI*2);ctx.fillStyle=c;ctx.fill();
@@ -2468,18 +2710,32 @@ function draw(now){
       if(n.owner===ME&&s.state==='done'&&stationBusy(s)){ctx.beginPath();ctx.arc(sx,sy,13.5*sz,0,Math.PI*2);ctx.strokeStyle=BUSY;ctx.lineWidth=1.8;ctx.stroke();}
       G.hits.push({x:sx,y:sy,r:12*sz,kind:'station',s,n});
     }
+    const RF=G.fleets,RW=G.workers;if(gh){G.fleets=G.ghost.fleets;G.workers=G.ghost.workers;}
     // workers are small markers; manage them from the core or asteroid menu
     G.workers.filter(w=>w.node===id&&!moving(w)).forEach(w=>{
       const [ox,oy]=unitSlot(w,V);w.lastSlot=[ox,oy];
+      if(moveChosen(w))chosenPulse(x+ox*sz,y+oy*sz,9*sz);
       drawWorker(ctx,w,x+ox*sz,y+oy*sz,sz*.42,w.owner===ME&&workerBusy(w),false);
     });
-    G.fleets.filter(f=>f.node===id&&!moving(f)&&unitVisible(f,V)).forEach(f=>{const [ox,oy]=unitSlot(f,V);f.lastSlot=[ox,oy];const fx=x+ox*sz+f.dx*z,fy=y+oy*sz+f.dy*z;drawFleet(f,fx,fy,sz,selU===f,f.owner===ME&&fleetBusy(f));G.hits.push({x:fx,y:fy,r:fleetR(f)*1.5*sz,kind:'fleet',u:f,bx:fx-f.dx*z,by:fy-f.dy*z});});
-    if(G.flash.has(id)){const k=(Math.sin(now/220)+1)/2;ctx.beginPath();ctx.arc(x,y,(26+k*8)*sz,0,Math.PI*2);ctx.strokeStyle=`rgba(255,93,108,${.35+k*.4})`;ctx.lineWidth=2;ctx.stroke();}
+    G.fleets.filter(f=>f.node===id&&!moving(f)&&!(boomOf(f)&&!gh)&&unitVisible(f,V)).forEach(f=>{const [ox,oy]=unitSlot(f,V);f.lastSlot=[ox,oy];const fx=x+ox*sz+f.dx*z,fy=y+oy*sz+f.dy*z;drawFleet(f,fx,fy,sz,selU===f,f.owner===ME&&fleetBusy(f));G.hits.push({x:fx,y:fy,r:fleetR(f)*1.5*sz,kind:'fleet',u:f,bx:fx-f.dx*z,by:fy-f.dy*z});});
+    G.fleets=RF;G.workers=RW;
+    // the battle ring pulses twice, once the tile's own animation is over
+    if(G.flash.has(id)&&G.anim&&G.ringAt&&G.ringAt.has(id)){const k=(el-G.ringAt.get(id))/900;if(k>0&&k<1){const q=(k*2)%1;ctx.beginPath();ctx.arc(x,y,(26+8*q)*sz,0,Math.PI*2);ctx.strokeStyle=`rgba(255,93,108,${.8*(1-q)})`;ctx.lineWidth=2;ctx.stroke();}}
   }
   // moving units glide along their route and land exactly where their icon will sit, instead of snapping there afterwards
   const glide=(u,ap)=>{const [wx,wy]=along(u.trail,ap);const [x,y]=toScreen(wx,wy);const end=unitSlot(u,V),st=u.lastSlot||end,k=ease(ap);return [x+(st[0]+(end[0]-st[0])*k)*sz,y+(st[1]+(end[1]-st[1])*k)*sz];};
-  for(const w of G.workers)if(moving(w)&&unitVisible(w,V)){const [x,y]=glide(w,ap);drawWorker(ctx,w,x,y,sz*.42,false,false);}
-  G.fleets.filter(f=>moving(f)&&unitVisible(f,V)).forEach(f=>{const [x,y]=glide(f,ap);drawFleet(f,x,y,sz,false,false);});
+  // while the moves play, the snapshot glides (so drones that die later are still seen arriving); afterwards each
+  // tile switches to the real state once its own animation is over
+  const glideSet=(ghostMode)=>{const RF=G.fleets,RW=G.workers;if(ghostMode){G.fleets=G.ghost.fleets;G.workers=G.ghost.workers;}
+    const pick=u=>{const dest=u.node;return ghostMode?(el<MOVE_FX||ghostOn(dest,el)):!(G.anim&&G.ghost&&ghostOn(dest,el));};
+    for(const w of G.workers)if(moving(w)&&pick(w)&&unitVisible(w,V)){const [x,y]=glide(w,ap);drawWorker(ctx,w,x,y,sz*.42,false,false);}
+    G.fleets.filter(f=>moving(f)&&pick(f)&&!(boomOf(f)&&!ghostMode)&&unitVisible(f,V)).forEach(f=>{const [x,y]=glide(f,ap);drawFleet(f,x,y,sz,false,false);});
+    G.fleets=RF;G.workers=RW;};
+  if(G.anim&&G.ghost){glideSet(true);if(el>=MOVE_FX)glideSet(false);}else glideSet(false);
+  // boomerangs fly home once their battle has played
+  if(G.anim)for(const b of G.boomFx||[]){const f=G.fleets.find(g=>g.id===b.fid);if(!f||!unitVisible(f,V))continue;const k=Math.max(0,Math.min(1,(el-b.start)/b.len));if(el<b.start)continue;
+    const A=G.nodes[b.from],B=G.nodes[b.to],e=ease(k),[px,py]=toScreen(A.x+(B.x-A.x)*e,A.y+(B.y-A.y)*e),sl=unitSlot(f,V);drawFleet(f,px+sl[0]*sz,py+sl[1]*sz,sz,false,false);}
+  if(G.anim)drawTurnFx(el,V,z,sz);
   // catapult rockets: launch, arc over and burst on the target
   if(G.anim&&G.rockets&&G.rockets.length){
     const t=el/1000;
@@ -2505,17 +2761,18 @@ function draw(now){
   }
   // ballista bolts: a flickering jagged line through every tile hit, blue for yours and orange for enemies', for 2 seconds
   if(G.anim&&G.shocks&&G.shocks.length){
-    const fade=Math.min(1,(2000-el)/300);
     for(const sh of G.shocks){
+      const t0=sh.start!=null?sh.start:MOVE_FX,hops=sh.path.length-1,prog=(el-t0)/HOP_FX;if(prog<=0)continue;
+      const fade=Math.max(0,Math.min(1,(t0+hops*HOP_FX+700-el)/300));if(fade<=0)continue;
       if(!sh.path.some(id=>V.has(id)))continue;
       const col=sh.owner===ME?'77,163,255':'255,155,61';
       const pts=sh.path.map(id=>toScreen(G.nodes[id].x,G.nodes[id].y));
       const fh=G.hits.find(h=>h.kind==='fleet'&&h.u.id===sh.fid);if(fh)pts[0]=[fh.x,fh.y];
       for(const [w,a] of [[6,.25],[2,.95]]){
         ctx.beginPath();
-        for(let i=0;i<pts.length-1;i++){const [ax,ay]=pts[i],[bx,by]=pts[i+1],dx=bx-ax,dy=by-ay,L=Math.hypot(dx,dy)||1,nx=-dy/L,ny=dx/L;
+        for(let i=0;i<pts.length-1&&i<prog;i++){const [ax,ay]=pts[i],[bx,by]=pts[i+1],dx=bx-ax,dy=by-ay,L=Math.hypot(dx,dy)||1,nx=-dy/L,ny=dx/L,part=Math.min(1,prog-i);
           if(i===0)ctx.moveTo(ax,ay);
-          for(let k=1;k<=8;k++){const t=k/8,j=k<8?(Math.random()-.5)*12*sz:0;ctx.lineTo(ax+dx*t+nx*j,ay+dy*t+ny*j);}}
+          for(let k=1;k<=8;k++){const t=k/8*part,j=k<8?(Math.random()-.5)*12*sz:0;ctx.lineTo(ax+dx*t+nx*j,ay+dy*t+ny*j);}}
         ctx.strokeStyle=`rgba(${col},${a*fade})`;ctx.lineWidth=w*sz;ctx.lineJoin='round';ctx.stroke();
       }
     }
@@ -2553,7 +2810,7 @@ function draw(now){
 
 /* ---------- map input ---------- */
 function nodeAt(sx,sy){
-  const V=vis(ME);let best=null,bd=30;
+  const V=vis(ME);let best=null,bd=Math.max(30,R*cam.z*.58);
   for(const id of V){const n=G.nodes[id];const [x,y]=toScreen(n.x,n.y);const d=Math.hypot(x-sx,y-sy);if(d<bd){bd=d;best=id;}}
   return best;
 }
@@ -2597,8 +2854,12 @@ cv.addEventListener('pointermove',e=>{
     if(drag.trace&&drag.moved){
       const id=nodeAt(sx,sy),t=drag.trace,last=t[t.length-1],mm=G.moveMode;
       if(id!=null&&id!==last&&mm){
-        if(t.length>1&&id===t[t.length-2])t.pop();
-        else if(G.nodes[last].nbr.includes(id)&&!t.includes(id)&&known(ME).has(id)&&(!mm.u.cls||mm.squad!=null||routeSet(mm.u,ME).has(id)))t.push(id);
+        const ok=mm.squad!=null||!mm.u.cls?known(ME):routeSet(mm.u,ME);
+        // back onto any earlier tile: the route is cut there
+        if(t.includes(id))t.length=t.indexOf(id)+1;
+        else if(G.nodes[last].nbr.includes(id)){if(ok.has(id))t.push(id);}
+        // a fast drag skipped tiles: fill the gap with the shortest way that doesn't cross the route
+        else if(ok.has(id)){const free=new Set([...ok].filter(x=>!t.includes(x)||x===last));const gap=findPath(last,id,free);if(gap&&gap.length&&gap.length<=6)t.push(...gap);}
         G.hoverPath=t.slice(1);
       }
       return;
@@ -2618,12 +2879,15 @@ cv.addEventListener('pointermove',e=>{
 cv.addEventListener('pointerup',e=>{
   touches.delete(e.pointerId);if(touches.size<2)pinch=null;
   const d=drag;drag=null;clearTimeout(lpT);
-  if(d&&d.select&&G){finishSelect(d.select);return;}
-  if(d&&d.trace&&d.moved&&G&&G.moveMode){finishTrace(d.trace);return;}
+  if(d&&d.select&&G){if(!tutHoldOk()){sfxError();refresh();return;}finishSelect(d.select);return;}
+  if(d&&d.trace&&d.moved&&G&&G.moveMode){if(tutOn()&&!tutMapOk(null,d.trace.at(-1))){sfxError();return;}finishTrace(d.trace);return;}
   if(!d||d.moved||!G)return;
   sfxClick();
   const r=cv.getBoundingClientRect();const sx=e.clientX-r.left,sy=e.clientY-r.top;
-  const h=d.hit,id=nodeAt(sx,sy);
+  let h=d.hit;const id=nodeAt(sx,sy);
+  // tutorials: a tap on an enemy icon on the target tile counts as a tap on that tile
+  if(tutOn()&&G.moveMode&&h&&h.kind==='fleet'&&h.u.owner!==ME&&h.u.node===id)h=null;
+  if(!tutMapOk(h,id)){sfxError();return;}
   // bubble ripple where you clicked an icon
   if((h&&h.kind!=='station')||(!h&&id!=null)){const [wx,wy]=h?toWorld(h.x,h.y):[G.nodes[id].x,G.nodes[id].y];ripples.push({x:wx,y:wy,t:performance.now()});}
   if(G.moveMode){
@@ -2634,7 +2898,7 @@ cv.addEventListener('pointerup',e=>{
     if(mm.mode==='bombard'&&mm.u.cls==='ballista'){if(!G.nodes[mm.u.node].nbr.includes(id)){toast(L('Artillery can only fire at a neighbouring tile.','Артиллерия стреляет только по соседней клетке.'),true);return;}G.popup={type:'charge',f:mm.u.id,to:id,cr:Math.min(5,maxCharge(mm.u),Math.max(1,Math.floor(P(ME).res.xeno)))};G.popupAt=performance.now();G.moveMode=null;refresh();return;}
     if(mm.mode==='bombard'){if(order({t:'bomb',f:mm.u.id,to:id,keep:settings.keepFire})){toast(settings.keepFire?L('They will fire every turn until you stop them.','Они будут стрелять каждый ход, пока вы их не остановите.'):L('They will fire once, when this turn ends.','Они выстрелят один раз в конце хода.'));}}
     else if(mm.mode==='aim'){if(order({t:'aim',s:mm.s.uid,to:id}))toast(L('The death turret fires at the end of this turn.','Турель смерти выстрелит в конце хода.'));}
-    else if(mm.squad!=null)order({t:'squadmove',q:mm.squad,to:id});
+    else if(mm.squad!=null){const q=(P(ME).squads||[]).find(q=>q.id===mm.squad);if(q&&enemiesAt(id)){openSquadPreview(q,id);return;}order({t:'squadmove',q:mm.squad,to:id});}
     else if(mm.u.cls){if(mm.u.cls!=='spy'&&enemiesAt(id))openPreview(mm.u,id);else order({t:'fmove',f:mm.u.id,to:id});}
     else order({t:'wmove',w:mm.u.id,to:id});
     G.moveMode=null;G.hoverPath=null;refresh();return;
@@ -2651,28 +2915,32 @@ function enemiesAt(id){
 }
 // fight the battle on a copy of the match, with only what you can see, to estimate the result
 function previewBattle(f,to){
+  const fs=Array.isArray(f)?f:[f];
   const keep={G,UID,RNG},V=vis(ME);let res=null;
   const g2={};for(const k in G)if(!['hits','modal','popup','moveMode','hoverPath','anim','flash','log','seenTech','lastFight'].includes(k))g2[k]=G[k];
   try{
     REPLAY=true;G=Object.assign(structuredClone(g2),{log:[],flash:new Set(),hits:[],seenTech:new Set()});
     G.fleets=G.fleets.filter(x=>x.owner===ME||x.cls!=='spy'&&(x.node!==to||unitVisible(x,V)));
-    const fc=G.fleets.find(x=>x.id===f.id);fc.node=to;fc.path=[];fc.trail=[f.node,to];
+    for(const f0 of fs){const fc=G.fleets.find(x=>x.id===f0.id);if(fc){fc.node=to;fc.path=[];fc.trail=[f0.node,to];}}
     const n=G.nodes[to],enemyW=G.workers.filter(w=>w.node===to&&w.owner!==ME).length;
     if(fight(n,G.fleets.filter(x=>x.node===to&&x.cls!=='spy'),'')){res=G.lastFight;}
-    else res={win:[ME],sides:[{pid:ME,fleets:[[f.cls,f.count]],workers:0,turrets:[],core:null,saved:[]}],workersOnly:enemyW};
-  }catch(e){console.warn('Jopium: preview failed',e);res=null;}
+    else res={win:[ME],sides:[{pid:ME,fleets:fs.map(x=>[x.cls,x.count]),workers:0,turrets:[],core:null,saved:[]}],workersOnly:enemyW};
+  }catch(e){console.warn('Colonio: preview failed',e);res=null;}
   finally{G=keep.G;UID=keep.UID;RNG=keep.RNG;REPLAY=false;}
   return res;
 }
-function openPreview(f,to){G.popup={type:'preview',f:f.id,to,res:previewBattle(f,to)};G.popupAt=performance.now();G.moveMode=null;G.hoverPath=null;refresh();}
+// a fleet (several squadrons) or a traced route can start a battle too: preview those as well (Draft 12)
+function openSquadPreview(q,to,rt){const fl=q.ids.map(id=>G.fleets.find(f=>f.id===id&&f.owner===ME)).filter(f=>f&&!f.settled);if(!fl.length)return;G.popup={type:'preview',q:q.id,f:fl[0].id,to,rt:rt||null,res:previewBattle(fl,to)};G.popupAt=performance.now();G.moveMode=null;G.hoverPath=null;refresh();}
+function openPreview(f,to,path){G.popup={type:'preview',f:f.id,to,path:path||null,res:previewBattle(f,to)};G.popupAt=performance.now();G.moveMode=null;G.hoverPath=null;refresh();}
 const tileKind=n=>n.type==='core'||n.type==='deadcore'||n.type==='captured'?L('core','ядро'):n.planet!=null?(n.center?L('planet centre','центр планеты'):L('planet section','участок планеты')):L('asteroid','астероид');
 // a traced route was released: send the unit along it
 function finishTrace(t){
+  // a tiny drag that never left the start tile keeps the move open
+  if(t.length<2){G.hoverPath=null;refresh();return;}
   const mm=G.moveMode;G.moveMode=null;G.hoverPath=null;
-  if(t.length<2){refresh();return;}
   const to=t[t.length-1],path=t.slice(1);
-  if(mm.squad!=null)order({t:'squadmove',q:mm.squad,to});
-  else if(mm.u.cls)order({t:'fmove',f:mm.u.id,to,path});
+  if(mm.squad!=null){const q=(P(ME).squads||[]).find(q=>q.id===mm.squad);const rt=settings.fleetRoute?{path,from:mm.from}:{};if(q&&enemiesAt(to)){openSquadPreview(q,to,rt);return;}order({t:'squadmove',q:mm.squad,to,...rt});}
+  else if(mm.u.cls){if(mm.u.cls!=='spy'&&enemiesAt(to)){openPreview(mm.u,to,path);return;}order({t:'fmove',f:mm.u.id,to,path});}
   else order({t:'wmove',w:mm.u.id,to,path});
   refresh();
 }
@@ -2706,6 +2974,7 @@ window.addEventListener('keydown',e=>{
   if(e.target&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
   const a=actionOf(e.key);
   if(a==='back'||e.key==='Escape'){keyBack();return;}
+  if(tutOn())return; // tutorials: keys are off except Esc
   if(!G||!ov.hidden||!a)return;
   held.add(normKey(e.key));pressedAt[normKey(e.key)]=performance.now();
   const menu=G.popup||!$('#modal').hidden||!$('#techscr').hidden;
@@ -2766,7 +3035,7 @@ const rb=r=>`<span class="rb" style="background:${RINFO[r].c}"></span>`;
 const BOLT='<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.5 1 3 9h4l-1 6 7-8.5H9l.5-5.5z" fill="#ffd84d"/></svg>';
 const HEART='<span class="heart" aria-label="health">♥</span>';
 const HOPS='<svg class="ico" viewBox="0 0 16 16" role="img" aria-label="hops per turn"><g fill="none" stroke="#7fd3ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4 6.5 8l-4 4M8.5 4l4 4-4 4"/></g></svg>';
-const STARGOLD='<svg class="ico" viewBox="0 0 16 16" role="img" aria-label="jopium"><path d="M8 .8 9.6 6.4 15.2 8 9.6 9.6 8 15.2 6.4 9.6.8 8l5.6-1.6z" fill="#ffcf4a"/></svg>';
+const STARGOLD='<svg class="ico" viewBox="0 0 16 16" role="img" aria-label="starium"><path d="M8 .8 9.6 6.4 15.2 8 9.6 9.6 8 15.2 6.4 9.6.8 8l5.6-1.6z" fill="#ffcf4a"/></svg>';
 const DMG='<svg class="ico" viewBox="0 0 16 16" aria-label="damage" role="img"><g fill="none" stroke="#ff8a5c" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="8" r="4.6"/><path d="M8 1v3.2M8 11.8V15M1 8h3.2M11.8 8H15"/></g><circle cx="8" cy="8" r="1.3" fill="#ff8a5c"/></svg>';
 function costHtml(c,w){return `<span class="cost">${Object.entries(c).map(([k,v])=>`<span class="${w&&w[k]<v?'bad':''}" title="${rN(k)}">${rb(k)}${v}</span>`).join('')}</span>`;}
 function hpBar(v,m){return `<div class="mono sub">${HEART} ${Math.max(0,Math.round(v))}/${m}</div><div class="bar hp"><i style="width:${100*Math.max(0,v)/m}%"></i></div>`;}
@@ -2828,7 +3097,8 @@ function beginTutorial(key){
 const nodeOpen=id=>G.modal&&G.modal.type==='node'&&G.modal.id===id&&!$('#modal').hidden;
 const unitOpen=f=>f&&G.modal&&G.modal.type==='unit'&&G.modal.f===f.id&&!$('#modal').hidden;
 const stOpen=uid=>G.modal&&G.modal.type==='station'&&G.modal.uid===uid&&!$('#modal').hidden;
-const q$=sel=>{const el=document.querySelector(sel);return el&&el.offsetParent!==null&&!el.disabled?el:null;};
+// visible and pressable: not inside a closed list ("Build a station here") and not hidden by the browser
+const q$=sel=>{const el=document.querySelector(sel);if(!el||el.disabled||el.offsetParent===null)return null;const d=el.closest('details');if(d&&!d.open&&!el.closest('summary'))return null;if(el.checkVisibility&&!el.checkVisibility())return null;return el;};
 const T_tile=id=>({tile:id}),T_dom=sel=>({dom:sel});
 const myWorkers=()=>G.workers.filter(w=>w.owner===ME);
 const workerTo=id=>myWorkers().some(w=>(w.path.length?w.path.at(-1):w.node)===id);
@@ -2836,28 +3106,56 @@ const workerAt=id=>myWorkers().some(w=>w.node===id&&!w.path.length);
 const myFleets=c=>G.fleets.filter(f=>f.owner===ME&&(!c||f.cls===c));
 const T2=(en,ru)=>L(en,ru);
 // open tile `from`, press Move on a worker there, then tap tile `to`
-function tMove(from,to){if(G.moveMode)return T_tile(to);if(nodeOpen(from)&&q$('[data-a="wmove"]'))return T_dom('[data-a="wmove"]');return T_tile(from);}
+function tMove(from,to){if(G.moveMode)return T_tile(to);if((nodeOpen(from)||G.modal&&G.modal.type==='unit'&&G.modal.w!=null&&!$('#modal').hidden)&&q$('[data-a="wmove"]'))return T_dom('[data-a="wmove"]');return T_tile(from);}
 function tTask(id,task){if(nodeOpen(id)&&q$(`[data-a="wtask"][data-t="${task}"]`))return T_dom(`[data-a="wtask"][data-t="${task}"]`);return T_tile(id);}
 // open a tile's "Build a station here" list, then press Start on `type`
 function tBuild(id,type){if(!nodeOpen(id))return T_tile(id);if(q$(`[data-a="start"][data-t="${type}"]`))return T_dom(`[data-a="start"][data-t="${type}"]`);return T_dom('#modal details > summary');}
 // a squadron order: tap the squadron, press the button, tap the tile (and confirm the battle preview)
-function tFleet(f,act,to){if(!f)return null;if(G.popup&&G.popup.type==='preview')return T_dom('[data-a="pmove"]');if(G.popup&&G.popup.type==='charge')return null;if(G.moveMode)return T_tile(to);if(unitOpen(f)&&q$(`[data-a="${act}"][data-f="${f.id}"]`))return T_dom(`[data-a="${act}"][data-f="${f.id}"]`);return {unit:f};}
+function tFleet(f,act,to){if(!f)return null;if(G.popup&&G.popup.type==='preview')return T_dom('[data-a="pmove"]');if(G.popup&&G.popup.type==='charge')return null;if(G.moveMode)return T_tile(to);if((unitOpen(f)||nodeOpen(f.node))&&q$(`[data-a="${act}"][data-f="${f.id}"]`))return T_dom(`[data-a="${act}"][data-f="${f.id}"]`);return {unit:f};}
 // a station's button
 function tStation(n,s,sel){if(stOpen(s.uid)&&q$(sel))return T_dom(sel);if(nodeOpen(n)&&q$(`[data-a="openst"][data-s="${s.uid}"]`))return T_dom(`[data-a="openst"][data-s="${s.uid}"]`);return {station:s.uid,tile:n};}
 const stepDone=()=>TUT&&TUT.T.steps[TUT.i];
 const tutStep=stepDone;
 const tutAllowsEnd=()=>!TUT||!!(tutStep()&&tutStep().end);
 // a map target can't be pressed while a menu covers it: point at the menu's ✕ first
+const TUT_LAYERS=[['#popup','#popup .x'],['#techscr','#techscr .tcore'],['#modal','#modal .x']];
 function tutResolve(t){
   if(!t)return null;
-  const mapT=t.tile!=null||t.unit||t.station!=null||t.hold;
-  if(mapT&&!t.dom){
-    if(G.popup&&!$('#popup').hidden&&q$('#popup .x'))return {dom:'#popup .x',close:true};
-    if(!$('#techscr').hidden&&q$('#techscr .tcore'))return {dom:'#techscr .tcore',close:true};
-    if(!$('#modal').hidden&&q$('#modal .x'))return {dom:'#modal .x',close:true};
-  }
+  const el=t.dom?q$(t.dom):null;
+  // the top-most open menu: the target must be inside it, otherwise close that menu first
+  for(const [lay,x] of TUT_LAYERS){const L0=$(lay);if(L0.hidden||(lay==='#popup'&&!G.popup))continue;
+    if(el&&L0.contains(el))return t;
+    if(el&&el.closest('#top'))return t;
+    if(q$(x))return {dom:x,close:true};}
+  if(t.dom&&!el)return null;
   return t;
 }
+const tutOn=()=>!!(TUT&&G&&G.tut);
+function tutTarget(){const st=tutStep();return st&&st.at?tutResolve(st.at()):null;}
+function tutClickOk(el){
+  if(!tutOn())return true;
+  if(el.closest('#tutbub')||el.closest('#hudbar')||el.closest('#resign'))return true;
+  if(G.popup&&G.popup.type==='tutskip'&&el.closest('#popup'))return true;
+  if(TUT.ended)return false;
+  const t=tutTarget();if(!t||!t.dom)return false;
+  const g=q$(t.dom);return !!g&&(g===el||g.contains(el)||el.contains(g));
+}
+document.addEventListener('click',e=>{
+  if(!tutOn())return;
+  const el=e.target.closest&&e.target.closest('[data-a],button,summary,input,select,label');if(!el)return;
+  if(tutClickOk(el))return;
+  e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();sfxError();
+},true);
+// a tap on the map: only the target tile, unit (or its tile) or station
+function tutMapOk(h,id){
+  if(!tutOn())return true;if(TUT.ended)return false;
+  const t=tutTarget();if(!t||t.dom||t.hold)return false;
+  if(t.tile!=null&&id===t.tile)return true;
+  if(t.unit&&((h&&h.kind==='fleet'&&h.u===t.unit)||id===t.unit.node))return true;
+  if(t.station!=null&&h&&h.kind==='station'&&h.s.uid===t.station)return true;
+  return false;
+}
+const tutHoldOk=()=>!tutOn()||(!TUT.ended&&!!(tutTarget()||{}).hold);
 function tutRect(t){
   if(!t)return null;
   if(t.dom){const el=q$(t.dom);if(!el)return null;const r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:r.width+12,h:r.height+12,round:false};}
@@ -2867,10 +3165,11 @@ function tutRect(t){
   const id=t.tile;if(id==null)return null;const n=G.nodes[id];const [x,y]=toScreen(n.x,n.y);const d=27*Math.max(.55,Math.min(1.4,cam.z))*2+16;return {x:cr.left+x,y:cr.top+y,w:d,h:d,round:true};
 }
 function tutAdvance(){
-  const r=TUT.lastRect;if(r)TUT.fx={x:r.x,y:r.y,t:performance.now()};
+  const r=TUT.lastRect,lt=TUT.lastT;if(r&&lt&&!lt.close)TUT.fx={x:r.x,y:r.y,t:performance.now(),dom:lt.dom||null};
   TUT.i++;TUT.t0=performance.now();sfxTurn();
   const nx=tutStep();
   if(!nx){tutFinish();return;}
+  if(nx.next){closeModal();G.popup=null;refresh();}
   if(nx.enter)nx.enter();
   if(nx.end&&nx.at&&(nx.at()||{}).dom==='#endturn'){closeModal();refresh();}
 }
@@ -2879,43 +3178,67 @@ function tutLoop(){
   const el=tutEl(),st=tutStep();
   if(!st){el.hidden=true;return;}
   if(st.fix)st.fix();
-  if(st.done&&st.done()){tutAdvance();requestAnimationFrame(tutLoop);return;}
+  if(st.done&&!G.anim&&st.done()){tutAdvance();requestAnimationFrame(tutLoop);return;}
   el.hidden=false;
-  const t=tutResolve(st.at?st.at():null),r=tutRect(t);if(r)TUT.lastRect=r;
+  const t=tutResolve(st.at?st.at():null),r=t&&t.hold?null:tutRect(t);if(r){TUT.lastRect=r;TUT.lastT=t;}
   const out=$('#tutout'),bub=$('#tutbub'),fx=$('#tutfx');
-  out.hidden=!r;
+  out.hidden=!r;out.style.display=r?'':'none'; // (the hidden attribute does not hide an <svg>)
+  tutHand(t&&t.hold?t:null);
   if(r){out.style.left=(r.x-r.w/2-4)+'px';out.style.top=(r.y-r.h/2-4)+'px';out.setAttribute('width',r.w+8);out.setAttribute('height',r.h+8);
     const rc=out.querySelector('rect');rc.setAttribute('width',r.w+4);rc.setAttribute('height',r.h+4);rc.setAttribute('rx',r.round?(r.w+4)/2:10);}
   // the bubble: only when this step has something to explain (closing a menu needs no words)
   const txt=t&&t.close?null:st.say?st.say():null;
   const key=TUT.i+'|'+(txt||'');
-  if(bub.dataset.k!==key){bub.dataset.k=key;bub.hidden=!txt&&!st.next;bub.querySelector('.tt').textContent=txt||'';const nb=bub.querySelector('.tutnext');nb.hidden=!st.next;nb.textContent=L('Next','Далее');bub.classList.remove('pop');void bub.offsetWidth;bub.classList.add('pop');}
+  // a closed box stays closed until the next text (no way back to the same text)
+  if(bub.dataset.k!==key){bub.dataset.k=key;const shut=TUT.shut===key;bub.hidden=shut||(!txt&&!st.next);bub.querySelector('.tt').textContent=txt||'';const nb=bub.querySelector('.tutnext');nb.hidden=!st.next;nb.textContent=L('Next','Далее');bub.querySelector('.tutx').hidden=!!st.next;bub.querySelector('.tutx').setAttribute('aria-label',L('Close','Закрыть'));bub.classList.remove('pop');void bub.offsetWidth;bub.classList.add('pop');}
   if(!bub.hidden){
-    const bw=bub.offsetWidth,bh=bub.offsetHeight,vw=innerWidth,vh=innerHeight;let bx,by;
-    if(r){const right=r.x+r.w/2+16+bw<vw-8;bx=right?r.x+r.w/2+16:r.x-r.w/2-16-bw;by=r.y-bh/2;if(bx<8){bx=Math.max(8,Math.min(vw-bw-8,r.x-bw/2));by=r.y+r.h/2+14;if(by+bh>vh-8)by=r.y-r.h/2-bh-14;}}
-    else{bx=(vw-bw)/2;by=vh-bh-90;}
-    bub.style.left=Math.max(8,Math.min(vw-bw-8,bx))+'px';bub.style.top=Math.max(8,Math.min(vh-bh-8,by))+'px';
+    bub.style.left='';bub.style.top='';
+    // bottom edge; the top edge while a menu would sit under it
+    const sheet=[...document.querySelectorAll('#sheet,#pcard,#techscr')].find(x=>x.offsetParent!==null&&!x.closest('[hidden]'));
+    // the edge away from what you need to press; with a menu over the bottom, the top unless the target is up there
+    const bh=bub.offsetHeight+100,cover=!!sheet&&sheet.getBoundingClientRect().bottom>innerHeight-bh,ty=r?r.y+r.h/2:null;
+    const top=ty!=null?(ty>innerHeight-bh-20||(cover&&ty>bh+60)):cover;
+    bub.classList.toggle('top',top);
   }
-  // a correct press: a short yellow shine with a few sparks
-  if(TUT.fx){const k=(performance.now()-TUT.fx.t)/1100;if(k>1){TUT.fx=null;fx.hidden=true;}else{fx.hidden=false;fx.style.left=TUT.fx.x+'px';fx.style.top=TUT.fx.y+'px';fx.style.setProperty('--k',k);}}
+  // a correct press: a short yellow shine, only while what was pressed is still in view (not under a menu)
+  if(TUT.fx){const k=(performance.now()-TUT.fx.t)/1100;let ok=k<=1;
+    if(ok){const top=document.elementFromPoint(TUT.fx.x,TUT.fx.y);if(TUT.fx.dom){const g=q$(TUT.fx.dom);ok=!!g&&!!top&&(g===top||g.contains(top));}else ok=top===cv;}
+    if(!ok){TUT.fx=null;fx.hidden=true;}else{fx.hidden=false;fx.style.left=TUT.fx.x+'px';fx.style.top=TUT.fx.y+'px';fx.style.setProperty('--k',k);}}
   requestAnimationFrame(tutLoop);
 }
-// FINISH HIM: big letters for 2 s and a deep synthesized voice; the music dips while it speaks
-function finishHim(){
-  const b=$('#tutbig');b.textContent=L('FINISH HIM','ДОБЕЙ ЕГО');b.hidden=false;b.classList.remove('go');void b.offsetWidth;b.classList.add('go');setTimeout(()=>{b.hidden=true;},2200);
-  duck=.2;const back=()=>{duck=1;};
-  try{if(window.speechSynthesis&&settings.sfx>0){const u=new SpeechSynthesisUtterance(L('Finish him!','Добей его!'));u.lang=RU()?'ru-RU':'en-US';u.pitch=.1;u.rate=.75;u.volume=Math.min(1,settings.sfx*1.4);u.onend=back;speechSynthesis.cancel();speechSynthesis.speak(u);setTimeout(back,3500);}else setTimeout(back,1500);}catch(e){back();}
+function tutHand(t){
+  const c0=$('#tutcv');if(!c0)return;const D=Math.min(2,devicePixelRatio||1),w=innerWidth,h=innerHeight;
+  if(c0.width!==Math.round(w*D)||c0.height!==Math.round(h*D)){c0.width=Math.round(w*D);c0.height=Math.round(h*D);}
+  const c=c0.getContext('2d');c.setTransform(D,0,0,D,0,0);c.clearRect(0,0,w,h);
+  if(!t||drag||G.popup||!$('#modal').hidden){TUT.handT0=null;return;}
+  const cr=cv.getBoundingClientRect(),hs=G.hits.filter(x=>x.kind==='fleet'&&x.u.owner===ME);if(hs.length<1)return;
+  const x0=Math.min(...hs.map(x=>x.x-x.r))+cr.left-34,y0=Math.min(...hs.map(x=>x.y-x.r))+cr.top-30,x1=Math.max(...hs.map(x=>x.x+x.r))+cr.left+34,y1=Math.max(...hs.map(x=>x.y+x.r))+cr.top+30;
+  if(TUT.handT0==null)TUT.handT0=performance.now();
+  const T=((performance.now()-TUT.handT0)/1000)%5.2,seg=(a,b)=>Math.max(0,Math.min(1,(T-a)/(b-a))),eo=v=>1-Math.pow(1-v,3);
+  const press=seg(.4,1.4),dr=eo(seg(1.5,2.8));let hx=x0,hy=y0;
+  if(T<.4){hx=x0-30+30*seg(0,.4);hy=y0-20+20*seg(0,.4);}else if(T>=1.5){hx=x0+(x1-x0)*dr;hy=y0+(y1-y0)*dr;}
+  if(T>=.4&&T<1.5){c.beginPath();c.arc(x0,y0,18,-Math.PI/2,-Math.PI/2+Math.PI*2*press);c.strokeStyle='#ffd84d';c.lineWidth=3;c.stroke();}
+  if(T>=1.5&&T<3.6){c.save();c.globalAlpha=T>3?1-seg(3,3.6):1;c.fillStyle='rgba(77,163,255,.1)';c.strokeStyle='#4da3ff';c.setLineDash([5,4]);c.lineWidth=1.4;c.fillRect(x0,y0,hx-x0,hy-y0);c.strokeRect(x0,y0,hx-x0,hy-y0);c.restore();}
+  const a=T>4.4?1-seg(4.4,5):1;if(a<=0)return;
+  c.save();c.globalAlpha=a;c.translate(hx+4,hy+4);const k=T>=.4&&T<3?.92:1;c.scale(k,k);
+  c.fillStyle='rgba(255,216,77,.95)';c.strokeStyle='#3a2d00';c.lineWidth=1.4;c.beginPath();
+  c.moveTo(0,0);c.lineTo(0,-22);c.quadraticCurveTo(0,-27,4,-27);c.quadraticCurveTo(8,-27,8,-22);c.lineTo(8,-10);c.lineTo(10,-12);c.quadraticCurveTo(14,-14,16,-10);c.lineTo(17,-8);c.quadraticCurveTo(21,-10,23,-6);c.lineTo(24,-4);c.quadraticCurveTo(28,-5,28,0);c.lineTo(27,12);c.quadraticCurveTo(26,20,18,22);c.lineTo(8,22);c.quadraticCurveTo(2,21,-2,14);c.lineTo(-9,2);c.quadraticCurveTo(-11,-3,-6,-3);c.closePath();c.fill();c.stroke();c.restore();
 }
 function tutFinish(){
+  if(!TUT||TUT.ended)return;
   restoreTutRules();
-  const el=tutEl();if(el)el.hidden=true;
-  const k=TUT?TUT.key:'starter',T=TUTS[k];TUT=null;
+  const k=TUT.key,T=TUTS[k];
   profile.tuts=Object.assign({},profile.tuts||{},{[k]:true});saveProfile();
   if(k==='starter')Acc.tutDone();
   if(Acc.state==='in')Acc.saveTuts();
-  if(G){G.tut=false;G.over=true;}
-  ov.hidden=false;ov.className='dim';ov.dataset.view='tutdone';
-  ov.innerHTML=`<div class="card"><h1>${k==='starter'?L('Tutorial complete','Обучение пройдено'):L(`${T.n} tutorial completed`,`Обучение «${T.r}» пройдено`)}</h1>${k==='starter'?`<p>${L('More short tutorials are in Settings → Tutorials.','Другие короткие уроки — в Настройках → «Обучение».')}</p>`:''}<div class="opts"><button class="btn primary" type="button" data-a="tut-menu">${L('To the main menu','В главное меню')}</button>${k!=='starter'?`<button class="btn" type="button" data-a="tut-list">${L('More tutorials','Другие уроки')}</button>`:''}</div></div>`;
+  closeModal();G.moveMode=null;refresh();
+  const sum=T.sum?L(T.sum[0],T.sum[1]):L('Lesson complete.','Урок пройден.');
+  const more=k==='starter'?L(' More short lessons are in Settings → Tutorials.',' Другие короткие уроки — в Настройках → «Обучение».'):'';
+  TUT.ended=true;TUT.T={...T,steps:[
+    {say:()=>sum+more,done:()=>TUT.shut===TUT.i+'|'+sum+more},
+    {at:()=>$('#top').classList.contains('open')?T_dom('#resign'):T_dom('#hudbar'),done:()=>false}]};
+  TUT.i=0;TUT.t0=performance.now();
+  return;
 }
 function restoreTutRules(){if(TUT_SAVE){TECH.barrack.c=TUT_SAVE.tb;ST.kazarm.t=TUT_SAVE.kt;ST.levi.t=TUT_SAVE.lt;TECH.trade.c=TUT_SAVE.tt;TUT_SAVE=null;}}
 // leaving a tutorial early: ask first
@@ -2927,7 +3250,9 @@ function tutMenuHtml(){
   return `<div class="card"><button class="x" type="button" data-a="m-settings" aria-label="${L('Close','Закрыть')}">✕</button><h1>${L('Tutorials','Обучение')}</h1>
     <div class="mbtns">${row('starter')}</div>
     <h3 class="sub" style="margin:4px 0 0">${L('Economy','Экономика')}</h3><div class="mbtns">${row('trade')}</div>
-    <h3 class="sub" style="margin:4px 0 0">${L('War drones','Боевые дроны')}</h3><div class="mbtns tutgrid">${['interceptor','bomber','frigate','siege','catapult','boomerang','tank','stomper','ballista'].map(row).join('')}</div></div>`;
+    <h3 class="sub" style="margin:4px 0 0">${L('War drones','Боевые дроны')}</h3><div class="mbtns tutgrid">${['bomber','interceptor','frigate','siege','catapult','boomerang','tank','stomper','ballista'].map(row).join('')}</div>
+    <h3 class="sub" style="margin:4px 0 0">${L('Utility drones','Вспомогательные дроны')}</h3><div class="mbtns tutgrid">${['spy','engineer','charger'].map(row).join('')}</div>
+    <h3 class="sub" style="margin:4px 0 0">${L('Stations','Станции')}</h3><div class="mbtns tutgrid">${['upstation','death','rebuild'].map(row).join('')}</div></div>`;
 }
 
 
@@ -2935,12 +3260,14 @@ function tutMenuHtml(){
 const enemyFleet=(cls,k,node,up)=>{const f=newFleet(1,cls,k,node,up);G.fleets.push(f);return f;};
 const myFleet=(cls,k,node,up)=>{const f=newFleet(ME,cls,k,node,up);G.fleets.push(f);return f;};
 const TUTS={
-  // the starter: core with iron, empty and silicon asteroids; iron and silicon meet in one planet section; the enemy core sits by another
+  // the starter: core with iron, empty and silicon asteroids; only the iron asteroid touches the planet section, so the
+  // shortest route from the core to the planet centre runs core → iron → section → centre (Draft 12)
   starter:{n:'Starter tutorial',r:'Основное обучение',workers:1,
-    map:{cells:[[1,0,'res','iron'],[-1,0,'empty'],[1,-1,'res','silicon'],[6,-1,'res','copper'],[5,0,'empty'],[6,-2,'res','iron'],[5,-2,'res','silicon'],[-2,0,'res','copper'],[-2,1,'empty']],
+    sum:['Tutorial complete! You claimed and mined land, built a Barrack and a fleet, linked a planet centre to your core and won with a leviathan.','Обучение пройдено! Вы захватывали и добывали, построили Казарму и флот, подключили центр планеты к ядру и победили левиафаном.'],
+    map:{cells:[[1,0,'res','iron'],[-1,0,'empty'],[0,-1,'res','silicon'],[6,-1,'res','copper'],[5,0,'empty'],[6,-2,'res','iron'],[5,-2,'res','silicon'],[-2,0,'res','copper'],[-2,1,'empty']],
          planet:{c:[3,-1],secs:[[2,-1],[4,-1],[3,0],[3,-2],[4,-2]],look:1},cores:[[0,0],[5,-1]]},
-    ids:at=>({A:at(1,0),E:at(-1,0),Si:at(1,-1),S:at(2,-1),S2:at(4,-1),P:at(3,-1),ec:at(5,-1)}),
-    setup:(at,p)=>{for(const r of RES)p.res[r]=25;p.gold=99;TECH.barrack.c=1;ST.kazarm.t=1;ST.levi.t=1;},
+    ids:at=>({A:at(1,0),E:at(-1,0),Si:at(0,-1),S:at(2,-1),S2:at(4,-1),P:at(3,-1),ec:at(5,-1)}),
+    setup:(at,p)=>{for(const r of RES)p.res[r]=25;p.res.iron=40;p.gold=99;TECH.barrack.c=1;ST.kazarm.t=1;ST.levi.t=1;},
     steps:[
       {say:()=>T2('This is your core: everything starts here. Tap it.','Это ваше ядро, с него начинается всё. Нажмите на него.'),at:()=>T_tile(P(ME).core),done:()=>G.sel===P(ME).core||nodeOpen(P(ME).core)},
       {say:()=>T2('Tap it again to open it.','Нажмите ещё раз, чтобы открыть его.'),at:()=>T_tile(P(ME).core),done:()=>nodeOpen(P(ME).core)},
@@ -2955,41 +3282,41 @@ const TUTS={
         at:()=>!$('#techscr').hidden?(G.popup&&G.popup.type==='tech'&&G.popup.t==='barrack'?T_dom('[data-a="tset"]'):T_dom('[data-a="techpop"][data-t="barrack"]')):nodeOpen(P(ME).core)?T_dom('[data-a="open"][data-m="tech"]'):T_tile(P(ME).core),
         done:()=>myWorkers().some(w=>w.task==='research'&&w.tech==='barrack')||has(ME,'barrack')},
       {at:()=>T_dom('#endturn'),end:true,done:()=>has(ME,'barrack')},
-      {say:()=>T2('Build a Barrack at your core.','Постройте Казарму в ядре.'),at:()=>tBuild(P(ME).core,'kazarm'),done:()=>G.nodes[P(ME).core].stations.some(s=>s.type==='kazarm')},
+      {say:()=>T2('Stations are built from a tile\'s menu. Open your core and press "Build a station here".','Станции строятся из меню клетки. Откройте ядро и нажмите «Построить станцию».'),
+        at:()=>nodeOpen(P(ME).core)?T_dom('#modal details > summary'):T_tile(P(ME).core),done:()=>!!q$('[data-a="start"][data-t="kazarm"]')||G.nodes[P(ME).core].stations.some(s=>s.type==='kazarm')},
+      {say:()=>q$('[data-a="start"][data-t="kazarm"]')?T2('Build a Barrack.','Постройте Казарму.'):null,at:()=>tBuild(P(ME).core,'kazarm'),done:()=>G.nodes[P(ME).core].stations.some(s=>s.type==='kazarm')},
       {at:()=>T_dom('#endturn'),end:true,done:()=>live(G.nodes[P(ME).core],'kazarm').length>0},
       {say:()=>T2('Order two different war drones.','Закажите двух разных боевых дронов.'),
         at:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];if(!k)return null;return tStation(P(ME).core,k,k.queue.includes('interceptor')?'[data-a="kbuild"][data-c="bomber"]':'[data-a="kbuild"][data-c="interceptor"]');},
         done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&new Set([...k.queue,...CLS.filter(c=>k.hangar[c].length)]).size>=2;}},
       {at:()=>T_dom('#endturn'),end:true,done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&k.hangar.interceptor.length>0&&k.hangar.bomber.length>0;}},
       {at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const k=live(G.nodes[P(ME).core],'kazarm')[0];return k?tStation(P(ME).core,k,`[data-a="hangar"][data-c="${k.hangar.interceptor.length?'interceptor':'bomber'}"]`):null;},
-        done:()=>myFleets().length>=2},
-      {say:()=>G.popup&&G.popup.type==='squad'?null:T2('Press and hold here for a second, then drag across both squadrons to group them into a fleet.','Нажмите здесь и держите секунду, затем протяните рамку через обе эскадрильи, чтобы собрать их во флот.'),
+        say:()=>G.popup&&G.popup.type==='hangar'?null:T2('Launch your new drones from the Barrack.','Выпустите новых дронов из Казармы.'),done:()=>myFleets().length>=2},
+      {say:()=>G.popup&&G.popup.type==='squad'?null:T2('Make a fleet: press and hold the map for a second, then drag a box over both squadrons.','Соберите флот: нажмите на карту и держите секунду, затем протяните рамку через обе эскадрильи.'),
         at:()=>G.popup&&G.popup.type==='squad'?T_dom('[data-a="sqmake"]'):{hold:myFleets()[0]},done:()=>(P(ME).squads||[]).length>0},
       {enter:()=>{enemyFleet('interceptor',1,TUT.ids.E);hitPulse(TUT.ids.E,[],[],'gift');G.pulseT0=performance.now();refresh();},
         say:()=>G.popup&&G.popup.type==='preview'||G.moveMode?null:T2('An enemy drone landed next to your core! Attack it with your fleet.','Вражеский дрон сел рядом с ядром! Атакуйте его флотом.'),
         at:()=>G.popup&&G.popup.type==='preview'?T_dom('[data-a="pmove"]'):G.moveMode?T_tile(TUT.ids.E):G.modal&&G.modal.type==='empire'&&!$('#modal').hidden?T_dom('[data-a="sqmove"]'):T_dom('#empireBtn'),
         done:()=>myFleets().some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.E)},
       {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
-      {say:()=>G.moveMode?null:T2('Planet centres hold jopium. Send your new worker to the planet centre.','В центрах планет есть жопиум. Отправьте нового рабочего в центр планеты.'),at:()=>tMove(P(ME).core,TUT.ids.P),done:()=>workerTo(TUT.ids.P),
-        // the worker takes the silicon asteroid and the planet section straight to the centre
-        fix:()=>{const w=myWorkers().find(w=>w.path.length&&w.path.at(-1)===TUT.ids.P&&w.path[0]!==TUT.ids.Si&&w.node===P(ME).core);if(w)w.path=[TUT.ids.Si,TUT.ids.S,TUT.ids.P];}},
+      {say:()=>G.moveMode?null:T2('Planet centres hold starium. Send your new worker to the planet centre: it flies over your iron asteroid and the planet section.','В центрах планет есть стариум. Отправьте нового рабочего в центр планеты: он пролетит через ваш железный астероид и участок планеты.'),at:()=>tMove(P(ME).core,TUT.ids.P),done:()=>workerTo(TUT.ids.P)},
       {say:()=>T2('End turns until it arrives.','Завершайте ходы, пока он не долетит.'),at:()=>T_dom('#endturn'),end:true,done:()=>workerAt(TUT.ids.P)},
       {at:()=>tTask(TUT.ids.P,'claim'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='claim')||G.nodes[TUT.ids.P].owner===ME},
       {at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.P].owner===ME},
-      {say:()=>T2('Press Mine now: from the turn the centre connects to your core, it gives 1 jopium a turn, that very turn included.','Нажмите «Добывать»: с того хода, когда центр соединится с ядром, он даёт 1 жопиум за ход, включая этот ход.'),at:()=>tTask(TUT.ids.P,'mine'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='mine')},
+      {say:()=>T2('Press Mine now: from the turn the centre connects to your core, it gives 1 starium a turn, that very turn included.','Нажмите «Добывать»: с того хода, когда центр соединится с ядром, он даёт 1 стариум за ход, включая этот ход.'),at:()=>tTask(TUT.ids.P,'mine'),done:()=>myWorkers().some(w=>w.node===TUT.ids.P&&w.task==='mine')},
       {say:()=>T2('The red cross means the centre is cut off: the planet section between it and your iron asteroid is unclaimed.','Красный крестик значит, что центр отрезан: участок планеты между ним и вашим железным астероидом ничей.'),at:()=>T_tile(TUT.ids.P),next:true},
       {say:()=>{const g=TUT.ids.S;if(workerAt(g)&&!myWorkers().some(w=>w.node===g&&w.task==='claim'))return null;if(myWorkers().some(w=>w.node===g&&w.task==='claim')||workerTo(g))return null;return T2('Move the iron miner one hop onto that section and claim it.','Переместите шахтёра с железа на этот участок и захватите его.');},
         at:()=>{const g=TUT.ids.S;if(myWorkers().some(w=>w.node===g&&!w.path.length&&w.task==='claim'))return T_dom('#endturn');if(workerAt(g))return tTask(g,'claim');if(workerTo(g))return T_dom('#endturn');return tMove(TUT.ids.A,g);},end:true,
         done:()=>G.nodes[TUT.ids.S].owner===ME&&G.conn[ME].has(TUT.ids.P)},
       {at:()=>T_dom('#endturn'),end:true,done:()=>P(ME).gold>=100},
-      {say:()=>T2('100 jopium: build a leviathan on the planet centre.','100 жопиума: постройте левиафана в центре планеты.'),at:()=>tBuild(TUT.ids.P,'levi'),done:()=>G.nodes[TUT.ids.P].stations.some(s=>s.type==='levi')||myFleets('leviathan').length>0},
+      {say:()=>nodeOpen(TUT.ids.P)&&!q$('[data-a="start"][data-t="levi"]')?T2('Press "Build a station here".','Нажмите «Построить станцию».'):T2('100 starium: build a leviathan on the planet centre.','100 стариума: постройте левиафана в центре планеты.'),at:()=>tBuild(TUT.ids.P,'levi'),done:()=>G.nodes[TUT.ids.P].stations.some(s=>s.type==='levi')||myFleets('leviathan').length>0},
       {at:()=>T_dom('#endturn'),end:true,done:()=>myFleets('leviathan').length>0},
       {say:()=>G.moveMode||G.popup?null:T2('Send it to the enemy core.','Отправьте его к вражескому ядру.'),at:()=>tFleet(myFleets('leviathan')[0],'fmove',TUT.ids.ec),done:()=>myFleets('leviathan').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.ec)},
       {at:()=>T_dom('#endturn'),end:true,done:()=>myFleets('leviathan').some(f=>f.node===TUT.ids.S2)},
-      {enter:()=>finishHim(),at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
+      {enter:()=>centerOn(G.nodes[TUT.ids.ec],false),say:()=>T2('End the turn: your leviathan finishes the enemy core.','Завершите ход: левиафан добьёт вражеское ядро.'),at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
     ]},
 
-  trade:{n:'Trade',r:'Торговля',workers:2,
+  trade:{n:'Trade',r:'Торговля',workers:2,sum:['Trade turns what you have into what you need, in the Empire menu.','Торговля в меню «Империя» превращает то, что есть, в то, что нужно.'],
     map:{cells:[[1,0,'res','iron'],[-1,0,'res','copper'],[0,1,'empty'],[4,-2,'empty']],cores:[[0,0],[5,-2]]},
     setup:(at,p)=>{p.res.iron=30;p.res.silicon=10;p.techs.add('generator');TECH.trade.c=1;p.workersBuilt=0;},
     steps:[
@@ -3004,7 +3331,7 @@ const TUTS={
     ]},
 
   // a lone ballista at the edge of a planet; four enemy tiles in a line, the last an enemy core at 1 health
-  ballista:{n:'Ballista',r:'Баллиста',workers:0,
+  ballista:{n:'Ballista',r:'Баллиста',workers:0,sum:['A 5-crystal bolt jumps from enemy to enemy, doubling each time. Upgraded ballistas keep jumping after the 5th hit.','Молния на 5 кристаллов прыгает от врага к врагу, удваиваясь. Улучшенные баллисты прыгают и после 5-го удара.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty'],[-3,2,'empty']],planet:{c:[-1,0],secs:[[0,0],[-2,0],[-1,1],[-1,-1],[0,-1],[-2,1]],look:2},cores:[[-3,1],[4,0]]},
     ids:at=>({B:at(0,0),t1:at(1,0),t2:at(2,0),t3:at(3,0),ec:at(4,0)}),center:at=>at(1,0),
     setup:(at,p)=>{p.res.xeno=10;p.techs.add('rovers');p.techs.add('planetmove');myFleet('ballista',1,at(0,0));enemyFleet('interceptor',1,at(1,0));enemyFleet('interceptor',1,at(2,0));enemyFleet('frigate',1,at(3,0));G.nodes[at(4,0)].coreHp=1;},
@@ -3015,7 +3342,7 @@ const TUTS={
       {at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
     ]},
 
-  interceptor:{n:'Interceptor',r:'Перехватчик',workers:0,
+  interceptor:{n:'Interceptor',r:'Перехватчик',workers:0,sum:['Interceptors fly 2 hops a turn: use them to answer raids and catch workers.','Перехватчики пролетают 2 прыжка за ход: ими отвечают на набеги и ловят рабочих.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'res','iron'],[4,0,'empty']],cores:[[0,0],[6,-1]]},
     ids:at=>({X:at(3,0)}),center:at=>at(2,0),
     setup:(at,p)=>{p.techs.add('barrack');myFleet('interceptor',2,at(1,0));G.workers.push(newWorker(1,at(3,0)));G.workers.at(-1).task='claim';G.nodes[at(4,0)].owner=null;},
@@ -3026,29 +3353,39 @@ const TUTS={
     ]},
 
   bomber:{n:'Bomber',r:'Бомбер',workers:0,
+    sum:['Bombers are the basic war drone: build more, deal more. While a bomber squadron outnumbers every enemy squadron, each bomber deals 3 instead of 2.','Бомберы — базовые боевые дроны: больше дронов — больше урона. Пока эскадрилья бомберов больше любой вражеской, каждый бьёт на 3 вместо 2.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty']],cores:[[0,0],[4,-1]]},
     ids:at=>({X:at(1,0)}),center:at=>at(1,0),
-    setup:(at,p)=>{p.techs.add('barrack');const c=G.nodes[p.core];const k=newStation(c,'kazarm',{state:'done'});k.work=0;c.stations.push(k);k.hangar.bomber.push(newDrone('bomber'));myFleet('bomber',5,p.core);enemyFleet('bomber',5,at(1,0));enemyFleet('interceptor',2,at(1,0));},
+    setup:(at,p)=>{p.techs.add('barrack');p.res.iron=12;p.res.copper=12;const c=G.nodes[p.core];const k=newStation(c,'kazarm',{state:'done'});k.work=0;c.stations.push(k);myFleet('bomber',4,p.core);enemyFleet('bomber',4,at(1,0));enemyFleet('bomber',3,at(1,0),true);},
     steps:[
-      {say:()=>T2('Bombers deal 3 instead of 2 while their squadron outnumbers every enemy squadron. 5 against 5 would lose this fight. Launch the bomber waiting in your Barrack.','Бомберы наносят 3 вместо 2, пока их эскадрилья больше любой вражеской. 5 против 5 проиграли бы этот бой. Выпустите бомбер из Казармы.'),
+      {say:()=>G.moveMode||G.popup?null:T2('Two enemy bomber squadrons wait next to your core. Try attacking them with your 4 bombers and read the battle preview.','У ядра ждут две вражеские эскадрильи бомберов. Попробуйте атаковать их своими 4 бомберами и посмотрите прогноз боя.'),
+        at:()=>tFleet(myFleets('bomber')[0],'fmove',TUT.ids.X),done:()=>!!(G.popup&&G.popup.type==='preview')},
+      {say:()=>T2('You would lose: 4 is not more than 4, so your bombers deal only 2. Cancel this attack.','Вы проиграете: 4 не больше 4, поэтому ваши бомберы бьют только на 2. Отмените атаку.'),
+        at:()=>G.popup&&G.popup.type==='preview'?T_dom('#popup [data-a="pclose"]:not(.x)'):null,done:()=>!G.popup},
+      {say:()=>T2('Order 2 more bombers in your Barrack.','Закажите в Казарме ещё 2 бомбера.'),
+        at:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return tStation(P(ME).core,k,'[data-a="kbuild"][data-c="bomber"]');},
+        done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&k.queue.filter(c=>c==='bomber').length+k.hangar.bomber.length>=2;}},
+      {say:()=>T2('End turns until both are built.','Завершайте ходы, пока оба не будут готовы.'),at:()=>T_dom('#endturn'),end:true,done:()=>{const k=live(G.nodes[P(ME).core],'kazarm')[0];return !!k&&k.hangar.bomber.length>=2;}},
+      {say:()=>T2('Launch them: they join your squadron.','Выпустите их: они присоединятся к вашей эскадрилье.'),
         at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const k=live(G.nodes[P(ME).core],'kazarm')[0];return tStation(P(ME).core,k,'[data-a="hangar"][data-c="bomber"]');},
         done:()=>myFleets('bomber').some(f=>f.count>=6)},
-      {say:()=>G.moveMode||G.popup?null:T2('6 against 5: attack now.','6 против 5: атакуйте.'),at:()=>tFleet(myFleets('bomber')[0],'fmove',TUT.ids.X),done:()=>myFleets('bomber').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
+      {say:()=>G.popup&&G.popup.type==='preview'?T2('6 is more than 4 and more than 3: every bomber now deals 3. Attack!','6 больше 4 и больше 3: теперь каждый бомбер бьёт на 3. Атакуйте!'):G.moveMode?null:T2('Check the preview again.','Снова посмотрите прогноз.'),
+        at:()=>tFleet(myFleets('bomber')[0],'fmove',TUT.ids.X),done:()=>myFleets('bomber').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
       {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
     ]},
 
-  frigate:{n:'Frigate',r:'Фрегат',workers:0,
+  frigate:{n:'Frigate',r:'Фрегат',workers:0,sum:['Enemies target frigates before your other space drones, so frigates shield them.','Враги бьют фрегаты раньше других ваших космических дронов, поэтому фрегаты их прикрывают.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty'],[1,-1,'empty']],cores:[[0,0],[4,-1]]},
     ids:at=>({X:at(1,0),Y:at(1,-1),Z:at(2,0)}),center:at=>at(1,0),
     setup:(at,p)=>{p.techs.add('barrack');myFleet('catapult',2,at(1,0));myFleet('frigate',3,at(1,-1));enemyFleet('interceptor',3,at(2,0));},
     steps:[
-      {say:()=>G.moveMode||G.popup?null:T2('Enemy interceptors will hit your catapults next turn. Frigates take damage first: move them onto the catapults\' tile to shield them.','Вражеские перехватчики ударят по катапультам в следующем ходу. Фрегаты принимают урон первыми: переместите их к катапультам, чтобы прикрыть.'),
+      {say:()=>G.moveMode||G.popup?null:T2('Enemy interceptors will hit your catapults next turn. Enemies target frigates before your other space drones: move them onto the catapults\' tile to shield them.','Вражеские перехватчики ударят по катапультам в следующем ходу. Враги бьют фрегаты раньше других ваших космических дронов: переместите их к катапультам, чтобы прикрыть.'),
         at:()=>tFleet(myFleets('frigate')[0],'fmove',TUT.ids.X),done:()=>myFleets('frigate').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
       {enter:()=>{const e=G.fleets.find(f=>f.owner===1);if(e)e.path=[TUT.ids.X];},at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
       {say:()=>myFleets('catapult').length?T2('The frigates took the hits, and every catapult survived.','Фрегаты приняли удар, и все катапульты уцелели.'):T2('The battle is over.','Бой окончен.'),at:()=>T_tile(TUT.ids.X),next:true},
     ]},
 
-  siege:{n:'Siege',r:'Осада',workers:0,
+  siege:{n:'Siege',r:'Осада',workers:0,sum:['Siege drones deal 5 to turrets and cores: bring them to break defences.','Осадные дроны наносят 5 турелям и ядрам: берите их, чтобы ломать оборону.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty']],cores:[[0,0],[3,0]]},
     ids:at=>({ec:at(3,0),X:at(2,0)}),center:at=>at(2,0),
     setup:(at,p)=>{p.techs.add('barrack');myFleet('siege',6,at(2,0));const e=G.nodes[at(3,0)];const t=newStation(e,'turret',{state:'done'});t.hp=t.maxHp||ST.turret.hp||6;e.stations.push(t);},
@@ -3058,7 +3395,7 @@ const TUTS={
       {at:()=>T_dom('#endturn'),end:true,done:()=>!P(1).alive},
     ]},
 
-  catapult:{n:'Catapult',r:'Катапульта',workers:0,
+  catapult:{n:'Catapult',r:'Катапульта',workers:0,sum:['Catapults shell turrets on the next tile from safety, for 1 iron a shot.','Катапульты обстреливают турели на соседней клетке издалека, 1 железо за выстрел.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,-1,'empty']],cores:[[0,0],[4,-1]]},
     ids:at=>({T:at(2,0),X:at(1,0)}),center:at=>at(2,0),
     setup:(at,p)=>{p.techs.add('barrack');p.res.iron=20;myFleet('catapult',3,at(1,0));const n=G.nodes[at(2,0)];n.owner=1;const t=newStation(n,'turret',{state:'done'});t.hp=t.maxHp||ST.turret.hp||6;n.stations.push(t);},
@@ -3068,7 +3405,7 @@ const TUTS={
       {say:()=>T2('End turns until the turret falls.','Завершайте ходы, пока турель не падёт.'),at:()=>T_dom('#endturn'),end:true,fix:()=>{const f=myFleets('catapult')[0];if(f&&f.bombard==null&&liveTurrets(G.nodes[TUT.ids.T]).length)f.bombard=TUT.ids.T;},done:()=>!liveTurrets(G.nodes[TUT.ids.T]).length},
     ]},
 
-  boomerang:{n:'Boomerang',r:'Бумеранг',workers:0,
+  boomerang:{n:'Boomerang',r:'Бумеранг',workers:0,sum:['Boomerangs fly home after a win, and the tile they hit costs no hop next turn.','Бумеранги возвращаются после победы, а атакованная клетка в следующем ходу не тратит прыжок.'],
     map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty']],cores:[[0,0],[5,-1]]},
     ids:at=>({A:at(2,0),B:at(3,0),H:at(1,0)}),center:at=>at(2,0),
     setup:(at,p)=>{p.techs.add('barrack');myFleet('boomerang',4,at(1,0));enemyFleet('interceptor',1,at(2,0));enemyFleet('interceptor',1,at(3,0));},
@@ -3080,7 +3417,7 @@ const TUTS={
       {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
     ]},
 
-  tank:{n:'Tank',r:'Танк',workers:0,
+  tank:{n:'Tank',r:'Танк',workers:0,sum:['Tanks are the basic rover: they only drive on their own planet.','Танки — обычные роверы: они ездят только по своей планете.'],
     map:{cells:[[-3,1,'empty']],planet:{c:[0,0],secs:[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]],look:3},cores:[[-2,1],[3,-1]]},
     ids:at=>({P:at(0,0),T:at(-1,1)}),center:at=>at(0,0),
     setup:(at,p)=>{p.techs.add('rovers');p.techs.add('planetmove');myFleet('tank',2,at(-1,1));G.workers.push(newWorker(1,at(0,0)));G.workers.at(-1).task='claim';},
@@ -3091,14 +3428,106 @@ const TUTS={
     ]},
 
   stomper:{n:'Stomper',r:'Топтун',workers:0,
+    sum:['Stompers deal no damage in battle. Each time they move, every stomper deals 0.5 to each enemy on the planet tiles around where it lands.','Топтуны не бьют в бою. Каждый раз, когда они переезжают, каждый топтун наносит 0,5 урона врагам на клетках планеты вокруг места, куда приехал.'],
     map:{cells:[[-3,1,'empty']],planet:{c:[0,0],secs:[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]],look:4},cores:[[-2,1],[3,-1]]},
-    ids:at=>({B:at(-1,0),S:at(0,-1),E:at(0,0)}),center:at=>at(0,0),
-    setup:(at,p)=>{p.techs.add('rovers');p.techs.add('planetmove');myFleet('ballista',2,at(-1,0));myFleet('stomper',2,at(0,-1));enemyFleet('tank',3,at(0,0));},
+    ids:at=>({S:at(0,-1),P:at(0,0)}),center:at=>at(0,0),
+    setup:(at,p)=>{p.techs.add('rovers');p.techs.add('planetmove');myFleet('stomper',4,at(0,-1));for(const [q,r] of [[1,0],[-1,0],[0,1],[1,-1],[-1,1]])enemyFleet('ballista',1,at(q,r));},
     steps:[
-      {say:()=>G.moveMode||G.popup?null:T2('Enemy tanks will hit your ballistas next turn. Stompers are bulky and take damage first: move yours next to the ballistas.','Вражеские танки ударят по баллистам в следующем ходу. Топтуны крепкие и принимают урон первыми: подведите своего к баллистам.'),
-        at:()=>tFleet(myFleets('stomper')[0],'fmove',TUT.ids.B),done:()=>myFleets('stomper').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.B)},
-      {enter:()=>{const e=G.fleets.find(f=>f.owner===1);if(e)e.path=[TUT.ids.B];},at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)||G.turn>=6},
-      {say:()=>T2('The stomper soaked up the tank fire while the ballistas fought.','Топтун принял огонь танков, пока баллисты сражались.'),at:()=>T_tile(TUT.ids.B),next:true},
+      {say:()=>G.moveMode||G.popup?null:T2('Five enemy ballistas surround the planet centre. Stompers deal no damage in battle, but every time they move they shake the planet tiles around where they land: 0.5 per stomper. Drive your 4 stompers onto the centre.','Пять вражеских баллист окружают центр планеты. Топтуны не бьют в бою, но каждый раз, когда переезжают, трясут клетки планеты вокруг: 0,5 урона за каждого топтуна. Заведите 4 топтунов в центр.'),
+        at:()=>tFleet(myFleets('stomper')[0],'fmove',TUT.ids.P),done:()=>myFleets('stomper').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.P)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+    ]},
+
+  // ---------- Draft 12: stations ----------
+  upstation:{n:'Upgrade station',r:'Станция улучшений',workers:0,
+    sum:['Dock drones at an upgrade station, pay their price again, and one turn later they come out upgraded. Upgraded bombers fly 2 hops a turn.','Пристыкуйте дроны к станции улучшений, заплатите их цену ещё раз, и через ход они выйдут улучшенными. Улучшенные бомберы летят на 2 прыжка за ход.'],
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty'],[4,0,'empty'],[5,0,'empty'],[6,0,'empty'],[7,0,'empty']],cores:[[0,0],[9,-1]]},
+    ids:at=>({X:at(6,0)}),center:at=>at(3,0),
+    setup:(at,p)=>{p.techs.add('barrack');p.techs.add('upgradest');p.res.iron=10;p.res.copper=10;const c=G.nodes[p.core];const u=newStation(c,'upgrade',{state:'done'});u.work=0;c.stations.push(u);myFleet('bomber',2,p.core);enemyFleet('interceptor',1,at(6,0));},
+    steps:[
+      {say:()=>T2('An enemy drone sits 6 hops away. Bombers fly 1 hop a turn, upgraded ones 2. Open the upgrade station at your core and dock both bombers.','Вражеский дрон в 6 прыжках. Бомберы летят 1 прыжок за ход, улучшенные — 2. Откройте станцию улучшений в ядре и пристыкуйте оба бомбера.'),
+        at:()=>{const u=live(G.nodes[P(ME).core],'upgrade')[0];return u?tStation(P(ME).core,u,'[data-a="dockone"]'):null;},done:()=>{const u=live(G.nodes[P(ME).core],'upgrade')[0];return !!u&&u.hangar.bomber.length>=2;}},
+      {say:()=>T2('Upgrade them: each upgrade costs the drone\'s price and takes one turn.','Улучшите их: каждое улучшение стоит как сам дрон и занимает один ход.'),
+        at:()=>{const u=live(G.nodes[P(ME).core],'upgrade')[0];return u?tStation(P(ME).core,u,'[data-a="kupg"][data-c="bomber"]'):null;},done:()=>{const u=live(G.nodes[P(ME).core],'upgrade')[0];return !!u&&u.hangar.bomber.filter(d=>d.upg||d.up).length>=2;}},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>{const u=live(G.nodes[P(ME).core],'upgrade')[0];return !!u&&u.hangar.bomber.length>=2&&u.hangar.bomber.every(d=>d.up);}},
+      {say:()=>T2('Launch the upgraded bombers.','Выпустите улучшенные бомберы.'),
+        at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const u=live(G.nodes[P(ME).core],'upgrade')[0];return u?tStation(P(ME).core,u,'[data-a="hangar"][data-c="bomber"]'):null;},
+        done:()=>myFleets('bomber').some(f=>f.up&&f.count>=2)},
+      {say:()=>G.moveMode||G.popup?null:T2('Send them to the enemy drone: 3 turns instead of 6.','Отправьте их к вражескому дрону: 3 хода вместо 6.'),at:()=>tFleet(myFleets('bomber').find(f=>f.up),'fmove',TUT.ids.X),done:()=>myFleets('bomber').some(f=>f.up&&(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
+      {say:()=>T2('End turns until they get there.','Завершайте ходы, пока они не долетят.'),at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+    ]},
+
+  death:{n:'Death turret',r:'Турель смерти',workers:0,
+    sum:['The death turret wipes out everything on the tile it hits, then recharges for 5 turns. Aim where the enemy will be, not where it is.','Турель смерти уничтожает всё на клетке, по которой бьёт, и перезаряжается 5 ходов. Цельтесь туда, где враг будет, а не где он сейчас.'],
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty'],[4,0,'empty'],[5,0,'empty']],cores:[[0,0],[6,-1]]},
+    ids:at=>({T:at(1,0),X:at(2,0),Y:at(3,0)}),center:at=>at(2,0),
+    setup:(at,p)=>{p.techs.add('turret');p.techs.add('death');p.res.xeno=10;const n=G.nodes[at(1,0)];n.owner=ME;const d=newStation(n,'death',{state:'done'});d.work=0;d.hp=d.maxHp;n.stations.push(d);enemyFleet('bomber',6,at(3,0));enemyFleet('frigate',6,at(3,0));enemyFleet('interceptor',6,at(3,0));},
+    steps:[
+      {say:()=>G.moveMode?T2('Aim at the empty tile between you: that is where they will step.','Цельтесь в пустую клетку между вами: туда они и шагнут.'):T2('A huge enemy push is 2 hops from your death turret. Next turn it will step onto the tile next to it. Aim the turret there, not where they stand now.','Огромная вражеская армия в 2 прыжках от турели смерти. В следующем ходу она шагнёт на соседнюю с турелью клетку. Наведите турель туда, а не туда, где враг стоит сейчас.'),
+        at:()=>{const n=G.nodes[TUT.ids.T],d=n.stations.find(s=>s.type==='death');if(G.moveMode&&G.moveMode.mode==='aim')return T_tile(TUT.ids.X);return d?tStation(TUT.ids.T,d,`[data-a="aim"][data-s="${d.uid}"]`):null;},
+        done:()=>G.nodes[TUT.ids.T].stations.some(s=>s.type==='death'&&s.aim===TUT.ids.X)},
+      {enter:()=>{for(const f of G.fleets)if(f.owner===1)f.path=[TUT.ids.X];},at:()=>T_dom('#endturn'),end:true,done:()=>!G.fleets.some(f=>f.owner===1)},
+    ]},
+
+  rebuild:{n:'Repair stations',r:'Ремонт станций',workers:1,
+    sum:['Destroyed stations stay on their asteroid. Claim it, and a worker standing there repairs one station per turn, for free.','Разрушенные станции остаются на астероиде. Захватите его, и рабочий на нём чинит одну станцию за ход бесплатно.'],
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[-1,0,'empty']],cores:[[0,0],[4,-1]]},
+    ids:at=>({A:at(1,0)}),center:at=>at(1,0),
+    setup:(at,p)=>{const n=G.nodes[at(1,0)];for(const t of ['kazarm','generator']){const st=newStation(n,t,{state:'destroyed'});st.work=0;n.stations.push(st);}},
+    steps:[
+      {say:()=>G.moveMode?null:T2('The enemy lost this asteroid, but its stations are only broken. Send your worker there.','Противник потерял этот астероид, но его станции только сломаны. Отправьте туда рабочего.'),at:()=>tMove(P(ME).core,TUT.ids.A),done:()=>workerTo(TUT.ids.A)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>workerAt(TUT.ids.A)},
+      {say:()=>T2('Claim it.','Захватите его.'),at:()=>tTask(TUT.ids.A,'claim'),done:()=>myWorkers().some(w=>w.node===TUT.ids.A&&w.task==='claim')||G.nodes[TUT.ids.A].owner===ME},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.A].owner===ME},
+      {say:()=>T2('Now repair the Barrack: one turn, no cost.','Теперь почините Казарму: один ход, бесплатно.'),
+        at:()=>{const k=G.nodes[TUT.ids.A].stations.find(s=>s.type==='kazarm');return nodeOpen(TUT.ids.A)&&k&&q$(`[data-a="wfix"][data-s="${k.uid}"]`)?T_dom(`[data-a="wfix"][data-s="${k.uid}"]`):T_tile(TUT.ids.A);},
+        done:()=>myWorkers().some(w=>w.task==='fix')||G.nodes[TUT.ids.A].stations.some(s=>s.type==='kazarm'&&s.state==='done')},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>G.nodes[TUT.ids.A].stations.some(s=>s.type==='kazarm'&&s.state==='done')},
+    ]},
+
+  // ---------- Draft 12: utility drones ----------
+  spy:{n:'Spy',r:'Шпион',workers:0,
+    sum:['Spies are invisible, see 2 hops and fly past enemy drones. They are destroyed if they end a turn on a tile with enemy war drones.','Шпионы невидимы, видят на 2 прыжка и пролетают мимо вражеских дронов. Они гибнут, если заканчивают ход на клетке с вражескими боевыми дронами.'],
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty'],[4,0,'empty']],cores:[[0,0],[5,0]]},
+    ids:at=>({F:at(2,0),Z:at(3,0),ec:at(5,0)}),center:at=>at(2,0),
+    setup:(at,p)=>{p.explored=new Set([p.core,at(1,0),at(2,0)]);myFleet('spy',1,at(1,0));enemyFleet('frigate',4,at(2,0));},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('The enemy core is hidden somewhere past that fleet. Spies are invisible and fly straight past enemy drones. Send yours 2 hops, past the fleet.','Вражеское ядро спрятано где-то за этим флотом. Шпионы невидимы и пролетают мимо вражеских дронов. Отправьте своего на 2 прыжка, за флот.'),
+        at:()=>tFleet(myFleets('spy')[0],'fmove',TUT.ids.Z),done:()=>myFleets('spy').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.Z)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>vis(ME).has(TUT.ids.ec)},
+      {say:()=>T2('Found it: spies see 2 hops around them.','Нашли: шпионы видят на 2 прыжка вокруг.'),at:()=>T_tile(TUT.ids.ec),next:true},
+    ]},
+
+  engineer:{n:'Engineer',r:'Инженер',workers:0,
+    sum:['Engineers cannot attack, but each one repairs 1 health on every drone on its tile, every turn.','Инженеры не атакуют, но каждый чинит 1 здоровья всем дронам на своей клетке каждый ход.'],
+    map:{cells:[[1,0,'empty'],[2,0,'empty']],cores:[[0,0],[4,-1]]},
+    ids:at=>({X:at(1,0)}),center:at=>at(1,0),
+    setup:(at,p)=>{myFleet('repair',3,p.core);const f=myFleet('frigate',3,at(1,0));f.hp=8;},
+    steps:[
+      {enter:()=>{const f=myFleets('frigate')[0];if(f)openUnit(f);},say:()=>T2('Your frigates are badly damaged: look at each one\'s health.','Ваши фрегаты сильно повреждены: посмотрите на здоровье каждого.'),next:true},
+      {say:()=>G.moveMode||G.popup?null:T2('Move the engineers onto the frigates\' tile.','Переместите инженеров на клетку фрегатов.'),
+        at:()=>tFleet(myFleets('repair')[0],'fmove',TUT.ids.X),done:()=>myFleets('repair').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.X)},
+      {say:()=>T2('End turns until the frigates are whole again.','Завершайте ходы, пока фрегаты не будут целы.'),at:()=>T_dom('#endturn'),end:true,done:()=>myFleets('frigate').every(f=>f.hp>=fleetMax(f))},
+      {enter:()=>{const f=myFleets('frigate')[0];if(f)openUnit(f);},say:()=>T2('Healed: every frigate is whole again.','Готово: все фрегаты снова целы.'),next:true},
+    ]},
+
+  charger:{n:'Charger',r:'Зарядчик',workers:0,
+    sum:['A settled charger uses no energy and recharges drones docked in it by 0.5 a turn, even far from your network.','Севший зарядчик не тратит энергию и заряжает пристыкованные дроны на 0,5 за ход, даже вдали от вашей сети.'],
+    map:{cells:[[1,0,'empty'],[2,0,'empty'],[3,0,'empty'],[4,0,'empty'],[5,0,'empty']],cores:[[0,0],[7,-1]]},
+    ids:at=>({C:at(2,0),B:at(3,0),N:at(4,0)}),center:at=>at(3,0),
+    setup:(at,p)=>{myFleet('charger',1,at(2,0));const b=myFleet('bomber',3,at(3,0));b.en=[0,0,0];},
+    steps:[
+      {say:()=>G.moveMode||G.popup?null:T2('These bombers are cut off and out of energy. Fly the charger to them.','Эти бомберы отрезаны и без энергии. Отправьте к ним зарядчик.'),
+        at:()=>tFleet(myFleets('charger')[0],'fmove',TUT.ids.B),done:()=>myFleets('charger').some(f=>(f.path.length?f.path.at(-1):f.node)===TUT.ids.B)},
+      {at:()=>T_dom('#endturn'),end:true,done:()=>myFleets('charger').some(f=>f.node===TUT.ids.B)},
+      {say:()=>T2('Settle the charger.','Посадите зарядчик.'),at:()=>tFleet(myFleets('charger')[0],'fsettle1',TUT.ids.B),done:()=>myFleets('charger').some(f=>f.settled)},
+      {say:()=>T2('Dock all three bombers in it.','Пристыкуйте к нему все три бомбера.'),
+        at:()=>{const ch=myFleets('charger')[0];if(!ch)return null;return unitOpen(ch)&&q$(`[data-a="dockone"][data-ch="${ch.id}"]`)?T_dom(`[data-a="dockone"][data-ch="${ch.id}"]`):{unit:ch};},
+        done:()=>!myFleets('bomber').length},
+      {say:()=>T2('Docked drones gain 0.5 energy a turn. End turns until they have 1 each.','Пристыкованные дроны получают 0,5 энергии за ход. Завершайте ходы, пока у каждого не станет 1.'),at:()=>T_dom('#endturn'),end:true,done:()=>{const ch=myFleets('charger')[0];return !!ch&&(ch.dock||[]).length>=3&&ch.dock.every(d=>d.en>=1);}},
+      {say:()=>T2('Launch them: they can fly on.','Выпустите их: они могут лететь дальше.'),
+        at:()=>{if(G.popup&&G.popup.type==='hangar')return T_dom('[data-a="hlaunch"][data-i="-1"]');const ch=myFleets('charger')[0];if(!ch)return null;return unitOpen(ch)&&q$(`[data-a="hangar"][data-ch="${ch.id}"]`)?T_dom(`[data-a="hangar"][data-ch="${ch.id}"]`):{unit:ch};},
+        done:()=>myFleets('bomber').some(f=>f.count>=3&&f.en.every(e=>e>0))},
     ]},
 };
 
@@ -3158,6 +3587,7 @@ function renderModal(){
   if(m.type==='node')h=nodeMenu(G.nodes[m.id]);
   else if(m.type==='station'){const f=findStation(m.uid);if(!f){closeModal();return;}h=stationMenu(f.n,f.s);}
   else if(m.type==='unit'){h=unitMenu(m);if(h==null){closeModal();return;}}
+  else if(m.type==='fleet'){h=fleetMenu(m);if(h==null){closeModal();return;}}
   else if(m.type==='report')h=reportMenu();
   else if(m.type==='empire')h=empireMenu();
   const sh=$('#sheet');const st=sh.scrollTop;
@@ -3172,7 +3602,6 @@ $('#modal').addEventListener('click',e=>{if(e.target===$('#modal')&&!(G&&perform
 // big: the squadron's own menu (style 2B): one chip per drone with its health and energy, then the buttons
 function fleetRow(f,n,big){
   const D=DR[f.cls],mine=n.owner===ME;
-  const kaz=mine&&live(n,D.ground?'rbarracks':'kazarm').length;
   const btn=(a,l,cls)=>`<button class="btn small ${cls||''}" type="button" data-a="${a}" data-f="${f.id}">${l}</button>`;
   const b=[];
   if(f.cls==='charger'&&f.settled)b.push(btn('fsettle0',L('Stand up','Встать')));
@@ -3180,8 +3609,8 @@ function fleetRow(f,n,big){
   if(ARTY(f.cls))b.push(btn('fbomb',L('Bombard','Обстрел')));
   if(f.path.length||f.bombard!=null)b.push(btn('fstop',L('Stop','Стоп'),'quiet'));
   if(f.count>1)b.push(btn('fsplit',L('Split','Разделить')));
-  if(kaz&&f.cls!=='leviathan')b.push(btn('fdis',L('Disassemble','Разобрать'),'quiet'));
-  if(stuck(f))b.push(btn('fboom',L('Self-destruct','Взорваться'),'danger'));
+  if(squadOf(f))b.push(btn('fleave',L('Leave fleet','Покинуть флот'),'quiet'));
+  if(f.cls!=='leviathan')b.push(btn('fkill',L('Destroy','Уничтожить'),'danger'));
   let status=`${HEART} ${Math.round(f.hp)}/${fleetMax(f)}`;
   if(f.cls!=='leviathan')status+=` · ${BOLT}${avgEn(f)}/${BATT}`;
   if(f.cls!=='spy'&&f.cls!=='leviathan'&&!fleetOnGrid(f))status+=' · <span class="warn">'+L('cut off','отрезан')+'</span>';
@@ -3193,10 +3622,9 @@ function fleetRow(f,n,big){
     // each drone's share of the health: the front drones are whole, the last one carries the damage
     const per=DR[f.cls].hp;let rest=f.hp;const hps=Array.from({length:f.count},()=>{const v=Math.min(per,rest);rest-=v;return Math.max(0,Math.round(v*10)/10);});
     const where=status.split(' · ').filter(x=>!x.includes(HEART)&&!x.includes(BOLT)).join(' · ');
-    return `<div class="dchips">${hps.map((hp,i)=>{const e=f.cls==='leviathan'?null:f.en[i];return `<div class="dchip ${e!=null&&e<=1?'low':''}"><span class="mono">${HEART}${hp}/${per}</span>${e!=null?`<span class="mono ${e<=0?'bad':e<=1?'warn':''}">${BOLT}${e}</span>`:''}</div>`;}).join('')}</div>${where?`<p class="sub" style="margin:6px 0 0">${where}</p>`:''}<div class="acts" style="margin-top:8px">${b.join('')}</div>${split}`;
+    return `<div class="dchips">${hps.map((hp,i)=>{const e=f.cls==='leviathan'?null:f.en[i];return `<div class="dchip ${e!=null&&e<=1?'low':''}" ${f.cls!=='leviathan'?`data-a="dchip"`:''}><span class="mono">${HEART}${hp}/${per}</span>${e!=null?`<span class="mono ${e<=0?'bad':e<=1?'warn':''}">${BOLT}${e}</span>`:''}${f.cls!=='leviathan'?`<button class="dx" type="button" data-a="fkill" data-f="${f.id}" data-i="${i}" aria-label="${L('Destroy this drone','Уничтожить этот дрон')}">✕</button>`:''}</div>`;}).join('')}</div>${where?`<p class="sub" style="margin:6px 0 0">${where}</p>`:''}<div class="acts" style="margin-top:8px">${b.join('')}</div>${split}`;
   }
   let h=`<div class="row"><div class="grow"><b>${dN(f.cls)}${f.up?' ↑':''}</b> ×${f.count}<br><span class="sub">${status}</span></div><div class="acts">${b.join('')}</div>`;
-  if(f.cls!=='leviathan')h+=`<div class="full mono sub" title="${L('Energy of each drone','Энергия каждого дрона')}">${BOLT} ${f.en.map(e=>`<span class="${e<=0?'bad':e<2?'warn':''}">${e}</span>`).join(' · ')}</div>`;
   if(G.splitOpen===f.id){const half=Math.floor(f.count/2);h+=`<div class="full"><input type="range" id="splitN" min="1" max="${f.count-1}" value="${half}" aria-label="${L('Drones to split off','Сколько отделить')}"><span class="mono" id="splitLbl" style="white-space:nowrap">${f.count-half} | ${half}</span><button class="btn small primary" type="button" data-a="fsplitgo" data-f="${f.id}">${L('Split','Разделить')}</button></div>`;}
   return h+`</div>`;
 }
@@ -3216,7 +3644,7 @@ function workerButtons(w){
   const p=P(ME),n=G.nodes[w.node],b=[],here=!w.path.length;
   const btn=(a,label,extra,dis,cls)=>`<button class="btn small ${cls||''}" type="button" data-a="${a}" data-w="${w.id}" ${extra||''} ${dis?'disabled':''}>${label}</button>`;
   if(here&&n.owner===ME&&n.res)b.push(btn('wtask',L('Mine','Добывать'),'data-t="mine"',w.task==='mine'));
-  if(here&&n.owner===ME&&n.center){const other=G.workers.some(x=>x!==w&&x.owner===ME&&x.node===n.id&&x.task==='mine');const bore=live(n,'borehole').length>0;b.push(btn('wtask',bore?`${L('Operate borehole','Работать на скважине')} ${STARGOLD}`:`${L('Mine','Добывать')} ${STARGOLD}`,`data-t="mine" title="${other?(bore?L('The borehole already has an operator','У скважины уже есть оператор'):L('Only one worker can mine jopium here','Здесь жопиум может добывать только один рабочий')):bore?L('Sit at the borehole: 5 jopium a turn for 1 energy','Работать на скважине: 5 жопиума за ход за 1 энергию'):L('Mine jopium','Добывать жопиум')}"`,w.task==='mine'||other));}
+  if(here&&n.owner===ME&&n.center){const other=G.workers.some(x=>x!==w&&x.owner===ME&&x.node===n.id&&x.task==='mine');const bore=live(n,'borehole').length>0;b.push(btn('wtask',bore?`${L('Operate borehole','Работать на скважине')} ${STARGOLD}`:`${L('Mine','Добывать')} ${STARGOLD}`,`data-t="mine" title="${other?(bore?L('The borehole already has an operator','У скважины уже есть оператор'):L('Only one worker can mine starium here','Здесь стариум может добывать только один рабочий')):bore?L('Sit at the borehole: 5 starium a turn for 1 energy','Работать на скважине: 5 стариума за ход за 1 энергию'):L('Mine starium','Добывать стариум')}"`,w.task==='mine'||other));}
   // a worker can't claim an asteroid while one of its owner's workers stands on it
   const guarded=n.owner!=null&&n.owner!==ME&&G.workers.some(x=>x.node===n.id&&x.owner===n.owner);
   if(here&&n.owner!==ME&&n.type!=='core'&&n.type!=='wreck')b.push(btn('wtask',L('Claim','Захватить'),`data-t="claim" title="${guarded?L("The owner's worker is here","Здесь рабочий владельца"):''}"`,w.task==='claim'||guarded));
@@ -3238,10 +3666,61 @@ function techUnlocks(t){
 const unlockName=u=>u.k==='dr'?dN(u.id):sN(u.id);
 function statLine(D,f){return `<span class="stats mono"><span title="${L('Health','Здоровье')}">${HEART} ${D.hp}</span><span title="${L('Damage','Урон')}">${DMG} ${D.dmg}${D.sdmg?'/'+D.sdmg:''}</span><span title="${L('Hops per turn','Прыжков за ход')}">${HOPS} ${D.spd}</span></span>`;}
 // the menu that opens when you click a squadron on the map (yours: orders; a rival's: what it is)
+// the fleet (squadron group) a squadron belongs to, if any
+const squadOf=f=>(P(f.owner).squads||[]).find(q=>q.ids.includes(f.id));
+const fSpeed=f=>f.up&&f.cls==='bomber'?2:DR[f.cls].spd;
+// a small picture of a unit's map symbol, for menus
+const shapeImgs={};
+function shapeImg(cls,up){const k=cls+(up?'u':'');if(!shapeImgs[k]){const cv=document.createElement('canvas');cv.width=cv.height=44;const c=cv.getContext('2d');const col=P(ME).color;
+  if(cls==='leviathan')drawLeviathan(c,22,22,19,col,.18,3);else{shapePath(c,cls,22,22,14);c.fillStyle=up?col:hexa(col,.25);c.fill();c.strokeStyle=col;c.lineWidth=2.4;c.stroke();}shapeImgs[k]=cv.toDataURL();}
+  return `<img src="${shapeImgs[k]}" alt="">`;}
+// each drone's health: the front drones are whole, the last one carries the damage
+function droneHps(f){const per=DR[f.cls].hp;let rest=f.hp;return Array.from({length:f.count},()=>{const v=Math.min(per,rest);rest-=v;return Math.max(0,v);});}
+// the new fleet menu (Draft 12): summary, Move / Disband, one card per squadron with Open and Leave
+function fleetMenu(m){
+  const q=(P(ME).squads||[]).find(q=>q.id===m.q);if(!q)return null;
+  const fl=q.ids.map(id=>G.fleets.find(f=>f.id===id&&f.owner===ME)).filter(Boolean);if(!fl.length)return null;
+  const drones=fl.reduce((a,f)=>a+f.count,0),hp=fl.reduce((a,f)=>a+f.hp,0),mx=fl.reduce((a,f)=>a+fleetMax(f),0),sp=Math.min(...fl.map(fSpeed));
+  let h=`<h2>${L('Fleet','Флот')} ${q.id}</h2><div class="sumline"><span>${L(`<b>${fl.length}</b> squadrons`,`эскадрилий: <b>${fl.length}</b>`)}</span><span>${L(`<b>${drones}</b> drones`,`дронов: <b>${drones}</b>`)}</span><span>${HEART} <b>${Math.round(hp)}/${mx}</b></span><span>${L(`flies <b>${plural(sp,'hop')}</b> a turn (slowest)`,`летит на <b>${cnt(sp,'hop')}</b> за ход (по самой медленной)`)}</span></div>`;
+  h+=`<div class="acts"><button class="btn small primary" type="button" data-a="sqmove" data-q="${q.id}">${L('Move fleet','Лететь флотом')}</button><button class="btn small quiet" type="button" data-a="sqdel" data-q="${q.id}">${L('Disband fleet','Распустить флот')}</button></div>`;
+  for(const f of fl){
+    const task=f.path.length?L(`moving, ${plural(f.path.length,'hop')} left`,`в пути, осталось ${cnt(f.path.length,'hop')}`):f.bombard!=null?L('bombarding','обстрел'):L('holding','на месте');
+    const hps=droneHps(f);
+    h+=`<div class="sqcard"><div class="sqhead">${shapeImg(f.cls,f.up)}<b>${dN(f.cls)}${f.up?' ↑':''} ×${f.count}</b><span class="sub">· ${lc(nodeName(G.nodes[f.node]))} · ${task}</span><span class="acts"><button class="btn small" type="button" data-a="fopen" data-f="${f.id}">${L('Open','Открыть')}</button><button class="btn small quiet" type="button" data-a="fleave" data-f="${f.id}">${L('Leave','Покинуть')}</button></span></div>`;
+    h+=`<div class="minichips">${hps.map((v,i)=>{const e=f.cls==='leviathan'?null:f.en[i];return `<i class="${e!=null&&e<=1?'low':''}">♥${Math.round(v*10)/10}${e!=null?' ⚡'+e:''}</i>`;}).join('')}</div></div>`;
+  }
+  return h;
+}
+// what destroying drones would give back: 1 of each resource in the cost per drone, only on land connected to your core
+function killRefund(f,k){if(!G.conn[f.owner].has(f.node))return null;const r=oneEach(DR[f.cls].cost);for(const x in r)r[x]*=k;return r;}
+// expected resource change next turn (miners and boreholes), for the Empire menu
+function resIncome(pid){
+  const inc={iron:0,copper:0,silicon:0,xeno:0,gold:0},conn=G.conn[pid],done=new Set();
+  for(const w of G.workers){if(w.owner!==pid||w.task!=='mine'||w.path.length)continue;const n=G.nodes[w.node];if(n.owner!==pid)continue;
+    if(n.center){if(!conn.has(n.id)||done.has(n.id))continue;done.add(n.id);const bore=live(n,'borehole').length>0,capped=G.goldCap&&G.goldCap.pid===pid;inc.gold+=bore?(capped?2:5):1;}
+    else if(n.res&&(conn.has(n.id)||clusterOf(pid,n.id).some(x=>storeCap(x)>0)))inc[n.res]+=2;}
+  return inc;
+}
+function empireTop(){
+  const p=P(ME),prod=energyProd(ME),use=Math.round(energyUse(ME)*10)/10,net=Math.round((prod-use)*10)/10,cap=energyCap(ME),inc=resIncome(ME);
+  const sgn=v=>v>0?`<span class="good">+${v}</span>`:v<0?`<span class="bad">${v}</span>`:`<span class="sub">+0</span>`;
+  let h=`<div class="energy"><div class="top"><span class="sub" style="display:flex;gap:6px;align-items:center">${BOLT}${L('Energy','Энергия')}</span><span class="big">${Math.floor(p.energy)}<span class="sub" style="font-size:14px"> / ${cap}</span></span><span class="mono" style="margin-left:auto"><span class="good">+${prod}</span> <span class="bad">−${use}</span> = <b class="${net>=0?'good':'bad'}">${net>=0?'+':''}${net}</b> ${L('/ turn','/ ход')}</span></div><div class="bar2"><i style="width:${Math.min(100,100*p.energy/Math.max(1,cap))}%;background:#ffd84d"></i></div></div>`;
+  const card=(c,name,ico,v,d)=>`<div class="ecard" style="--c:${c}"><span class="nm">${ico}${name}</span><span class="v">${v}</span><span class="d">${d}</span></div>`;
+  h+=`<div class="ecards">`;
+  for(const r of RES)h+=card(RINFO[r].c,L(RINFO[r].n,RINFO[r].r),rb(r),Math.floor(p.res[r]),`${sgn(inc[r])} ${L('/ turn','/ ход')}`);
+  h+=card('#ffcf4a',L('Starium','Стариум'),STARGOLD,p.gold,`${sgn(inc.gold)} ${L('/ turn','/ ход')}`);
+  const ws=G.workers.filter(w=>w.owner===ME),idle=ws.filter(w=>w.task==='idle'&&!w.path.length).length;
+  h+=`<button class="ecard" type="button" data-a="empw" style="--c:#5fd38d"><span class="nm">${L('Workers','Рабочие')}</span><span class="v">${ws.length}</span><span class="d ${idle?'warn':'sub'}">${L(`${idle} idle`,`без дела: ${idle}`)}</span></button>`;
+  h+=`</div>`;
+  const tot=resTotal(p),rc=resCap(ME);
+  h+=`<div class="space"><div class="lab"><span>${L('Resource space','Место для ресурсов')}</span><span class="mono">${L(`${tot} of ${rc}`,`${tot} из ${rc}`)}</span></div><div class="bar2">${RES.map(r=>`<i style="width:${100*p.res[r]/Math.max(1,rc)}%;background:${RINFO[r].c}"></i>`).join('')}</div></div>`;
+  return `<div class="sec" style="display:grid;gap:10px">${h}</div>`;
+}
 function unitMenu(m){
   const f=G.fleets.find(x=>x.id===m.f);if(!f)return null;
   const n=G.nodes[f.node],D=DR[f.cls],mine=f.owner===ME;
-  let h=`<h2><button class="lnk" type="button" data-a="dinfo" data-c="${f.cls}">${dN(f.cls)}</button>${f.up?' ↑':''} ×${f.count}</h2><div class="opts">${mine?'':`<span class="pill" style="color:${P(f.owner).color}">${esc(pShort(P(f.owner)))}</span>`}<span class="sub">${L('at ','на: ')}${lc(nodeName(n))}</span>${statLine(D)}</div><p class="sub" style="margin:0">${dD(f.cls)}</p>`;
+  const sq=mine?squadOf(f):null;
+  let h=`<div class="h2row"><h2><button class="lnk" type="button" data-a="dinfo" data-c="${f.cls}">${dN(f.cls)}</button>${f.up?' ↑':''} ×${f.count}</h2>${sq?`<button class="ftab" type="button" data-a="sqsee" data-q="${sq.id}">${L(`Open fleet ${sq.id}`,`Открыть флот ${sq.id}`)} ›</button>`:''}</div><div class="opts">${mine?'':`<span class="pill" style="color:${P(f.owner).color}">${esc(pShort(P(f.owner)))}</span>`}<span class="sub">${L('at ','на: ')}${lc(nodeName(n))}</span></div><p class="sub" style="margin:0">${dD(f.cls)}</p>`;
   if(mine)h+=`<div class="sec">${fleetRow(f,n,true)}</div>`;
   if(mine&&f.cls==='charger'&&f.settled){h+=nearbyHtml(n,[...SPACE,...ROVERS].filter(c=>c!=='charger'),`data-ch="${f.id}"`);h+=dockedHtml(f.dock||[],`data-ch="${f.id}"`);}
   // an enemy squadron: a stat card and one health bar, no buttons
@@ -3260,7 +3739,7 @@ function nodeMenu(n){
   const P0=t=>`<p class="sub" style="margin:0">${t}</p>`;
   if(n.res)h+=P0(L(`Each mining worker extracts 2 ${rb(n.res)} per turn.`,`Каждый рабочий добывает 2 ${rb(n.res)} за ход.`));
   else if(n.type==='empty')h+=P0(L('No resources. Room for 4 stations.','Ресурсов нет. Место для 4 станций.'));
-  else if(n.planet!=null)h+=P0((n.center?L(`Planet centre: the owner's worker mines ${STARGOLD} 1 jopium per turn, 5 with a borehole. One miner at a time.`,`Центр планеты: рабочий владельца добывает ${STARGOLD} 1 жопиум за ход, 5 со скважиной. Добывать может только один рабочий.`):L('Planet section: room for 4 stations. Rovers can move here.','Участок планеты: место для 4 станций. Сюда могут ездить роверы.'))+' '+L('War drones fight at full strength on planets, but use twice the energy there.','На планетах боевые дроны сражаются в полную силу, но тратят вдвое больше энергии.'));
+  else if(n.planet!=null)h+=P0((n.center?L(`Planet centre: the owner's worker mines ${STARGOLD} 1 starium per turn, 5 with a borehole. One miner at a time.`,`Центр планеты: рабочий владельца добывает ${STARGOLD} 1 стариум за ход, 5 со скважиной. Добывать может только один рабочий.`):L('Planet section: room for 4 stations. Rovers can move here.','Участок планеты: место для 4 станций. Сюда могут ездить роверы.'))+' '+L('War drones fight at full strength on planets, but use twice the energy there.','На планетах боевые дроны сражаются в полную силу, но тратят вдвое больше энергии.'));
   if(n.owner===ME&&!G.conn[ME].has(n.id)){const w=walletAt(ME,n.id);const e=clusterOf(ME,n.id).reduce((a,x)=>a+x.estore+5*live(x,'generator').length,0);h+=P0(`${L('This cluster runs on its own supplies:','Это скопление живёт на своих запасах:')} ${RES.map(r=>`${rb(r)}${w[r]}`).join(' ')} · ${BOLT}${e}`);}
   h+=`</div>`;
   // an unclaimed tile you can see: send any worker there
@@ -3389,11 +3868,9 @@ function kazarmHtml(n,s){
 }
 // upgrade station: like a barrack, a card per type with Upgrade (a docked drone, done next turn) and Launch
 function upgradeHtml(n,s){
-  const w=walletAt(ME,n.id),list=dockKinds(s).filter(c=>DR[c].ground?s.hangar[c].length>0:canMake(ME,c)&&dU(c));
+  const w=walletAt(ME,n.id),list=dockKinds(s).filter(c=>dU(c)&&(DR[c].ground?s.hangar[c].length>0:canMake(ME,c))); // rovers show only while docked here
   let h=`<div class="sec"><h3>${L('Upgrades · each takes one turn','Улучшения · каждое за один ход')}</h3><div class="dgrid">`;
   for(const c of list){
-    // rovers only dock here to recharge: they can be launched but not upgraded
-    if(DR[c].ground){const docked=s.hangar[c];h+=`<div class="dcard"><button class="dname" type="button" data-a="dinfo" data-c="${c}">${dN(c)} <span aria-hidden="true">›</span></button><span class="sub">${L("Rovers recharge here but can't be upgraded.",'Роверы заряжаются здесь, но не улучшаются.')}</span><div class="dbtns"><button class="btn small primary" type="button" data-a="hangar" data-s="${s.uid}" data-c="${c}" ${docked.length?'':'disabled'}>${L('Launch','Выпустить')}${docked.length?' '+docked.length:''}</button></div></div>`;continue;}
     const docked=s.hangar[c],ready=docked.filter(d=>!d.up&&!d.upg).length,busy=docked.filter(d=>d.upg).length;
     h+=`<div class="dcard"><button class="dname" type="button" data-a="dinfo" data-c="${c}">${dN(c)} <span aria-hidden="true">›</span></button>${costHtml(DR[c].cost,w)}<span class="sub">${dU(c)}</span>${busy?`<span class="sub warn">${L(`${busy} upgrading`,`улучшается: ${busy}`)}</span>`:''}<div class="dbtns"><button class="btn small" type="button" data-a="kupg" data-s="${s.uid}" data-c="${c}" ${ready&&canPayAt(ME,n.id,DR[c].cost)?'':'disabled'}>${L('Upgrade','Улучшить')}${ready?' '+ready:''}</button><button class="btn small primary" type="button" data-a="hangar" data-s="${s.uid}" data-c="${c}" ${docked.length?'':'disabled'}>${L('Launch','Выпустить')}${docked.length?' '+docked.length:''}</button></div></div>`;
   }
@@ -3459,6 +3936,13 @@ function renderPopup(){
     if(u.k==='dr'){const D=DR[u.id];h+=`${statLine(D)}<p style="margin:0">${dD(u.id)}</p><div class="sub">${L('Cost','Цена')}: ${costHtml(D.cost)} · ${L('upkeep','содержание')} ${BOLT}${D.up}/${L('turn','ход')}</div>`;}
     else{const S0=ST[u.id];h+=`${S0.hp?`<span class="stats mono"><span>${HEART} ${S0.hp}</span>${S0.dmg?`<span>${DMG} ${S0.dmg}</span>`:''}</span>`:''}<p style="margin:0">${sD(u.id)}</p><div class="sub">${L('Cost','Цена')}: ${S0.gold?`${STARGOLD}${S0.gold}`:costHtml(S0.cost)} · ${cnt(S0.t,'worker-turn')}</div>`;}
     if(list.length>1)h+=`<div class="pager"><button class="btn small" type="button" data-a="unlp" data-d="-1" aria-label="${L('Previous','Назад')}">‹</button><span class="dots">${list.map((_,i)=>`<i class="${i===m.i?'on':''}"></i>`).join('')}</span><button class="btn small" type="button" data-a="unlp" data-d="1" aria-label="${L('Next','Далее')}">›</button></div>`;
+  }else if(m.type==='kill'){
+    const f=G.fleets.find(x=>x.id===m.f);if(!f){G.popup=null;box.hidden=true;return;}
+    const k=m.i!=null?1:f.count,r=killRefund(f,k);
+    h+=`<h2>${m.i!=null?L(`Destroy this ${dN(f.cls).toLowerCase()}?`,`Уничтожить этого дрона (${dN(f.cls).toLowerCase()})?`):L(`Destroy ${dCount(k,f.cls)}?`,`Уничтожить: ${dCount(k,f.cls)}?`)}</h2>`;
+    if(r)h+=`<p class="sub" style="margin:0">${L(`${k>1?"They're":"It's"} on land connected to your core, so you get back:`,'Это земля, подключённая к ядру, поэтому вернётся:')}</p><div class="refund">${Object.keys(r).map(x=>`<span>${rb(x)}${r[x]} ${L(RINFO[x].n.toLowerCase(),RINFO[x].r.toLowerCase())}</span>`).join('')}</div>`;
+    else h+=`<div class="warnbox">${L("This tile isn't connected to your core, so <b>you get nothing back</b>.",'Эта клетка не подключена к ядру, поэтому <b>ничего не вернётся</b>.')}</div>`;
+    h+=`<div class="acts"><button class="btn small danger" type="button" data-a="fkillgo">${L('Destroy','Уничтожить')}</button><button class="btn small" type="button" data-a="pclose">${L('Cancel','Отмена')}</button></div>`;
   }else if(m.type==='drone'){
     const D=DR[m.c];
     h+=`<h2>${dN(m.c)}</h2><canvas id="dronecv" width="440" height="260" aria-label="${L('Blueprint','Чертёж')}: ${dN(m.c)}"></canvas>${statLine(D)}<p style="margin:0">${dD(m.c)}</p>`;
@@ -3485,19 +3969,21 @@ function renderPopup(){
   const cv3=$('#unlcv');
   if(cv3){const u=techUnlocks(m.t)[m.i],c=cv3.getContext('2d'),Wd=cv3.width,Hd=cv3.height;c.fillStyle='#08101f';c.fillRect(0,0,Wd,Hd);
     c.strokeStyle='rgba(77,163,255,.14)';c.lineWidth=1;for(let x=0;x<=Wd;x+=20){c.beginPath();c.moveTo(x+.5,0);c.lineTo(x+.5,Hd);c.stroke();}for(let y=0;y<=Hd;y+=20){c.beginPath();c.moveTo(0,y+.5);c.lineTo(Wd,y+.5);c.stroke();}
-    if(u.k==='dr'){shapePath(c,u.id,Wd/2,Hd/2,64);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash([]);c.stroke();c.setLineDash([]);}
+    if(u.k==='dr'&&u.id==='leviathan')drawLeviathan(c,Wd/2,Hd/2,90,'#4da3ff',.18,11);
+    else if(u.k==='dr'){shapePath(c,u.id,Wd/2,Hd/2,64);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash([]);c.stroke();c.setLineDash([]);}
     else stationIcon(c,{type:u.id,state:'done',hp:1},Wd/2,Hd/2,6.5,'#4da3ff');}
   const cv2=$('#dronecv');
   if(cv2){const c=cv2.getContext('2d'),Wd=cv2.width,Hd=cv2.height;c.fillStyle='#08101f';c.fillRect(0,0,Wd,Hd);
     c.strokeStyle='rgba(77,163,255,.14)';c.lineWidth=1;for(let x=0;x<=Wd;x+=20){c.beginPath();c.moveTo(x+.5,0);c.lineTo(x+.5,Hd);c.stroke();}for(let y=0;y<=Hd;y+=20){c.beginPath();c.moveTo(0,y+.5);c.lineTo(Wd,y+.5);c.stroke();}
     c.strokeStyle='rgba(77,163,255,.32)';for(let x=0;x<=Wd;x+=100){c.beginPath();c.moveTo(x+.5,0);c.lineTo(x+.5,Hd);c.stroke();}for(let y=0;y<=Hd;y+=100){c.beginPath();c.moveTo(0,y+.5);c.lineTo(Wd,y+.5);c.stroke();}
-    shapePath(c,m.c,Wd/2,Hd/2,72);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash([]);c.stroke();c.setLineDash([]);
+    if(m.c==='leviathan')drawLeviathan(c,Wd/2,Hd/2,100,'#4da3ff',.18,12);
+    else{shapePath(c,m.c,Wd/2,Hd/2,72);c.fillStyle='rgba(77,163,255,.22)';c.fill();c.strokeStyle='#4da3ff';c.lineWidth=4;c.setLineDash([]);c.stroke();c.setLineDash([]);}
   }
 }
 function empireMenu(){
   const p=P(ME);let h=`<h2>${L('Empire','Империя')}</h2>`;
   const prod=energyProd(ME),use=energyUse(ME);
-  h+=`<div class="sec"><div class="row mono" style="display:grid;grid-template-columns:1fr auto;gap:2px 12px"><span>${BOLT} ${L('Stored','Запас')}</span><span>${Math.floor(p.energy)} / ${energyCap(ME)}</span><span>${L('Production','Производство')}</span><span class="good">+${prod}</span><span>${L('Consumption','Потребление')}</span><span class="bad">−${Math.round(use*10)/10}</span><span>${L('Resource space','Место для ресурсов')}</span><span>${L(`${resTotal(p)} of ${resCap(ME)} in total`,`всего ${resTotal(p)} из ${resCap(ME)}`)}</span></div></div>`;
+  h+=empireTop();
   if(has(ME,'trade')){
     const opts=RES.filter(r=>r!=='xeno'||has(ME,'xtrade'));
     if(!opts.includes(G.trade.give))G.trade.give='iron';if(!opts.includes(G.trade.get))G.trade.get='copper';
@@ -3511,8 +3997,7 @@ function empireMenu(){
   if(sqs.length){
     h+=`<div class="sec"><h3>${L('Fleets','Флоты')}</h3>`;
     for(const {q,fl:sf} of sqs){
-      h+=`<div class="row"><div class="grow"><b>${L('Fleet','Флот')} ${q.id}</b><br><span class="sub">${sf.map(f=>dCount(f.count,f.cls)).join(', ')}</span></div><div class="acts"><button class="btn small" type="button" data-a="sqmove" data-q="${q.id}">${L('Move','Лететь')}</button><button class="btn small" type="button" data-a="sqsee" data-q="${q.id}">${G.squadOpen===q.id?L('Hide','Скрыть'):L('See','Открыть')}</button><button class="btn small quiet" type="button" data-a="sqdel" data-q="${q.id}">${L('Disband','Распустить')}</button></div></div>`;
-      if(G.squadOpen===q.id)for(const f of sf)h+=fleetRow(f,G.nodes[f.node]);
+      h+=`<div class="row"><div class="grow"><b>${L('Fleet','Флот')} ${q.id}</b><br><span class="sub">${sf.map(f=>dCount(f.count,f.cls)).join(', ')}</span></div><div class="acts"><button class="btn small" type="button" data-a="sqmove" data-q="${q.id}">${L('Move','Лететь')}</button><button class="btn small" type="button" data-a="sqsee" data-q="${q.id}">${L('Open','Открыть')}</button><button class="btn small quiet" type="button" data-a="sqdel" data-q="${q.id}">${L('Disband','Распустить')}</button></div></div>`;
     }
     h+=`</div>`;
   }
@@ -3522,7 +4007,7 @@ function empireMenu(){
     const cutTxt=f.cls!=='spy'&&f.cls!=='leviathan'&&!fleetOnGrid(f)?` · <span class="warn">${L('cut off','отрезан')}</span>`:'';
     h+=`<div class="row" data-fdrop="${f.id}"><span class="handle" data-fdrag="${f.id}" aria-label="${L('Drag to merge','Перетащите, чтобы объединить')}">⠿</span><div class="grow" data-a="gonode" data-n="${f.node}" style="cursor:pointer"><b>${dN(f.cls)}${f.up?' ↑':''}</b> ×${f.count} · <span class="sub">${nodeName(G.nodes[f.node])} · ${task}${cutTxt} · ${BOLT}${f.cls==='leviathan'?'∞':avgEn(f)}</span></div></div>`;
   }
-  h+=`</div><div class="sec"><h3>${L('Workers','Рабочие')}</h3>`;
+  h+=`</div><div class="sec" id="empWorkers"><h3>${L('Workers','Рабочие')}</h3>`;
   for(const w of idleFirst(G.workers.filter(w=>w.owner===ME)))h+=`<div class="row click" data-a="gonode" data-n="${w.node}"><div class="grow"><b>${esc(w.name)}</b> · <span class="sub">${nodeName(G.nodes[w.node])}</span><br><span class="sub ${w.task==='idle'&&!w.path.length?'warn':''}">${workerStatus(w)}</span></div></div>`;
   // rivals: everyone is listed; ones you haven't met yet are "unknown rival"
   const met=metOf(ME);
@@ -3602,6 +4087,7 @@ function renderTech(){
 }
 
 /* ---------- actions ---------- */
+document.addEventListener('click',e=>{const c=e.target.closest&&e.target.closest('.dchip');document.querySelectorAll('.dchip.show').forEach(x=>{if(x!==c)x.classList.remove('show');});if(c&&!e.target.closest('.dx'))c.classList.toggle('show');},true);
 function act(a,d){
   if(/^([msehjlk]-|acc-|set-|tut-lang|tut-menu|tut-go|tut-list)/.test(a))return menuAct(a,d);
   if(!G)return;
@@ -3619,9 +4105,15 @@ function act(a,d){
     case 'pclose':G.popup=null;break;
     case 'sqmake':{if(G.popup&&G.popup.type==='squad'&&order({t:'squad',ids:G.popup.ids}))toast(L('Fleet made. Find it in the Empire menu.','Флот создан. Он в меню «Империя».'));G.popup=null;break;}
     case 'sqmove':{closeModal();const q=(P(ME).squads||[]).find(q=>q.id===+d.q);const f=q&&q.ids.map(id=>G.fleets.find(f=>f.id===id)).find(Boolean);if(f){G.moveMode={squad:q.id,u:{},mode:'move',from:f.node};refresh();}return;}
-    case 'sqsee':G.squadOpen=G.squadOpen===+d.q?null:+d.q;break;
-    case 'sqdel':order({t:'squaddel',q:+d.q});break;
-    case 'pmove':G.popup=null;order({t:'fmove',f:+d.f,to:+d.n});break;
+    case 'sqsee':openModal({type:'fleet',q:+d.q});return;
+    case 'fopen':{const f=F(d.f);if(f)openUnit(f);return;}
+    case 'fleave':{const f=F(d.f);if(f&&order({t:'sqleave',f:f.id}))toast(L(`${dN(f.cls)} squadron left the fleet.`,`Эскадрилья «${dN(f.cls)}» покинула флот.`));break;}
+    case 'fkill':{const f=F(d.f);if(!f)break;G.popup={type:'kill',f:f.id,i:d.i!=null?+d.i:null};G.popupAt=performance.now();break;}
+    case 'fkillgo':{const m=G.popup;G.popup=null;if(!m||m.type!=='kill')break;const f=F(m.f);if(!f)break;const k=m.i!=null?1:f.count;if(order({t:'fkill',f:f.id,i:m.i}))toast(L(`${dCount(k,f.cls)} destroyed.`,`Уничтожено: ${dCount(k,f.cls)}.`));break;}
+    case 'dchip':return;
+    case 'empw':{const e=document.getElementById('empWorkers');if(e)e.scrollIntoView({behavior:'smooth',block:'start'});return;}
+    case 'sqdel':order({t:'squaddel',q:+d.q});if(G.modal&&G.modal.type==='fleet')closeModal();break;
+    case 'pmove':{const m=G.popup;G.popup=null;if(m&&m.type==='preview'&&m.q!=null)order({t:'squadmove',q:m.q,to:+d.n,...(m.rt||{})});else order({t:'fmove',f:+d.f,to:+d.n,...(m&&m.path?{path:m.path}:{})});break;}
     case 'openfleet':{const f=F(d.f);if(f)openUnit(f);return;}
     case 'tset':{const t=G.popup&&G.popup.t;if(t)order({t:'research',w:+d.w,tech:t});break;}
     case 'tunset':order({t:'task',w:+d.w,task:'idle'});break;
@@ -3670,6 +4162,7 @@ function act(a,d){
     case 'trade':order({t:'trade',give:G.trade.give,get:G.trade.get});break;
     case 'chg':if(G.popup&&G.popup.type==='charge')G.popup.cr=+d.k;break;
     case 'tut-next':if(TUT&&tutStep()&&tutStep().next)tutAdvance();return;
+    case 'tut-hide':if(TUT){TUT.shut=$('#tutbub').dataset.k;$('#tutbub').hidden=true;}return;
     case 'tut-skip':{G.popup=null;restoreTutRules();TUT=null;const el=tutEl();if(el)el.hidden=true;Acc.tutDone();leaveGame();showMenu('main');toast(L('Tutorial skipped. You can replay it from Settings.','Обучение пропущено. Его можно пройти заново в Настройках.'));return;}
     case 'rival':closeModal();G.popup={type:'rival',p:+d.p};G.popupAt=performance.now();break;
     case 'dset':order({t:'diplo',w:+d.w,to:+d.p,brk:d.b==='1'});break;
@@ -3694,13 +4187,14 @@ document.addEventListener('click',e=>{
   if(!el.dataset.a||el.tagName==='SELECT')return;
   act(el.dataset.a,el.dataset);
 });
-document.addEventListener('change',e=>{if(e.target.matches('select[data-a]'))onChange(e.target);if(e.target.id==='volS')sfxClick();});
+document.addEventListener('change',e=>{if(e.target.matches('select[data-a]'))onChange(e.target);if(e.target.id==='volS')sfxClick();if(e.target.id==='volB')bSnd.battle(1,1);});
 document.addEventListener('input',e=>{
   const t=e.target;
   if(t.id==='splitN'){const f=G&&G.fleets.find(f=>f.id===G.splitOpen);if(f)$('#splitLbl').textContent=`${f.count-t.value} | ${t.value}`;}
   if(t.id==='perR'){setupOpts.per=+t.value;$('#perV').textContent=t.value;}
   if(t.id==='volM'){settings.music=t.value/100;$('#volMV').textContent=t.value+'%';saveSettings();}
   if(t.id==='volS'){settings.sfx=t.value/100;$('#volSV').textContent=t.value+'%';saveSettings();}
+  if(t.id==='volB'){settings.bsfx=t.value/100;$('#volBV').textContent=t.value+'%';saveSettings();}
 });
 // drag a squadron onto another to merge (Empire menu)
 let fdrag=null;
@@ -3737,7 +4231,7 @@ function endTurn(auto){
   const clash=leviClashes(ME);
   if(clash.length){
     if(!auto){sfxError();G.notice=L(`You can't end the turn like this: a leviathan would be finished at ${clash.map(n=>lc(nodeName(n))).join(', ')}, where your squadrons are or are heading. Move the squadrons elsewhere, or stop the build.`,`Нельзя так завершить ход: левиафан достроится на ${clash.map(n=>lc(nodeName(n))).join(', ')}, где стоят или куда летят ваши эскадрильи. Уведите эскадрильи или остановите стройку.`);openModal({type:'report'});return;}
-    // the timer ran out: the build is cancelled and the jopium comes back
+    // the timer ran out: the build is cancelled and the starium comes back
     for(const n of clash)for(const st of n.stations.filter(x=>x.type==='levi'))order({t:'stcancel',s:st.uid});
   }
   if(G.online){submitTurn();return;}
@@ -3762,7 +4256,7 @@ function afterResolve(){
   refresh();
 }
 $('#endturn').onclick=()=>endTurn(false);
-$('#resign').onclick=()=>{if(!G)return;if(G.tut){tutSkip();return;}if(G.over)showEnd();else if(G.online)resignOnline();else endGame('resigned');};
+$('#resign').onclick=()=>{if(!G)return;if(G.tut){if(TUT&&TUT.ended){TUT=null;G.tut=false;tutEl().hidden=true;leaveGame();showMenu('main');}else tutSkip();return;}if(G.over)showEnd();else if(G.online)resignOnline();else endGame('resigned');};
 document.addEventListener('pointerdown',e=>{const t=$('#top');if(t.classList.contains('open')&&!t.contains(e.target)){t.classList.remove('open');$('#hudbar').setAttribute('aria-expanded',false);}},true);
 $('#hudbar').onclick=()=>{const t=$('#top');t.classList.toggle('open');$('#hudbar').setAttribute('aria-expanded',t.classList.contains('open'));};
 $('#settingsBtn').onclick=()=>{menuFrom='game';showMenu('settings');};
@@ -3773,7 +4267,7 @@ setInterval(()=>{const now=performance.now(),dt=(now-last)/1000;last=now;if(!G||
 // The server only relays orders between players; every screen runs the match itself (see applyCmd).
 // Where the server lives: ?server=wss://... in the page address wins; a page served by the game server itself
 // (your PC, or the hosting service) talks to that same address; anything else (itch.io) uses DEFAULT_SERVER.
-const DEFAULT_SERVER='wss://jopium-server.onrender.com';
+const DEFAULT_SERVER='wss://colonio-server.onrender.com';
 const SERVER_URL=(()=>{
   try{const q=new URLSearchParams(location.search).get('server');if(q)return q;}catch(e){}
   const h=location.hostname||'';
@@ -3787,7 +4281,7 @@ let LOBBY=null,LOBBIES=null,netError='';
    users/{uid}: {name, pic, elo, games, tut, created} — Elo, games and score are written only by the game server.
    names/{name}: {uid} — one document per nickname, so two players can never hold the same name (capitals count).
    The claude.ai copy can't reach Firebase, so it stays a guest-only test version. */
-const FB_CONFIG={apiKey:"AIzaSyDdiasH4cwsumx0QYhqMRRnd_ICjzkuPzI",authDomain:"jopium-243b1.firebaseapp.com",projectId:"jopium-243b1",storageBucket:"jopium-243b1.firebasestorage.app",messagingSenderId:"379443429897",appId:"1:379443429897:web:0891ab92bcf64848672ed8"};
+const FB_CONFIG={apiKey:"AIzaSyDdiasH4cwsumx0QYhqMRRnd_ICjzkuPzI",authDomain:"colonio-server.onrender.com",projectId:"jopium-243b1",storageBucket:"jopium-243b1.firebasestorage.app",messagingSenderId:"379443429897",appId:"1:379443429897:web:0891ab92bcf64848672ed8"};
 const FB_V='10.12.2';
 const GUEST_ONLY=/[?&]guest=1/.test(location.search)||location.protocol==='file:'||/(^|\.)claude\.ai$|claudeusercontent\.com$|claude\.site$|anthropic\.com$/.test(location.hostname||'');
 const NAME_OK=/^[A-Za-z0-9_]{3,16}$/;
@@ -3803,7 +4297,7 @@ const Acc={
       const app=a.initializeApp(FB_CONFIG);
       this.auth=au.getAuth(app);this.db=fs.getFirestore(app); // sign-in is kept on this device until the player signs out
       au.onAuthStateChanged(this.auth,u=>this.onUser(u));
-    }catch(e){console.warn('Jopium: accounts unavailable',e);this.state='guest';accChanged();}
+    }catch(e){console.warn('Colonio: accounts unavailable',e);this.state='guest';accChanged();}
   },
   async signIn(){
     const {GoogleAuthProvider,signInWithPopup,signInWithRedirect}=this.m;
@@ -3846,7 +4340,7 @@ const Acc={
     catch(e){return e.message==='taken'?L('That name is taken. Try another.','Это имя занято. Попробуйте другое.'):L("Couldn't save the name.",'Не удалось сохранить имя.');}
   },
   async saveTuts(){if(this.state!=='in')return;const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{tuts:profile.tuts||{}});}catch(e){}},
-  async saveAch(){if(this.state!=='in')return;const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{ach:profile.ach});}catch(e){console.warn('Jopium: achievements not saved',e);}},
+  async saveAch(){if(this.state!=='in')return;const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{ach:profile.ach});}catch(e){console.warn('Colonio: achievements not saved',e);}},
   async setPic(pic){const {doc,updateDoc}=this.m;await updateDoc(doc(this.db,'users',this.user.uid),{pic});},
   async tutDone(){if(this.state==='in'){const {doc,updateDoc}=this.m;try{await updateDoc(doc(this.db,'users',this.user.uid),{tut:true});}catch(e){}}profile.tut=true;saveProfile();},
   // the top 100 by Elo (ties: who got there first), plus your own place when you are lower
@@ -3921,7 +4415,7 @@ function onlineTurn(m){
   if(!G||!G.online||!SNAP||m.turn!==G.turn)return;
   restoreSnapshot();
   REPLAY=true;
-  try{for(let pid=0;pid<G.players.length;pid++)for(const c of (m.cmds[pid]||[])){try{applyCmd(pid,c);}catch(e){console.warn('Jopium: order failed',c,e);}}}
+  try{for(let pid=0;pid<G.players.length;pid++)for(const c of (m.cmds[pid]||[])){try{applyCmd(pid,c);}catch(e){console.warn('Colonio: order failed',c,e);}}}
   finally{REPLAY=false;}
   const gone=(m.dropped||[]).map(pid=>G.players[pid]).filter(q=>q&&!q.ai);
   gone.forEach(q=>{q.ai=true;});
@@ -4004,12 +4498,12 @@ function showMenu(view){
       <div class="mbtns"><button class="btn" type="button" data-a="tut-lang" data-v="en">English</button><button class="btn" type="button" data-a="tut-lang" data-v="ru">Русский</button></div></div>`;
   }else if(view==='login'){
     // first visit (or signed out): Google is the only way in
-    ov.innerHTML=`<div class="card"><h1 class="logo">JOPIUM</h1><p style="text-align:center;margin:0">${L('Sign in to play. Your profile, Elo and nickname are saved to your Google account and stay through every update.','Войдите, чтобы играть. Профиль, Elo и никнейм сохраняются в вашем аккаунте Google и не пропадают при обновлениях.')}</p>
+    ov.innerHTML=`<div class="card"><h1 class="logo">COLONIO</h1><p style="text-align:center;margin:0">${L('Sign in to play. Your profile, Elo and nickname are saved to your Google account and stay through every update.','Войдите, чтобы играть. Профиль, Elo и никнейм сохраняются в вашем аккаунте Google и не пропадают при обновлениях.')}</p>
       ${Acc.state==='loading'?`<p class="sub" style="text-align:center">${L('Connecting…','Подключение…')}</p>`:''}<div class="mbtns" ${Acc.state==='loading'?'hidden':''}><button class="btn primary gbtn" type="button" data-a="acc-in"><svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/></svg> ${L('Sign in with Google','Войти через Google')}</button></div></div>`;
   }else if(view==='main'&&!G&&achPopup()){
     return;
   }else if(view==='main'){
-    ov.innerHTML=`<div class="card"><h1 class="logo">JOPIUM</h1>
+    ov.innerHTML=`<div class="card"><h1 class="logo">COLONIO</h1>
       <div class="mbtns">
         <button class="btn" type="button" data-a="m-play">${L('Play','Играть')}</button>
         <button class="btn" type="button" data-a="m-setup">${L('Play vs AI','Игра против ИИ')}</button>
@@ -4058,7 +4552,7 @@ function showMenu(view){
       <div class="opts"><button class="btn" type="button" data-a="m-main">${L('Back','Назад')}</button></div></div>`;
   }else if(view==='setup'){
     ov.innerHTML=`<div class="card"><h1>${L('Play vs AI','Игра против ИИ')}</h1>
-      <div class="field"><div class="lab">${L('Game mode','Режим игры')}</div><span class="seg">${seg('s-mode','warfare',setupOpts.mode!=='conquest',L('Warfare','Сражение'))}${seg('s-mode','conquest',setupOpts.mode==='conquest',L('Conquest','Завоевание'))}</span><p class="sub" style="margin:0">${setupOpts.mode==='conquest'?L(`Dwarf planets join the belt. Mine jopium at their centres: the first to ${GOLD_WIN} wins, or be the last one left.`,`В поясе появляются карликовые планеты. Добывайте жопиум в их центрах: побеждает первый, кто наберёт ${GOLD_WIN}, или последний выживший.`):L('Be the last one left in the belt. Dwarf planets give jopium: 100 of it builds a leviathan.','Останьтесь последним в поясе. Карликовые планеты дают жопиум: за 100 можно построить левиафана.')}</p></div>
+      <div class="field"><div class="lab">${L('Game mode','Режим игры')}</div><span class="seg">${seg('s-mode','warfare',setupOpts.mode!=='conquest',L('Warfare','Сражение'))}${seg('s-mode','conquest',setupOpts.mode==='conquest',L('Conquest','Завоевание'))}</span><p class="sub" style="margin:0">${setupOpts.mode==='conquest'?L(`Dwarf planets join the belt. Mine starium at their centres: the first to ${GOLD_WIN} wins, or be the last one left.`,`В поясе появляются карликовые планеты. Добывайте стариум в их центрах: побеждает первый, кто наберёт ${GOLD_WIN}, или последний выживший.`):L('Be the last one left in the belt. Dwarf planets give starium: 100 of it builds a leviathan.','Останьтесь последним в поясе. Карликовые планеты дают стариум: за 100 можно построить левиафана.')}</p></div>
       <div class="field"><div class="lab"><label for="perR">${L('Map size','Размер карты')}</label><span><b id="perV">${setupOpts.per}</b> ${L('asteroids per player','астероидов на игрока')}</span></div><input type="range" id="perR" min="10" max="30" value="${setupOpts.per}"></div>
       <div class="field"><div class="lab">${L('Rival AIs','ИИ-соперники')}</div><span class="seg">${[1,2,3,4,5].map(v=>seg('s-bots',v,setupOpts.bots===v,v)).join('')}</span></div>
       <div class="field"><div class="lab">${L('Difficulty','Сложность')}</div><span class="seg">${[['easy','Easy','Лёгкая'],['normal','Normal','Обычная'],['hard','Hard','Сложная']].map(([v,e,r])=>seg('s-diff',v,setupOpts.diff===v,L(e,r))).join('')}</span></div>
@@ -4069,25 +4563,31 @@ function showMenu(view){
     ov.innerHTML=`<div class="card"><h1>${L('Settings','Настройки')}</h1>${setTabs()}
       <div class="keys">${KEY_ACTIONS.map(([a,,en,ru])=>`<div class="krow"><span>${L(en,ru)}</span><span class="kk">${settings.keys[a].map((k,i)=>`<span class="kcap ${keyWait&&keyWait.a===a&&keyWait.i===i?'wait':''}">${keyWait&&keyWait.a===a&&keyWait.i===i?L('Press a key…','Нажмите клавишу…'):esc(keyLabel(k))}</span><button class="btn small" type="button" data-a="k-chg" data-k="${a}" data-i="${i}">${L('Change','Изменить')}</button>`).join('')}</span></div>`).join('')}</div>
       <div class="opts"><button class="btn" type="button" data-a="k-reset">${L('Reset to default','Сбросить по умолчанию')}</button><button class="btn primary" type="button" data-a="m-back">${menuFrom==='game'?L('Back to game','Вернуться в игру'):L('Back','Назад')}</button></div></div>`;
+  }else if(view==='settings'&&setTab==='sound'){
+    const m=Math.round(settings.music*100),s=Math.round(settings.sfx*100),b=Math.round(settings.bsfx*100);
+    ov.innerHTML=`<div class="card"><h1>${L('Settings','Настройки')}</h1>${setTabs()}
+      <div class="field"><div class="lab"><label for="volM">${L('Music','Музыка')}</label><b id="volMV">${m}%</b></div><input type="range" id="volM" min="0" max="100" value="${m}"></div>
+      <div class="field"><div class="lab"><label for="volS">${L('Effects','Эффекты')}</label><b id="volSV">${s}%</b></div><input type="range" id="volS" min="0" max="100" value="${s}"></div>
+      <div class="field"><div class="lab"><label for="volB">${L('Battle','Бой')}</label><b id="volBV">${b}%</b></div><input type="range" id="volB" min="0" max="100" value="${b}"><p class="sub" style="margin:4px 0 0">${L('Battles, ballistas, catapults, stompers, death turrets and falling cores. Close up they are loud; zoomed far out they go quiet. A falling core is heard from anywhere.','Бои, баллисты, катапульты, топтуны, турели смерти и падение ядер. Вблизи громко, при сильном отдалении тихо. Падение ядра слышно отовсюду.')}</p></div>
+      <div class="opts"><button class="btn primary" type="button" data-a="m-back">${menuFrom==='game'?L('Back to game','Вернуться в игру'):L('Back','Назад')}</button></div></div>`;
   }else if(view==='settings'){
-    const m=Math.round(settings.music*100),s=Math.round(settings.sfx*100);
     ov.innerHTML=`<div class="card"><h1>${L('Settings','Настройки')}</h1>${setTabs()}
       <div class="field"><div class="lab">${L('Language','Язык')}</div><span class="seg">${seg('s-lang','en',!RU(),'English')}${seg('s-lang','ru',RU(),'Русский')}</span></div>
-      <div class="field"><div class="lab"><label for="volM">${L('Music volume','Громкость музыки')}</label><b id="volMV">${m}%</b></div><input type="range" id="volM" min="0" max="100" value="${m}"></div>
-      <div class="field"><div class="lab"><label for="volS">${L('Sound volume','Громкость звуков')}</label><b id="volSV">${s}%</b></div><input type="range" id="volS" min="0" max="100" value="${s}"></div>
+      <div class="field"><div class="lab"><span>${L('Fleets follow drawn routes','Флоты летят по нарисованному пути')}</span><button type="button" class="switch ${settings.fleetRoute?'on':''}" role="switch" aria-checked="${settings.fleetRoute}" data-a="s-froute" aria-label="${L('Fleets follow drawn routes','Флоты летят по нарисованному пути')}"></button></div></div>
       <div class="field"><div class="lab"><span>${L('Continuous artillery fire','Непрерывный огонь артиллерии')}</span><button type="button" class="switch ${settings.keepFire?'on':''}" role="switch" aria-checked="${settings.keepFire}" data-a="s-fire" aria-label="${L('Continuous artillery fire','Непрерывный огонь артиллерии')}"><i></i></button></div><p class="sub" style="margin:0">${L('Catapults and ballistas keep firing every turn until you stop them.','Катапульты и баллисты стреляют каждый ход, пока вы их не остановите.')}</p></div>
+      <div class="field"><div class="lab"><span>${L('Battle animations','Анимация боёв')}</span><button type="button" class="switch ${settings.battleFx?'on':''}" role="switch" aria-checked="${settings.battleFx}" data-a="s-bfx" aria-label="${L('Battle animations','Анимация боёв')}"></button></div></div>
       <div class="field"><div class="lab"><span>${L('Show important reports','Показывать важные отчёты')}</span><button type="button" class="switch ${settings.autoReport?'on':''}" role="switch" aria-checked="${settings.autoReport}" data-a="s-rep" aria-label="${L('Show important reports','Показывать важные отчёты')}"><i></i></button></div><p class="sub" style="margin:0">${L('Open the turn report by itself when something important happens, like losing your core.','Открывать отчёт за ход самостоятельно, когда происходит что-то важное, например падение ядра.')}</p></div>
       <div class="field"><div class="lab"><span>${L('Infinite queues','Бесконечные очереди')}</span><button type="button" class="switch ${settings.loopQ?'on':''}" role="switch" aria-checked="${settings.loopQ}" data-a="s-loop" aria-label="${L('Infinite queues','Бесконечные очереди')}"><i></i></button></div><p class="sub" style="margin:0">${L('Barracks and upgrade stations repeat the last drone, one a turn, whenever you can pay for it.','Казармы и станции улучшений повторяют последний дрон, по одному за ход, когда хватает ресурсов.')}</p></div>
       ${menuFrom==='game'?'':`<div class="field"><button class="btn" type="button" data-a="s-tut">${L('Tutorials','Обучение')}</button></div>`}
       <div class="opts"><button class="btn primary" type="button" data-a="m-back">${menuFrom==='game'?L('Back to game','Вернуться в игру'):L('Back','Назад')}</button></div></div>`;
   }else if(view==='closed'){
-    ov.innerHTML=`<div class="card"><h1>${L('Jopium is closed','Jopium закрыт')}</h1><p>${L('The music has stopped. You can close this browser tab now.','Музыка остановлена. Теперь можно закрыть эту вкладку.')}</p><div class="opts"><button class="btn" type="button" data-a="m-reopen">${L('Back to main menu','В главное меню')}</button></div></div>`;
+    ov.innerHTML=`<div class="card"><h1>${L('Colonio is closed','Колонио закрыт')}</h1><p>${L('The music has stopped. You can close this browser tab now.','Музыка остановлена. Теперь можно закрыть эту вкладку.')}</p><div class="opts"><button class="btn" type="button" data-a="m-reopen">${L('Back to main menu','В главное меню')}</button></div></div>`;
   }
 }
 // settings tabs: General and Keyboard (phones and tablets only get General)
 let setTab='general',keyWait=null;
 const touchOnly=()=>window.matchMedia&&matchMedia('(hover: none) and (pointer: coarse)').matches;
-const setTabs=()=>touchOnly()?'':`<div class="seg tabs" role="tablist">${[['general','General','Общие'],['keys','Keyboard','Клавиатура']].map(([v,en,ru])=>`<button type="button" role="tab" aria-selected="${setTab===v}" class="${setTab===v?'on':''}" data-a="set-tab" data-v="${v}">${L(en,ru)}</button>`).join('')}</div>`;
+const setTabs=()=>`<div class="seg tabs" role="tablist">${[['general','General','Общие'],['sound','Sound','Звук'],...(touchOnly()?[]:[['keys','Keyboard','Клавиатура']])].map(([v,en,ru])=>`<button type="button" role="tab" aria-selected="${setTab===v}" class="${setTab===v?'on':''}" data-a="set-tab" data-v="${v}">${L(en,ru)}</button>`).join('')}</div>`;
 const hostOpts={name:'',mode:'warfare',per:20,opp:3,timer:45};
 const keepLobbyName=()=>{const el=$('#lobbyIn');if(el)hostOpts.name=el.value.trim();};
 // the calm rocket (Draft 11): slow drifting stars, one gentle sway every 6 s, a soft flame.
@@ -4142,7 +4642,7 @@ function eloResult(m){ELO_RES=m;profile.elo=m.after;profile.games=m.games;savePr
 function eloRoll(){
   const r=ELO_RES;if(!r)return Acc.state==='in'?`<p class="sub" style="text-align:center">${L('Updating Elo…','Обновляем Elo…')}</p>`:'';
   const up=r.after>=r.before,d=r.after-r.before,a=String(r.before).padStart(4,' '),b=String(r.after).padStart(4,' ');
-  return `<div class="eloroll" data-from="${r.before}" data-to="${r.after}">${[...b].map((ch,i)=>`<span class="dg"><span class="rl" data-f="${a[i]}" data-t="${ch}">${ch}</span></span>`).join('')}<div class="ebar"><i class="${up?'up':'down'}"></i></div><div class="${up?'good':'bad'}">${up?'+':'−'}${Math.abs(d)} Elo${r.first?L(' · your first rated game',' · ваша первая рейтинговая игра'):''}</div></div>`;
+  return `<div class="eloroll" data-from="${r.before}" data-to="${r.after}"><div class="edigs">${[...b].map((ch,i)=>`<span class="dg"><span class="rl" data-f="${a[i]}" data-t="${ch}">${ch}</span></span>`).join('')}</div><div class="ebar"><i class="${up?'up':'down'}"></i></div><div class="${up?'good':'bad'}">${up?'+':'−'}${Math.abs(d)} Elo${r.first?L(' · your first rated game',' · ваша первая рейтинговая игра'):''}</div></div>`;
 }
 function animateElo(){
   const box=ov.querySelector('.eloroll');if(!box||box.dataset.done)return;box.dataset.done=1;
@@ -4154,20 +4654,21 @@ function animateElo(){
   const bar=box.querySelector('.ebar i');if(bar)bar.animate([{width:'50%'},{width:up?'62%':'38%'}],{duration:1400,delay:600,easing:'ease-out',fill:'forwards'});
 }
 function endGame(result){
-  if(G&&G.tut){if(result==='won'&&TUT){tutFinish();}return;}
+  if(G&&G.tut){if(result==='won'&&TUT){const w=animWait();if(w>0){const k=TUT.key;setTimeout(()=>{if(TUT&&TUT.key===k)tutFinish();},w);}else tutFinish();}return;}
   G.over=true;G.result=result;G.moveMode=null;
   // after a defeat (or resigning) the whole map opens up and you can keep pressing Next turn to watch the AIs
   // the winner also gets the whole map, with no fog, to look around
   G.spectate=true;
   if(result==='resigned'&&P(ME).alive)coreFall(G.nodes[P(ME).core]);
   if(result==='resigned')log(L('You resigned.','Вы сдались.'),'battle',null,[0]);
-  closeModal();refresh();showEnd();
+  closeModal();refresh();
+  const w=animWait();if(w>0){G.endWait=true;setTimeout(()=>{if(G&&G.over&&G.endWait){G.endWait=false;showEnd();}},w);}else showEnd();
 }
 function showEnd(){
   const r=G.result;
   const gw=G.winner!=null&&G.mode==='conquest'&&P(G.winner).gold>=GOLD_WIN?P(G.winner):null;
-  const title=r==='draw'?L('Stalemate','Пат'):r==='won'?(gw?L('Jopium secured','Жопиум добыто'):L('Belt secured','Пояс ваш')):r==='lost'?(gw?L(`${pShort(gw)} wins`,`Победа: ${pShort(gw)}`):L('Core lost','Ядро потеряно')):L('You resigned','Вы сдались');
-  const text=r==='draw'?L('Turn 1000 was reached and nobody won. The match is a draw.','Достигнут 1000-й ход, никто не победил. Ничья.'):r==='won'?(gw?L(`You mined ${gw.gold} jopium on turn ${G.turn-1}.`,`Вы добыли ${gw.gold} жопиума на ходу ${G.turn-1}.`):L(`Every rival has been shut down. You control the belt after ${G.turn-1} turns.`,`Все соперники отключены. За ${cnt(G.turn-1,'turn')} вы взяли пояс под контроль.`)):r==='lost'?(gw?L(`${pName(gw)} reached ${GOLD_WIN} jopium on turn ${G.turn-1}.`,`${pName(gw)} набрал ${GOLD_WIN} жопиума на ходу ${G.turn-1}.`):L(`Your core was destroyed on turn ${G.turn-1}.`,`Ваше ядро уничтожено на ходу ${G.turn-1}.`)):L(`You left the match on turn ${G.turn}.`,`Вы покинули матч на ходу ${G.turn}.`);
+  const title=r==='draw'?L('Stalemate','Пат'):r==='won'?(gw?L('Starium secured','Стариум добыт'):L('Belt secured','Пояс ваш')):r==='lost'?(gw?L(`${pShort(gw)} wins`,`Победа: ${pShort(gw)}`):L('Core lost','Ядро потеряно')):L('You resigned','Вы сдались');
+  const text=r==='draw'?L('Turn 1000 was reached and nobody won. The match is a draw.','Достигнут 1000-й ход, никто не победил. Ничья.'):r==='won'?(gw?L(`You mined ${gw.gold} starium on turn ${G.turn-1}.`,`Вы добыли ${gw.gold} стариума на ходу ${G.turn-1}.`):L(`Every rival has been shut down. You control the belt after ${G.turn-1} turns.`,`Все соперники отключены. За ${cnt(G.turn-1,'turn')} вы взяли пояс под контроль.`)):r==='lost'?(gw?L(`${pName(gw)} reached ${GOLD_WIN} starium on turn ${G.turn-1}.`,`${pName(gw)} набрал ${GOLD_WIN} стариума на ходу ${G.turn-1}.`):L(`Your core was destroyed on turn ${G.turn-1}.`,`Ваше ядро уничтожено на ходу ${G.turn-1}.`)):L(`You left the match on turn ${G.turn}.`,`Вы покинули матч на ходу ${G.turn}.`);
   ov.hidden=false;ov.className='dim';ov.dataset.view='end';
   requestAnimationFrame(()=>fitText(ov));
   ov.innerHTML=`<div class="card"><button class="x" type="button" data-a="e-close" aria-label="${L('Close and watch the map','Закрыть и смотреть карту')}">✕</button><h1>${title}</h1><p>${text}</p>${G.online?eloRoll():''}<div class="opts">${G.online?'':`<button class="btn primary" type="button" data-a="e-next">${L('Next game','Следующая игра')}</button>`}${r==='won'?`<button class="btn" type="button" data-a="e-close">${L('Observe the map','Осмотреть карту')}</button>`:''}${r!=='won'&&G.spectate&&!gw&&G.players.filter(p=>p.alive).length>1?`<button class="btn" type="button" data-a="e-close">${G.online?L('Keep watching','Смотреть дальше'):L('Watch the AIs','Смотреть за ИИ')}</button>`:''}<button class="btn" type="button" data-a="e-menu">${L('Back to menu','В меню')}</button></div></div>`;
@@ -4213,6 +4714,8 @@ function menuAct(a,d){
     case 's-mode':setupOpts.mode=d.v;showMenu('setup');break;
     case 's-loop':settings.loopQ=!settings.loopQ;saveSettings();showMenu('settings');if(G&&P(ME).alive)order({t:'loopq',v:settings.loopQ});break;
     case 's-rep':settings.autoReport=!settings.autoReport;saveSettings();showMenu('settings');break;
+    case 's-bfx':settings.battleFx=!settings.battleFx;saveSettings();showMenu('settings');break;
+    case 's-froute':settings.fleetRoute=!settings.fleetRoute;saveSettings();showMenu('settings');break;
     case 's-fire':settings.keepFire=!settings.keepFire;saveSettings();showMenu('settings');break;
     case 's-tut':showMenu('tutmenu');break;
     case 'set-tab':setTab=d.v;keyWait=null;showMenu('settings');break;

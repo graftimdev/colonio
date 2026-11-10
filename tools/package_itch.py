@@ -19,7 +19,7 @@ if n != 1:
     sys.exit('Could not find DEFAULT_SERVER in client/index.html. Run python tools/build.py first.')
 
 os.makedirs(DIST, exist_ok=True)
-out = os.path.join(DIST, 'jopium-itch.zip')
+out = os.path.join(DIST, 'colonio-itch.zip')
 with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
     z.writestr('index.html', html)
     for f in ('astrosong.mp3', 'gamesong.mp3'):

@@ -34,7 +34,9 @@ window.botOrders=function(){
   for(const f of mine){
     if(!G.fleets.includes(f))continue;
     const r=R();
-    if(stuck(f)){order({t:'selfdestruct',f:f.id});continue;}
+    // Draft 12: Destroy (whole squadron, or one drone) replaces Self-destruct
+    if(stuck(f)){order({t:'fkill',f:f.id,i:R()<.5?0:undefined});continue;}
+    if(r<.02&&f.cls!=='leviathan'){order({t:'fkill',f:f.id,i:R()<.5?Math.floor(R()*f.count):undefined});continue;}
     if(f.cls==='charger'){if(!f.settled&&r<.4)order({t:'settle',f:f.id,v:true});else if(f.settled&&r<.15)order({t:'settle',f:f.id,v:false});
       if(f.settled){const g=mine.find(g=>g!==f&&g.node===f.node&&G.fleets.includes(g)&&g.cls!=='leviathan'&&g.cls!=='charger');if(g)order({t:'dockone',f:g.id,ch:f.id});for(const d of (f.dock||[]).slice(0,1))order({t:'launch',ch:f.id,c:d.c,i:-1});}
       if(f.settled)continue;}
@@ -48,6 +50,7 @@ window.botOrders=function(){
   if(alive.length>=2&&R()<.15)order({t:'squad',ids:[alive[0].id,alive[1].id]});
   for(const q of me.squads||[])if(R()<.3)order({t:'squadmove',q:q.id,to:pick(K)});
   if(R()<.05&&(me.squads||[]).length)order({t:'squaddel',q:me.squads[0].id});
+  if(R()<.08&&(me.squads||[]).length){const q=me.squads[0];order({t:'sqleave',f:q.ids[q.ids.length-1]});}
   if(R()<.3)order({t:'trade',give:pick(RES),get:pick(RES)});
   // Draft 10: send workers somewhere with a task, diplomacy both ways
   if(R()<.2&&ws.length){const w=pick(ws);order({t:'wgo',w:w.id,to:pick(K),task:pick(['mine','claim',null])});}
