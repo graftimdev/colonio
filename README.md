@@ -2,12 +2,12 @@
 
 Colonio is a turn-based strategy game set in an asteroid belt. Everyone gives orders at the same time, then presses **End turn**, and the whole turn plays out at once.
 
-Build up from a single core: claim asteroids, mine iron, copper, silicon and Xenocrystal, research new technology, and build drones. Then win your way:
+Build up from a single core: claim asteroids, mine iron, copper, silicon and crystals, research new technology, and build drones. Then win your way:
 
 - **Warfare:** be the last core standing.
 - **Conquest:** be the first to mine 100 starium.
 
-Current version: **0.2.2 (Draft 12)**. See [Draft 12.md](Draft%2012.md) for everything new, and [Draft 11.md](Draft%2011.md) for the version before.
+Current version: **0.2.3 (Draft 13)**. See [Draft 13.md](Draft%2013.md) for everything new, and [Draft 12.md](Draft%2012.md) for the version before. **Settings → Wiki** explains the damage order and the rules that are hard to find.
 
 ## Play
 
